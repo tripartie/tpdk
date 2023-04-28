@@ -37,7 +37,7 @@ jobs:
       - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
         name: Download latest OpenAPI
 
-      - run: echo tag=`cat schema-oas.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
+      - run: echo tag=`cat oas-upstream.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
         name: Determine schema version
         id: version
 
@@ -54,7 +54,7 @@ jobs:
         run: openapi-generator-cli generate -g python-nextgen --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.yml --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
 
       - name: Cleanup
-        run: rm -f schema-oas.yml openapitools.json ./python/git_push.sh ./typescript/git_push.sh ./php/git_push.sh ./php/.travis.yml ./python/.gitlab-ci.yml ./python/.travis.yml
+        run: rm -f oas-upstream.yml openapitools.json ./python/git_push.sh ./typescript/git_push.sh ./php/git_push.sh ./php/.travis.yml ./python/.gitlab-ci.yml ./python/.travis.yml
 
       - name: Patch license (PHP)
         run: sed -i 's/unlicense/Apache-2\.0/g' ./php/composer.json
