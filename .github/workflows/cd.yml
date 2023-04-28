@@ -31,7 +31,7 @@ jobs:
       - run: wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
         name: Install YQ
 
-      - run: apt install -y jq
+      - run: sudo apt install -y jq
         name: Install JQ
 
       - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
