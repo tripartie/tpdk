@@ -51,7 +51,7 @@ jobs:
         run: openapi-generator-cli generate -g php --git-repo-id tpdk --git-user-id tripartie -o ./php -i oas-upstream.yml --additional-properties=invokerPackage=Tripartie\\\\Tpdk,variableNamingConvention=camelCase
 
       - name: TPDK for Python
-        run: openapi-generator-cli generate -g python-next --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.yml --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
+        run: openapi-generator-cli generate -g python-nextgen --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.yml --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
 
       - name: Cleanup
         run: rm -f schema-oas.yml openapitools.json ./python/git_push.sh ./typescript/git_push.sh ./php/git_push.sh ./php/.travis.yml ./python/.gitlab-ci.yml ./python/.travis.yml
