@@ -44,17 +44,26 @@ jobs:
       - run: npm install @openapitools/openapi-generator-cli -g
         name: Setup OpenAPI Generator
 
+      - name: Clean Typescript TPDK
+        run: rm -fR ./typescript || true
+
       - name: TPDK for Typescript
         run: openapi-generator-cli generate -g typescript-axios --git-repo-id tpdk --git-user-id tripartie -o ./typescript -i oas-upstream.yml --additional-properties=npmName=@tripartie/tpdk,supportsES6=true,stringEnums=true
 
+      - name: Clean PHP TPDK
+        run: rm -fR ./php || true
+
       - name: TPDK for PHP
         run: openapi-generator-cli generate -g php --git-repo-id tpdk --git-user-id tripartie -o ./php -i oas-upstream.yml --additional-properties=invokerPackage=Tripartie\\\\Tpdk,variableNamingConvention=camelCase
+
+      - name: Clean Python TPDK
+        run: rm -fR ./python || true
 
       - name: TPDK for Python
         run: openapi-generator-cli generate -g python-nextgen --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.yml --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
 
       - name: Cleanup
-        run: rm -f oas-upstream.yml openapitools.json ./python/git_push.sh ./typescript/git_push.sh ./php/git_push.sh ./php/.travis.yml ./python/.gitlab-ci.yml ./python/.travis.yml
+        run: rm -f oas-upstream.yml openapitools.json
 
       - name: Patch license (PHP)
         run: sed -i 's/unlicense/Apache-2\.0/g' ./php/composer.json

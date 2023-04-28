@@ -1,0 +1,14 @@
+/php/.openapi-generator/
+/php/.travis.yml
+/php/git_push.sh
+/python/.github/
+/python/.openapi-generator/
+/python/.gitlab-ci.yml
+/python/.openapi-generator-ignore
+/python/.travis.yml
+/python/git_push.sh
+/typescript/.openapi-generator/
+/typescript/.openapi-generator-ignore
+/typescript/git_push.sh
+/openapitools.json
+/schema-oas.yml
