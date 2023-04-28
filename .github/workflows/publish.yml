@@ -1,7 +1,7 @@
 name: Continuous Delivery (Publish)
 
 permissions:
-  contents: read
+  contents: write
   deployments: write
   id-token: write
 
@@ -92,7 +92,7 @@ jobs:
       - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
         name: Download latest OpenAPI
 
-      - run: echo tag=`cat schema-oas.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
+      - run: echo tag=`cat oas-upstream.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
         name: Determine schema version
         id: version
 
