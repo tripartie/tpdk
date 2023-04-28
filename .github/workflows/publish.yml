@@ -37,10 +37,12 @@ jobs:
         run: npm run build
         working-directory: ./typescript
 
+      - name: Config auth
+        working-directory: ./typescript
+        run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_PACKAGE_TOKEN }}
+
       - name: Publish package
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGE_TOKEN }}
+        run: npm publish --access public
         working-directory: ./typescript
 
   publish_python:
