@@ -75,9 +75,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    environment:
-      name: packagist
-      url: https://www.npmjs.com/package/tpdk
+    needs:
+      - publish_typescript
+      - publish_python
 
     steps:
       - name: Checkout
