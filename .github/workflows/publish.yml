@@ -6,9 +6,6 @@ permissions:
   id-token: write
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     branches:
       - main
@@ -82,6 +79,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - run: wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+        name: Install YQ
+
+      - run: apt install -y jq
+        name: Install JQ
 
       - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
         name: Download latest OpenAPI

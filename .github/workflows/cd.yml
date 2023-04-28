@@ -28,6 +28,12 @@ jobs:
         with:
           node-version: '18'
 
+      - run: wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+        name: Install YQ
+
+      - run: apt install -y jq
+        name: Install JQ
+
       - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
         name: Download latest OpenAPI
 
@@ -63,4 +69,4 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: sync upstream changes - openapi generation - ${{ steps.version.outputs.tag }}
-          title: [tpdk][${{ steps.version.outputs.tag }}] sync from upstream openapi changes
+          title: "[tpdk][${{ steps.version.outputs.tag }}] sync from upstream openapi changes"
