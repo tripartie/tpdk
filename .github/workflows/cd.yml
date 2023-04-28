@@ -1,0 +1,66 @@
+name: Continuous Delivery (PR)
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Controls when the action will run.
+on:
+  workflow_dispatch:
+    branches:
+      - main
+  schedule:
+    - cron: "0 8 * * 1"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  generation:
+    name: TPDK Generation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        name: Setup node
+        with:
+          node-version: '18'
+
+      - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
+        name: Download latest OpenAPI
+
+      - run: echo tag=`cat schema-oas.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
+        name: Determine schema version
+        id: version
+
+      - run: npm install @openapitools/openapi-generator-cli -g
+        name: Setup OpenAPI Generator
+
+      - name: TPDK for Typescript
+        run: openapi-generator-cli generate -g typescript-axios --git-repo-id tpdk --git-user-id tripartie -o ./typescript -i oas-upstream.yml --additional-properties=npmName=@tripartie/tpdk,supportsES6=true,stringEnums=true
+
+      - name: TPDK for PHP
+        run: openapi-generator-cli generate -g php --git-repo-id tpdk --git-user-id tripartie -o ./php -i oas-upstream.yml --additional-properties=invokerPackage=Tripartie\\\\Tpdk,variableNamingConvention=camelCase
+
+      - name: TPDK for Python
+        run: openapi-generator-cli generate -g python-next --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.yml --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
+
+      - name: Cleanup
+        run: rm -f schema-oas.yml openapitools.json ./python/git_push.sh ./typescript/git_push.sh ./php/git_push.sh ./php/.travis.yml ./python/.gitlab-ci.yml ./python/.travis.yml
+
+      - name: Patch license (PHP)
+        run: sed -i 's/unlicense/Apache-2\.0/g' ./php/composer.json
+
+      - name: Patch license (Typescript)
+        run: sed -i 's/Unlicense/Apache-2\.0/g' ./typescript/package.json
+
+      - name: Patch license (Python)
+        run: sed -i 's/NoLicense/Apache-2\.0/g' ./python/pyproject.toml
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: sync upstream changes - openapi generation - ${{ steps.version.outputs.tag }}
+          title: [tpdk][${{ steps.version.outputs.tag }}] sync from upstream openapi changes

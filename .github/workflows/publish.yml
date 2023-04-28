@@ -1,0 +1,99 @@
+name: Continuous Delivery (Publish)
+
+permissions:
+  contents: read
+  deployments: write
+  id-token: write
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    branches:
+      - main
+
+jobs:
+
+  publish_typescript:
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: npm
+      url: "https://www.npmjs.com/package/@tripartie/tpdk"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        name: Setup node
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./typescript
+
+      - name: Build package
+        run: npm build
+        working-directory: ./typescript
+
+      - name: Publish package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGE_TOKEN }}
+        working-directory: ./typescript
+
+  publish_python:
+
+    environment:
+      name: pypi
+      url: https://pypi.org/project/tpdk
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Build package
+        run: python -m build
+        working-directory: ./python
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: ./python/dist
+
+  publish_tag:
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: packagist
+      url: https://www.npmjs.com/package/tpdk
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
+        name: Download latest OpenAPI
+
+      - run: echo tag=`cat schema-oas.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
+        name: Determine schema version
+        id: version
+
+      - uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ steps.version.outputs.tag }}
+          body: |
+            The CHANGES are available in the [technical hub](https://hub.tripartie.com).
+            Create an issue in this repository to gain support for the tpdk low-level client.
+            The versioning match the API schema'.
