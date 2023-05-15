@@ -34,10 +34,10 @@ jobs:
       - run: sudo apt install -y jq
         name: Install JQ
 
-      - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
+      - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.json
         name: Download latest OpenAPI
 
-      - run: echo tag=`cat oas-upstream.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
+      - run: echo tag=`cat oas-upstream.json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
         name: Determine schema version
         id: version
 
@@ -48,16 +48,16 @@ jobs:
         run: rm -fR ./typescript || true
 
       - name: TPDK for Typescript
-        run: openapi-generator-cli generate -g typescript-axios --git-repo-id tpdk --git-user-id tripartie -o ./typescript -i oas-upstream.yml --additional-properties=npmName=@tripartie/tpdk,supportsES6=true,stringEnums=true
+        run: openapi-generator-cli generate -g typescript-axios --git-repo-id tpdk --git-user-id tripartie -o ./typescript -i oas-upstream.json --additional-properties=npmName=@tripartie/tpdk,supportsES6=true,stringEnums=true
 
       - name: Clean Python TPDK
         run: rm -fR ./python || true
 
       - name: TPDK for Python
-        run: openapi-generator-cli generate -g python-nextgen --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.yml --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
+        run: openapi-generator-cli generate -g python-nextgen --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.json --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
 
       - name: Cleanup
-        run: rm -f oas-upstream.yml openapitools.json
+        run: rm -f oas-upstream.json openapitools.json
 
       - name: Patch license (Typescript)
         run: sed -i 's/Unlicense/Apache-2\.0/g' ./typescript/package.json
