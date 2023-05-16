@@ -31,12 +31,13 @@ Retrieves the collection of Dispute resources.
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.dispute_collection_read import DisputeCollectionRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -81,6 +82,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_get_collection: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -136,12 +138,14 @@ Create a draft dispute to be filled by an alleged aggrieved customer. Do not use
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.dispute_independent_write import DisputeIndependentWrite
+from tpdk.models.dispute_post_creation_read import DisputePostCreationRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -170,6 +174,7 @@ with tpdk.ApiClient(configuration) as api_client:
         print("Exception when calling ResolutionCenterApi->api_disputes_post: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -192,9 +197,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | Dispute resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -209,12 +214,12 @@ Abandon claims on Dispute
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -240,6 +245,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulid_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -279,12 +285,13 @@ Retrieves a Dispute resource.
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.dispute_read import DisputeRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -312,6 +319,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulid_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -350,111 +358,17 @@ Updates the Dispute resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    dispute_update = tpdk.DisputeUpdate() # DisputeUpdate | The updated Dispute resource
-
-    try:
-        # Updates the Dispute resource.
-        api_response = api_instance.api_disputes_ulid_patch(ulid, dispute_update)
-        print("The response of ResolutionCenterApi->api_disputes_ulid_patch:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulid_patch: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    dispute_update = tpdk.DisputeUpdate() # DisputeUpdate | The updated Dispute resource
-
-    try:
-        # Updates the Dispute resource.
-        api_response = api_instance.api_disputes_ulid_patch(ulid, dispute_update)
-        print("The response of ResolutionCenterApi->api_disputes_ulid_patch:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulid_patch: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.dispute_read import DisputeRead
+from tpdk.models.dispute_update import DisputeUpdate
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -495,6 +409,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulid_patch: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -521,8 +436,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Dispute resource updated |  -  |
 **400** | Invalid input |  -  |
-**404** | Resource not found |  -  |
 **422** | Unprocessable entity |  -  |
+**404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -536,111 +451,17 @@ Submit an Evaluation for the Dispute
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    evaluation_write = tpdk.EvaluationWrite() # EvaluationWrite | The new Evaluation resource
-
-    try:
-        # Submit an Evaluation for the Dispute
-        api_response = api_instance.api_disputes_ulidevaluations_post(ulid, evaluation_write)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevaluations_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevaluations_post: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    evaluation_write = tpdk.EvaluationWrite() # EvaluationWrite | The new Evaluation resource
-
-    try:
-        # Submit an Evaluation for the Dispute
-        api_response = api_instance.api_disputes_ulidevaluations_post(ulid, evaluation_write)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevaluations_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevaluations_post: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.evaluation_read import EvaluationRead
+from tpdk.models.evaluation_write import EvaluationWrite
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -681,6 +502,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidevaluations_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -705,9 +527,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | Evaluation resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -721,111 +543,16 @@ Retrieves the collection of Evidence resources.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
-
-    try:
-        # Retrieve all Evidences in Dispute
-        api_response = api_instance.api_disputes_ulidevidences_get_collection(ulid, page=page)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevidences_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_get_collection: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
-
-    try:
-        # Retrieve all Evidences in Dispute
-        api_response = api_instance.api_disputes_ulidevidences_get_collection(ulid, page=page)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevidences_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_get_collection: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.evidence_read import EvidenceRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -866,6 +593,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_get_collection: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -904,107 +632,15 @@ Removes the Evidence resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Evidence identifier
-
-    try:
-        # Withdraw an Evidence from a Dispute
-        api_instance.api_disputes_ulidevidences_id_delete(ulid, id)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_id_delete: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Evidence identifier
-
-    try:
-        # Withdraw an Evidence from a Dispute
-        api_instance.api_disputes_ulidevidences_id_delete(ulid, id)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_id_delete: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -1043,6 +679,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_id_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -1082,113 +719,16 @@ Creates a Media resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Evidence identifier
-    file = tpdk.bytearray() # bytearray |  (optional)
-
-    try:
-        # Upload attachment in regard of described Evidence
-        api_response = api_instance.api_disputes_ulidevidences_idmedia_post(ulid, id, file=file)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevidences_idmedia_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_idmedia_post: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Evidence identifier
-    file = tpdk.bytearray() # bytearray |  (optional)
-
-    try:
-        # Upload attachment in regard of described Evidence
-        api_response = api_instance.api_disputes_ulidevidences_idmedia_post(ulid, id, file=file)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevidences_idmedia_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_idmedia_post: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -1220,7 +760,7 @@ with tpdk.ApiClient(configuration) as api_client:
     api_instance = tpdk.ResolutionCenterApi(api_client)
     ulid = 'ulid_example' # str | Dispute identifier
     id = 'id_example' # str | Evidence identifier
-    file = tpdk.bytearray() # bytearray |  (optional)
+    file = None # bytearray |  (optional)
 
     try:
         # Upload attachment in regard of described Evidence
@@ -1230,6 +770,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_idmedia_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -1255,9 +796,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | Media resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1271,111 +812,17 @@ This action does not held the actual upload, you will have to do the upload in a
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    evidence_write = tpdk.EvidenceWrite() # EvidenceWrite | The new Evidence resource
-
-    try:
-        # Submit an Evidence to the Dispute case
-        api_response = api_instance.api_disputes_ulidevidences_post(ulid, evidence_write)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevidences_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_post: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    evidence_write = tpdk.EvidenceWrite() # EvidenceWrite | The new Evidence resource
-
-    try:
-        # Submit an Evidence to the Dispute case
-        api_response = api_instance.api_disputes_ulidevidences_post(ulid, evidence_write)
-        print("The response of ResolutionCenterApi->api_disputes_ulidevidences_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_post: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.evidence_read import EvidenceRead
+from tpdk.models.evidence_write import EvidenceWrite
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -1416,6 +863,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -1440,9 +888,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | Evidence resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1456,111 +904,15 @@ Retrieves the collection of Parcel resources.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
-
-    try:
-        # Retrieves the collection of Parcel resources.
-        api_response = api_instance.api_disputes_ulidparcels_get_collection(ulid, page=page)
-        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_get_collection: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
-
-    try:
-        # Retrieves the collection of Parcel resources.
-        api_response = api_instance.api_disputes_ulidparcels_get_collection(ulid, page=page)
-        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_get_collection: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -1601,6 +953,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_get_collection: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -1639,107 +992,15 @@ Removes the Parcel resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Parcel identifier
-
-    try:
-        # Removes the Parcel resource.
-        api_instance.api_disputes_ulidparcels_id_delete(ulid, id)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_id_delete: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Parcel identifier
-
-    try:
-        # Removes the Parcel resource.
-        api_instance.api_disputes_ulidparcels_id_delete(ulid, id)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_id_delete: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -1778,6 +1039,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_id_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -1817,111 +1079,17 @@ Creates a Parcel resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    parcel_write = tpdk.ParcelWrite() # ParcelWrite | The new Parcel resource
-
-    try:
-        # Creates a Parcel resource.
-        api_response = api_instance.api_disputes_ulidparcels_post(ulid, parcel_write)
-        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_post: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    parcel_write = tpdk.ParcelWrite() # ParcelWrite | The new Parcel resource
-
-    try:
-        # Creates a Parcel resource.
-        api_response = api_instance.api_disputes_ulidparcels_post(ulid, parcel_write)
-        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_post: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.parcel_read import ParcelRead
+from tpdk.models.parcel_write import ParcelWrite
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -1962,6 +1130,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -2002,111 +1171,16 @@ Creates a Media resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Offer identifier
-    file = tpdk.bytearray() # bytearray |  (optional)
-
-    try:
-        # Upload a picture for a given Offer
-        api_response = api_instance.api_offers_ulidmedias_post(ulid, file=file)
-        print("The response of ResolutionCenterApi->api_offers_ulidmedias_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_offers_ulidmedias_post: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Offer identifier
-    file = tpdk.bytearray() # bytearray |  (optional)
-
-    try:
-        # Upload a picture for a given Offer
-        api_response = api_instance.api_offers_ulidmedias_post(ulid, file=file)
-        print("The response of ResolutionCenterApi->api_offers_ulidmedias_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_offers_ulidmedias_post: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -2137,7 +1211,7 @@ with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
     ulid = 'ulid_example' # str | Offer identifier
-    file = tpdk.bytearray() # bytearray |  (optional)
+    file = None # bytearray |  (optional)
 
     try:
         # Upload a picture for a given Offer
@@ -2147,6 +1221,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_offers_ulidmedias_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -2171,9 +1246,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | Media resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

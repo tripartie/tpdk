@@ -23,12 +23,13 @@ Retrieves the collection of Persona resources.
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.persona_collection_read import PersonaCollectionRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -70,6 +71,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PersonaApi->api_personas_get_collection: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -122,12 +124,12 @@ You **MAY** unregister (or free the email/phone number) your Persona entry using
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -153,6 +155,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PersonaApi->api_personas_id_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -192,12 +195,13 @@ Retrieves a Persona resource.
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.persona_read import PersonaRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -225,6 +229,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PersonaApi->api_personas_id_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -264,12 +269,14 @@ Update your Persona (eg. your customer/user entry) through that API call. _Bewar
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.persona_read import PersonaRead
+from tpdk.models.persona_update import PersonaUpdate
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -299,6 +306,7 @@ with tpdk.ApiClient(configuration) as api_client:
         print("Exception when calling PersonaApi->api_personas_id_patch: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -324,8 +332,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Persona resource updated |  -  |
 **400** | Invalid input |  -  |
-**404** | Resource not found |  -  |
 **422** | Unprocessable entity |  -  |
+**404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -340,12 +348,14 @@ Without this, your users may be required to pass a MFA challenge even if they ar
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.persona_post_auth_read import PersonaPostAuthRead
+from tpdk.models.persona_write import PersonaWrite
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -375,6 +385,7 @@ with tpdk.ApiClient(configuration) as api_client:
         print("Exception when calling PersonaApi->api_personas_idtoken_post: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -398,9 +409,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | Persona resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -415,12 +426,14 @@ You should not register your whole database of users, only those who are concern
 
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.persona_read import PersonaRead
+from tpdk.models.persona_write import PersonaWrite
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -449,6 +462,7 @@ with tpdk.ApiClient(configuration) as api_client:
         print("Exception when calling PersonaApi->api_personas_post: %s\n" % e)
 ```
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -471,9 +485,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | Persona resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -22,113 +22,16 @@ Retrieves the collection of WebhookHistory resources.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    page = 1 # int | The collection page number (optional) (default to 1)
-    event = 'event_example' # str |  (optional)
-    event2 = ['event_example'] # List[str] |  (optional)
-
-    try:
-        # Retrieves the collection of WebhookHistory resources.
-        api_response = api_instance.api_webhook_histories_get_collection(page=page, event=event, event2=event2)
-        print("The response of WebhookApi->api_webhook_histories_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_histories_get_collection: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    page = 1 # int | The collection page number (optional) (default to 1)
-    event = 'event_example' # str |  (optional)
-    event2 = ['event_example'] # List[str] |  (optional)
-
-    try:
-        # Retrieves the collection of WebhookHistory resources.
-        api_response = api_instance.api_webhook_histories_get_collection(page=page, event=event, event2=event2)
-        print("The response of WebhookApi->api_webhook_histories_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_histories_get_collection: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.webhook_history_collection_read import WebhookHistoryCollectionRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -170,6 +73,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling WebhookApi->api_webhook_histories_get_collection: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -209,109 +113,16 @@ Retrieves a WebhookHistory resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    id = 'id_example' # str | WebhookHistory identifier
-
-    try:
-        # Retrieves a WebhookHistory resource.
-        api_response = api_instance.api_webhook_histories_id_get(id)
-        print("The response of WebhookApi->api_webhook_histories_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_histories_id_get: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    id = 'id_example' # str | WebhookHistory identifier
-
-    try:
-        # Retrieves a WebhookHistory resource.
-        api_response = api_instance.api_webhook_histories_id_get(id)
-        print("The response of WebhookApi->api_webhook_histories_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_histories_id_get: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.webhook_history_read import WebhookHistoryRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -351,6 +162,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling WebhookApi->api_webhook_histories_id_get: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -389,111 +201,16 @@ Replaces the WebhookHistory resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    id = 'id_example' # str | WebhookHistory identifier
-    body = None # object | The updated WebhookHistory resource
-
-    try:
-        # Replay a Webhook that ended in failure
-        api_response = api_instance.api_webhook_histories_id_put(id, body)
-        print("The response of WebhookApi->api_webhook_histories_id_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_histories_id_put: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    id = 'id_example' # str | WebhookHistory identifier
-    body = None # object | The updated WebhookHistory resource
-
-    try:
-        # Replay a Webhook that ended in failure
-        api_response = api_instance.api_webhook_histories_id_put(id, body)
-        print("The response of WebhookApi->api_webhook_histories_id_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_histories_id_put: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.webhook_history_read import WebhookHistoryRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -534,6 +251,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling WebhookApi->api_webhook_histories_id_put: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -560,8 +278,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | WebhookHistory resource updated |  -  |
 **400** | Invalid input |  -  |
-**404** | Resource not found |  -  |
 **422** | Unprocessable entity |  -  |
+**404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -575,111 +293,16 @@ Retrieves the collection of WebhookSubscription resources.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    page = 1 # int | The collection page number (optional) (default to 1)
-    event = 'dispute.opened' # str | Filter on a limited subset of event (optional)
-
-    try:
-        # Retrieves the collection of WebhookSubscription resources.
-        api_response = api_instance.api_webhook_subscriptions_get_collection(page=page, event=event)
-        print("The response of WebhookApi->api_webhook_subscriptions_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_subscriptions_get_collection: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    page = 1 # int | The collection page number (optional) (default to 1)
-    event = 'dispute.opened' # str | Filter on a limited subset of event (optional)
-
-    try:
-        # Retrieves the collection of WebhookSubscription resources.
-        api_response = api_instance.api_webhook_subscriptions_get_collection(page=page, event=event)
-        print("The response of WebhookApi->api_webhook_subscriptions_get_collection:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_subscriptions_get_collection: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.webhook_subscription_read import WebhookSubscriptionRead
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -720,6 +343,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling WebhookApi->api_webhook_subscriptions_get_collection: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -758,105 +382,15 @@ Removes the WebhookSubscription resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    id = 'id_example' # str | WebhookSubscription identifier
-
-    try:
-        # Removes the WebhookSubscription resource.
-        api_instance.api_webhook_subscriptions_id_delete(id)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_subscriptions_id_delete: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    id = 'id_example' # str | WebhookSubscription identifier
-
-    try:
-        # Removes the WebhookSubscription resource.
-        api_instance.api_webhook_subscriptions_id_delete(id)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_subscriptions_id_delete: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -894,6 +428,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling WebhookApi->api_webhook_subscriptions_id_delete: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -932,109 +467,17 @@ Creates a WebhookSubscription resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    webhook_subscription_write = tpdk.WebhookSubscriptionWrite() # WebhookSubscriptionWrite | The new WebhookSubscription resource
-
-    try:
-        # Subscribe to Event(s)
-        api_response = api_instance.api_webhook_subscriptions_post(webhook_subscription_write)
-        print("The response of WebhookApi->api_webhook_subscriptions_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_subscriptions_post: %s\n" % e)
-```
-
 * Api Key Authentication (personaAuthKey):
-```python
-from __future__ import print_function
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.WebhookApi(api_client)
-    webhook_subscription_write = tpdk.WebhookSubscriptionWrite() # WebhookSubscriptionWrite | The new WebhookSubscription resource
-
-    try:
-        # Subscribe to Event(s)
-        api_response = api_instance.api_webhook_subscriptions_post(webhook_subscription_write)
-        print("The response of WebhookApi->api_webhook_subscriptions_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling WebhookApi->api_webhook_subscriptions_post: %s\n" % e)
-```
-
 * OAuth Authentication (oauth):
 ```python
-from __future__ import print_function
 import time
 import os
 import tpdk
+from tpdk.models.webhook_subscription_read import WebhookSubscriptionRead
+from tpdk.models.webhook_subscription_write import WebhookSubscriptionWrite
 from tpdk.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://staging-api.tripartie.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tpdk.Configuration(
@@ -1074,6 +517,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling WebhookApi->api_webhook_subscriptions_post: %s\n" % e)
 ```
+
 
 ### Parameters
 
@@ -1097,9 +541,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
 **201** | WebhookSubscription resource created |  -  |
 **400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
