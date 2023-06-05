@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **ulid** | **str** |  | 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**enforce_persona_auth** | **bool** | Mean that the generated url cannot be accessed without a generated token for a Persona. Disallow external registration. | 
+**enforce_persona_auth** | **bool** | Mean that the generated url cannot be accessed without a generated token for a Persona. Disallow external registration. | [default to True]
 **override_rate_commission_safe_checkout** | **float** | Override YOUR platform fees for that particular Offer. | 
 **redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
 **url** | **str** |  | [readonly] 
@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **hand_delivery_allowed** | **bool** | Enable both parties to finalize the transaction in person rather than using delivery. A QR Code must be scanned by the seller once the buyer claims the product. | [default to True]
 **shipping_carriers** | **List[str]** | If you wish to enable automated shipping label generation through a specific provider, specify it there. | 
 **ean_code** | **str** |  | [optional] 
+**can_be_sold_separately** | **bool** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. | [default to True]
 **metadata** | [**List[Metadata]**](Metadata.md) |  | 
 **medias** | **List[str]** |  | 
 **views** | [**List[View]**](View.md) |  | 

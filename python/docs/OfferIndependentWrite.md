@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **condition** | **str** |  | [default to 'USED']
 **weight_in_gram** | **int** |  | [optional] 
 **ean_code** | **str** |  | [optional] 
+**can_be_sold_separately** | **bool** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. | [default to True]
 **metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | 
 
 ## Example

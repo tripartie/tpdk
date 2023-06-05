@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **extension** | **str** |  | 
 **filename** | **str** |  | 
 **public_url** | **str** |  | [optional] 
-**file** | [**bytearray**](bytearray.md) |  | [optional] 
+**file** | **bytearray** |  | [optional] 
 **b64_encoded_tmp_file** | **str** |  | [optional] 
 **thumbnail** | **str** | Associated 374x374 pixels small thumbnail | [optional] 
 **original** | **str** |  | [optional] 

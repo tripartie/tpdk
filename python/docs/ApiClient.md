@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **owner** | **str** |  | [optional] 
 **created_at** | **datetime** |  | 
 **secret** | **str** |  | [optional] 
-**monthly_quota** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **redirect_uris** | **List[object]** |  | [optional] 
 **grants** | **List[object]** |  | [optional] 

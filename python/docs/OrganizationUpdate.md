@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **vat_number** | **str** |  | [optional] 
 **commercial_registry_number** | **str** |  | [optional] 
+**webhook_url** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
 **billing_address** | [**OrganizationUpdateBillingAddress**](OrganizationUpdateBillingAddress.md) |  | [optional] 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 **info_color** | **str** |  | [optional] 
 **success_color** | **str** |  | [optional] 
 **warning_color** | **str** |  | [optional] 
-**end_user_notification_toggle** | **bool** |  | 
+**direct_notification_toggle** | **bool** |  | [default to True]
 **anonymity_level** | **str** |  | [default to 'PARTIAL_FIRST_NAME']
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
 **rate_commission_safe_checkout** | **float** |  | 
