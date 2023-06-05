@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **dispute** | **str** |  | [optional] 
 **persona** | **str** |  | [optional] 
 **user** | **str** |  | [optional] 
+**hit_count** | **int** |  | [default to 1]
 **created_at** | **datetime** |  | [optional] [readonly] 
 
 ## Example
