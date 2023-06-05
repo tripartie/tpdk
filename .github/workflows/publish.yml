@@ -7,8 +7,6 @@ permissions:
 
 on:
   workflow_dispatch:
-    branches:
-      - main
 
 jobs:
 
@@ -85,16 +83,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - run: wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-        name: Install YQ
-
       - run: sudo apt install -y jq
         name: Install JQ
 
-      - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.yml
+      - run: curl ${{ vars.OPENAPI_SCHEMA_HTTP }} -o oas-upstream.json
         name: Download latest OpenAPI
 
-      - run: echo tag=`cat oas-upstream.yml | yq -o=json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
+      - run: echo tag=`cat oas-upstream.json | jq .info.version | tr -d '"\n'` >> "$GITHUB_OUTPUT"
         name: Determine schema version
         id: version
 
