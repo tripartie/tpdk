@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import tpdk
-from tpdk.models.address_read import AddressRead  # noqa: E501
+from tpdk.models.persona_token_write import PersonaTokenWrite  # noqa: E501
 from tpdk.rest import ApiException
 
-class TestAddressRead(unittest.TestCase):
-    """AddressRead unit test stubs"""
+class TestPersonaTokenWrite(unittest.TestCase):
+    """PersonaTokenWrite unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,34 +30,24 @@ class TestAddressRead(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test AddressRead
+        """Test PersonaTokenWrite
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AddressRead`
+        # uncomment below to create an instance of `PersonaTokenWrite`
         """
-        model = tpdk.models.address_read.AddressRead()  # noqa: E501
+        model = tpdk.models.persona_token_write.PersonaTokenWrite()  # noqa: E501
         if include_optional :
-            return AddressRead(
-                company_name = 'Company Tld', 
-                country_code = 'FRA', 
-                zip_code = '75004', 
-                city_name = 'Paris', 
-                first_line = '118 avenue des champs élysées', 
-                second_line = 'Apt 6E', 
-                building_name = 'Electron', 
-                building_floor = 'Third floor', 
-                gate_or_portal_or_inbox_code = '3124', 
-                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+            return PersonaTokenWrite(
+                target_url = 'https://next.tripartie.app/?d=01ARZ3NDEKTSV4RRFFQ69G5FAV'
             )
         else :
-            return AddressRead(
+            return PersonaTokenWrite(
         )
         """
 
-    def testAddressRead(self):
-        """Test AddressRead"""
+    def testPersonaTokenWrite(self):
+        """Test PersonaTokenWrite"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

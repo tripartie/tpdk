@@ -1,6 +1,6 @@
 {
   "name": "@tripartie/tpdk",
-  "version": "2.0.7",
+  "version": "2.0.9",
   "description": "OpenAPI client for @tripartie/tpdk",
   "author": "OpenAPI-Generator Contributors",
   "repository": {

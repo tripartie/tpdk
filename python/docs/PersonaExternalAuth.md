@@ -1,4 +1,4 @@
-# PersonaPersonaExternalAuth
+# PersonaExternalAuth
 
 
 
@@ -14,19 +14,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from tpdk.models.persona_persona_external_auth import PersonaPersonaExternalAuth
+from tpdk.models.persona_external_auth import PersonaExternalAuth
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of PersonaPersonaExternalAuth from a JSON string
-persona_persona_external_auth_instance = PersonaPersonaExternalAuth.from_json(json)
+# create an instance of PersonaExternalAuth from a JSON string
+persona_external_auth_instance = PersonaExternalAuth.from_json(json)
 # print the JSON string representation of the object
-print PersonaPersonaExternalAuth.to_json()
+print PersonaExternalAuth.to_json()
 
 # convert the object into a dict
-persona_persona_external_auth_dict = persona_persona_external_auth_instance.to_dict()
-# create an instance of PersonaPersonaExternalAuth from a dict
-persona_persona_external_auth_form_dict = persona_persona_external_auth.from_dict(persona_persona_external_auth_dict)
+persona_external_auth_dict = persona_external_auth_instance.to_dict()
+# create an instance of PersonaExternalAuth from a dict
+persona_external_auth_form_dict = persona_external_auth.from_dict(persona_external_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
