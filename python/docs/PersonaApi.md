@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_personas_idtoken_post**
-> PersonaPostAuthRead api_personas_idtoken_post(id, persona_write)
+> PersonaPostAuthRead api_personas_idtoken_post(id, persona_token_write)
 
 Issue authenticated URL for single end-user
 
@@ -405,7 +405,7 @@ import time
 import os
 import tpdk
 from tpdk.models.persona_post_auth_read import PersonaPostAuthRead
-from tpdk.models.persona_write import PersonaWrite
+from tpdk.models.persona_token_write import PersonaTokenWrite
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -427,11 +427,11 @@ with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.PersonaApi(api_client)
     id = 'id_example' # str | Persona identifier
-    persona_write = tpdk.PersonaWrite() # PersonaWrite | The new Persona resource
+    persona_token_write = tpdk.PersonaTokenWrite() # PersonaTokenWrite | The new Persona resource
 
     try:
         # Issue authenticated URL for single end-user
-        api_response = api_instance.api_personas_idtoken_post(id, persona_write)
+        api_response = api_instance.api_personas_idtoken_post(id, persona_token_write)
         print("The response of PersonaApi->api_personas_idtoken_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -444,7 +444,7 @@ with tpdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
- **persona_write** | [**PersonaWrite**](PersonaWrite.md)| The new Persona resource | 
+ **persona_token_write** | [**PersonaTokenWrite**](PersonaTokenWrite.md)| The new Persona resource | 
 
 ### Return type
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **api_personasauthentication_post**
-> PersonaPersonaAuthReturn api_personasauthentication_post(persona_persona_external_auth)
+> PersonaAuthReturn api_personasauthentication_post(persona_external_auth)
 
 Persona Authentication
 
@@ -28,8 +28,8 @@ Main route for Persona (Organization customers) to authenticate themselves. Publ
 import time
 import os
 import tpdk
-from tpdk.models.persona_persona_auth_return import PersonaPersonaAuthReturn
-from tpdk.models.persona_persona_external_auth import PersonaPersonaExternalAuth
+from tpdk.models.persona_auth_return import PersonaAuthReturn
+from tpdk.models.persona_external_auth import PersonaExternalAuth
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -62,11 +62,11 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.UserApi(api_client)
-    persona_persona_external_auth = tpdk.PersonaPersonaExternalAuth() # PersonaPersonaExternalAuth | The new Persona resource
+    persona_external_auth = tpdk.PersonaExternalAuth() # PersonaExternalAuth | The new Persona resource
 
     try:
         # Persona Authentication
-        api_response = api_instance.api_personasauthentication_post(persona_persona_external_auth)
+        api_response = api_instance.api_personasauthentication_post(persona_external_auth)
         print("The response of UserApi->api_personasauthentication_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -78,11 +78,11 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **persona_persona_external_auth** | [**PersonaPersonaExternalAuth**](PersonaPersonaExternalAuth.md)| The new Persona resource | 
+ **persona_external_auth** | [**PersonaExternalAuth**](PersonaExternalAuth.md)| The new Persona resource | 
 
 ### Return type
 
-[**PersonaPersonaAuthReturn**](PersonaPersonaAuthReturn.md)
+[**PersonaAuthReturn**](PersonaAuthReturn.md)
 
 ### Authorization
 

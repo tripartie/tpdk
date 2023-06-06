@@ -22,12 +22,12 @@ import json
 from typing import Optional
 from pydantic import BaseModel, Field, StrictStr
 
-class OfferPostCreationRead(BaseModel):
+class PersonaTokenWrite(BaseModel):
     """
-    An Offer object represent a public listening
+    
     """
-    url: Optional[StrictStr] = Field(...)
-    __properties = ["url"]
+    target_url: Optional[StrictStr] = Field(None, alias="targetUrl", description="The URL you wish that Persona to go to without additional MFA. The URL MUST concern that Persona.")
+    __properties = ["targetUrl"]
 
     class Config:
         """Pydantic configuration"""
@@ -43,35 +43,34 @@ class OfferPostCreationRead(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> OfferPostCreationRead:
-        """Create an instance of OfferPostCreationRead from a JSON string"""
+    def from_json(cls, json_str: str) -> PersonaTokenWrite:
+        """Create an instance of PersonaTokenWrite from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
-                            "url",
                           },
                           exclude_none=True)
-        # set to None if url (nullable) is None
+        # set to None if target_url (nullable) is None
         # and __fields_set__ contains the field
-        if self.url is None and "url" in self.__fields_set__:
-            _dict['url'] = None
+        if self.target_url is None and "target_url" in self.__fields_set__:
+            _dict['targetUrl'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> OfferPostCreationRead:
-        """Create an instance of OfferPostCreationRead from a dict"""
+    def from_dict(cls, obj: dict) -> PersonaTokenWrite:
+        """Create an instance of PersonaTokenWrite from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return OfferPostCreationRead.parse_obj(obj)
+            return PersonaTokenWrite.parse_obj(obj)
 
-        _obj = OfferPostCreationRead.parse_obj({
-            "url": obj.get("url")
+        _obj = PersonaTokenWrite.parse_obj({
+            "target_url": obj.get("targetUrl")
         })
         return _obj
 

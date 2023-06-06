@@ -1,4 +1,4 @@
-# PersonaPersonaAuthReturn
+# PersonaAuthReturn
 
 
 
@@ -11,19 +11,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from tpdk.models.persona_persona_auth_return import PersonaPersonaAuthReturn
+from tpdk.models.persona_auth_return import PersonaAuthReturn
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of PersonaPersonaAuthReturn from a JSON string
-persona_persona_auth_return_instance = PersonaPersonaAuthReturn.from_json(json)
+# create an instance of PersonaAuthReturn from a JSON string
+persona_auth_return_instance = PersonaAuthReturn.from_json(json)
 # print the JSON string representation of the object
-print PersonaPersonaAuthReturn.to_json()
+print PersonaAuthReturn.to_json()
 
 # convert the object into a dict
-persona_persona_auth_return_dict = persona_persona_auth_return_instance.to_dict()
-# create an instance of PersonaPersonaAuthReturn from a dict
-persona_persona_auth_return_form_dict = persona_persona_auth_return.from_dict(persona_persona_auth_return_dict)
+persona_auth_return_dict = persona_auth_return_instance.to_dict()
+# create an instance of PersonaAuthReturn from a dict
+persona_auth_return_form_dict = persona_auth_return.from_dict(persona_auth_return_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
