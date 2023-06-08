@@ -5,9 +5,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
-**vat_number** | **str** |  | [optional] 
-**commercial_registry_number** | **str** |  | [optional] 
+**name** | **str** |  | 
+**vat_number** | **str** |  | 
+**commercial_registry_number** | **str** |  | 
 **webhook_url** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
@@ -19,10 +19,10 @@ Name | Type | Description | Notes
 **info_color** | **str** |  | [optional] 
 **success_color** | **str** |  | [optional] 
 **warning_color** | **str** |  | [optional] 
-**direct_notification_toggle** | **bool** |  | [default to True]
-**anonymity_level** | **str** |  | [default to 'PARTIAL_FIRST_NAME']
+**direct_notification_toggle** | **bool** |  | [optional] [default to True]
+**anonymity_level** | **str** |  | [optional] [default to 'PARTIAL_FIRST_NAME']
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
-**rate_commission_safe_checkout** | **float** |  | 
+**rate_commission_safe_checkout** | **float** |  | [optional] 
 
 ## Example
 

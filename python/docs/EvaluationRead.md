@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rating** | **int** |  | [optional] 
+**rating** | **int** |  | 
 **comment** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 

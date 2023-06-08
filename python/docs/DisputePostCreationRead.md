@@ -5,7 +5,7 @@ Access directly our resolution center without having used the safe-checkout feat
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ulid** | **str** |  | 
+**ulid** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **captcha** | **str** |  | [optional] 
 **plain_password** | **str** |  | [optional] 
-**first_name** | **str** |  | [optional] 
-**last_name** | **str** |  | [optional] 
-**gender** | **str** |  | [optional] [default to 'RATHER_NOT_SAY']
+**first_name** | **str** |  | 
+**last_name** | **str** |  | 
+**gender** | **str** |  | [default to 'RATHER_NOT_SAY']
 **date_of_birth** | **date** |  | [optional] 
 **language** | **str** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
 **email** | **str** |  | [optional] 

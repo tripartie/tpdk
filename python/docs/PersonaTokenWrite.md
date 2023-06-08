@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target_url** | **str** | The URL you wish that Persona to go to without additional MFA. The URL MUST concern that Persona. | [optional] 
+**target_url** | **str** | The URL you wish that Persona to go to without additional MFA. The URL MUST concern that Persona. | 
 
 ## Example
 

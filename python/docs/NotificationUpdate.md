@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seen** | **bool** |  | [optional] 
+**seen** | **bool** |  | 
 
 ## Example
 

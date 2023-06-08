@@ -6,16 +6,16 @@ Access directly our resolution center without having used the safe-checkout feat
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
-**issue_type** | **str** |  | 
+**issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
-**issue_details** | **str** |  | [optional] 
-**complainant_stake** | **str** |  | 
+**issue_details** | **str** |  | 
+**complainant_stake** | **str** |  | [optional] 
 **chosen_solution** | **str** |  | [optional] 
 **chosen_partial_refund_amount** | **int** |  | [optional] 
 **counter_solution** | **str** |  | [optional] 
 **counter_partial_refund_amount** | **int** |  | [optional] 
 **complainant_approval** | **bool** |  | [optional] 
-**seller_approval** | **bool** |  | 
+**seller_approval** | **bool** |  | [optional] 
 
 ## Example
 

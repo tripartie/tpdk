@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additional_information** | **str** | Description of what the evidence actually is. | [optional] 
+**additional_information** | **str** | Description of what the evidence actually is. | 
 
 ## Example
 

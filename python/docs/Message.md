@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
+**dispute** | **str** |  | [optional] 
 **agent** | **str** |  | [optional] 
 **var_from** | **str** |  | [optional] 
 **to** | **str** |  | [optional] 
