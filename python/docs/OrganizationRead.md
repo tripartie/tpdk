@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**name** | **str** |  | [optional] 
-**domain_verified** | **bool** |  | 
+**name** | **str** |  | 
+**domain_verified** | **bool** |  | [optional] 
 
 ## Example
 

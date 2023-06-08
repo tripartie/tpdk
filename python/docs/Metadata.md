@@ -6,7 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**key** | **str** |  | 
+**persona** | **str** |  | [optional] 
+**dispute** | **str** |  | [optional] 
+**offer** | **str** |  | [optional] 
+**transaction** | **str** |  | [optional] 
+**key** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 
 ## Example

@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**carrier** | **str** |  | 
-**identifier** | **str** |  | 
+**carrier** | **str** |  | [optional] 
+**identifier** | **str** |  | [optional] 
 **price** | **float** |  | [optional] 
 **currency** | **str** |  | [optional] [default to 'EUR']
 

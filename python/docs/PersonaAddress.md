@@ -6,6 +6,8 @@ Always the Shipping address. Thus enabling automated package returns.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
+**persona** | **str** |  | [optional] 
+**organization** | **str** |  | [optional] 
 **company_name** | **str** |  | [optional] 
 **country_code** | **str** |  | [optional] 
 **zip_code** | **str** |  | [optional] 

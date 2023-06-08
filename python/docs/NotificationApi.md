@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **api_personas_idnotifications_get_collection**
-> List[Notification] api_personas_idnotifications_get_collection(id, page=page)
+> List[NotificationRead] api_personas_idnotifications_get_collection(id, page=page)
 
 Retrieve pending notifications for Persona
 
@@ -24,7 +24,7 @@ Retrieves the collection of Notification resources.
 import time
 import os
 import tpdk
-from tpdk.models.notification import Notification
+from tpdk.models.notification_read import NotificationRead
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Notification]**](Notification.md)
+[**List[NotificationRead]**](NotificationRead.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_personas_persona_idnotifications_id_patch**
-> Notification api_personas_persona_idnotifications_id_patch(persona_id, id, notification)
+> NotificationRead api_personas_persona_idnotifications_id_patch(persona_id, id, notification_update)
 
 Mark as read/unread a notification for Persona
 
@@ -103,7 +103,8 @@ Updates the Notification resource.
 import time
 import os
 import tpdk
-from tpdk.models.notification import Notification
+from tpdk.models.notification_read import NotificationRead
+from tpdk.models.notification_update import NotificationUpdate
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -130,11 +131,11 @@ with tpdk.ApiClient(configuration) as api_client:
     api_instance = tpdk.NotificationApi(api_client)
     persona_id = 'persona_id_example' # str | Persona identifier
     id = 'id_example' # str | Notification identifier
-    notification = tpdk.Notification() # Notification | The updated Notification resource
+    notification_update = tpdk.NotificationUpdate() # NotificationUpdate | The updated Notification resource
 
     try:
         # Mark as read/unread a notification for Persona
-        api_response = api_instance.api_personas_persona_idnotifications_id_patch(persona_id, id, notification)
+        api_response = api_instance.api_personas_persona_idnotifications_id_patch(persona_id, id, notification_update)
         print("The response of NotificationApi->api_personas_persona_idnotifications_id_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -148,11 +149,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **persona_id** | **str**| Persona identifier | 
  **id** | **str**| Notification identifier | 
- **notification** | [**Notification**](Notification.md)| The updated Notification resource | 
+ **notification_update** | [**NotificationUpdate**](NotificationUpdate.md)| The updated Notification resource | 
 
 ### Return type
 
-[**Notification**](Notification.md)
+[**NotificationRead**](NotificationRead.md)
 
 ### Authorization
 

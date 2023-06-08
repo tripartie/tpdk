@@ -5,8 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**seen** | **bool** |  | [optional] 
+**type** | **str** |  | [optional] 
+**seen** | **bool** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 
 ## Example
