@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **transaction** | [**TransactionCollectionRead**](TransactionCollectionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
-**issue_type** | **str** |  | 
+**issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
-**complainant_stake** | **str** |  | 
+**complainant_stake** | **str** |  | [optional] 
 **inferred_stake** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 

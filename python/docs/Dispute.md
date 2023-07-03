@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **status** | **str** |  | [default to 'CREATED']
 **redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
-**issue_type** | **str** |  | 
+**issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
 **issue_details** | **str** |  | [optional] 
 **complainant_truthfulness_score** | **int** |  | [default to 100]
 **seller_truthfulness_score** | **int** |  | [default to 100]
-**complainant_stake** | **str** |  | 
+**complainant_stake** | **str** |  | [optional] 
 **inferred_stake** | **str** |  | [optional] 
 **recommended_solution** | **str** |  | [optional] 
 **recommended_partial_refund_amount** | **int** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **counter_solution** | **str** |  | [optional] 
 **counter_partial_refund_amount** | **int** |  | [optional] 
 **complainant_approval** | **bool** |  | [optional] 
-**seller_approval** | **bool** |  | 
+**seller_approval** | **bool** |  | [optional] 
 **platform_solution** | **str** |  | [optional] 
 **platform_partial_refund_amount** | **int** |  | [optional] 
 **platform_approval** | **bool** |  | [optional] 

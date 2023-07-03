@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **ulid** | **str** |  | 
 **transaction** | [**TransactionRead**](TransactionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
-**item_count** | **int** |  | [default to 1]
-**issue_type** | **str** |  | 
+**item_count** | **int** |  | [optional] [default to 1]
+**issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
 **issue_details** | **str** |  | [optional] 
 **complainant_truthfulness_score** | **int** |  | [default to 100]
 **seller_truthfulness_score** | **int** |  | [default to 100]
-**complainant_stake** | **str** |  | 
+**complainant_stake** | **str** |  | [optional] 
 **inferred_stake** | **str** |  | [optional] 
 **recommended_solution** | **str** |  | [optional] 
 **recommended_partial_refund_amount** | **int** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **counter_solution** | **str** |  | [optional] 
 **counter_partial_refund_amount** | **int** |  | [optional] 
 **complainant_approval** | **bool** |  | [optional] 
-**seller_approval** | **bool** |  | 
+**seller_approval** | **bool** |  | [optional] 
 **platform_solution** | **str** |  | [optional] 
 **platform_partial_refund_amount** | **int** |  | [optional] 
 **platform_approval** | **bool** |  | [optional] 
@@ -45,16 +45,17 @@ Name | Type | Description | Notes
 **risk_score** | **int** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
 **external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
-**metadata** | [**List[MetadataRead]**](MetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | 
+**metadata** | [**List[MetadataRead]**](MetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | [optional] 
 **offer_count** | **int** | Issued Offers count owned by a given Persona | [optional] [readonly] 
 **purchase_count** | **int** |  | [optional] [readonly] 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
+**seller** | **str** | If the seller is actually YOUR organization, set it to NULL. | 
 **nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **unit_price** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] [default to 'EUR']
-**condition** | **str** |  | [default to 'USED']
+**condition** | **str** |  | [optional] [default to 'USED']
 
 ## Example
 

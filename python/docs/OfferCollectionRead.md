@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **unit_price** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] [default to 'EUR']
-**item_count** | **int** |  | [default to 1]
-**condition** | **str** |  | [default to 'USED']
+**item_count** | **int** |  | [optional] [default to 1]
+**condition** | **str** |  | [optional] [default to 'USED']
 
 ## Example
 

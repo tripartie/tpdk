@@ -5,11 +5,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**offer** | [**OfferIndependentWrite**](OfferIndependentWrite.md) |  | [optional] 
-**buyer** | [**PersonaIndependentWrite**](PersonaIndependentWrite.md) |  | [optional] 
+**offer** | [**OfferIndependentWrite**](OfferIndependentWrite.md) |  | 
+**buyer** | [**PersonaIndependentWrite**](PersonaIndependentWrite.md) |  | 
 **fees** | **float** |  | [optional] 
-**metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | 
-**parcels** | [**List[ParcelIndependentWrite]**](ParcelIndependentWrite.md) |  | 
+**metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | [optional] 
+**parcels** | [**List[ParcelIndependentWrite]**](ParcelIndependentWrite.md) |  | [optional] 
 
 ## Example
 

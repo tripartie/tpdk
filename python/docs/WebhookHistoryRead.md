@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **url** | **str** |  | 
 **response_code** | **int** |  | 
 **response_body** | **str** |  | 
+**occurred_at** | **datetime** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **attempted_at** | **datetime** |  | [optional] [readonly] 
 **retry_count** | **int** |  | 

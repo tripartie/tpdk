@@ -6,18 +6,17 @@ An Offer object represent a public listening
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**seller** | [**OfferIndependentWriteSeller**](OfferIndependentWriteSeller.md) |  | [optional] 
+**seller** | [**PersonaIndependentWrite**](PersonaIndependentWrite.md) |  | 
 **nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **unit_price** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] [default to 'EUR']
-**item_count** | **int** |  | [default to 1]
-**condition** | **str** |  | [default to 'USED']
+**item_count** | **int** |  | [optional] [default to 1]
+**condition** | **str** |  | [optional] [default to 'USED']
 **weight_in_gram** | **int** |  | [optional] 
 **ean_code** | **str** |  | [optional] 
-**can_be_sold_separately** | **bool** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. | [default to True]
-**metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | 
+**metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | [optional] 
 
 ## Example
 

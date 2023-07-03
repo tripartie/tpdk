@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**api_disputes_ulidevidences_id_delete**](ResolutionCenterApi.md#api_disputes_ulidevidences_id_delete) | **DELETE** /disputes/{ulid}/evidences/{id} | Withdraw an Evidence from a Dispute
 [**api_disputes_ulidevidences_idmedia_post**](ResolutionCenterApi.md#api_disputes_ulidevidences_idmedia_post) | **POST** /disputes/{ulid}/evidences/{id}/media | Upload attachment in regard of described Evidence
 [**api_disputes_ulidevidences_post**](ResolutionCenterApi.md#api_disputes_ulidevidences_post) | **POST** /disputes/{ulid}/evidences | Submit an Evidence to the Dispute case
-[**api_disputes_ulidparcels_get_collection**](ResolutionCenterApi.md#api_disputes_ulidparcels_get_collection) | **GET** /disputes/{ulid}/parcels | Retrieves the collection of Parcel resources.
+[**api_disputes_ulidparcels_get**](ResolutionCenterApi.md#api_disputes_ulidparcels_get) | **GET** /disputes/{ulid}/parcels | Read single parcel state
 [**api_disputes_ulidparcels_id_delete**](ResolutionCenterApi.md#api_disputes_ulidparcels_id_delete) | **DELETE** /disputes/{ulid}/parcels/{id} | Removes the Parcel resource.
 [**api_disputes_ulidparcels_post**](ResolutionCenterApi.md#api_disputes_ulidparcels_post) | **POST** /disputes/{ulid}/parcels | Creates a Parcel resource.
 [**api_offers_ulidmedias_post**](ResolutionCenterApi.md#api_offers_ulidmedias_post) | **POST** /offers/{ulid}/medias | Upload a picture for a given Offer
@@ -893,12 +893,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_disputes_ulidparcels_get_collection**
-> List[object] api_disputes_ulidparcels_get_collection(ulid, page=page)
+# **api_disputes_ulidparcels_get**
+> ParcelRead api_disputes_ulidparcels_get(ulid)
 
-Retrieves the collection of Parcel resources.
+Read single parcel state
 
-Retrieves the collection of Parcel resources.
+Retrieves a Parcel resource.
 
 ### Example
 
@@ -909,6 +909,7 @@ Retrieves the collection of Parcel resources.
 import time
 import os
 import tpdk
+from tpdk.models.parcel_read import ParcelRead
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -942,15 +943,14 @@ with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
     ulid = 'ulid_example' # str | Dispute identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
 
     try:
-        # Retrieves the collection of Parcel resources.
-        api_response = api_instance.api_disputes_ulidparcels_get_collection(ulid, page=page)
-        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_get_collection:\n")
+        # Read single parcel state
+        api_response = api_instance.api_disputes_ulidparcels_get(ulid)
+        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_get_collection: %s\n" % e)
+        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_get: %s\n" % e)
 ```
 
 
@@ -959,11 +959,10 @@ with tpdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Dispute identifier | 
- **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
-**List[object]**
+[**ParcelRead**](ParcelRead.md)
 
 ### Authorization
 
@@ -977,7 +976,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Parcel collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Parcel resource |  -  |
+**404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

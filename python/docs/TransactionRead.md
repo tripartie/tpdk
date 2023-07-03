@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**offer** | [**OfferRead**](OfferRead.md) |  | [optional] 
-**buyer** | **str** |  | [optional] 
+**offer** | [**OfferRead**](OfferRead.md) |  | 
+**buyer** | **str** |  | 
 **fees** | **float** |  | [optional] 
-**metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | 
-**parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
+**metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | [optional] 
+**parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | [optional] 
 
 ## Example
 
