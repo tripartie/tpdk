@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**api_transactions_uliddispute_get**](SafeCheckoutApi.md#api_transactions_uliddispute_get) | **GET** /transactions/{ulid}/dispute | Read Dispute from existing Transaction
 [**api_transactions_uliddispute_patch**](SafeCheckoutApi.md#api_transactions_uliddispute_patch) | **PATCH** /transactions/{ulid}/dispute | Interact with a Dispute
 [**api_transactions_uliddispute_post**](SafeCheckoutApi.md#api_transactions_uliddispute_post) | **POST** /transactions/{ulid}/dispute | Open a Dispute related to existing Transaction
-[**api_transactions_ulidparcels_get_collection**](SafeCheckoutApi.md#api_transactions_ulidparcels_get_collection) | **GET** /transactions/{ulid}/parcels | Read shipments from Transaction
+[**api_transactions_ulidparcels_get**](SafeCheckoutApi.md#api_transactions_ulidparcels_get) | **GET** /transactions/{ulid}/parcels | Read single parcel state
 [**api_transactions_ulidparcels_id_delete**](SafeCheckoutApi.md#api_transactions_ulidparcels_id_delete) | **DELETE** /transactions/{ulid}/parcels/{id} | Withdraw shipment from Transaction
 [**api_transactions_ulidparcels_post**](SafeCheckoutApi.md#api_transactions_ulidparcels_post) | **POST** /transactions/{ulid}/parcels | Manually declare package shipped for Transaction
 
@@ -1569,21 +1569,23 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_transactions_ulidparcels_get_collection**
-> List[object] api_transactions_ulidparcels_get_collection(ulid, page=page)
+# **api_transactions_ulidparcels_get**
+> ParcelRead api_transactions_ulidparcels_get(ulid)
 
-Read shipments from Transaction
+Read single parcel state
 
-Retrieves the collection of Parcel resources.
+Retrieves a Parcel resource.
 
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
 ```python
 import time
 import os
 import tpdk
+from tpdk.models.parcel_read import ParcelRead
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -1610,20 +1612,21 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
 
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
     ulid = 'ulid_example' # str | Transaction identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
 
     try:
-        # Read shipments from Transaction
-        api_response = api_instance.api_transactions_ulidparcels_get_collection(ulid, page=page)
-        print("The response of SafeCheckoutApi->api_transactions_ulidparcels_get_collection:\n")
+        # Read single parcel state
+        api_response = api_instance.api_transactions_ulidparcels_get(ulid)
+        print("The response of SafeCheckoutApi->api_transactions_ulidparcels_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SafeCheckoutApi->api_transactions_ulidparcels_get_collection: %s\n" % e)
+        print("Exception when calling SafeCheckoutApi->api_transactions_ulidparcels_get: %s\n" % e)
 ```
 
 
@@ -1632,15 +1635,14 @@ with tpdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Transaction identifier | 
- **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
-**List[object]**
+[**ParcelRead**](ParcelRead.md)
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey)
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1650,7 +1652,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Parcel collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Parcel resource |  -  |
+**404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

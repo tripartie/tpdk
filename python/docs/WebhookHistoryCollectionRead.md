@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **event** | **str** |  | 
 **response_code** | **int** |  | 
+**occurred_at** | **datetime** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **attempted_at** | **datetime** |  | [optional] [readonly] 
 **retry_count** | **int** |  | 

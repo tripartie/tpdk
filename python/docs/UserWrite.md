@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**captcha** | **str** |  | [optional] 
+**captcha** | **str** |  | 
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
 **public_name** | **str** |  | 

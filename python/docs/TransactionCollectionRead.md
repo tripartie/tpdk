@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**offer** | [**OfferCollectionRead**](OfferCollectionRead.md) |  | [optional] 
+**offer** | [**OfferCollectionRead**](OfferCollectionRead.md) |  | 
 
 ## Example
 

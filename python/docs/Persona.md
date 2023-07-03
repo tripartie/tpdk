@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **risk_score** | **int** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
 **external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
-**metadata** | [**List[Metadata]**](Metadata.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | 
+**metadata** | [**List[Metadata]**](Metadata.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | [optional] 
 **offers** | **List[str]** |  | 
 **purchases** | **List[str]** |  | 
 **tokens** | [**List[PersonaToken]**](PersonaToken.md) |  | 
