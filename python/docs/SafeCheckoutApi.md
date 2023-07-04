@@ -325,6 +325,7 @@ Removes the Media resource.
 
 ### Example
 
+* Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
 ```python
@@ -344,6 +345,12 @@ configuration = tpdk.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
 
 # Configure API key authorization: personaAuthKey
 configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
@@ -381,7 +388,7 @@ void (empty response body)
 
 ### Authorization
 
-[personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

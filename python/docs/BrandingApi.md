@@ -21,7 +21,6 @@ Updates the Organization resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-* OAuth Authentication (oauth):
 ```python
 import time
 import os
@@ -47,8 +46,6 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
@@ -80,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey)
 
 ### HTTP request headers
 
@@ -107,7 +104,6 @@ Removes the Media resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-* OAuth Authentication (oauth):
 ```python
 import time
 import os
@@ -131,8 +127,6 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
@@ -160,7 +154,7 @@ void (empty response body)
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey)
 
 ### HTTP request headers
 
@@ -185,7 +179,6 @@ Creates a Media resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-* OAuth Authentication (oauth):
 ```python
 import time
 import os
@@ -210,8 +203,6 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
@@ -243,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey)
 
 ### HTTP request headers
 
@@ -269,7 +260,6 @@ Removes the Media resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-* OAuth Authentication (oauth):
 ```python
 import time
 import os
@@ -293,8 +283,6 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
@@ -322,7 +310,7 @@ void (empty response body)
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey)
 
 ### HTTP request headers
 
@@ -347,7 +335,6 @@ Creates a Media resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-* OAuth Authentication (oauth):
 ```python
 import time
 import os
@@ -372,8 +359,6 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
@@ -405,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey)
 
 ### HTTP request headers
 
