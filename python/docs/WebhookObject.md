@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ulid** | **str** |  | 
 **transaction** | [**TransactionRead**](TransactionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
+**redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
 **item_count** | **int** |  | [optional] [default to 1]
 **issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
@@ -49,6 +50,7 @@ Name | Type | Description | Notes
 **offer_count** | **int** | Issued Offers count owned by a given Persona | [optional] [readonly] 
 **purchase_count** | **int** |  | [optional] [readonly] 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
+**organization** | [**OfferReadOrganization**](OfferReadOrganization.md) |  | [optional] 
 **seller** | **str** | If the seller is actually YOUR organization, set it to NULL. | 
 **nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
 **title** | **str** |  | [optional] 
@@ -56,6 +58,7 @@ Name | Type | Description | Notes
 **unit_price** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] [default to 'EUR']
 **condition** | **str** |  | [optional] [default to 'USED']
+**medias** | [**List[MediaRead]**](MediaRead.md) |  | 
 
 ## Example
 

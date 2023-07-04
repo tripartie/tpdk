@@ -5,9 +5,22 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [readonly] 
-**name** | **str** |  | 
-**domain_verified** | **bool** |  | [optional] 
+**name** | **str** |  | [optional] 
+**website_url** | **str** |  | [optional] 
+**custom_base_url** | **str** |  | [optional] 
+**icon** | [**EvidenceReadMedia**](EvidenceReadMedia.md) |  | [optional] 
+**logo** | [**EvidenceReadMedia**](EvidenceReadMedia.md) |  | [optional] 
+**primary_color** | **str** |  | [optional] 
+**secondary_color** | **str** |  | [optional] 
+**accent_color** | **str** |  | [optional] 
+**error_color** | **str** |  | [optional] 
+**info_color** | **str** |  | [optional] 
+**success_color** | **str** |  | [optional] 
+**warning_color** | **str** |  | [optional] 
+**direct_notification_toggle** | **bool** |  | [default to True]
+**persona_auth_portal_toggle** | **bool** |  | 
+**flat_rate_enabled** | **bool** |  | [optional] [readonly] 
+**rate_commission_safe_checkout** | **float** |  | 
 
 ## Example
 

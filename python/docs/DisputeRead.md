@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ulid** | **str** |  | 
 **transaction** | [**TransactionRead**](TransactionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
+**redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
 **issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
