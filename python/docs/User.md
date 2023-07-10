@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **consent_mail_notification** | **bool** |  | 
 **consent_mail_ads** | **bool** |  | 
-**api** | **str** |  | [optional] 
+**keys** | **List[str]** |  | 
 **organization** | **str** |  | [optional] 
 **username** | **str** | A visual identifier that represents this user. | [optional] [readonly] 
 **salt** | **str** |  | [optional] [readonly] 
