@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_offers_ulidtransactions_get_collection**
-> List[TransactionCollectionRead] api_offers_ulidtransactions_get_collection(ulid, page=page, order_status=order_status, metadata=metadata, status=status, exists_dispute=exists_dispute)
+> List[TransactionCollectionRead] api_offers_ulidtransactions_get_collection(ulid, page=page, order_status=order_status, metadata=metadata, status=status)
 
 Retrieve Payment Intents for Offer
 
@@ -534,11 +534,10 @@ with tpdk.ApiClient(configuration) as api_client:
     order_status = 'order_status_example' # str |  (optional)
     metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
     status = 'CREATED' # str | Filter on a limited subset of status (optional)
-    exists_dispute = True # bool |  (optional)
 
     try:
         # Retrieve Payment Intents for Offer
-        api_response = api_instance.api_offers_ulidtransactions_get_collection(ulid, page=page, order_status=order_status, metadata=metadata, status=status, exists_dispute=exists_dispute)
+        api_response = api_instance.api_offers_ulidtransactions_get_collection(ulid, page=page, order_status=order_status, metadata=metadata, status=status)
         print("The response of SafeCheckoutApi->api_offers_ulidtransactions_get_collection:\n")
         pprint(api_response)
     except Exception as e:
@@ -555,7 +554,6 @@ Name | Type | Description  | Notes
  **order_status** | **str**|  | [optional] 
  **metadata** | [**List[str]**](str.md)| Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \&quot;null\&quot; for desired value. | [optional] 
  **status** | **str**| Filter on a limited subset of status | [optional] 
- **exists_dispute** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -1134,7 +1132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_transactions_get_collection**
-> List[TransactionCollectionRead] api_transactions_get_collection(page=page, order_status=order_status, metadata=metadata, status=status, exists_dispute=exists_dispute)
+> List[TransactionCollectionRead] api_transactions_get_collection(page=page, order_status=order_status, metadata=metadata, status=status)
 
 Retrieves the collection of Transaction resources.
 
@@ -1179,11 +1177,10 @@ with tpdk.ApiClient(configuration) as api_client:
     order_status = 'order_status_example' # str |  (optional)
     metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
     status = 'CREATED' # str | Filter on a limited subset of status (optional)
-    exists_dispute = True # bool |  (optional)
 
     try:
         # Retrieves the collection of Transaction resources.
-        api_response = api_instance.api_transactions_get_collection(page=page, order_status=order_status, metadata=metadata, status=status, exists_dispute=exists_dispute)
+        api_response = api_instance.api_transactions_get_collection(page=page, order_status=order_status, metadata=metadata, status=status)
         print("The response of SafeCheckoutApi->api_transactions_get_collection:\n")
         pprint(api_response)
     except Exception as e:
@@ -1199,7 +1196,6 @@ Name | Type | Description  | Notes
  **order_status** | **str**|  | [optional] 
  **metadata** | [**List[str]**](str.md)| Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \&quot;null\&quot; for desired value. | [optional] 
  **status** | **str**| Filter on a limited subset of status | [optional] 
- **exists_dispute** | **bool**|  | [optional] 
 
 ### Return type
 

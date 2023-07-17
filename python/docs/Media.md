@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **thumbnail** | **str** | Associated 374x374 pixels small thumbnail | [optional] 
 **original** | **str** |  | [optional] 
 **owner** | **str** |  | [optional] 
+**offers** | **List[str]** |  | [optional] [readonly] 
 **offer** | **str** |  | [optional] 
 **thumbnail_url** | **str** |  | [optional] [readonly] 
 

@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_disputes_ulidevidences_get_collection**
-> List[EvidenceRead] api_disputes_ulidevidences_get_collection(ulid, page=page)
+> List[EvidenceRead] api_disputes_ulidevidences_get_collection(ulid)
 
 Retrieve all Evidences in Dispute
 
@@ -605,11 +605,10 @@ with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
     ulid = 'ulid_example' # str | Dispute identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
 
     try:
         # Retrieve all Evidences in Dispute
-        api_response = api_instance.api_disputes_ulidevidences_get_collection(ulid, page=page)
+        api_response = api_instance.api_disputes_ulidevidences_get_collection(ulid)
         print("The response of ResolutionCenterApi->api_disputes_ulidevidences_get_collection:\n")
         pprint(api_response)
     except Exception as e:
@@ -622,7 +621,6 @@ with tpdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Dispute identifier | 
- **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
