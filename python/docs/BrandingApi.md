@@ -132,7 +132,7 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.BrandingApi(api_client)
-    id = 'id_example' # str | Organization identifier
+    id = 'id_example' # str | Media identifier
 
     try:
         # Unset your Organization Icon
@@ -146,7 +146,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Organization identifier | 
+ **id** | **str**| Media identifier | 
 
 ### Return type
 
@@ -208,7 +208,7 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.BrandingApi(api_client)
-    id = 'id_example' # str | Organization identifier
+    id = 'id_example' # str | Media identifier
     file = None # bytearray |  (optional)
 
     try:
@@ -225,7 +225,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Organization identifier | 
+ **id** | **str**| Media identifier | 
  **file** | **bytearray**|  | [optional] 
 
 ### Return type
@@ -288,7 +288,7 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.BrandingApi(api_client)
-    id = 'id_example' # str | Organization identifier
+    id = 'id_example' # str | Media identifier
 
     try:
         # Unset your Organization Logo
@@ -302,7 +302,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Organization identifier | 
+ **id** | **str**| Media identifier | 
 
 ### Return type
 
@@ -364,7 +364,7 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.BrandingApi(api_client)
-    id = 'id_example' # str | Organization identifier
+    id = 'id_example' # str | Media identifier
     file = None # bytearray |  (optional)
 
     try:
@@ -381,7 +381,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Organization identifier | 
+ **id** | **str**| Media identifier | 
  **file** | **bytearray**|  | [optional] 
 
 ### Return type

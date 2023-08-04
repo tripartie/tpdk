@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **arbitration_by** | **str** |  | [optional] 
 **parcels** | **List[str]** |  | 
 **messages** | [**List[Message]**](Message.md) |  | 
+**evidences** | **List[str]** |  | [optional] [readonly] 
+**evaluations** | **List[str]** |  | [optional] [readonly] 
 **views** | [**List[View]**](View.md) |  | 
 **metadata** | [**List[Metadata]**](Metadata.md) |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
