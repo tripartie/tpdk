@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **extension** | **str** |  | 
 **filename** | **str** |  | 
-**public_url** | **str** |  | [optional] 
+**public_url** | **str** |  | 
 **file** | **bytearray** |  | [optional] 
 **b64_encoded_tmp_file** | **str** |  | [optional] 
 **thumbnail** | **str** | Associated 374x374 pixels small thumbnail | [optional] 
 **original** | **str** |  | [optional] 
 **owner** | **str** |  | [optional] 
-**offer** | **str** |  | [optional] 
+**offers** | **List[str]** |  | [optional] [readonly] 
 **thumbnail_url** | **str** |  | [optional] [readonly] 
 
 ## Example

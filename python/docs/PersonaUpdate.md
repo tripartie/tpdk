@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **gender** | **str** |  | [default to 'RATHER_NOT_SAY']
 **date_of_birth** | **date** |  | [optional] 
 **language** | **str** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
+**email** | **str** |  | [optional] 
+**mobile_phone_number** | **str** |  | [optional] 
 **address** | [**PersonaUpdateAddress**](PersonaUpdateAddress.md) |  | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
 **external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 

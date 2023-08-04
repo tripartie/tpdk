@@ -14,8 +14,9 @@ Method | HTTP request | Description
 [**api_disputes_ulidevidences_id_delete**](ResolutionCenterApi.md#api_disputes_ulidevidences_id_delete) | **DELETE** /disputes/{ulid}/evidences/{id} | Withdraw an Evidence from a Dispute
 [**api_disputes_ulidevidences_idmedia_post**](ResolutionCenterApi.md#api_disputes_ulidevidences_idmedia_post) | **POST** /disputes/{ulid}/evidences/{id}/media | Upload attachment in regard of described Evidence
 [**api_disputes_ulidevidences_post**](ResolutionCenterApi.md#api_disputes_ulidevidences_post) | **POST** /disputes/{ulid}/evidences | Submit an Evidence to the Dispute case
-[**api_disputes_ulidparcels_get**](ResolutionCenterApi.md#api_disputes_ulidparcels_get) | **GET** /disputes/{ulid}/parcels | Read single parcel state
+[**api_disputes_ulidparcels_get_collection**](ResolutionCenterApi.md#api_disputes_ulidparcels_get_collection) | **GET** /disputes/{ulid}/parcels | Retrieves the collection of Parcel resources.
 [**api_disputes_ulidparcels_id_delete**](ResolutionCenterApi.md#api_disputes_ulidparcels_id_delete) | **DELETE** /disputes/{ulid}/parcels/{id} | Removes the Parcel resource.
+[**api_disputes_ulidparcels_id_get**](ResolutionCenterApi.md#api_disputes_ulidparcels_id_get) | **GET** /disputes/{ulid}/parcels/{id} | Read single parcel state
 [**api_disputes_ulidparcels_post**](ResolutionCenterApi.md#api_disputes_ulidparcels_post) | **POST** /disputes/{ulid}/parcels | Creates a Parcel resource.
 [**api_offers_ulidmedias_post**](ResolutionCenterApi.md#api_offers_ulidmedias_post) | **POST** /offers/{ulid}/medias | Upload a picture for a given Offer
 
@@ -559,7 +560,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_disputes_ulidevidences_get_collection**
-> List[EvidenceRead] api_disputes_ulidevidences_get_collection(ulid, page=page)
+> List[EvidenceRead] api_disputes_ulidevidences_get_collection(ulid)
 
 Retrieve all Evidences in Dispute
 
@@ -604,12 +605,11 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    page = 1 # int | The collection page number (optional) (default to 1)
+    ulid = 'ulid_example' # str | 
 
     try:
         # Retrieve all Evidences in Dispute
-        api_response = api_instance.api_disputes_ulidevidences_get_collection(ulid, page=page)
+        api_response = api_instance.api_disputes_ulidevidences_get_collection(ulid)
         print("The response of ResolutionCenterApi->api_disputes_ulidevidences_get_collection:\n")
         pprint(api_response)
     except Exception as e:
@@ -621,8 +621,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
- **page** | **int**| The collection page number | [optional] [default to 1]
+ **ulid** | **str**|  | 
 
 ### Return type
 
@@ -689,8 +688,8 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Evidence identifier
+    ulid = 'ulid_example' # str | 
+    id = 56 # int | 
 
     try:
         # Withdraw an Evidence from a Dispute
@@ -704,8 +703,8 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
- **id** | **str**| Evidence identifier | 
+ **ulid** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
@@ -767,8 +766,8 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Evidence identifier
+    ulid = 'ulid_example' # str | 
+    id = 56 # int | 
     file = None # bytearray |  (optional)
 
     try:
@@ -785,8 +784,8 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
- **id** | **str**| Evidence identifier | 
+ **ulid** | **str**|  | 
+ **id** | **int**|  | 
  **file** | **bytearray**|  | [optional] 
 
 ### Return type
@@ -851,7 +850,7 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
+    ulid = 'ulid_example' # str | 
     evidence_write = tpdk.EvidenceWrite() # EvidenceWrite | The new Evidence resource
 
     try:
@@ -868,7 +867,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
+ **ulid** | **str**|  | 
  **evidence_write** | [**EvidenceWrite**](EvidenceWrite.md)| The new Evidence resource | 
 
 ### Return type
@@ -893,8 +892,173 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_disputes_ulidparcels_get**
-> ParcelRead api_disputes_ulidparcels_get(ulid)
+# **api_disputes_ulidparcels_get_collection**
+> List[object] api_disputes_ulidparcels_get_collection(ulid, page=page)
+
+Retrieves the collection of Parcel resources.
+
+Retrieves the collection of Parcel resources.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+```python
+import time
+import os
+import tpdk
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.ResolutionCenterApi(api_client)
+    ulid = 'ulid_example' # str | Dispute identifier
+    page = 1 # int | The collection page number (optional) (default to 1)
+
+    try:
+        # Retrieves the collection of Parcel resources.
+        api_response = api_instance.api_disputes_ulidparcels_get_collection(ulid, page=page)
+        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_get_collection:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_get_collection: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ulid** | **str**| Dispute identifier | 
+ **page** | **int**| The collection page number | [optional] [default to 1]
+
+### Return type
+
+**List[object]**
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Parcel collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_disputes_ulidparcels_id_delete**
+> api_disputes_ulidparcels_id_delete(ulid, id)
+
+Removes the Parcel resource.
+
+Removes the Parcel resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+```python
+import time
+import os
+import tpdk
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.ResolutionCenterApi(api_client)
+    ulid = 'ulid_example' # str | 
+    id = 56 # int | 
+
+    try:
+        # Removes the Parcel resource.
+        api_instance.api_disputes_ulidparcels_id_delete(ulid, id)
+    except Exception as e:
+        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_id_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ulid** | **str**|  | 
+ **id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Parcel resource deleted |  -  |
+**404** | Resource not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_disputes_ulidparcels_id_get**
+> ParcelRead api_disputes_ulidparcels_id_get(ulid, id)
 
 Read single parcel state
 
@@ -942,15 +1106,16 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
+    ulid = 'ulid_example' # str | 
+    id = 56 # int | 
 
     try:
         # Read single parcel state
-        api_response = api_instance.api_disputes_ulidparcels_get(ulid)
-        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_get:\n")
+        api_response = api_instance.api_disputes_ulidparcels_id_get(ulid, id)
+        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_get: %s\n" % e)
+        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_id_get: %s\n" % e)
 ```
 
 
@@ -958,7 +1123,8 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
+ **ulid** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
@@ -977,83 +1143,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Parcel resource |  -  |
-**404** | Resource not found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_disputes_ulidparcels_id_delete**
-> api_disputes_ulidparcels_id_delete(ulid, id)
-
-Removes the Parcel resource.
-
-Removes the Parcel resource.
-
-### Example
-
-* Api Key Authentication (jwtPersonalKey):
-```python
-import time
-import os
-import tpdk
-from tpdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Parcel identifier
-
-    try:
-        # Removes the Parcel resource.
-        api_instance.api_disputes_ulidparcels_id_delete(ulid, id)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_id_delete: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
- **id** | **str**| Parcel identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[jwtPersonalKey](../README.md#jwtPersonalKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Parcel resource deleted |  -  |
 **404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1192,7 +1281,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Offer identifier
+    ulid = 'ulid_example' # str | 
     file = None # bytearray |  (optional)
 
     try:
@@ -1209,7 +1298,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Offer identifier | 
+ **ulid** | **str**|  | 
  **file** | **bytearray**|  | [optional] 
 
 ### Return type

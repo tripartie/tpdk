@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**public_url** | **str** |  | [optional] 
+**public_url** | **str** |  | 
 
 ## Example
 

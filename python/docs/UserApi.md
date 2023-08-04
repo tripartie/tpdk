@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**api_api_clients_post**](UserApi.md#api_api_clients_post) | **POST** /api-clients | Creates a ApiClient resource.
 [**api_me_get**](UserApi.md#api_me_get) | **GET** /me | Retrieves a User resource.
 [**api_personasauthentication_post**](UserApi.md#api_personasauthentication_post) | **POST** /personas/authentication | Persona Authentication
+[**api_personasme_get**](UserApi.md#api_personasme_get) | **GET** /personas/me | Retrieve your authenticated Persona
 [**api_personasregister_post**](UserApi.md#api_personasregister_post) | **POST** /personas/register | Persona external registration
 [**api_register_post**](UserApi.md#api_register_post) | **POST** /register | Organization onboarding
 [**api_users_get_collection**](UserApi.md#api_users_get_collection) | **GET** /users | Retrieves the collection of User resources.
@@ -499,6 +500,80 @@ Name | Type | Description  | Notes
 **201** | Persona resource created |  -  |
 **400** | Invalid input |  -  |
 **422** | Unprocessable entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_personasme_get**
+> PersonaRead api_personasme_get()
+
+Retrieve your authenticated Persona
+
+Retrieves a Persona resource.
+
+### Example
+
+* Api Key Authentication (personaAuthKey):
+```python
+import time
+import os
+import tpdk
+from tpdk.models.persona_read import PersonaRead
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+
+    try:
+        # Retrieve your authenticated Persona
+        api_response = api_instance.api_personasme_get()
+        print("The response of UserApi->api_personasme_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->api_personasme_get: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PersonaRead**](PersonaRead.md)
+
+### Authorization
+
+[personaAuthKey](../README.md#personaAuthKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Persona resource |  -  |
+**404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
