@@ -5,7 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**event** | **str** |  | 
+**event** | **str** |  | [optional] 
 **callback_url** | **str** |  | 
 
 ## Example

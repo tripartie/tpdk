@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
 **issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
-**issue_details** | **str** |  | 
+**issue_mentioned_in_offer** | **bool** |  | [optional] 
+**issue_details** | **str** |  | [optional] 
 **complainant_stake** | **str** |  | [optional] 
 **chosen_solution** | **str** |  | [optional] 
 **chosen_partial_refund_amount** | **int** |  | [optional] 

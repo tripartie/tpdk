@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
 **issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
+**issue_mentioned_in_offer** | **bool** |  | [optional] 
 **issue_details** | **str** |  | [optional] 
 **complainant_truthfulness_score** | **int** |  | [default to 100]
 **seller_truthfulness_score** | **int** |  | [default to 100]
@@ -33,7 +34,7 @@ Name | Type | Description | Notes
 **arbitration_by** | **str** |  | [optional] 
 **parcels** | **List[str]** |  | 
 **messages** | [**List[Message]**](Message.md) |  | 
-**evidences** | **List[str]** |  | [optional] [readonly] 
+**evidences** | **List[str]** |  | 
 **evaluations** | **List[str]** |  | [optional] [readonly] 
 **views** | [**List[View]**](View.md) |  | 
 **metadata** | [**List[Metadata]**](Metadata.md) |  | 
