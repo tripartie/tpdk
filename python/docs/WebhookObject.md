@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **item_count** | **int** |  | [optional] [default to 1]
 **issue_type** | **str** |  | [optional] 
 **issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
+**issue_mentioned_in_offer** | **bool** |  | [optional] 
 **issue_details** | **str** |  | [optional] 
 **complainant_truthfulness_score** | **int** |  | [default to 100]
 **seller_truthfulness_score** | **int** |  | [default to 100]
