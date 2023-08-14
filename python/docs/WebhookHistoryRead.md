@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **event** | **str** |  | 
 **url** | **str** |  | 
-**response_code** | **int** |  | 
-**response_body** | **str** |  | 
+**response_code** | **int** |  | [optional] 
+**response_body** | **str** |  | [optional] 
 **occurred_at** | **datetime** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **attempted_at** | **datetime** |  | [optional] [readonly] 

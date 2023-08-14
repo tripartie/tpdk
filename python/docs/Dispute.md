@@ -40,6 +40,8 @@ Name | Type | Description | Notes
 **metadata** | [**List[Metadata]**](Metadata.md) |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
+**status_expiration** | **datetime** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 
+**awaited_party** | **str** | Determine who is awaited (actor) for the next transition | [optional] [readonly] 
 **iri** | **str** |  | [optional] [readonly] 
 **message_count** | **int** |  | [optional] [readonly] 
 
