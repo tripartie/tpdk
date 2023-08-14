@@ -1,4 +1,4 @@
-## @tripartie/tpdk@2.0.35
+## @tripartie/tpdk@2.0.39
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +36,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install @tripartie/tpdk@2.0.35 --save
+npm install @tripartie/tpdk@2.0.39 --save
 ```
 
 _unPublished (not recommended):_
