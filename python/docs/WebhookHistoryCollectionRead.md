@@ -5,6 +5,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] [readonly] 
+**object_id** | **str** |  | [optional] 
 **event** | **str** |  | 
 **response_code** | **int** |  | [optional] 
 **occurred_at** | **datetime** |  | 
