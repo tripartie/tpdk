@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **api_webhook_histories_get_collection**
-> List[WebhookHistoryCollectionRead] api_webhook_histories_get_collection(page=page, event=event, event2=event2)
+> List[WebhookHistoryCollectionRead] api_webhook_histories_get_collection(page=page, event=event, event2=event2, object_id=object_id)
 
 Retrieves the collection of WebhookHistory resources.
 
@@ -57,10 +57,11 @@ with tpdk.ApiClient(configuration) as api_client:
     page = 1 # int | The collection page number (optional) (default to 1)
     event = 'event_example' # str |  (optional)
     event2 = ['event_example'] # List[str] |  (optional)
+    object_id = 'object_id_example' # str |  (optional)
 
     try:
         # Retrieves the collection of WebhookHistory resources.
-        api_response = api_instance.api_webhook_histories_get_collection(page=page, event=event, event2=event2)
+        api_response = api_instance.api_webhook_histories_get_collection(page=page, event=event, event2=event2, object_id=object_id)
         print("The response of WebhookApi->api_webhook_histories_get_collection:\n")
         pprint(api_response)
     except Exception as e:
@@ -75,6 +76,7 @@ Name | Type | Description  | Notes
  **page** | **int**| The collection page number | [optional] [default to 1]
  **event** | **str**|  | [optional] 
  **event2** | [**List[str]**](str.md)|  | [optional] 
+ **object_id** | **str**|  | [optional] 
 
 ### Return type
 

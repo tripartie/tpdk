@@ -5,8 +5,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] [readonly] 
+**object_id** | **str** |  | [optional] 
 **event** | **str** |  | 
 **url** | **str** |  | 
+**normalized_object** | **List[str]** |  | [optional] 
 **response_code** | **int** |  | [optional] 
 **response_body** | **str** |  | [optional] 
 **occurred_at** | **datetime** |  | 
