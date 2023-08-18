@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **event** | **str** |  | [optional] 
-**callback_url** | **str** |  | 
+**callback_url** | **str** |  | [optional] 
+**webhook_secret** | **str** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 
 ## Example

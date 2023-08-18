@@ -8,12 +8,6 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
-**risk_level** | **str** | We sort Persona into three distinct risks&#39; category. This is inferred from the riskScore. | [optional] 
-**created_at** | **datetime** |  | [optional] [readonly] 
-**updated_at** | **datetime** |  | [optional] [readonly] 
-**offer_count** | **int** | Issued Offers count owned by a given Persona | [optional] [readonly] 
-**purchase_count** | **int** |  | [optional] [readonly] 
 
 ## Example
 

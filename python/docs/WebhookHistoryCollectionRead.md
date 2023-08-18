@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] [readonly] 
 **attempted_at** | **datetime** |  | [optional] [readonly] 
 **retry_count** | **int** |  | 
+**in_progress** | **bool** |  | [optional] [readonly] 
 
 ## Example
 
