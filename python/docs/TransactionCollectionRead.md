@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
 **offer** | [**OfferCollectionRead**](OfferCollectionRead.md) |  | 
+**buyer** | [**PersonaCollectionRead**](PersonaCollectionRead.md) |  | 
 
 ## Example
 

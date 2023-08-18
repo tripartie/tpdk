@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **vat_number** | **str** |  | 
 **commercial_registry_number** | **str** |  | 
-**webhook_url** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
 **billing_address** | [**OrganizationUpdateBillingAddress**](OrganizationUpdateBillingAddress.md) |  | [optional] 
