@@ -31,6 +31,8 @@ Name | Type | Description | Notes
 **platform_approval** | **bool** |  | [optional] 
 **arbitration_by** | **str** |  | [optional] 
 **parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
+**metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | 
+**events** | [**List[WorkflowEventRead]**](WorkflowEventRead.md) |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **status_expiration** | **datetime** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 

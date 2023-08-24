@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **platform_approval** | **bool** |  | [optional] 
 **arbitration_by** | **str** |  | [optional] 
 **parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
+**metadata** | [**List[MetadataRead]**](MetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | 
+**events** | [**List[WorkflowEventRead]**](WorkflowEventRead.md) |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **status_expiration** | **datetime** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 
@@ -49,7 +51,6 @@ Name | Type | Description | Notes
 **risk_score** | **int** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
 **external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
-**metadata** | [**List[MetadataRead]**](MetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | [optional] 
 **offer_count** | **int** | Issued Offers count owned by a given Persona | [optional] [readonly] 
 **purchase_count** | **int** |  | [optional] [readonly] 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 

@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **evaluations** | **List[str]** |  | [optional] [readonly] 
 **views** | [**List[View]**](View.md) |  | 
 **metadata** | [**List[Metadata]**](Metadata.md) |  | 
+**events** | [**List[WorkflowEvent]**](WorkflowEvent.md) |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **status_expiration** | **datetime** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 
