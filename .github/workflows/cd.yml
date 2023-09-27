@@ -54,7 +54,7 @@ jobs:
         run: rm -fR ./python || true
 
       - name: TPDK for Python
-        run: openapi-generator-cli generate -g python-nextgen --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.json --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
+        run: openapi-generator-cli generate -g python --git-repo-id tpdk --git-user-id tripartie -o ./python -i oas-upstream.json --additional-properties=packageName=tpdk,projectName=tpdk,packageVersion=${{ steps.version.outputs.tag }},packageUrl=https://pypi.org/project/tpdk
 
       - name: Cleanup
         run: rm -f oas-upstream.json openapitools.json
