@@ -7,6 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
+**buyer_id** | **int** |  | [optional] [readonly] 
+**seller_id** | **int** |  | [optional] [readonly] 
+**offer_ulid** | **str** |  | [optional] [readonly] 
 
 ## Example
 

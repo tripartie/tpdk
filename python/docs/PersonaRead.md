@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **language** | **str** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
 **email** | **str** |  | [optional] 
 **mobile_phone_number** | **str** |  | [optional] 
-**address** | [**PersonaReadAddress**](PersonaReadAddress.md) |  | [optional] 
+**address** | [**AddressRead**](AddressRead.md) |  | [optional] 
 **risk_level** | **str** | We sort Persona into three distinct risks&#39; category. This is inferred from the riskScore. | [optional] 
 **risk_score** | **int** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 

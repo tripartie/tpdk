@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **last_name** | **str** |  | [optional] 
 **public_name** | **str** |  | [optional] 
 **role_in_company** | **str** |  | [optional] 
-**birthday** | **datetime** |  | 
+**birthday** | **datetime** |  | [optional] 
 **intl_phone_number** | **str** |  | [optional] 
 **consent_mail_notification** | **bool** |  | 
 **consent_mail_ads** | **bool** |  | 

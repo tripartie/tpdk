@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **str** |  | 
-**var_from** | **str** |  | 
+**var_from** | **str** |  | [optional] 
 **to** | **str** |  | [optional] 
 **event** | **str** |  | [optional] 
 **occurred_at** | **datetime** |  | [optional] [readonly] 

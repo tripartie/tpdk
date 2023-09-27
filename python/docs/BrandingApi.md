@@ -64,6 +64,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -140,6 +141,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BrandingApi->api_organizations_idicon_delete: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -221,6 +223,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -296,6 +299,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BrandingApi->api_organizations_idlogo_delete: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -375,6 +379,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BrandingApi->api_organizations_idlogo_post: %s\n" % e)
 ```
+
 
 
 ### Parameters

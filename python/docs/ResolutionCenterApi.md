@@ -16,7 +16,6 @@ Method | HTTP request | Description
 [**api_disputes_ulidevidences_post**](ResolutionCenterApi.md#api_disputes_ulidevidences_post) | **POST** /disputes/{ulid}/evidences | Submit an Evidence to the Dispute case
 [**api_disputes_ulidparcels_get_collection**](ResolutionCenterApi.md#api_disputes_ulidparcels_get_collection) | **GET** /disputes/{ulid}/parcels | Retrieves the collection of Parcel resources.
 [**api_disputes_ulidparcels_id_delete**](ResolutionCenterApi.md#api_disputes_ulidparcels_id_delete) | **DELETE** /disputes/{ulid}/parcels/{id} | Removes the Parcel resource.
-[**api_disputes_ulidparcels_id_get**](ResolutionCenterApi.md#api_disputes_ulidparcels_id_get) | **GET** /disputes/{ulid}/parcels/{id} | Read single parcel state
 [**api_disputes_ulidparcels_post**](ResolutionCenterApi.md#api_disputes_ulidparcels_post) | **POST** /disputes/{ulid}/parcels | Creates a Parcel resource.
 [**api_offers_ulidmedias_post**](ResolutionCenterApi.md#api_offers_ulidmedias_post) | **POST** /offers/{ulid}/medias | Upload a picture for a given Offer
 
@@ -90,6 +89,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_get_collection: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -183,6 +183,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -267,6 +268,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulid_delete: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -355,6 +357,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulid_get: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -447,6 +450,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -528,6 +532,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidevaluations_post: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -617,6 +622,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -699,6 +705,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -778,6 +785,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_disputes_ulidevidences_idmedia_post: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -863,6 +871,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -940,7 +949,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
+    ulid = 'ulid_example' # str | 
     page = 1 # int | The collection page number (optional) (default to 1)
 
     try:
@@ -953,11 +962,12 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
+ **ulid** | **str**|  | 
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
@@ -1029,6 +1039,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1053,96 +1064,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Parcel resource deleted |  -  |
-**404** | Resource not found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_disputes_ulidparcels_id_get**
-> ParcelRead api_disputes_ulidparcels_id_get(ulid, id)
-
-Read single parcel state
-
-Retrieves a Parcel resource.
-
-### Example
-
-* Api Key Authentication (jwtPersonalKey):
-* Api Key Authentication (personaAuthKey):
-* OAuth Authentication (oauth):
-```python
-import time
-import os
-import tpdk
-from tpdk.models.parcel_read import ParcelRead
-from tpdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://staging-api.tripartie.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = tpdk.Configuration(
-    host = "https://staging-api.tripartie.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: jwtPersonalKey
-configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
-
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Enter a context with an instance of the API client
-with tpdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | 
-    id = 56 # int | 
-
-    try:
-        # Read single parcel state
-        api_response = api_instance.api_disputes_ulidparcels_id_get(ulid, id)
-        print("The response of ResolutionCenterApi->api_disputes_ulidparcels_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ResolutionCenterApi->api_disputes_ulidparcels_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ulid** | **str**|  | 
- **id** | **int**|  | 
-
-### Return type
-
-[**ParcelRead**](ParcelRead.md)
-
-### Authorization
-
-[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Parcel resource |  -  |
 **404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1197,7 +1118,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
+    ulid = 'ulid_example' # str | 
     parcel_write = tpdk.ParcelWrite() # ParcelWrite | The new Parcel resource
 
     try:
@@ -1210,11 +1131,12 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
+ **ulid** | **str**|  | 
  **parcel_write** | [**ParcelWrite**](ParcelWrite.md)| The new Parcel resource | 
 
 ### Return type
@@ -1292,6 +1214,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ResolutionCenterApi->api_offers_ulidmedias_post: %s\n" % e)
 ```
+
 
 
 ### Parameters

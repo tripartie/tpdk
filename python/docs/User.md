@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **last_name** | **str** |  | [optional] 
 **public_name** | **str** |  | [optional] 
 **role_in_company** | **str** |  | [optional] 
-**birthday** | **datetime** |  | 
+**birthday** | **datetime** |  | [optional] 
 **email** | **str** |  | [optional] 
+**invited_role** | **List[str]** |  | [optional] 
 **roles** | **List[str]** |  | 
-**password** | **str** | The hashed password | 
+**password** | **str** | The hashed password | [optional] 
 **plain_password** | **str** |  | [optional] 
 **intl_phone_number** | **str** |  | [optional] 
 **origin_country** | **str** | The originating country | [optional] 

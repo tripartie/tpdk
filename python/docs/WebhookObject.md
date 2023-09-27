@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **language** | **str** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
 **email** | **str** |  | [optional] 
 **mobile_phone_number** | **str** |  | [optional] 
-**address** | [**PersonaReadAddress**](PersonaReadAddress.md) |  | [optional] 
+**address** | [**AddressRead**](AddressRead.md) |  | [optional] 
 **risk_level** | **str** | We sort Persona into three distinct risks&#39; category. This is inferred from the riskScore. | [optional] 
 **risk_score** | **int** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
@@ -54,7 +54,7 @@ Name | Type | Description | Notes
 **offer_count** | **int** | Issued Offers count owned by a given Persona | [optional] [readonly] 
 **purchase_count** | **int** |  | [optional] [readonly] 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**organization** | [**OfferReadOrganization**](OfferReadOrganization.md) |  | [optional] 
+**organization** | [**OrganizationRead**](OrganizationRead.md) |  | [optional] 
 **seller** | **str** | If the seller is actually YOUR organization, set it to NULL. | 
 **nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
 **title** | **str** |  | [optional] 

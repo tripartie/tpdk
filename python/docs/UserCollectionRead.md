@@ -14,10 +14,10 @@ Name | Type | Description | Notes
 **roles** | **List[str]** |  | 
 **intl_phone_number** | **str** |  | [optional] 
 **last_successful_log_in** | **datetime** |  | [optional] 
-**avatar** | [**OrganizationCollectionReadIcon**](OrganizationCollectionReadIcon.md) |  | [optional] 
+**avatar** | [**MediaCollectionRead**](MediaCollectionRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
-**organization** | [**UserCollectionReadOrganization**](UserCollectionReadOrganization.md) |  | [optional] 
+**organization** | [**OrganizationCollectionRead**](OrganizationCollectionRead.md) |  | [optional] 
 
 ## Example
 
