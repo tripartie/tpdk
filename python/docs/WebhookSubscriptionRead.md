@@ -5,6 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] [readonly] 
 **event** | **str** |  | [optional] 
 **callback_url** | **str** |  | [optional] 
 **webhook_secret** | **str** |  | 
