@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **commercial_registry_number** | **str** |  | 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
-**billing_address** | [**OrganizationUpdateBillingAddress**](OrganizationUpdateBillingAddress.md) |  | [optional] 
+**billing_address** | [**AddressUpdate**](AddressUpdate.md) |  | [optional] 
 **primary_color** | **str** |  | [optional] 
 **secondary_color** | **str** |  | [optional] 
 **accent_color** | **str** |  | [optional] 

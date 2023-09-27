@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **vat_number** | **str** |  | [optional] 
 **commercial_registry_number** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
-**billing_address** | [**OrganizationWriteBillingAddress**](OrganizationWriteBillingAddress.md) |  | [optional] 
+**billing_address** | [**AddressWrite**](AddressWrite.md) |  | [optional] 
 
 ## Example
 

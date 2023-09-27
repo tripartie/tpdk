@@ -62,6 +62,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -141,6 +142,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling NotificationApi->api_personas_persona_idnotifications_id_patch: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -236,6 +238,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -315,6 +318,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling NotificationApi->api_users_user_idnotifications_id_patch: %s\n" % e)
 ```
+
 
 
 ### Parameters

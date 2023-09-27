@@ -69,6 +69,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -154,6 +155,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationApi->api_organizations_id_get: %s\n" % e)
 ```
+
 
 
 ### Parameters

@@ -10,19 +10,19 @@ Name | Type | Description | Notes
 **last_name** | **str** |  | [optional] 
 **public_name** | **str** |  | [optional] 
 **role_in_company** | **str** |  | [optional] 
-**birthday** | **datetime** |  | 
+**birthday** | **datetime** |  | [optional] 
 **email** | **str** |  | [optional] 
 **roles** | **List[str]** |  | 
 **intl_phone_number** | **str** |  | [optional] 
 **origin_country** | **str** | The originating country | [optional] 
 **preferred_language** | **str** |  | [optional] 
 **last_successful_log_in** | **datetime** |  | [optional] 
-**avatar** | [**OrganizationAuthenticatedReadIcon**](OrganizationAuthenticatedReadIcon.md) |  | [optional] 
+**avatar** | [**MediaAuthenticatedRead**](MediaAuthenticatedRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **consent_mail_notification** | **bool** |  | 
 **consent_mail_ads** | **bool** |  | 
-**organization** | [**UserAuthenticatedReadOrganization**](UserAuthenticatedReadOrganization.md) |  | [optional] 
+**organization** | [**OrganizationAuthenticatedRead**](OrganizationAuthenticatedRead.md) |  | [optional] 
 
 ## Example
 

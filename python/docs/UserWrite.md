@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **preferred_language** | **str** |  | 
 **consent_mail_notification** | **bool** |  | [optional] 
 **consent_mail_ads** | **bool** |  | [optional] 
-**organization** | [**UserWriteOrganization**](UserWriteOrganization.md) |  | [optional] 
+**organization** | [**OrganizationWrite**](OrganizationWrite.md) |  | [optional] 
 
 ## Example
 

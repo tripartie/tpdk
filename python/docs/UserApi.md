@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**api_api_clients_identifier_delete**](UserApi.md#api_api_clients_identifier_delete) | **DELETE** /api-clients/{identifier} | Removes the ApiClient resource.
 [**api_api_clients_identifier_get**](UserApi.md#api_api_clients_identifier_get) | **GET** /api-clients/{identifier} | Retrieves a ApiClient resource.
 [**api_api_clients_post**](UserApi.md#api_api_clients_post) | **POST** /api-clients | Creates a ApiClient resource.
+[**api_invite_post**](UserApi.md#api_invite_post) | **POST** /invite | Organization invite
 [**api_me_get**](UserApi.md#api_me_get) | **GET** /me | Retrieves a User resource.
 [**api_personasauthentication_post**](UserApi.md#api_personasauthentication_post) | **POST** /personas/authentication | Persona Authentication
 [**api_personasme_get**](UserApi.md#api_personasme_get) | **GET** /personas/me | Retrieve your authenticated Persona
@@ -68,6 +69,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_api_clients_get_collection: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -142,6 +144,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_api_clients_identifier_delete: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -220,6 +223,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_api_clients_identifier_get: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -301,6 +305,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -326,6 +331,97 @@ Name | Type | Description  | Notes
 **201** | ApiClient resource created |  -  |
 **400** | Invalid input |  -  |
 **422** | Unprocessable entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_invite_post**
+> UserPostRegisterRead api_invite_post(user_invite)
+
+Organization invite
+
+Invite a user to your organization workspace
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+```python
+import time
+import os
+import tpdk
+from tpdk.models.user_invite import UserInvite
+from tpdk.models.user_post_register_read import UserPostRegisterRead
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    user_invite = tpdk.UserInvite() # UserInvite | The new User resource
+
+    try:
+        # Organization invite
+        api_response = api_instance.api_invite_post(user_invite)
+        print("The response of UserApi->api_invite_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->api_invite_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_invite** | [**UserInvite**](UserInvite.md)| The new User resource | 
+
+### Return type
+
+[**UserPostRegisterRead**](UserPostRegisterRead.md)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**422** | Unprocessable entity |  -  |
+**201** | User resource created |  -  |
+**400** | Invalid input |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -387,6 +483,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_me_get: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -475,6 +572,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -551,6 +649,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_personasme_get: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -637,6 +736,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_personasregister_post: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -729,6 +829,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -808,6 +909,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -883,6 +985,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_users_id_get: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -973,6 +1076,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_users_id_patch: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -1066,6 +1170,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UserApi->api_users_idemail_validation_patch: %s\n" % e)
 ```
+
 
 
 ### Parameters

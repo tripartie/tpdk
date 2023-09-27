@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **vat_number** | **str** |  | [optional] 
 **commercial_registry_number** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
-**icon** | [**OrganizationCollectionReadIcon**](OrganizationCollectionReadIcon.md) |  | [optional] 
-**logo** | [**OrganizationCollectionReadIcon**](OrganizationCollectionReadIcon.md) |  | [optional] 
+**icon** | [**MediaCollectionRead**](MediaCollectionRead.md) |  | [optional] 
+**logo** | [**MediaCollectionRead**](MediaCollectionRead.md) |  | [optional] 
 **direct_notification_toggle** | **bool** |  | [default to True]
 **safe_checkout_toggle** | **bool** |  | 
 **resolution_center_toggle** | **bool** |  | [default to True]

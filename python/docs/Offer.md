@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **iri** | **str** |  | [optional] [readonly] 
+**half_price_point** | **float** |  | [optional] [readonly] 
 
 ## Example
 

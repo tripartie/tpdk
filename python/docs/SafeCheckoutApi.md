@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**api_transactions_uliddispute_get**](SafeCheckoutApi.md#api_transactions_uliddispute_get) | **GET** /transactions/{ulid}/dispute | Read Dispute from existing Transaction
 [**api_transactions_uliddispute_patch**](SafeCheckoutApi.md#api_transactions_uliddispute_patch) | **PATCH** /transactions/{ulid}/dispute | Interact with a Dispute
 [**api_transactions_uliddispute_post**](SafeCheckoutApi.md#api_transactions_uliddispute_post) | **POST** /transactions/{ulid}/dispute | Open a Dispute related to existing Transaction
-[**api_transactions_ulidparcels_get**](SafeCheckoutApi.md#api_transactions_ulidparcels_get) | **GET** /transactions/{ulid}/parcels | Read single parcel state
+[**api_transactions_ulidparcels_get_collection**](SafeCheckoutApi.md#api_transactions_ulidparcels_get_collection) | **GET** /transactions/{ulid}/parcels | Read shipments from Transaction
 [**api_transactions_ulidparcels_id_delete**](SafeCheckoutApi.md#api_transactions_ulidparcels_id_delete) | **DELETE** /transactions/{ulid}/parcels/{id} | Withdraw shipment from Transaction
 [**api_transactions_ulidparcels_post**](SafeCheckoutApi.md#api_transactions_ulidparcels_post) | **POST** /transactions/{ulid}/parcels | Manually declare package shipped for Transaction
 
@@ -101,6 +101,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_offers_get_collection: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -200,6 +201,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -289,6 +291,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -375,6 +378,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -456,6 +460,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_offers_ulidmedias_post: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -545,6 +550,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -629,6 +635,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -709,6 +716,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_offers_ulidtransactions_post: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -796,6 +804,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_personas_idoffers_delete: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -901,6 +910,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_personas_idoffers_get_collection: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -1009,6 +1019,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1102,6 +1113,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1186,6 +1198,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_transactions_get_collection: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -1273,6 +1286,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_transactions_uliddispute_delete: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -1363,6 +1377,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1448,6 +1463,7 @@ with tpdk.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SafeCheckoutApi->api_transactions_uliddispute_patch: %s\n" % e)
 ```
+
 
 
 ### Parameters
@@ -1543,6 +1559,7 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
@@ -1572,23 +1589,21 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_transactions_ulidparcels_get**
-> ParcelRead api_transactions_ulidparcels_get(ulid)
+# **api_transactions_ulidparcels_get_collection**
+> List[object] api_transactions_ulidparcels_get_collection(ulid, page=page)
 
-Read single parcel state
+Read shipments from Transaction
 
-Retrieves a Parcel resource.
+Retrieves the collection of Parcel resources.
 
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
-* OAuth Authentication (oauth):
 ```python
 import time
 import os
 import tpdk
-from tpdk.models.parcel_read import ParcelRead
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -1615,37 +1630,38 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Transaction identifier
+    ulid = 'ulid_example' # str | 
+    page = 1 # int | The collection page number (optional) (default to 1)
 
     try:
-        # Read single parcel state
-        api_response = api_instance.api_transactions_ulidparcels_get(ulid)
-        print("The response of SafeCheckoutApi->api_transactions_ulidparcels_get:\n")
+        # Read shipments from Transaction
+        api_response = api_instance.api_transactions_ulidparcels_get_collection(ulid, page=page)
+        print("The response of SafeCheckoutApi->api_transactions_ulidparcels_get_collection:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SafeCheckoutApi->api_transactions_ulidparcels_get: %s\n" % e)
+        print("Exception when calling SafeCheckoutApi->api_transactions_ulidparcels_get_collection: %s\n" % e)
 ```
+
 
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Transaction identifier | 
+ **ulid** | **str**|  | 
+ **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
-[**ParcelRead**](ParcelRead.md)
+**List[object]**
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey)
 
 ### HTTP request headers
 
@@ -1655,8 +1671,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Parcel resource |  -  |
-**404** | Resource not found |  -  |
+**200** | Parcel collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1698,8 +1713,8 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Transaction identifier
-    id = 'id_example' # str | Parcel identifier
+    ulid = 'ulid_example' # str | 
+    id = 56 # int | 
 
     try:
         # Withdraw shipment from Transaction
@@ -1709,12 +1724,13 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Transaction identifier | 
- **id** | **str**| Parcel identifier | 
+ **ulid** | **str**|  | 
+ **id** | **int**|  | 
 
 ### Return type
 
@@ -1747,7 +1763,6 @@ Creates a Parcel resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
-* Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
 ```python
 import time
@@ -1775,19 +1790,13 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
 
-# Configure API key authorization: personaAuthKey
-configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
-
 configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 # Enter a context with an instance of the API client
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Transaction identifier
+    ulid = 'ulid_example' # str | 
     parcel_write = tpdk.ParcelWrite() # ParcelWrite | The new Parcel resource
 
     try:
@@ -1800,11 +1809,12 @@ with tpdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Transaction identifier | 
+ **ulid** | **str**|  | 
  **parcel_write** | [**ParcelWrite**](ParcelWrite.md)| The new Parcel resource | 
 
 ### Return type
@@ -1813,7 +1823,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+[jwtPersonalKey](../README.md#jwtPersonalKey), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
