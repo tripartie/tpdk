@@ -5,6 +5,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**captcha** | **str** |  | 
 **plain_password** | **str** |  | [optional] 
 **email_verification_input** | **str** |  | 
 

@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **platform_solution** | **str** |  | [optional] 
 **platform_partial_refund_amount** | **int** |  | [optional] 
 **platform_approval** | **bool** |  | [optional] 
+**platform_actor_type** | **str** |  | [optional] 
 **arbitration_by** | **str** |  | [optional] 
 **parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
 **metadata** | [**List[MetadataRead]**](MetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | 
