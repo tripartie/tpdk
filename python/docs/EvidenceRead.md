@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **additional_information** | **str** | Description of what the evidence actually is. | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
+**publisher** | **str** | Shortcut to whomever sent the evidence | [optional] [readonly] 
 
 ## Example
 
