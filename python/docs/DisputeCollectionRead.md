@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **platform_solution** | **str** |  | [optional] 
 **platform_partial_refund_amount** | **int** |  | [optional] 
 **platform_approval** | **bool** |  | [optional] 
+**platform_actor_type** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **status_expiration** | **datetime** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 
