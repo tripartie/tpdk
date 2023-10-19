@@ -24,11 +24,15 @@ Name | Type | Description | Notes
 **chosen_partial_refund_amount** | **int** |  | [optional] 
 **counter_solution** | **str** |  | [optional] 
 **counter_partial_refund_amount** | **int** |  | [optional] 
+**seller_notes** | **str** |  | [optional] 
+**seller_rejection_reason** | **str** |  | [optional] 
 **complainant_approval** | **bool** |  | [optional] 
 **seller_approval** | **bool** |  | [optional] 
 **platform_solution** | **str** |  | [optional] 
 **platform_partial_refund_amount** | **int** |  | [optional] 
 **platform_approval** | **bool** |  | [optional] 
+**platform_actor_type** | **str** |  | [optional] 
+**platform_reasoning** | **str** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. | [optional] 
 **arbitration_by** | **str** |  | [optional] 
 **parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
 **metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | 

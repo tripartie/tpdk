@@ -28,7 +28,6 @@ Name | Type | Description | Notes
 **metadata** | [**List[Metadata]**](Metadata.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | [optional] 
 **offers** | **List[str]** |  | 
 **purchases** | **List[str]** |  | 
-**tokens** | [**List[PersonaToken]**](PersonaToken.md) |  | 
 **views** | [**List[View]**](View.md) |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
