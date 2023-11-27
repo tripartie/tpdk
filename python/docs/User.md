@@ -26,8 +26,8 @@ Name | Type | Description | Notes
 **phone_verification_code** | **str** |  | [optional] 
 **phone_verification_input** | **str** |  | [optional] 
 **avatar** | **str** |  | [optional] 
-**notifications** | **List[str]** |  | [optional] [readonly] 
-**medias** | **List[str]** |  | [optional] [readonly] 
+**notifications** | **List[str]** |  | [optional] 
+**medias** | **List[str]** |  | [optional] 
 **views** | [**List[View]**](View.md) |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 

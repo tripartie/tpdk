@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**seller** | [**PersonaCollectionRead**](PersonaCollectionRead.md) |  | 
+**seller** | [**PersonaCollectionRead**](PersonaCollectionRead.md) | If the seller is actually YOUR organization, set it to NULL. | 
 **title** | **str** |  | [optional] 
 **unit_price** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] [default to 'EUR']

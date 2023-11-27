@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **weight_in_gram** | **int** |  | [optional] 
 **shipping_allowed** | **bool** | That toggle allows the seller to propose shipping for its item. If set in conjunction of shippingCarrier, the label will be automatically generated. Also, it will restrict the carrier to the limited subset defined. | [optional] 
 **hand_delivery_allowed** | **bool** | Enable both parties to finalize the transaction in person rather than using delivery. A QR Code must be scanned by the seller once the buyer claims the product. | [optional] [default to True]
-**shipping_carriers** | **List[str]** | If you wish to enable automated shipping label generation through a specific provider, specify it there. | [optional] 
+**shipping_carriers** | **List[str]** |  | [optional] 
 **ean_code** | **str** |  | [optional] 
 **can_be_sold_separately** | **bool** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. | [optional] [default to True]
 **metadata** | [**List[MetadataUpdate]**](MetadataUpdate.md) |  | [optional] 

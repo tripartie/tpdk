@@ -87,7 +87,7 @@ with tpdk.ApiClient(configuration) as api_client:
     created_at_strictly_before = 'created_at_strictly_before_example' # str |  (optional)
     created_at_after = 'created_at_after_example' # str |  (optional)
     created_at_strictly_after = 'created_at_strictly_after_example' # str |  (optional)
-    metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
+    metadata = ['[External-ID, 1254A]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
     offer_metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
     nature = 'service' # str | Filter on a limited subset of nature (optional)
     condition = 'NEW' # str | Filter on a limited subset of condition (optional)
@@ -537,7 +537,7 @@ with tpdk.ApiClient(configuration) as api_client:
     ulid = 'ulid_example' # str | Offer identifier
     page = 1 # int | The collection page number (optional) (default to 1)
     order_status = 'order_status_example' # str |  (optional)
-    metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
+    metadata = ['[External-ID, 1254A]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
     status = 'CREATED' # str | Filter on a limited subset of status (optional)
 
     try:
@@ -896,8 +896,8 @@ with tpdk.ApiClient(configuration) as api_client:
     created_at_strictly_before = 'created_at_strictly_before_example' # str |  (optional)
     created_at_after = 'created_at_after_example' # str |  (optional)
     created_at_strictly_after = 'created_at_strictly_after_example' # str |  (optional)
-    metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
-    offer_metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
+    metadata = ['[External-ID, 1254A]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
+    offer_metadata = ['[External-ID, 1254A]'] # List[str] | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
     nature = 'service' # str | Filter on a limited subset of nature (optional)
     condition = 'NEW' # str | Filter on a limited subset of condition (optional)
     shipping_allowed = True # bool |  (optional)
@@ -1187,7 +1187,7 @@ with tpdk.ApiClient(configuration) as api_client:
     api_instance = tpdk.SafeCheckoutApi(api_client)
     page = 1 # int | The collection page number (optional) (default to 1)
     order_status = 'order_status_example' # str |  (optional)
-    metadata = ['[\"External-ID\",\"1254A\"]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
+    metadata = ['[External-ID, 1254A]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
     status = 'CREATED' # str | Filter on a limited subset of status (optional)
 
     try:
