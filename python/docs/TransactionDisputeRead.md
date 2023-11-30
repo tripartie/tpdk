@@ -7,8 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
 **offer** | [**OfferDisputeRead**](OfferDisputeRead.md) |  | 
-**buyer** | **str** |  | 
+**buyer** | [**PersonaDisputeRead**](PersonaDisputeRead.md) |  | 
 **fees** | **float** |  | [optional] 
+**refundable_fees** | **bool** |  | [optional] 
 **metadata** | [**List[MetadataDisputeRead]**](MetadataDisputeRead.md) |  | [optional] 
 **parcels** | [**List[ParcelDisputeRead]**](ParcelDisputeRead.md) |  | [optional] 
 

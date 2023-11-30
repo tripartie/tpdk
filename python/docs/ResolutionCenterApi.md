@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **api_disputes_get_collection**
-> List[DisputeCollectionRead] api_disputes_get_collection(page=page, order_created_at=order_created_at, order_status=order_status, order_updated_at=order_updated_at, transaction_offer_title=transaction_offer_title, created_at_before=created_at_before, created_at_strictly_before=created_at_strictly_before, created_at_after=created_at_after, created_at_strictly_after=created_at_strictly_after, status=status, transaction_status=transaction_status, exists_recommended_solution=exists_recommended_solution, exists_chosen_solution=exists_chosen_solution, exists_counter_solution=exists_counter_solution, exists_platform_solution=exists_platform_solution, metadata=metadata, transaction_metadata=transaction_metadata, transaction_offer_metadata=transaction_offer_metadata)
+> List[DisputeCollectionRead] api_disputes_get_collection(page=page, order_created_at=order_created_at, order_status=order_status, order_updated_at=order_updated_at, transaction_offer_public_url=transaction_offer_public_url, transaction_offer_public_url2=transaction_offer_public_url2, transaction_offer_title=transaction_offer_title, transaction_buyer_id=transaction_buyer_id, transaction_buyer_id2=transaction_buyer_id2, transaction_buyer_email=transaction_buyer_email, transaction_offer_seller_id=transaction_offer_seller_id, transaction_offer_seller_id2=transaction_offer_seller_id2, transaction_offer_seller_email=transaction_offer_seller_email, created_at_before=created_at_before, created_at_strictly_before=created_at_strictly_before, created_at_after=created_at_after, created_at_strictly_after=created_at_strictly_after, status=status, transaction_status=transaction_status, exists_recommended_solution=exists_recommended_solution, exists_chosen_solution=exists_chosen_solution, exists_counter_solution=exists_counter_solution, exists_platform_solution=exists_platform_solution, metadata=metadata, transaction_metadata=transaction_metadata, transaction_offer_metadata=transaction_offer_metadata)
 
 Retrieves the collection of Dispute resources.
 
@@ -66,7 +66,15 @@ with tpdk.ApiClient(configuration) as api_client:
     order_created_at = 'order_created_at_example' # str |  (optional)
     order_status = 'order_status_example' # str |  (optional)
     order_updated_at = 'order_updated_at_example' # str |  (optional)
+    transaction_offer_public_url = 'transaction_offer_public_url_example' # str |  (optional)
+    transaction_offer_public_url2 = ['transaction_offer_public_url_example'] # List[str] |  (optional)
     transaction_offer_title = 'transaction_offer_title_example' # str |  (optional)
+    transaction_buyer_id = 56 # int |  (optional)
+    transaction_buyer_id2 = [56] # List[int] |  (optional)
+    transaction_buyer_email = 'transaction_buyer_email_example' # str |  (optional)
+    transaction_offer_seller_id = 56 # int |  (optional)
+    transaction_offer_seller_id2 = [56] # List[int] |  (optional)
+    transaction_offer_seller_email = 'transaction_offer_seller_email_example' # str |  (optional)
     created_at_before = 'created_at_before_example' # str |  (optional)
     created_at_strictly_before = 'created_at_strictly_before_example' # str |  (optional)
     created_at_after = 'created_at_after_example' # str |  (optional)
@@ -83,7 +91,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
     try:
         # Retrieves the collection of Dispute resources.
-        api_response = api_instance.api_disputes_get_collection(page=page, order_created_at=order_created_at, order_status=order_status, order_updated_at=order_updated_at, transaction_offer_title=transaction_offer_title, created_at_before=created_at_before, created_at_strictly_before=created_at_strictly_before, created_at_after=created_at_after, created_at_strictly_after=created_at_strictly_after, status=status, transaction_status=transaction_status, exists_recommended_solution=exists_recommended_solution, exists_chosen_solution=exists_chosen_solution, exists_counter_solution=exists_counter_solution, exists_platform_solution=exists_platform_solution, metadata=metadata, transaction_metadata=transaction_metadata, transaction_offer_metadata=transaction_offer_metadata)
+        api_response = api_instance.api_disputes_get_collection(page=page, order_created_at=order_created_at, order_status=order_status, order_updated_at=order_updated_at, transaction_offer_public_url=transaction_offer_public_url, transaction_offer_public_url2=transaction_offer_public_url2, transaction_offer_title=transaction_offer_title, transaction_buyer_id=transaction_buyer_id, transaction_buyer_id2=transaction_buyer_id2, transaction_buyer_email=transaction_buyer_email, transaction_offer_seller_id=transaction_offer_seller_id, transaction_offer_seller_id2=transaction_offer_seller_id2, transaction_offer_seller_email=transaction_offer_seller_email, created_at_before=created_at_before, created_at_strictly_before=created_at_strictly_before, created_at_after=created_at_after, created_at_strictly_after=created_at_strictly_after, status=status, transaction_status=transaction_status, exists_recommended_solution=exists_recommended_solution, exists_chosen_solution=exists_chosen_solution, exists_counter_solution=exists_counter_solution, exists_platform_solution=exists_platform_solution, metadata=metadata, transaction_metadata=transaction_metadata, transaction_offer_metadata=transaction_offer_metadata)
         print("The response of ResolutionCenterApi->api_disputes_get_collection:\n")
         pprint(api_response)
     except Exception as e:
@@ -100,7 +108,15 @@ Name | Type | Description  | Notes
  **order_created_at** | **str**|  | [optional] 
  **order_status** | **str**|  | [optional] 
  **order_updated_at** | **str**|  | [optional] 
+ **transaction_offer_public_url** | **str**|  | [optional] 
+ **transaction_offer_public_url2** | [**List[str]**](str.md)|  | [optional] 
  **transaction_offer_title** | **str**|  | [optional] 
+ **transaction_buyer_id** | **int**|  | [optional] 
+ **transaction_buyer_id2** | [**List[int]**](int.md)|  | [optional] 
+ **transaction_buyer_email** | **str**|  | [optional] 
+ **transaction_offer_seller_id** | **int**|  | [optional] 
+ **transaction_offer_seller_id2** | [**List[int]**](int.md)|  | [optional] 
+ **transaction_offer_seller_email** | **str**|  | [optional] 
  **created_at_before** | **str**|  | [optional] 
  **created_at_strictly_before** | **str**|  | [optional] 
  **created_at_after** | **str**|  | [optional] 

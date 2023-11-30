@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **offer** | [**OfferIndependentWrite**](OfferIndependentWrite.md) |  | 
 **buyer** | [**PersonaIndependentWrite**](PersonaIndependentWrite.md) |  | 
 **fees** | **float** |  | [optional] 
+**refundable_fees** | **bool** |  | [optional] 
 **metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | [optional] 
 **parcels** | [**List[ParcelIndependentWrite]**](ParcelIndependentWrite.md) |  | [optional] 
 
