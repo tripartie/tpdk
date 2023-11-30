@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **user** | **str** |  | [optional] 
 **hit_count** | **int** |  | [default to 1]
 **created_at** | **datetime** |  | [optional] [readonly] 
+**named_source** | **str** |  | [optional] [readonly] 
 
 ## Example
 

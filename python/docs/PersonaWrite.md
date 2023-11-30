@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **address** | [**AddressWrite**](AddressWrite.md) |  | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
 **external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
-**metadata** | [**List[MetadataWrite]**](MetadataWrite.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | [optional] 
+**metadata** | [**List[MetadataWrite]**](MetadataWrite.md) |  | [optional] 
 
 ## Example
 

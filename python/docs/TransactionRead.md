@@ -7,8 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
 **offer** | [**OfferRead**](OfferRead.md) |  | 
-**buyer** | **str** |  | 
+**buyer** | [**PersonaRead**](PersonaRead.md) |  | 
 **fees** | **float** |  | [optional] 
+**refundable_fees** | **bool** |  | [optional] 
 **metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | [optional] 
 **parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | [optional] 
 

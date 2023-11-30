@@ -35,14 +35,19 @@ Name | Type | Description | Notes
 **platform_reasoning** | **str** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. | [optional] 
 **arbitration_by** | **str** |  | [optional] 
 **parcels** | [**List[ParcelDisputeRead]**](ParcelDisputeRead.md) |  | 
+**views** | [**List[ViewDisputeRead]**](ViewDisputeRead.md) |  | 
 **metadata** | [**List[MetadataDisputeRead]**](MetadataDisputeRead.md) |  | 
-**events** | [**List[WorkflowEventDisputeRead]**](WorkflowEventDisputeRead.md) |  | [optional] [readonly] 
+**events** | [**List[WorkflowEventDisputeRead]**](WorkflowEventDisputeRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
+**view_count** | **int** |  | [optional] [readonly] 
 **status_expiration** | **datetime** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 
 **awaited_party** | **str** | Determine who is awaited (actor) for the next transition | [optional] [readonly] 
 **iri** | **str** |  | [optional] [readonly] 
 **message_count** | **int** |  | [optional] [readonly] 
+**closed_in_favor_of** | **str** |  | [optional] [readonly] 
+**disbursed_by_buyer** | **float** |  | [optional] [readonly] 
+**max_refundable_for_buyer** | **float** |  | [optional] [readonly] 
 
 ## Example
 
