@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **awaited_party** | **str** | Determine who is awaited (actor) for the next transition | [optional] [readonly] 
 **iri** | **str** |  | [optional] [readonly] 
 **message_count** | **int** |  | [optional] [readonly] 
-**closed_in_favor_of** | **str** |  | [optional] [readonly] 
+**closed_in_favor_of** | **str** | Determine who won the case, if not specified, then it is ongoing. | [optional] [readonly] 
 
 ## Example
 
