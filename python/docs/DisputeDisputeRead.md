@@ -3,6 +3,7 @@
 Access directly our resolution center without having used the safe-checkout feature.
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 

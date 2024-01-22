@@ -23,6 +23,7 @@ Retrieves the collection of Persona resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -86,6 +87,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -121,6 +123,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Persona collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
@@ -139,6 +142,7 @@ You **MAY** unregister (or free the email/phone number) your Persona entry using
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -188,6 +192,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -206,6 +211,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Persona resource deleted |  -  |
@@ -225,6 +231,7 @@ Retrieves a Persona resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -277,6 +284,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -295,6 +303,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Persona resource |  -  |
@@ -314,6 +323,7 @@ Update your Persona (eg. your customer/user entry) through that API call. _Bewar
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -368,6 +378,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -387,6 +398,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Persona resource updated |  -  |
@@ -406,6 +418,7 @@ Without this, your users may be required to pass a MFA challenge even if they ar
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -448,6 +461,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -467,6 +481,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |
@@ -485,6 +500,7 @@ You should not register your whole database of users, only those who are concern
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -526,6 +542,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **persona_write** | [**PersonaWrite**](PersonaWrite.md)| The new Persona resource | 
@@ -544,6 +561,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |

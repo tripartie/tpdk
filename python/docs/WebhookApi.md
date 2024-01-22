@@ -23,6 +23,7 @@ Retrieves the collection of WebhookHistory resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -73,6 +74,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -95,6 +97,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | WebhookHistory collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
@@ -112,6 +115,7 @@ Retrieves a WebhookHistory resource.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -158,6 +162,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| WebhookHistory identifier | 
@@ -176,6 +181,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | WebhookHistory resource |  -  |
@@ -193,6 +199,7 @@ Replaces the WebhookHistory resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -238,6 +245,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| WebhookHistory identifier | 
@@ -257,6 +265,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | WebhookHistory resource updated |  -  |
@@ -277,6 +286,7 @@ Retrieves the collection of WebhookSubscription resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -324,6 +334,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -343,6 +354,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | WebhookSubscription collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
@@ -359,6 +371,7 @@ Removes the WebhookSubscription resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -400,6 +413,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| WebhookSubscription identifier | 
@@ -418,6 +432,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | WebhookSubscription resource deleted |  -  |
@@ -435,6 +450,7 @@ Creates a WebhookSubscription resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -480,6 +496,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhook_subscription_write** | [**WebhookSubscriptionWrite**](WebhookSubscriptionWrite.md)| The new WebhookSubscription resource | 
@@ -498,6 +515,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |

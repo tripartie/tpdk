@@ -31,6 +31,7 @@ Retrieves the collection of Dispute resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -102,6 +103,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -145,6 +147,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Dispute collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
@@ -161,6 +164,7 @@ Create a draft dispute to be filled by an alleged aggrieved customer. Do not use
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -202,6 +206,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dispute_independent_write** | [**DisputeIndependentWrite**](DisputeIndependentWrite.md)| The new Dispute resource | 
@@ -220,6 +225,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |
@@ -240,6 +246,7 @@ Abandon claims on Dispute
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -289,6 +296,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Dispute identifier | 
@@ -307,6 +315,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Dispute resource deleted |  -  |
@@ -326,6 +335,7 @@ Retrieves a Dispute resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -378,6 +388,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Dispute identifier | 
@@ -396,6 +407,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Dispute resource |  -  |
@@ -415,6 +427,7 @@ Updates the Dispute resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -469,6 +482,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Dispute identifier | 
@@ -488,6 +502,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Dispute resource updated |  -  |
@@ -507,6 +522,7 @@ Submit an Evaluation for the Dispute
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -553,6 +569,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Dispute identifier | 
@@ -572,6 +589,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |
@@ -591,6 +609,7 @@ Retrieves the collection of Evidence resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -641,6 +660,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -659,6 +679,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Evidence collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
@@ -676,6 +697,7 @@ Removes the Evidence resource.
 
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -724,6 +746,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -743,6 +766,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Evidence resource deleted |  -  |
@@ -760,6 +784,7 @@ Creates a Media resource.
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -806,6 +831,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -826,6 +852,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |
@@ -844,6 +871,7 @@ This action does not held the actual upload, you will have to do the upload in a
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -890,6 +918,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -909,6 +938,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |
@@ -929,6 +959,7 @@ Retrieves the collection of Parcel resources.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -981,6 +1012,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -1000,6 +1032,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Parcel collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
@@ -1016,6 +1049,7 @@ Removes the Parcel resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -1058,6 +1092,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -1077,6 +1112,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Parcel resource deleted |  -  |
@@ -1096,6 +1132,7 @@ Creates a Parcel resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1150,6 +1187,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -1169,6 +1207,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Parcel resource created |  -  |
@@ -1188,6 +1227,7 @@ Creates a Media resource.
 
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1235,6 +1275,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -1254,6 +1295,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **422** | Unprocessable entity |  -  |
