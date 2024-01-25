@@ -3,12 +3,13 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**carrier** | **str** |  | 
-**identifier** | **str** |  | 
+**carrier** | **str** |  | [optional] 
+**identifier** | **str** |  | [optional] 
 **price** | **float** |  | [optional] 
-**refundable** | **bool** |  | [optional] 
+**refundable** | **bool** |  | 
 **currency** | **str** |  | [optional] [default to 'EUR']
 
 ## Example

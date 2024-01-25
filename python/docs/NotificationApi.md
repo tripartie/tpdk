@@ -20,6 +20,7 @@ Retrieves the collection of Notification resources.
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -65,6 +66,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -84,9 +86,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Notification collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Notification collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -100,6 +107,7 @@ Updates the Notification resource.
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -147,6 +155,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **persona_id** | **str**| Persona identifier | 
@@ -167,12 +176,17 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Notification resource updated |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
-**404** | Resource not found |  -  |
+**200** | Notification resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -188,6 +202,7 @@ Retrieves the collection of Notification resources.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -241,6 +256,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User identifier | 
@@ -260,9 +276,12 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Notification collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Notification collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -276,6 +295,7 @@ Updates the Notification resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -323,6 +343,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**| User identifier | 
@@ -343,12 +364,17 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Notification resource updated |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
-**404** | Resource not found |  -  |
+**200** | Notification resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
