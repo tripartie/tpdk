@@ -3,6 +3,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] [readonly] 
@@ -17,6 +18,11 @@ Name | Type | Description | Notes
 **roles** | **List[str]** |  | 
 **password** | **str** | The hashed password | [optional] 
 **plain_password** | **str** |  | [optional] 
+**new_password** | **str** |  | [optional] 
+**totp_secret** | **str** |  | [optional] 
+**totp_uri** | **str** |  | [optional] 
+**totp_enabled** | **bool** |  | [optional] 
+**totp_challenge** | **str** |  | [optional] 
 **intl_phone_number** | **str** |  | [optional] 
 **origin_country** | **str** | The originating country | [optional] 
 **preferred_language** | **str** |  | [optional] 
@@ -35,6 +41,7 @@ Name | Type | Description | Notes
 **consent_mail_ads** | **bool** |  | 
 **keys** | **List[str]** |  | 
 **organization** | **str** |  | [optional] 
+**impersonated_organization** | **str** |  | [optional] 
 **username** | **str** | A visual identifier that represents this user. | [optional] [readonly] 
 **salt** | **str** |  | [optional] [readonly] 
 **user_identifier** | **str** |  | [optional] [readonly] 
