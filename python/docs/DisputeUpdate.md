@@ -3,6 +3,7 @@
 Access directly our resolution center without having used the safe-checkout feature.
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 

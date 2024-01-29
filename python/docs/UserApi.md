@@ -18,6 +18,10 @@ Method | HTTP request | Description
 [**api_users_id_get**](UserApi.md#api_users_id_get) | **GET** /users/{id} | Retrieves a User resource.
 [**api_users_id_patch**](UserApi.md#api_users_id_patch) | **PATCH** /users/{id} | Updates the User resource.
 [**api_users_idemail_validation_patch**](UserApi.md#api_users_idemail_validation_patch) | **PATCH** /users/{id}/email-validation | Validate email ownership
+[**api_users_idpassword_patch**](UserApi.md#api_users_idpassword_patch) | **PATCH** /users/{id}/password | Updates the User resource.
+[**api_users_idtotp_setup_patch**](UserApi.md#api_users_idtotp_setup_patch) | **PATCH** /users/{id}/totp-setup | Updates the User resource.
+[**api_users_idtotp_toggle_patch**](UserApi.md#api_users_idtotp_toggle_patch) | **PATCH** /users/{id}/totp-toggle | Updates the User resource.
+[**authentication_post**](UserApi.md#authentication_post) | **POST** /authentication | User authentication
 
 
 # **api_api_clients_get_collection**
@@ -30,6 +34,7 @@ Retrieves the collection of ApiClient resources.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -74,6 +79,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -92,9 +98,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | ApiClient collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | ApiClient collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -108,6 +119,7 @@ Removes the ApiClient resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -149,6 +161,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| ApiClient identifier | 
@@ -164,13 +177,18 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | ApiClient resource deleted |  -  |
-**404** | Resource not found |  -  |
+**204** | ApiClient resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -184,6 +202,7 @@ Retrieves a ApiClient resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -228,6 +247,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| ApiClient identifier | 
@@ -246,10 +266,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | ApiClient resource |  -  |
-**404** | Resource not found |  -  |
+**200** | ApiClient resource |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -263,6 +288,7 @@ Creates a ApiClient resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -308,6 +334,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **api_client_write** | [**ApiClientWrite**](ApiClientWrite.md)| The new ApiClient resource | 
@@ -326,11 +353,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | ApiClient resource created |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
+**201** | ApiClient resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -346,6 +378,7 @@ Invite a user to your organization workspace
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -399,6 +432,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_invite** | [**UserInvite**](UserInvite.md)| The new User resource | 
@@ -417,11 +451,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | User resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | User resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -437,6 +474,7 @@ Retrieves a User resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -487,6 +525,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -503,10 +542,13 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User resource |  -  |
-**404** | Resource not found |  -  |
+**200** | User resource |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -522,6 +564,7 @@ Main route for Persona (Organization customers) to authenticate themselves. Publ
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -575,6 +618,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **persona_external_auth** | [**PersonaExternalAuth**](PersonaExternalAuth.md)| The new Persona resource | 
@@ -593,11 +637,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Persona resource created |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
+**201** | Persona resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -611,6 +658,7 @@ Retrieves a Persona resource.
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -653,6 +701,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -669,10 +718,15 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Persona resource |  -  |
-**404** | Resource not found |  -  |
+**200** | Persona resource |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -688,6 +742,7 @@ Creates a Persona resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -741,6 +796,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **persona_register** | [**PersonaRegister**](PersonaRegister.md)| The new Persona resource | 
@@ -759,11 +815,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Persona resource created |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
+**201** | Persona resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -779,6 +838,7 @@ Internal-use only, protected by a captcha. Organization first-enrollment
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -832,6 +892,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_write** | [**UserWrite**](UserWrite.md)| The new User resource | 
@@ -850,11 +911,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | User resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | User resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -868,6 +932,7 @@ Retrieves the collection of User resources.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -912,6 +977,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -930,9 +996,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | User collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -946,6 +1017,7 @@ Retrieves a User resource.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -990,6 +1062,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User identifier | 
@@ -1008,10 +1081,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User resource |  -  |
-**404** | Resource not found |  -  |
+**200** | User resource |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1027,6 +1105,7 @@ Updates the User resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1081,6 +1160,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User identifier | 
@@ -1100,12 +1180,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User resource updated |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
-**404** | Resource not found |  -  |
+**200** | User resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1121,6 +1204,7 @@ Updates the User resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1175,6 +1259,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| User identifier | 
@@ -1194,12 +1279,405 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User resource updated |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
-**404** | Resource not found |  -  |
+**200** | User resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_users_idpassword_patch**
+> UserUserRead api_users_idpassword_patch(id, user_user_password_update)
+
+Updates the User resource.
+
+Updates the User resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import os
+import tpdk
+from tpdk.models.user_user_password_update import UserUserPasswordUpdate
+from tpdk.models.user_user_read import UserUserRead
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    id = 'id_example' # str | User identifier
+    user_user_password_update = tpdk.UserUserPasswordUpdate() # UserUserPasswordUpdate | The updated User resource
+
+    try:
+        # Updates the User resource.
+        api_response = api_instance.api_users_idpassword_patch(id, user_user_password_update)
+        print("The response of UserApi->api_users_idpassword_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->api_users_idpassword_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| User identifier | 
+ **user_user_password_update** | [**UserUserPasswordUpdate**](UserUserPasswordUpdate.md)| The updated User resource | 
+
+### Return type
+
+[**UserUserRead**](UserUserRead.md)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | User resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_users_idtotp_setup_patch**
+> UserTotpSetupRead api_users_idtotp_setup_patch(id, body)
+
+Updates the User resource.
+
+Updates the User resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import os
+import tpdk
+from tpdk.models.user_totp_setup_read import UserTotpSetupRead
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    id = 'id_example' # str | User identifier
+    body = None # object | The updated User resource
+
+    try:
+        # Updates the User resource.
+        api_response = api_instance.api_users_idtotp_setup_patch(id, body)
+        print("The response of UserApi->api_users_idtotp_setup_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->api_users_idtotp_setup_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| User identifier | 
+ **body** | **object**| The updated User resource | 
+
+### Return type
+
+[**UserTotpSetupRead**](UserTotpSetupRead.md)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | User resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_users_idtotp_toggle_patch**
+> object api_users_idtotp_toggle_patch(id, user_totp_toggle_write)
+
+Updates the User resource.
+
+Updates the User resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import os
+import tpdk
+from tpdk.models.user_totp_toggle_write import UserTotpToggleWrite
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    id = 'id_example' # str | User identifier
+    user_totp_toggle_write = tpdk.UserTotpToggleWrite() # UserTotpToggleWrite | The updated User resource
+
+    try:
+        # Updates the User resource.
+        api_response = api_instance.api_users_idtotp_toggle_patch(id, user_totp_toggle_write)
+        print("The response of UserApi->api_users_idtotp_toggle_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->api_users_idtotp_toggle_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| User identifier | 
+ **user_totp_toggle_write** | [**UserTotpToggleWrite**](UserTotpToggleWrite.md)| The updated User resource | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | User resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authentication_post**
+> UserJwtCreated authentication_post(user_jwt_write=user_jwt_write)
+
+User authentication
+
+This endpoint is protected by a captcha, do not try to use it to consume our API. IP/CIDR to be banned upon fraudulent/irregular usage. Follow the oauth 2.0 authentication challenge as described in the documentation.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import os
+import tpdk
+from tpdk.models.user_jwt_created import UserJwtCreated
+from tpdk.models.user_jwt_write import UserJwtWrite
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    user_jwt_write = tpdk.UserJwtWrite() # UserJwtWrite |  (optional)
+
+    try:
+        # User authentication
+        api_response = api_instance.authentication_post(user_jwt_write=user_jwt_write)
+        print("The response of UserApi->authentication_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->authentication_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_jwt_write** | [**UserJwtWrite**](UserJwtWrite.md)|  | [optional] 
+
+### Return type
+
+[**UserJwtCreated**](UserJwtCreated.md)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** |  |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

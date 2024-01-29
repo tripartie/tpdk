@@ -3,6 +3,7 @@
 An Offer object represent a public listening
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** |  | [optional] [readonly] 

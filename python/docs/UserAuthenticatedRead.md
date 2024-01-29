@@ -3,6 +3,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] [readonly] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **birthday** | **datetime** |  | [optional] 
 **email** | **str** |  | [optional] 
 **roles** | **List[str]** |  | 
+**totp_enabled** | **bool** |  | [optional] 
 **intl_phone_number** | **str** |  | [optional] 
 **origin_country** | **str** | The originating country | [optional] 
 **preferred_language** | **str** |  | [optional] 

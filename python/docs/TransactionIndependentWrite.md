@@ -3,6 +3,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **offer** | [**OfferIndependentWrite**](OfferIndependentWrite.md) |  | 

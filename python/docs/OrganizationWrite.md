@@ -3,12 +3,13 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**name** | **str** |  | [optional] 
-**vat_number** | **str** |  | [optional] 
-**commercial_registry_number** | **str** |  | [optional] 
+**name** | **str** |  | 
+**vat_number** | **str** |  | 
+**commercial_registry_number** | **str** |  | 
 **website_url** | **str** |  | [optional] 
 **billing_address** | [**AddressWrite**](AddressWrite.md) |  | [optional] 
 

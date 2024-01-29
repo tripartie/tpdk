@@ -3,11 +3,12 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** |  | [optional] 
-**last_name** | **str** |  | [optional] 
-**gender** | **str** |  | [optional] [default to 'RATHER_NOT_SAY']
+**first_name** | **str** |  | 
+**last_name** | **str** |  | 
+**gender** | **str** |  | [default to 'RATHER_NOT_SAY']
 **date_of_birth** | **date** |  | [optional] 
 **language** | **str** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
 **email** | **str** |  | [optional] 
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 **address** | [**AddressIndependentWrite**](AddressIndependentWrite.md) |  | [optional] 
 **external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
 **external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
-**metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | [optional] 
+**metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | [optional] 
 
 ## Example
 

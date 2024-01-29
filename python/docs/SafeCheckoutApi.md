@@ -38,6 +38,7 @@ Retrieves the collection of Offer resources.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -106,6 +107,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -140,9 +142,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Offer collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Offer collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -157,6 +164,7 @@ Publish an offer so that you can safely retrieve a safe-checkout unique link fro
 
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -204,6 +212,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offer_independent_write** | [**OfferIndependentWrite**](OfferIndependentWrite.md)| The new Offer resource | 
@@ -222,11 +231,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | Offer resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | Offer resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -242,6 +256,7 @@ Retrieves a Offer resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -294,6 +309,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Offer identifier | 
@@ -312,10 +328,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Offer resource |  -  |
-**404** | Resource not found |  -  |
+**200** | Offer resource |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -331,6 +352,7 @@ Removes the Media resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -381,6 +403,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -397,13 +420,18 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Media resource deleted |  -  |
-**404** | Resource not found |  -  |
+**204** | Media resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -418,6 +446,7 @@ Creates a Media resource.
 
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -465,6 +494,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -484,11 +514,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | Media resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | Media resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -503,6 +538,7 @@ Retrieves the collection of Transaction resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -553,6 +589,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Offer identifier | 
@@ -575,9 +612,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Transaction collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Transaction collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -591,6 +633,7 @@ Submit an Evaluation for the Offer
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -638,6 +681,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Dispute identifier | 
@@ -658,11 +702,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | Evaluation resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | Evaluation resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -676,6 +725,7 @@ Cannot be used outside of a Persona (buyer)
 ### Example
 
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -721,6 +771,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Offer identifier | 
@@ -740,11 +791,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | Transaction resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | Transaction resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -760,6 +816,7 @@ That goes without says, if that **Offer** have a _Transaction_ **that is ongoing
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -809,6 +866,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -824,13 +882,18 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Offer resource deleted |  -  |
-**404** | Resource not found |  -  |
+**204** | Offer resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -846,6 +909,7 @@ Retrieves the collection of Offer resources.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -915,6 +979,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -950,9 +1015,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Offer collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Offer collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -968,6 +1038,7 @@ Updates the Offer resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1022,6 +1093,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -1041,12 +1113,17 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Offer resource updated |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
-**404** | Resource not found |  -  |
+**200** | Offer resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1062,6 +1139,7 @@ Creates a Offer resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1116,6 +1194,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Persona identifier | 
@@ -1135,11 +1214,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | Offer resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | Offer resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1154,6 +1238,7 @@ Retrieves the collection of Transaction resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1203,6 +1288,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
@@ -1224,9 +1310,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Transaction collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Transaction collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1242,6 +1333,7 @@ Abandon claims on Dispute
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1291,6 +1383,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Transaction identifier | 
@@ -1306,13 +1399,18 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Dispute resource deleted |  -  |
-**404** | Resource not found |  -  |
+**204** | Dispute resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1328,6 +1426,7 @@ Retrieves a Dispute resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1380,6 +1479,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Transaction identifier | 
@@ -1398,10 +1498,15 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Dispute resource |  -  |
-**404** | Resource not found |  -  |
+**200** | Dispute resource |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1416,6 +1521,7 @@ Only authenticated Persona can interact with a Dispute object. Usually through o
 
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -1468,6 +1574,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Transaction identifier | 
@@ -1487,12 +1594,17 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Dispute resource updated |  -  |
-**400** | Invalid input |  -  |
-**422** | Unprocessable entity |  -  |
-**404** | Resource not found |  -  |
+**200** | Dispute resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1508,6 +1620,7 @@ Creates a Dispute resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1562,6 +1675,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**| Transaction identifier | 
@@ -1581,11 +1695,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | Dispute resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | Dispute resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1600,6 +1719,7 @@ Retrieves the collection of Parcel resources.
 
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
+
 ```python
 import time
 import os
@@ -1650,6 +1770,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -1669,9 +1790,14 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Parcel collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Parcel collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1685,6 +1811,7 @@ No one except the support can do that manoeuvre.
 ### Example
 
 * Api Key Authentication (jwtPersonalKey):
+
 ```python
 import time
 import os
@@ -1727,6 +1854,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -1743,13 +1871,18 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Parcel resource deleted |  -  |
-**404** | Resource not found |  -  |
+**204** | Parcel resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1764,6 +1897,7 @@ Creates a Parcel resource.
 
 * Api Key Authentication (jwtPersonalKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -1812,6 +1946,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ulid** | **str**|  | 
@@ -1831,11 +1966,16 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**422** | Unprocessable entity |  -  |
-**201** | Parcel resource created |  -  |
-**400** | Invalid input |  -  |
+**201** | Parcel resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
