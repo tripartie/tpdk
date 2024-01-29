@@ -3,6 +3,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] [readonly] 
@@ -12,6 +13,7 @@ Name | Type | Description | Notes
 **role_in_company** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
 **roles** | **List[str]** |  | 
+**totp_enabled** | **bool** |  | [optional] 
 **intl_phone_number** | **str** |  | [optional] 
 **last_successful_log_in** | **datetime** |  | [optional] 
 **avatar** | [**MediaCollectionRead**](MediaCollectionRead.md) |  | [optional] 

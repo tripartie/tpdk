@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **api_organizations_get_collection**
-> List[OrganizationCollectionRead] api_organizations_get_collection(page=page)
+> List[OrganizationCollectionRead] api_organizations_get_collection(page=page, items_per_page=items_per_page, name=name)
 
 Retrieves the collection of Organization resources.
 
@@ -20,6 +20,7 @@ Retrieves the collection of Organization resources.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -58,10 +59,12 @@ with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.OrganizationApi(api_client)
     page = 1 # int | The collection page number (optional) (default to 1)
+    items_per_page = 30 # int | The number of items per page (optional) (default to 30)
+    name = 'name_example' # str |  (optional)
 
     try:
         # Retrieves the collection of Organization resources.
-        api_response = api_instance.api_organizations_get_collection(page=page)
+        api_response = api_instance.api_organizations_get_collection(page=page, items_per_page=items_per_page, name=name)
         print("The response of OrganizationApi->api_organizations_get_collection:\n")
         pprint(api_response)
     except Exception as e:
@@ -72,9 +75,12 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
+ **items_per_page** | **int**| The number of items per page | [optional] [default to 30]
+ **name** | **str**|  | [optional] 
 
 ### Return type
 
@@ -90,9 +96,12 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Organization collection |  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**200** | Organization collection |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  * Content-Range - HTTP standardized header for partial content, used for the pagination <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -108,6 +117,7 @@ Retrieves a Organization resource.
 * Api Key Authentication (jwtPersonalKey):
 * Api Key Authentication (personaAuthKey):
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import os
@@ -160,6 +170,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organization identifier | 
@@ -178,10 +189,13 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Organization resource |  -  |
-**404** | Resource not found |  -  |
+**200** | Organization resource |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
