@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **username** | **str** | A visual identifier that represents this user. | [optional] [readonly] 
 **salt** | **str** |  | [optional] [readonly] 
 **user_identifier** | **str** |  | [optional] [readonly] 
+**impersonating_organization** | **bool** |  | [optional] [readonly] 
 
 ## Example
 

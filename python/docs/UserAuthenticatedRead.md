@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **consent_mail_notification** | **bool** |  | 
 **consent_mail_ads** | **bool** |  | 
 **organization** | [**OrganizationAuthenticatedRead**](OrganizationAuthenticatedRead.md) |  | [optional] 
+**impersonating_organization** | **bool** |  | [optional] [readonly] 
 
 ## Example
 
