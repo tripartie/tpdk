@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from tpdk.models.webhook import Webhook
+from tpdk.models.user_user_email_update import UserUserEmailUpdate
 
-class TestWebhook(unittest.TestCase):
-    """Webhook unit test stubs"""
+class TestUserUserEmailUpdate(unittest.TestCase):
+    """UserUserEmailUpdate unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,30 +27,28 @@ class TestWebhook(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Webhook:
-        """Test Webhook
+    def make_instance(self, include_optional) -> UserUserEmailUpdate:
+        """Test UserUserEmailUpdate
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `Webhook`
+        # uncomment below to create an instance of `UserUserEmailUpdate`
         """
-        model = Webhook()
+        model = UserUserEmailUpdate()
         if include_optional:
-            return Webhook(
-                id = 122541,
-                event = 'dispute.created',
-                object_id = '01ARZ3NDEKTSV4RRFFQ69G5FAV',
-                iri = '',
-                occurred_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                object = None
+            return UserUserEmailUpdate(
+                email = 'john.doe@company.tld',
+                plain_password = 'secr$t'
             )
         else:
-            return Webhook(
+            return UserUserEmailUpdate(
+                email = 'john.doe@company.tld',
+                plain_password = 'secr$t',
         )
         """
 
-    def testWebhook(self):
-        """Test Webhook"""
+    def testUserUserEmailUpdate(self):
+        """Test UserUserEmailUpdate"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

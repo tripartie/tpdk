@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **public_name** | **str** |  | [optional] 
 **role_in_company** | **str** |  | [optional] 
 **birthday** | **datetime** |  | [optional] 
-**email** | **str** |  | [optional] 
+**email** | **str** |  | 
 **roles** | **List[str]** |  | [optional] 
 **totp_enabled** | **bool** |  | [optional] 
 **intl_phone_number** | **str** |  | [optional] 
@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **consent_mail_notification** | **bool** |  | [optional] 
 **consent_mail_ads** | **bool** |  | [optional] 
 **organization** | [**OrganizationUserRead**](OrganizationUserRead.md) |  | [optional] 
+**impersonating_organization** | **bool** |  | [optional] [readonly] 
 
 ## Example
 

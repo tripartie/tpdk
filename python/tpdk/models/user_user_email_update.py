@@ -20,24 +20,21 @@ import json
 
 
 from typing import Any, ClassVar, Dict, List, Optional
-from pydantic import BaseModel, StrictInt, StrictStr
+from pydantic import BaseModel
 from pydantic import Field
+from typing_extensions import Annotated
 try:
     from typing import Self
 except ImportError:
     from typing_extensions import Self
 
-class PersonaDisputeRead(BaseModel):
+class UserUserEmailUpdate(BaseModel):
     """
     
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    first_name: Optional[StrictStr] = Field(default=None, alias="firstName")
-    last_name: Optional[StrictStr] = Field(default=None, alias="lastName")
-    language: Optional[StrictStr] = Field(default=None, description="That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements.")
-    email: Optional[StrictStr] = None
-    mobile_phone_number: Optional[StrictStr] = Field(default=None, alias="mobilePhoneNumber")
-    __properties: ClassVar[List[str]] = ["id", "firstName", "lastName", "language", "email", "mobilePhoneNumber"]
+    email: Annotated[str, Field(strict=True, max_length=180)]
+    plain_password: Optional[Annotated[str, Field(min_length=6, strict=True, max_length=64)]] = Field(alias="plainPassword")
+    __properties: ClassVar[List[str]] = ["email", "plainPassword"]
 
     model_config = {
         "populate_by_name": True,
@@ -57,7 +54,7 @@ class PersonaDisputeRead(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of PersonaDisputeRead from a JSON string"""
+        """Create an instance of UserUserEmailUpdate from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,35 +66,23 @@ class PersonaDisputeRead(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * OpenAPI `readOnly` fields are excluded.
         """
         _dict = self.model_dump(
             by_alias=True,
             exclude={
-                "id",
             },
             exclude_none=True,
         )
-        # set to None if language (nullable) is None
+        # set to None if plain_password (nullable) is None
         # and model_fields_set contains the field
-        if self.language is None and "language" in self.model_fields_set:
-            _dict['language'] = None
-
-        # set to None if email (nullable) is None
-        # and model_fields_set contains the field
-        if self.email is None and "email" in self.model_fields_set:
-            _dict['email'] = None
-
-        # set to None if mobile_phone_number (nullable) is None
-        # and model_fields_set contains the field
-        if self.mobile_phone_number is None and "mobile_phone_number" in self.model_fields_set:
-            _dict['mobilePhoneNumber'] = None
+        if self.plain_password is None and "plain_password" in self.model_fields_set:
+            _dict['plainPassword'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Dict) -> Self:
-        """Create an instance of PersonaDisputeRead from a dict"""
+        """Create an instance of UserUserEmailUpdate from a dict"""
         if obj is None:
             return None
 
@@ -105,12 +90,8 @@ class PersonaDisputeRead(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "firstName": obj.get("firstName"),
-            "lastName": obj.get("lastName"),
-            "language": obj.get("language"),
             "email": obj.get("email"),
-            "mobilePhoneNumber": obj.get("mobilePhoneNumber")
+            "plainPassword": obj.get("plainPassword")
         })
         return _obj
 

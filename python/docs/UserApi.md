@@ -17,6 +17,9 @@ Method | HTTP request | Description
 [**api_users_get_collection**](UserApi.md#api_users_get_collection) | **GET** /users | Retrieves the collection of User resources.
 [**api_users_id_get**](UserApi.md#api_users_id_get) | **GET** /users/{id} | Retrieves a User resource.
 [**api_users_id_patch**](UserApi.md#api_users_id_patch) | **PATCH** /users/{id} | Updates the User resource.
+[**api_users_idavatar_delete**](UserApi.md#api_users_idavatar_delete) | **DELETE** /users/{id}/avatar | Unset your personal avatar
+[**api_users_idavatar_post**](UserApi.md#api_users_idavatar_post) | **POST** /users/{id}/avatar | Upload your personal avatar
+[**api_users_idemail_patch**](UserApi.md#api_users_idemail_patch) | **PATCH** /users/{id}/email | Update user email
 [**api_users_idemail_validation_patch**](UserApi.md#api_users_idemail_validation_patch) | **PATCH** /users/{id}/email-validation | Validate email ownership
 [**api_users_idpassword_patch**](UserApi.md#api_users_idpassword_patch) | **PATCH** /users/{id}/password | Updates the User resource.
 [**api_users_idtotp_setup_patch**](UserApi.md#api_users_idtotp_setup_patch) | **PATCH** /users/{id}/totp-setup | Updates the User resource.
@@ -1169,6 +1172,277 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserPostRegisterRead**](UserPostRegisterRead.md)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | User resource updated |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_users_idavatar_delete**
+> api_users_idavatar_delete(id)
+
+Unset your personal avatar
+
+Removes the Media resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+
+```python
+import time
+import os
+import tpdk
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    id = 56 # int | User identifier
+
+    try:
+        # Unset your personal avatar
+        api_instance.api_users_idavatar_delete(id)
+    except Exception as e:
+        print("Exception when calling UserApi->api_users_idavatar_delete: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| User identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Media resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_users_idavatar_post**
+> MediaRead api_users_idavatar_post(id, file=file)
+
+Upload your personal avatar
+
+Creates a Media resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+
+```python
+import time
+import os
+import tpdk
+from tpdk.models.media_read import MediaRead
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    id = 56 # int | User identifier
+    file = None # bytearray |  (optional)
+
+    try:
+        # Upload your personal avatar
+        api_response = api_instance.api_users_idavatar_post(id, file=file)
+        print("The response of UserApi->api_users_idavatar_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->api_users_idavatar_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| User identifier | 
+ **file** | **bytearray**|  | [optional] 
+
+### Return type
+
+[**MediaRead**](MediaRead.md)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Media resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_users_idemail_patch**
+> UserUserRead api_users_idemail_patch(id, user_user_email_update)
+
+Update user email
+
+Updates the User resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import os
+import tpdk
+from tpdk.models.user_user_email_update import UserUserEmailUpdate
+from tpdk.models.user_user_read import UserUserRead
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.UserApi(api_client)
+    id = 'id_example' # str | User identifier
+    user_user_email_update = tpdk.UserUserEmailUpdate() # UserUserEmailUpdate | The updated User resource
+
+    try:
+        # Update user email
+        api_response = api_instance.api_users_idemail_patch(id, user_user_email_update)
+        print("The response of UserApi->api_users_idemail_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UserApi->api_users_idemail_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| User identifier | 
+ **user_user_email_update** | [**UserUserEmailUpdate**](UserUserEmailUpdate.md)| The updated User resource | 
+
+### Return type
+
+[**UserUserRead**](UserUserRead.md)
 
 ### Authorization
 
