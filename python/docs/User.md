@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **int** |  | [optional] [readonly] 
 **captcha** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
@@ -42,10 +42,12 @@ Name | Type | Description | Notes
 **keys** | **List[str]** |  | 
 **organization** | **str** |  | [optional] 
 **impersonated_organization** | **str** |  | [optional] 
+**iri** | **str** |  | [optional] [readonly] 
 **username** | **str** | A visual identifier that represents this user. | [optional] [readonly] 
 **salt** | **str** |  | [optional] [readonly] 
 **user_identifier** | **str** |  | [optional] [readonly] 
 **impersonating_organization** | **bool** |  | [optional] [readonly] 
+**var_2fa** | **bool** |  | [optional] [readonly] 
 
 ## Example
 
