@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **int** |  | [optional] [readonly] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **public_name** | **str** |  | [optional] 
@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **organization** | [**OrganizationCollectionRead**](OrganizationCollectionRead.md) |  | [optional] 
+**iri** | **str** |  | [optional] [readonly] 
+**var_2fa** | **bool** |  | [optional] [readonly] 
 
 ## Example
 

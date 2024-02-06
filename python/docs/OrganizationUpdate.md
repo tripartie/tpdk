@@ -21,6 +21,10 @@ Name | Type | Description | Notes
 **warning_color** | **str** |  | [optional] 
 **direct_notification_toggle** | **bool** |  | [optional] [default to True]
 **anonymity_level** | **str** |  | [optional] [default to 'PARTIAL_FIRST_NAME']
+**internal_messaging_toggle** | **bool** |  | [optional] [default to True]
+**persona_auth_portal_toggle** | **bool** |  | [optional] 
+**automated_return_toggle** | **bool** |  | [optional] [default to True]
+**counter_proposal_toggle** | **bool** |  | [optional] [default to True]
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
 **rate_commission_safe_checkout** | **float** |  | [optional] 
 
