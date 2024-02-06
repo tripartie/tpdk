@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **internal_messaging_toggle** | **bool** |  | [default to True]
 **persona_auth_portal_toggle** | **bool** |  | 
 **automated_return_toggle** | **bool** |  | [default to True]
+**counter_proposal_toggle** | **bool** |  | [default to True]
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
 **rate_commission_safe_checkout** | **float** |  | 
 

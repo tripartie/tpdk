@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **int** |  | [optional] [readonly] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **public_name** | **str** |  | [optional] 
@@ -25,7 +25,9 @@ Name | Type | Description | Notes
 **consent_mail_notification** | **bool** |  | 
 **consent_mail_ads** | **bool** |  | 
 **organization** | [**OrganizationAuthenticatedRead**](OrganizationAuthenticatedRead.md) |  | [optional] 
+**iri** | **str** |  | [optional] [readonly] 
 **impersonating_organization** | **bool** |  | [optional] [readonly] 
+**var_2fa** | **bool** |  | [optional] [readonly] 
 
 ## Example
 

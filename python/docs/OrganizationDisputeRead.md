@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **warning_color** | **str** |  | [optional] 
 **direct_notification_toggle** | **bool** |  | [default to True]
 **persona_auth_portal_toggle** | **bool** |  | 
+**counter_proposal_toggle** | **bool** |  | [default to True]
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
 **rate_commission_safe_checkout** | **float** |  | 
 
