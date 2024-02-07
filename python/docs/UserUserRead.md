@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **consent_mail_notification** | **bool** |  | [optional] 
 **consent_mail_ads** | **bool** |  | [optional] 
+**lockdown** | **bool** |  | [optional] 
 **organization** | [**OrganizationUserRead**](OrganizationUserRead.md) |  | [optional] 
 **iri** | **str** |  | [optional] [readonly] 
 **impersonating_organization** | **bool** |  | [optional] [readonly] 
