@@ -101,6 +101,7 @@ jobs:
     needs:
       - publish_typescript
       - publish_python
+      - publish_java
 
     steps:
       - name: Checkout
