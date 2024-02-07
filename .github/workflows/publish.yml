@@ -25,6 +25,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+          server-id: ossrh
+          server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
       - name: Build with Maven
         working-directory: ./java
         run: mvn -B package --no-transfer-progress --file pom.xml
