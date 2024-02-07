@@ -1,8 +1,8 @@
 # tpdk
 
 Tripartie
-- API version: 2.0.177
-  - Build date: 2024-02-07T14:46:42.159671Z[Etc/UTC]
+- API version: 2.0.178
+  - Build date: 2024-02-07T15:33:34.209225Z[Etc/UTC]
 
 Our API suite for the **Resolution Center** and the **Safe Checkout** features.
 Simple, yet elegant web interfaces for your convenience. One request away from your first automated resolution or safe-checkout.
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.tripartie</groupId>
   <artifactId>tpdk</artifactId>
-  <version>2.0.177</version>
+  <version>2.0.178</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.tripartie:tpdk:2.0.177"
+     implementation "com.tripartie:tpdk:2.0.178"
   }
 ```
 
@@ -72,7 +72,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/tpdk-2.0.177.jar`
+* `target/tpdk-2.0.178.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
