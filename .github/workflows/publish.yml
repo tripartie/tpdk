@@ -29,7 +29,7 @@ jobs:
         working-directory: ./java
         run: mvn -B package --no-transfer-progress --file pom.xml
       - name: Publish package
-        run: mvn --batch-mode deploy -DaltDeploymentRepository=ossrh::https://s01.oss.sonatype.org/content/repositories/snapshots
+        run: mvn --batch-mode deploy -DaltDeploymentRepository=ossrh::::https://s01.oss.sonatype.org/content/repositories/snapshots/ -Drelease=true
         working-directory: ./java
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
