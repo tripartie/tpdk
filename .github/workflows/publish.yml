@@ -24,11 +24,11 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build with Maven
-        working-directory: ./java
+        working-directory: java
         run: mvn -B package --no-transfer-progress --file pom.xml
       - name: Publish package
         run: mvn --batch-mode deploy
-        working-directory: ./java
+        working-directory: java
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
