@@ -60,7 +60,7 @@ jobs:
         run: rm -fR ./java || true
 
       - name: TPDK for Java (8+)
-        run: openapi-generator-cli generate -g java --git-repo-id tpdk --git-user-id tripartie -o ./java -i oas-upstream.json --additional-properties=artifactId=tpdk,artifactDescription=Java APIs for the Resolution-Center and Safe-Checkout of Tripartie,apiPackage=org.tripartie.tpdk.api,caseInsensitiveResponseHeaders=true,developerOrganization=Tripartie SAS,developerOrganizationUrl=https://tripartie.com,developerEmail=noc@tripartie.com,artifactVersion=${{ steps.version.outputs.tag }},groupId=org.tripartie,invokerPackage=org.tripartie.tpdk,modelPackage=org.tripartie.tpdk.model,licenseName=Apache-2.0,licenseUrl=https://raw.githubusercontent.com/tripartie/tpdk/main/LICENSE,
+        run: openapi-generator-cli generate -g java --git-repo-id tpdk --git-user-id tripartie -o ./java -i oas-upstream.json --additional-properties="artifactId=tpdk,artifactDescription=Java APIs for the Resolution-Center and Safe-Checkout of Tripartie,apiPackage=org.tripartie.tpdk.api,caseInsensitiveResponseHeaders=true,developerOrganization=Tripartie SAS,developerOrganizationUrl=https://tripartie.com,developerEmail=noc@tripartie.com,artifactVersion=${{ steps.version.outputs.tag }},groupId=org.tripartie,invokerPackage=org.tripartie.tpdk,modelPackage=org.tripartie.tpdk.model,licenseName=Apache-2.0,licenseUrl=https://raw.githubusercontent.com/tripartie/tpdk/main/LICENSE"
 
       - name: Cleanup
         run: rm -f oas-upstream.json openapitools.json
