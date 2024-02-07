@@ -8,7 +8,7 @@ info:
     Our API suite for the **Resolution Center** and the **Safe Checkout** features.
     Simple, yet elegant web interfaces for your convenience. One request away from your first automated resolution or safe-checkout.
   title: Tripartie
-  version: 2.0.177
+  version: 2.0.178
 servers:
 - description: Sandbox
   url: https://staging-api.tripartie.com
