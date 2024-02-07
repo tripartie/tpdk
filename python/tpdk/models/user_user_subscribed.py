@@ -18,22 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
+
 from typing import Any, ClassVar, Dict, List, Optional
-from pydantic import BaseModel, StrictStr
-from pydantic import Field
+from pydantic import BaseModel, StrictInt, StrictStr
 try:
     from typing import Self
 except ImportError:
     from typing_extensions import Self
 
-class PersonaPostAuthRead(BaseModel):
+class UserUserSubscribed(BaseModel):
     """
-    
+    Disable a user account
     """ # noqa: E501
-    auth_url: Optional[StrictStr] = Field(default=None, description="Url that is able to bypass MFA for a single user. Please note that this should not be shared between the complainant and the seller or anyone external to them.", alias="authUrl")
-    expire_at: Optional[datetime] = Field(default=None, description="This authenticated-URL cannot be renewed, you will have to re-create one each time. Typically valid for a single hour.", alias="expireAt")
-    __properties: ClassVar[List[str]] = ["authUrl", "expireAt"]
+    id: Optional[StrictInt] = None
+    iri: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "iri"]
 
     model_config = {
         "populate_by_name": True,
@@ -53,7 +52,7 @@ class PersonaPostAuthRead(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of PersonaPostAuthRead from a JSON string"""
+        """Create an instance of UserUserSubscribed from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -65,28 +64,22 @@ class PersonaPostAuthRead(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         _dict = self.model_dump(
             by_alias=True,
             exclude={
+                "id",
+                "iri",
             },
             exclude_none=True,
         )
-        # set to None if auth_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.auth_url is None and "auth_url" in self.model_fields_set:
-            _dict['authUrl'] = None
-
-        # set to None if expire_at (nullable) is None
-        # and model_fields_set contains the field
-        if self.expire_at is None and "expire_at" in self.model_fields_set:
-            _dict['expireAt'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Dict) -> Self:
-        """Create an instance of PersonaPostAuthRead from a dict"""
+        """Create an instance of UserUserSubscribed from a dict"""
         if obj is None:
             return None
 
@@ -94,8 +87,8 @@ class PersonaPostAuthRead(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "authUrl": obj.get("authUrl"),
-            "expireAt": obj.get("expireAt")
+            "id": obj.get("id"),
+            "iri": obj.get("iri")
         })
         return _obj
 

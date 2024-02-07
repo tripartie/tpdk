@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from tpdk.models.user_invite import UserInvite
+from tpdk.models.user_user_subscribed import UserUserSubscribed
 
-class TestUserInvite(unittest.TestCase):
-    """UserInvite unit test stubs"""
+class TestUserUserSubscribed(unittest.TestCase):
+    """UserUserSubscribed unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,32 +27,26 @@ class TestUserInvite(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserInvite:
-        """Test UserInvite
+    def make_instance(self, include_optional) -> UserUserSubscribed:
+        """Test UserUserSubscribed
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `UserInvite`
+        # uncomment below to create an instance of `UserUserSubscribed`
         """
-        model = UserInvite()
+        model = UserUserSubscribed()
         if include_optional:
-            return UserInvite(
-                first_name = 'Jacob',
-                last_name = 'TAHRI',
-                email = 'john.doe@company.tld',
-                invited_role = ROLE_ADMIN
+            return UserUserSubscribed(
+                id = 56,
+                iri = 'https://example.com/'
             )
         else:
-            return UserInvite(
-                first_name = 'Jacob',
-                last_name = 'TAHRI',
-                email = 'john.doe@company.tld',
-                invited_role = ROLE_ADMIN,
+            return UserUserSubscribed(
         )
         """
 
-    def testUserInvite(self):
-        """Test UserInvite"""
+    def testUserUserSubscribed(self):
+        """Test UserUserSubscribed"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

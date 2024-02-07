@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **consent_mail_notification** | **bool** |  | 
 **consent_mail_ads** | **bool** |  | 
+**lockdown** | **bool** |  | 
 **keys** | **List[str]** |  | 
 **organization** | **str** |  | [optional] 
 **impersonated_organization** | **str** |  | [optional] 

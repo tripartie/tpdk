@@ -1,6 +1,6 @@
-# UserPostRegisterRead
+# UserUserSubscribed
 
-
+Disable a user account
 
 ## Properties
 
@@ -12,19 +12,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from tpdk.models.user_post_register_read import UserPostRegisterRead
+from tpdk.models.user_user_subscribed import UserUserSubscribed
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of UserPostRegisterRead from a JSON string
-user_post_register_read_instance = UserPostRegisterRead.from_json(json)
+# create an instance of UserUserSubscribed from a JSON string
+user_user_subscribed_instance = UserUserSubscribed.from_json(json)
 # print the JSON string representation of the object
-print UserPostRegisterRead.to_json()
+print UserUserSubscribed.to_json()
 
 # convert the object into a dict
-user_post_register_read_dict = user_post_register_read_instance.to_dict()
-# create an instance of UserPostRegisterRead from a dict
-user_post_register_read_form_dict = user_post_register_read.from_dict(user_post_register_read_dict)
+user_user_subscribed_dict = user_user_subscribed_instance.to_dict()
+# create an instance of UserUserSubscribed from a dict
+user_user_subscribed_form_dict = user_user_subscribed.from_dict(user_user_subscribed_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
