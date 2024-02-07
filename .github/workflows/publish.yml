@@ -10,6 +10,29 @@ on:
 
 jobs:
 
+  publish_java:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: maven
+      url: "https://central.sonatype.com/artifact/com.tripartie/tpdk"
+
+    steps:
+      - name: Set up Maven Repository
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Build with Maven
+        working-directory: ./java
+        run: mvn -B package --no-transfer-progress --file pom.xml
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        working-directory: ./java
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+
   publish_typescript:
 
     runs-on: ubuntu-latest
