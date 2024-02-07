@@ -60,7 +60,7 @@ jobs:
         run: rm -fR ./java || true
 
       - name: TPDK for Java (8+)
-        run: openapi-generator-cli generate -g java --git-repo-id tpdk --git-user-id tripartie -o ./java -i oas-upstream.json --additional-properties="artifactId=tpdk,apiPackage=com.tripartie.tpdk.api,caseInsensitiveResponseHeaders=true,developerOrganization=Tripartie-SAS,developerOrganizationUrl=https://tripartie.com,developerEmail=noc@tripartie.com,artifactVersion=${{ steps.version.outputs.tag }},groupId=org.tripartie,invokerPackage=com.tripartie.tpdk,modelPackage=com.tripartie.tpdk.model,licenseName=Apache-2.0,licenseUrl=https://raw.githubusercontent.com/tripartie/tpdk/main/LICENSE"
+        run: openapi-generator-cli generate -g java --git-repo-id tpdk --git-user-id tripartie -o ./java -i oas-upstream.json --additional-properties="artifactId=tpdk,apiPackage=com.tripartie.tpdk.api,caseInsensitiveResponseHeaders=true,developerOrganization=Tripartie-SAS,developerOrganizationUrl=https://tripartie.com,developerEmail=noc@tripartie.com,artifactVersion=${{ steps.version.outputs.tag }},groupId=com.tripartie,invokerPackage=com.tripartie.tpdk,modelPackage=com.tripartie.tpdk.model,licenseName=Apache-2.0,licenseUrl=https://raw.githubusercontent.com/tripartie/tpdk/main/LICENSE"
 
       - name: Remove duplicate Java workflow
         run: rm -f ./java/.github/workflows/maven.yml || true
