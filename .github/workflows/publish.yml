@@ -23,9 +23,9 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Publish package
-        run: mvn --batch-mode deploy -DaltDeploymentRepository="github::default::https://maven.pkg.github.com/tripartie/tpdk" -Drelease=true
+        run: mvn --batch-mode deploy -DaltDeploymentRepository="github::default::https://maven.pkg.github.com/tripartie/tpdk"
         working-directory: ./java
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
