@@ -13,7 +13,7 @@
 |**vatNumber** | **String** |  |  |
 |**commercialRegistryNumber** | **String** |  |  |
 |**websiteUrl** | **URI** |  |  [optional] |
-|**billingAddress** | [**AddressWrite**](AddressWrite.md) |  |  [optional] |
+|**billingAddress** | [**OrganizationWriteBillingAddress**](OrganizationWriteBillingAddress.md) |  |  [optional] |
 
 
 

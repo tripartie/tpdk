@@ -8,7 +8,7 @@ info:
     Our API suite for the **Resolution Center** and the **Safe Checkout** features.
     Simple, yet elegant web interfaces for your convenience. One request away from your first automated resolution or safe-checkout.
   title: Tripartie
-  version: 2.0.178
+  version: 2.0.179
 servers:
 - description: Sandbox
   url: https://staging-api.tripartie.com
@@ -8664,8 +8664,7 @@ components:
               websiteUrl: websiteUrl
               successColor: successColor
               name: name
-              logo:
-                publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+              logo: null
               customBaseUrl: customBaseUrl
               secondaryColor: secondaryColor
             publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
@@ -9540,7 +9539,7 @@ components:
           example: SUBMITTED
           type: string
         media:
-          $ref: '#/components/schemas/Media-Read'
+          $ref: '#/components/schemas/Evidence_Read_media'
         additionalInformation:
           description: Description of what the evidence actually is.
           example: "The motherboard I received have a minor scratch at the bottom,\
@@ -10232,8 +10231,7 @@ components:
           websiteUrl: websiteUrl
           successColor: successColor
           name: name
-          logo:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          logo: null
           customBaseUrl: customBaseUrl
           secondaryColor: secondaryColor
         publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
@@ -10257,7 +10255,7 @@ components:
           nullable: true
           type: string
         organization:
-          $ref: '#/components/schemas/Organization-Read'
+          $ref: '#/components/schemas/Offer_Read_organization'
         seller:
           $ref: '#/components/schemas/Persona-Read'
         nature:
@@ -10540,7 +10538,7 @@ components:
           nullable: true
           type: string
         organization:
-          $ref: '#/components/schemas/Organization-dispute.read'
+          $ref: '#/components/schemas/Offer_dispute_read_organization'
         seller:
           $ref: '#/components/schemas/Persona-dispute.read'
         nature:
@@ -10606,16 +10604,14 @@ components:
         rateCommissionSafeCheckout: 1.4658129805029452
         safeCheckoutToggle: true
         counterProposalToggle: true
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        icon: null
         personaAuthPortalToggle: true
         automatedReturnToggle: true
         flatRateEnabled: true
         domainVerified: true
         resolutionCenterToggle: true
         name: name
-        logo:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        logo: null
         internalMessagingToggle: true
         id: 6
       properties:
@@ -10627,9 +10623,9 @@ components:
         domainVerified:
           type: boolean
         icon:
-          $ref: '#/components/schemas/Media-AuthenticatedRead'
+          $ref: '#/components/schemas/Organization_AuthenticatedRead_icon'
         logo:
-          $ref: '#/components/schemas/Media-AuthenticatedRead'
+          $ref: '#/components/schemas/Organization_AuthenticatedRead_icon'
         safeCheckoutToggle:
           type: boolean
         resolutionCenterToggle:
@@ -10680,8 +10676,7 @@ components:
         websiteUrl: websiteUrl
         resolutionCenterToggle: true
         name: name
-        logo:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        logo: null
         internalMessagingToggle: true
         id: 0
         commercialRegistryNumber: commercialRegistryNumber
@@ -10701,9 +10696,9 @@ components:
           nullable: true
           type: string
         icon:
-          $ref: '#/components/schemas/Media-CollectionRead'
+          $ref: '#/components/schemas/Organization_CollectionRead_icon'
         logo:
-          $ref: '#/components/schemas/Media-CollectionRead'
+          $ref: '#/components/schemas/Organization_CollectionRead_icon'
         directNotificationToggle:
           default: true
           example: true
@@ -10761,8 +10756,7 @@ components:
         websiteUrl: websiteUrl
         successColor: successColor
         name: name
-        logo:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        logo: null
         customBaseUrl: customBaseUrl
         secondaryColor: secondaryColor
       properties:
@@ -10775,9 +10769,9 @@ components:
           nullable: true
           type: string
         icon:
-          $ref: '#/components/schemas/Media-Read'
+          $ref: '#/components/schemas/Evidence_Read_media'
         logo:
-          $ref: '#/components/schemas/Media-Read'
+          $ref: '#/components/schemas/Evidence_Read_media'
         primaryColor:
           nullable: true
           type: string
@@ -10847,7 +10841,7 @@ components:
           nullable: true
           type: string
         billingAddress:
-          $ref: '#/components/schemas/Address-Update'
+          $ref: '#/components/schemas/Organization_Update_billingAddress'
         primaryColor:
           nullable: true
           type: string
@@ -10911,16 +10905,14 @@ components:
         rateCommissionSafeCheckout: 1.4658129805029452
         safeCheckoutToggle: true
         counterProposalToggle: true
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        icon: null
         personaAuthPortalToggle: true
         automatedReturnToggle: true
         flatRateEnabled: true
         domainVerified: true
         resolutionCenterToggle: true
         name: name
-        logo:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        logo: null
         internalMessagingToggle: true
         id: 6
       properties:
@@ -10932,9 +10924,9 @@ components:
         domainVerified:
           type: boolean
         icon:
-          $ref: '#/components/schemas/Media-UserRead'
+          $ref: '#/components/schemas/Organization_UserRead_icon'
         logo:
-          $ref: '#/components/schemas/Media-UserRead'
+          $ref: '#/components/schemas/Organization_UserRead_icon'
         safeCheckoutToggle:
           type: boolean
         resolutionCenterToggle:
@@ -10994,7 +10986,7 @@ components:
           nullable: true
           type: string
         billingAddress:
-          $ref: '#/components/schemas/Address-Write'
+          $ref: '#/components/schemas/Organization_Write_billingAddress'
       required:
       - commercialRegistryNumber
       - name
@@ -11012,9 +11004,9 @@ components:
           nullable: true
           type: string
         icon:
-          $ref: '#/components/schemas/Media-dispute.read'
+          $ref: '#/components/schemas/Organization_dispute_read_icon'
         logo:
-          $ref: '#/components/schemas/Media-dispute.read'
+          $ref: '#/components/schemas/Organization_dispute_read_icon'
         primaryColor:
           nullable: true
           type: string
@@ -11411,7 +11403,7 @@ components:
           nullable: true
           type: string
         address:
-          $ref: '#/components/schemas/Address'
+          $ref: '#/components/schemas/Persona_address'
         riskLevel:
           description: We sort Persona into three distinct risks' category. This is
             inferred from the riskScore.
@@ -11600,7 +11592,7 @@ components:
           nullable: true
           type: string
         address:
-          $ref: '#/components/schemas/Address-IndependentWrite'
+          $ref: '#/components/schemas/Persona_IndependentWrite_address'
         externalPurchaseCount:
           description: "Knowing the statistics on your user is used to better know\
             \ its profile when you do not use the Safe-Checkout feature. Although\
@@ -11798,7 +11790,7 @@ components:
           nullable: true
           type: string
         address:
-          $ref: '#/components/schemas/Address-Update'
+          $ref: '#/components/schemas/Persona_Update_address'
         externalPurchaseCount:
           description: "Knowing the statistics on your user is used to better know\
             \ its profile when you do not use the Safe-Checkout feature. Although\
@@ -11868,7 +11860,7 @@ components:
           nullable: true
           type: string
         address:
-          $ref: '#/components/schemas/Address-Write'
+          $ref: '#/components/schemas/Persona_Write_address'
         externalPurchaseCount:
           description: "Knowing the statistics on your user is used to better know\
             \ its profile when you do not use the Safe-Checkout feature. Although\
@@ -12022,8 +12014,7 @@ components:
             websiteUrl: websiteUrl
             successColor: successColor
             name: name
-            logo:
-              publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+            logo: null
             customBaseUrl: customBaseUrl
             secondaryColor: secondaryColor
           publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
@@ -12229,6 +12220,10 @@ components:
             - ROLE_ACCOUNTING_MANAGER
             - ROLE_BILLING_MANAGER
             - ROLE_CUSTOMER_SERVICE
+            - ROLE_CUSTOMER_SERVICE
+            - ROLE_PLATFORM_ADMIN
+            - ROLE_PLATFORM_SUPPORT
+            - ROLE_ORGANIZATION_OWNER
             type: string
           type: array
         roles:
@@ -12410,16 +12405,14 @@ components:
           rateCommissionSafeCheckout: 1.4658129805029452
           safeCheckoutToggle: true
           counterProposalToggle: true
-          icon:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          icon: null
           personaAuthPortalToggle: true
           automatedReturnToggle: true
           flatRateEnabled: true
           domainVerified: true
           resolutionCenterToggle: true
           name: name
-          logo:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          logo: null
           internalMessagingToggle: true
           id: 6
         originCountry: FRA
@@ -12492,7 +12485,7 @@ components:
           nullable: true
           type: string
         avatar:
-          $ref: '#/components/schemas/Media-AuthenticatedRead'
+          $ref: '#/components/schemas/Organization_AuthenticatedRead_icon'
         createdAt:
           format: date-time
           readOnly: true
@@ -12508,7 +12501,7 @@ components:
         lockdown:
           type: boolean
         organization:
-          $ref: '#/components/schemas/Organization-AuthenticatedRead'
+          $ref: '#/components/schemas/User_AuthenticatedRead_organization'
         iri:
           example: https://example.com/
           format: iri-reference
@@ -12555,8 +12548,7 @@ components:
           websiteUrl: websiteUrl
           resolutionCenterToggle: true
           name: name
-          logo:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          logo: null
           internalMessagingToggle: true
           id: 0
           commercialRegistryNumber: commercialRegistryNumber
@@ -12614,7 +12606,7 @@ components:
           nullable: true
           type: string
         avatar:
-          $ref: '#/components/schemas/Media-CollectionRead'
+          $ref: '#/components/schemas/Organization_CollectionRead_icon'
         createdAt:
           format: date-time
           readOnly: true
@@ -12624,7 +12616,7 @@ components:
           readOnly: true
           type: string
         organization:
-          $ref: '#/components/schemas/Organization-CollectionRead'
+          $ref: '#/components/schemas/User_CollectionRead_organization'
         iri:
           example: https://example.com/
           format: iri-reference
@@ -12688,6 +12680,10 @@ components:
             - ROLE_ACCOUNTING_MANAGER
             - ROLE_BILLING_MANAGER
             - ROLE_CUSTOMER_SERVICE
+            - ROLE_CUSTOMER_SERVICE
+            - ROLE_PLATFORM_ADMIN
+            - ROLE_PLATFORM_SUPPORT
+            - ROLE_ORGANIZATION_OWNER
             type: string
           type: array
       required:
@@ -12841,16 +12837,14 @@ components:
           rateCommissionSafeCheckout: 1.4658129805029452
           safeCheckoutToggle: true
           counterProposalToggle: true
-          icon:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          icon: null
           personaAuthPortalToggle: true
           automatedReturnToggle: true
           flatRateEnabled: true
           domainVerified: true
           resolutionCenterToggle: true
           name: name
-          logo:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          logo: null
           internalMessagingToggle: true
           id: 6
         originCountry: FRA
@@ -12925,7 +12919,7 @@ components:
           nullable: true
           type: string
         avatar:
-          $ref: '#/components/schemas/Media-UserRead'
+          $ref: '#/components/schemas/Organization_UserRead_icon'
         createdAt:
           format: date-time
           readOnly: true
@@ -12941,7 +12935,7 @@ components:
         lockdown:
           type: boolean
         organization:
-          $ref: '#/components/schemas/Organization-UserRead'
+          $ref: '#/components/schemas/User_UserRead_organization'
         iri:
           example: https://example.com/
           format: iri-reference
@@ -13020,7 +13014,7 @@ components:
         consentMailAds:
           type: boolean
         organization:
-          $ref: '#/components/schemas/Organization-Write'
+          $ref: '#/components/schemas/User_Write_organization'
       required:
       - captcha
       - email
@@ -13526,7 +13520,168 @@ components:
         id: 122541
         event: dispute.created
         objectId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
-        object: null
+        object:
+          counterSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          metadata:
+          - value: "54412"
+            key: External-ID
+          - value: "54412"
+            key: External-ID
+          redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?from_dispute=true
+          messageCount: 6
+          ulid: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+          platformApproval: true
+          platformReasoning: The buyer does not respect our terms of service.
+          issueMentionedInOffer: true
+          sellerApproval: true
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          platformSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          complainantStake: LOW
+          inferredStake: LOW
+          viewCount: 5
+          views:
+          - createdAt: 2000-01-23T04:56:07.000+00:00
+            hitCount: 1
+            namedSource: BUYER
+          - createdAt: 2000-01-23T04:56:07.000+00:00
+            hitCount: 1
+            namedSource: BUYER
+          events:
+          - occurredAt: 2000-01-23T04:56:07.000+00:00
+            initiator: https://example.com/
+            from: from
+            label: label
+            to: to
+            event: dispute.opened
+          - occurredAt: 2000-01-23T04:56:07.000+00:00
+            initiator: https://example.com/
+            from: from
+            label: label
+            to: to
+            event: dispute.opened
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          chosenSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          iri: https://example.com/
+          closedInFavorOf: BUYER
+          counterPartialRefundAmount: 30
+          sellerTruthfulnessScore: 100
+          recommendedSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          platformPartialRefundAmount: 5
+          platformActorType: RULING
+          arbitrationBy: https://example.com/
+          awaitedParty: BUYER
+          issueDetails: "The item received have multiple impacts on the left side,\
+            \ this was not mentioned and I feel a bit sad. Although it is usable as-is,\
+            \ I expected it without flaws."
+          chosenPartialRefundAmount: 40
+          statusExpiration: 2000-01-23T04:56:07.000+00:00
+          itemCount: 1
+          complainantApproval: true
+          maxRefundableForBuyer: 7.061401241503109
+          issueType: NOT_AS_DESCRIBED
+          sellerNotes: "Unfortunately, I did not notice it, after thinking again,\
+            \ yes, you deserve a discount on that."
+          recommendedPartialRefundAmount: 35
+          disbursedByBuyer: 2.3021358869347655
+          sellerRejectionReason: UNJUSTIFIED_REQUEST
+          issueInDescriptionType: WRONG_COLOUR
+          transaction:
+            offer:
+              seller:
+                firstName: John
+                lastName: Doe
+                mobilePhoneNumber: "+33745214529"
+                language: fr
+                id: 6
+                email: john.doe@gmail.com
+              unitPrice: 125.54
+              medias:
+              - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+              - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+              condition: USED
+              ulid: ulid
+              nature: physical_item
+              organization:
+                warningColor: warningColor
+                errorColor: errorColor
+                rateCommissionSafeCheckout: 0.8008281904610115
+                accentColor: accentColor
+                counterProposalToggle: true
+                icon:
+                  publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+                primaryColor: primaryColor
+                infoColor: infoColor
+                personaAuthPortalToggle: true
+                directNotificationToggle: true
+                flatRateEnabled: true
+                websiteUrl: websiteUrl
+                successColor: successColor
+                name: name
+                logo: null
+                customBaseUrl: customBaseUrl
+                secondaryColor: secondaryColor
+              publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+                \ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+                \ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris\
+                \ nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in\
+                \ reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+                \ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\
+                \ culpa qui officia deserunt mollit anim id est laborum."
+              title: ASUS TUF X570-PLUS GAMING Motherboard
+              currencyCode: EUR
+              itemCount: 1
+            fees: 1.4658129805029452
+            refundableFees: true
+            metadata:
+            - value: "54412"
+              key: External-ID
+            - value: "54412"
+              key: External-ID
+            ulid: ulid
+            buyer:
+              firstName: John
+              lastName: Doe
+              mobilePhoneNumber: "+33745214529"
+              language: fr
+              id: 6
+              email: john.doe@gmail.com
+            parcels:
+            - identifier: 8J001271466474
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              carrier: SwissPost
+              price: 4.88
+              refundable: true
+              currency: EUR
+              status: CREATED
+              updatedAt: 2000-01-23T04:56:07.000+00:00
+            - identifier: 8J001271466474
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              carrier: SwissPost
+              price: 4.88
+              refundable: true
+              currency: EUR
+              status: CREATED
+              updatedAt: 2000-01-23T04:56:07.000+00:00
+          status: CREATED
+          complainantTruthfulnessScore: 100
+          parcels:
+          - identifier: 8J001271466474
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            carrier: SwissPost
+            price: 4.88
+            refundable: true
+            currency: EUR
+            status: CREATED
+            updatedAt: 2000-01-23T04:56:07.000+00:00
+          - identifier: 8J001271466474
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            carrier: SwissPost
+            price: 4.88
+            refundable: true
+            currency: EUR
+            status: CREATED
+            updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           example: 122541
@@ -13567,6 +13722,9 @@ components:
         object:
           $ref: '#/components/schemas/Webhook_object'
     AuthError:
+      example:
+        code: 401
+        message: JWT Token not found
       properties:
         code:
           example: 401
@@ -13575,6 +13733,8 @@ components:
           example: JWT Token not found
           type: string
     MessageError:
+      example:
+        message: email or password mismatch
       properties:
         message:
           example: email or password mismatch
@@ -13582,6 +13742,10 @@ components:
     NotFoundError:
       description: This error can occurs when you reference objects in the query that
         does not exist.
+      example:
+        detail: Not Found
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13593,6 +13757,10 @@ components:
           example: Not Found
           type: string
     GenericError:
+      example:
+        detail: An internal error occurred that prevented us to fulfill the request
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13604,6 +13772,10 @@ components:
           example: An internal error occurred that prevented us to fulfill the request
           type: string
     AccessError:
+      example:
+        detail: Access denied
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13615,6 +13787,10 @@ components:
           example: Access denied
           type: string
     InvalidQueryError:
+      example:
+        detail: The request is malformed and therefore cannot be executed
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13626,6 +13802,10 @@ components:
           example: The request is malformed and therefore cannot be executed
           type: string
     RateLimitError:
+      example:
+        detail: Too many request
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13637,6 +13817,23 @@ components:
           example: Too many request
           type: string
     UnprocessableEntity:
+      example:
+        violations:
+        - code: c1051bb4-d103-4f74-8988-acbcafc7fdc3
+          propertyPath: firstName
+          message: This value should not be blank.
+        - code: c1051bb4-d103-4f74-8988-acbcafc7fdc3
+          propertyPath: firstName
+          message: This value should not be blank.
+        detail: |-
+          firstName: This value should not be blank.
+          lastName: This value should not be blank.
+          email: This value should not be null.
+          plainPassword: This value should not be null.
+          originCountry: This value should not be null.
+          preferredLanguage: This value should not be null.
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13693,6 +13890,89 @@ components:
         file:
           format: binary
           type: string
+    Evidence_Read_media:
+      anyOf:
+      - $ref: '#/components/schemas/Media-Read'
+      - nullable: true
+      owl:maxCardinality: 1
+    Offer_Read_organization:
+      anyOf:
+      - $ref: '#/components/schemas/Organization-Read'
+      - nullable: true
+      owl:maxCardinality: 1
+    Offer_dispute_read_organization:
+      anyOf:
+      - $ref: '#/components/schemas/Organization-dispute.read'
+      - nullable: true
+      owl:maxCardinality: 1
+    Organization_AuthenticatedRead_icon:
+      anyOf:
+      - $ref: '#/components/schemas/Media-AuthenticatedRead'
+      - nullable: true
+      owl:maxCardinality: 1
+    Organization_CollectionRead_icon:
+      anyOf:
+      - $ref: '#/components/schemas/Media-CollectionRead'
+      - nullable: true
+      owl:maxCardinality: 1
+    Organization_Update_billingAddress:
+      anyOf:
+      - $ref: '#/components/schemas/Address-Update'
+      - nullable: true
+    Organization_UserRead_icon:
+      anyOf:
+      - $ref: '#/components/schemas/Media-UserRead'
+      - nullable: true
+      owl:maxCardinality: 1
+    Organization_Write_billingAddress:
+      anyOf:
+      - $ref: '#/components/schemas/Address-Write'
+      - nullable: true
+    Organization_dispute_read_icon:
+      anyOf:
+      - $ref: '#/components/schemas/Media-dispute.read'
+      - nullable: true
+      owl:maxCardinality: 1
+    Persona_address:
+      anyOf:
+      - $ref: '#/components/schemas/Address'
+      - nullable: true
+      description: Always the Shipping address. Thus enabling automated package returns.
+    Persona_IndependentWrite_address:
+      anyOf:
+      - $ref: '#/components/schemas/Address-IndependentWrite'
+      - nullable: true
+      description: Always the Shipping address. Thus enabling automated package returns.
+    Persona_Update_address:
+      anyOf:
+      - $ref: '#/components/schemas/Address-Update'
+      - nullable: true
+      description: Always the Shipping address. Thus enabling automated package returns.
+    Persona_Write_address:
+      anyOf:
+      - $ref: '#/components/schemas/Address-Write'
+      - nullable: true
+      description: Always the Shipping address. Thus enabling automated package returns.
+    User_AuthenticatedRead_organization:
+      anyOf:
+      - $ref: '#/components/schemas/Organization-AuthenticatedRead'
+      - nullable: true
+      owl:maxCardinality: 1
+    User_CollectionRead_organization:
+      anyOf:
+      - $ref: '#/components/schemas/Organization-CollectionRead'
+      - nullable: true
+      owl:maxCardinality: 1
+    User_UserRead_organization:
+      anyOf:
+      - $ref: '#/components/schemas/Organization-UserRead'
+      - nullable: true
+      owl:maxCardinality: 1
+    User_Write_organization:
+      anyOf:
+      - $ref: '#/components/schemas/Organization-Write'
+      - nullable: true
+      owl:maxCardinality: 1
     Webhook_object:
       anyOf:
       - $ref: '#/components/schemas/Dispute-Read'
@@ -13700,6 +13980,10 @@ components:
       - $ref: '#/components/schemas/Offer-Read'
       nullable: false
     UnprocessableEntity_violations_inner:
+      example:
+        code: c1051bb4-d103-4f74-8988-acbcafc7fdc3
+        propertyPath: firstName
+        message: This value should not be blank.
       properties:
         propertyPath:
           example: firstName

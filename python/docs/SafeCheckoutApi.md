@@ -40,8 +40,6 @@ Retrieves the collection of Offer resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_collection_read import OfferCollectionRead
 from tpdk.rest import ApiException
@@ -166,8 +164,6 @@ Publish an offer so that you can safely retrieve a safe-checkout unique link fro
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_independent_write import OfferIndependentWrite
 from tpdk.models.offer_post_creation_read import OfferPostCreationRead
@@ -258,8 +254,6 @@ Retrieves a Offer resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_read import OfferRead
 from tpdk.rest import ApiException
@@ -354,8 +348,6 @@ Removes the Media resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -448,8 +440,6 @@ Creates a Media resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
@@ -540,8 +530,6 @@ Retrieves the collection of Transaction resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.transaction_collection_read import TransactionCollectionRead
 from tpdk.rest import ApiException
@@ -635,8 +623,6 @@ Submit an Evaluation for the Offer
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.evaluation_read import EvaluationRead
 from tpdk.models.evaluation_write import EvaluationWrite
@@ -727,8 +713,6 @@ Cannot be used outside of a Persona (buyer)
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.transaction_read import TransactionRead
 from tpdk.rest import ApiException
@@ -818,8 +802,6 @@ That goes without says, if that **Offer** have a _Transaction_ **that is ongoing
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -911,8 +893,6 @@ Retrieves the collection of Offer resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_collection_read import OfferCollectionRead
 from tpdk.rest import ApiException
@@ -1040,8 +1020,6 @@ Updates the Offer resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_read import OfferRead
 from tpdk.models.offer_update import OfferUpdate
@@ -1141,8 +1119,6 @@ Creates a Offer resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_post_creation_read import OfferPostCreationRead
 from tpdk.models.offer_write import OfferWrite
@@ -1240,8 +1216,6 @@ Retrieves the collection of Transaction resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.transaction_collection_read import TransactionCollectionRead
 from tpdk.rest import ApiException
@@ -1335,8 +1309,6 @@ Abandon claims on Dispute
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1428,8 +1400,6 @@ Retrieves a Dispute resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_read import DisputeRead
 from tpdk.rest import ApiException
@@ -1523,8 +1493,6 @@ Only authenticated Persona can interact with a Dispute object. Usually through o
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_read import DisputeRead
 from tpdk.models.dispute_update import DisputeUpdate
@@ -1622,8 +1590,6 @@ Creates a Dispute resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_post_creation_read import DisputePostCreationRead
 from tpdk.models.dispute_write import DisputeWrite
@@ -1721,8 +1687,6 @@ Retrieves the collection of Parcel resources.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1813,8 +1777,6 @@ No one except the support can do that manoeuvre.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1899,8 +1861,6 @@ Creates a Parcel resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.parcel_read import ParcelRead
 from tpdk.models.parcel_write import ParcelWrite

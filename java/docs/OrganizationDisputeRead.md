@@ -11,8 +11,8 @@
 |**name** | **String** |  |  [optional] |
 |**websiteUrl** | **String** |  |  [optional] |
 |**customBaseUrl** | **String** |  |  [optional] |
-|**icon** | [**MediaDisputeRead**](MediaDisputeRead.md) |  |  [optional] |
-|**logo** | [**MediaDisputeRead**](MediaDisputeRead.md) |  |  [optional] |
+|**icon** | [**OrganizationDisputeReadIcon**](OrganizationDisputeReadIcon.md) |  |  [optional] |
+|**logo** | [**OrganizationDisputeReadIcon**](OrganizationDisputeReadIcon.md) |  |  [optional] |
 |**primaryColor** | **String** |  |  [optional] |
 |**secondaryColor** | **String** |  |  [optional] |
 |**accentColor** | **String** |  |  [optional] |

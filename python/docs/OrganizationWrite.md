@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **vat_number** | **str** |  | 
 **commercial_registry_number** | **str** |  | 
 **website_url** | **str** |  | [optional] 
-**billing_address** | [**AddressWrite**](AddressWrite.md) |  | [optional] 
+**billing_address** | [**OrganizationWriteBillingAddress**](OrganizationWriteBillingAddress.md) |  | [optional] 
 
 ## Example
 

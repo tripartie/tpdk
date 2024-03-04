@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**organization** | [**OrganizationDisputeRead**](OrganizationDisputeRead.md) |  | [optional] 
+**organization** | [**OfferDisputeReadOrganization**](OfferDisputeReadOrganization.md) |  | [optional] 
 **seller** | [**PersonaDisputeRead**](PersonaDisputeRead.md) | If the seller is actually YOUR organization, set it to NULL. | 
 **nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
 **title** | **str** |  | [optional] 

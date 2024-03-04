@@ -11,8 +11,8 @@
 |**name** | **String** |  |  [optional] |
 |**websiteUrl** | **String** |  |  [optional] |
 |**customBaseUrl** | **String** |  |  [optional] |
-|**icon** | [**MediaRead**](MediaRead.md) |  |  [optional] |
-|**logo** | [**MediaRead**](MediaRead.md) |  |  [optional] |
+|**icon** | [**EvidenceReadMedia**](EvidenceReadMedia.md) |  |  [optional] |
+|**logo** | [**EvidenceReadMedia**](EvidenceReadMedia.md) |  |  [optional] |
 |**primaryColor** | **String** |  |  [optional] |
 |**secondaryColor** | **String** |  |  [optional] |
 |**accentColor** | **String** |  |  [optional] |

@@ -13,7 +13,7 @@
 |**commercialRegistryNumber** | **String** |  |  |
 |**websiteUrl** | **URI** |  |  [optional] |
 |**customBaseUrl** | **URI** |  |  [optional] |
-|**billingAddress** | [**AddressUpdate**](AddressUpdate.md) |  |  [optional] |
+|**billingAddress** | [**OrganizationUpdateBillingAddress**](OrganizationUpdateBillingAddress.md) |  |  [optional] |
 |**primaryColor** | **String** |  |  [optional] |
 |**secondaryColor** | **String** |  |  [optional] |
 |**accentColor** | **String** |  |  [optional] |

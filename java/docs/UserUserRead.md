@@ -21,13 +21,13 @@
 |**originCountry** | **String** | The originating country |  [optional] |
 |**preferredLanguage** | **String** |  |  [optional] |
 |**lastSuccessfulLogIn** | **OffsetDateTime** |  |  [optional] |
-|**avatar** | [**MediaUserRead**](MediaUserRead.md) |  |  [optional] |
+|**avatar** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**consentMailNotification** | **Boolean** |  |  [optional] |
 |**consentMailAds** | **Boolean** |  |  [optional] |
 |**lockdown** | **Boolean** |  |  [optional] |
-|**organization** | [**OrganizationUserRead**](OrganizationUserRead.md) |  |  [optional] |
+|**organization** | [**UserUserReadOrganization**](UserUserReadOrganization.md) |  |  [optional] |
 |**iri** | **String** |  |  [optional] [readonly] |
 |**impersonatingOrganization** | **Boolean** |  |  [optional] [readonly] |
 |**_2fa** | **Boolean** |  |  [optional] [readonly] |

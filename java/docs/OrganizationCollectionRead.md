@@ -13,8 +13,8 @@
 |**vatNumber** | **String** |  |  [optional] |
 |**commercialRegistryNumber** | **String** |  |  [optional] |
 |**websiteUrl** | **String** |  |  [optional] |
-|**icon** | [**MediaCollectionRead**](MediaCollectionRead.md) |  |  [optional] |
-|**logo** | [**MediaCollectionRead**](MediaCollectionRead.md) |  |  [optional] |
+|**icon** | [**OrganizationCollectionReadIcon**](OrganizationCollectionReadIcon.md) |  |  [optional] |
+|**logo** | [**OrganizationCollectionReadIcon**](OrganizationCollectionReadIcon.md) |  |  [optional] |
 |**directNotificationToggle** | **Boolean** |  |  |
 |**safeCheckoutToggle** | **Boolean** |  |  |
 |**resolutionCenterToggle** | **Boolean** |  |  |

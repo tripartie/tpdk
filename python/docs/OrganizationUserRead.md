@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] 
 **domain_verified** | **bool** |  | 
-**icon** | [**MediaUserRead**](MediaUserRead.md) |  | [optional] 
-**logo** | [**MediaUserRead**](MediaUserRead.md) |  | [optional] 
+**icon** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  | [optional] 
+**logo** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  | [optional] 
 **safe_checkout_toggle** | **bool** |  | 
 **resolution_center_toggle** | **bool** |  | [default to True]
 **internal_messaging_toggle** | **bool** |  | [default to True]

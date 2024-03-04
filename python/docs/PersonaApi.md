@@ -25,8 +25,6 @@ Retrieves the collection of Persona resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_collection_read import PersonaCollectionRead
 from tpdk.rest import ApiException
@@ -148,8 +146,6 @@ You **MAY** unregister (or free the email/phone number) your Persona entry using
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -241,8 +237,6 @@ Retrieves a Persona resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_read import PersonaRead
 from tpdk.rest import ApiException
@@ -337,8 +331,6 @@ Update your Persona (eg. your customer/user entry) through that API call. _Bewar
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_read import PersonaRead
 from tpdk.models.persona_update import PersonaUpdate
@@ -436,8 +428,6 @@ Without this, your users may be required to pass a MFA challenge even if they ar
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_post_auth_read import PersonaPostAuthRead
 from tpdk.models.persona_token_write import PersonaTokenWrite
@@ -522,8 +512,6 @@ You should not register your whole database of users, only those who are concern
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_read import PersonaRead
 from tpdk.models.persona_write import PersonaWrite

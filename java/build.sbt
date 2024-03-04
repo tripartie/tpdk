@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.tripartie",
     name := "tpdk",
-    version := "2.0.178",
+    version := "2.0.179",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

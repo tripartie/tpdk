@@ -22,8 +22,6 @@ Retrieves the collection of Notification resources.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.rest import ApiException
@@ -109,8 +107,6 @@ Updates the Notification resource.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.models.notification_update import NotificationUpdate
@@ -204,8 +200,6 @@ Retrieves the collection of Notification resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.rest import ApiException
@@ -297,8 +291,6 @@ Updates the Notification resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.models.notification_update import NotificationUpdate

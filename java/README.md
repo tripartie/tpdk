@@ -1,8 +1,8 @@
 # tpdk
 
 Tripartie
-- API version: 2.0.178
-  - Build date: 2024-02-07T15:33:34.209225Z[Etc/UTC]
+- API version: 2.0.179
+  - Build date: 2024-03-04T08:16:59.915280Z[Etc/UTC]
 
 Our API suite for the **Resolution Center** and the **Safe Checkout** features.
 Simple, yet elegant web interfaces for your convenience. One request away from your first automated resolution or safe-checkout.
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.tripartie</groupId>
   <artifactId>tpdk</artifactId>
-  <version>2.0.178</version>
+  <version>2.0.179</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.tripartie:tpdk:2.0.178"
+     implementation "com.tripartie:tpdk:2.0.179"
   }
 ```
 
@@ -72,7 +72,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/tpdk-2.0.178.jar`
+* `target/tpdk-2.0.179.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -229,6 +229,7 @@ Class | Method | HTTP request | Description
  - [EvaluationWrite](docs/EvaluationWrite.md)
  - [Evidence](docs/Evidence.md)
  - [EvidenceRead](docs/EvidenceRead.md)
+ - [EvidenceReadMedia](docs/EvidenceReadMedia.md)
  - [EvidenceWrite](docs/EvidenceWrite.md)
  - [GenericError](docs/GenericError.md)
  - [InvalidQueryError](docs/InvalidQueryError.md)
@@ -251,35 +252,47 @@ Class | Method | HTTP request | Description
  - [Offer](docs/Offer.md)
  - [OfferCollectionRead](docs/OfferCollectionRead.md)
  - [OfferDisputeRead](docs/OfferDisputeRead.md)
+ - [OfferDisputeReadOrganization](docs/OfferDisputeReadOrganization.md)
  - [OfferIndependentWrite](docs/OfferIndependentWrite.md)
  - [OfferPostCreationRead](docs/OfferPostCreationRead.md)
  - [OfferRead](docs/OfferRead.md)
+ - [OfferReadOrganization](docs/OfferReadOrganization.md)
  - [OfferUpdate](docs/OfferUpdate.md)
  - [OfferWrite](docs/OfferWrite.md)
  - [OrganizationAuthenticatedRead](docs/OrganizationAuthenticatedRead.md)
+ - [OrganizationAuthenticatedReadIcon](docs/OrganizationAuthenticatedReadIcon.md)
  - [OrganizationCollectionRead](docs/OrganizationCollectionRead.md)
+ - [OrganizationCollectionReadIcon](docs/OrganizationCollectionReadIcon.md)
  - [OrganizationDisputeRead](docs/OrganizationDisputeRead.md)
+ - [OrganizationDisputeReadIcon](docs/OrganizationDisputeReadIcon.md)
  - [OrganizationRead](docs/OrganizationRead.md)
  - [OrganizationUpdate](docs/OrganizationUpdate.md)
+ - [OrganizationUpdateBillingAddress](docs/OrganizationUpdateBillingAddress.md)
  - [OrganizationUserRead](docs/OrganizationUserRead.md)
+ - [OrganizationUserReadIcon](docs/OrganizationUserReadIcon.md)
  - [OrganizationWrite](docs/OrganizationWrite.md)
+ - [OrganizationWriteBillingAddress](docs/OrganizationWriteBillingAddress.md)
  - [Parcel](docs/Parcel.md)
  - [ParcelDisputeRead](docs/ParcelDisputeRead.md)
  - [ParcelIndependentWrite](docs/ParcelIndependentWrite.md)
  - [ParcelRead](docs/ParcelRead.md)
  - [ParcelWrite](docs/ParcelWrite.md)
  - [Persona](docs/Persona.md)
+ - [PersonaAddress](docs/PersonaAddress.md)
  - [PersonaAuthReturn](docs/PersonaAuthReturn.md)
  - [PersonaCollectionRead](docs/PersonaCollectionRead.md)
  - [PersonaDisputeRead](docs/PersonaDisputeRead.md)
  - [PersonaExternalAuth](docs/PersonaExternalAuth.md)
  - [PersonaIndependentWrite](docs/PersonaIndependentWrite.md)
+ - [PersonaIndependentWriteAddress](docs/PersonaIndependentWriteAddress.md)
  - [PersonaPostAuthRead](docs/PersonaPostAuthRead.md)
  - [PersonaRead](docs/PersonaRead.md)
  - [PersonaRegister](docs/PersonaRegister.md)
  - [PersonaTokenWrite](docs/PersonaTokenWrite.md)
  - [PersonaUpdate](docs/PersonaUpdate.md)
+ - [PersonaUpdateAddress](docs/PersonaUpdateAddress.md)
  - [PersonaWrite](docs/PersonaWrite.md)
+ - [PersonaWriteAddress](docs/PersonaWriteAddress.md)
  - [RateLimitError](docs/RateLimitError.md)
  - [TransactionCollectionRead](docs/TransactionCollectionRead.md)
  - [TransactionDisputeRead](docs/TransactionDisputeRead.md)
@@ -289,7 +302,9 @@ Class | Method | HTTP request | Description
  - [UnprocessableEntityViolationsInner](docs/UnprocessableEntityViolationsInner.md)
  - [User](docs/User.md)
  - [UserAuthenticatedRead](docs/UserAuthenticatedRead.md)
+ - [UserAuthenticatedReadOrganization](docs/UserAuthenticatedReadOrganization.md)
  - [UserCollectionRead](docs/UserCollectionRead.md)
+ - [UserCollectionReadOrganization](docs/UserCollectionReadOrganization.md)
  - [UserEmailValidationWrite](docs/UserEmailValidationWrite.md)
  - [UserInvite](docs/UserInvite.md)
  - [UserJwtCreated](docs/UserJwtCreated.md)
@@ -301,8 +316,10 @@ Class | Method | HTTP request | Description
  - [UserUserEmailUpdate](docs/UserUserEmailUpdate.md)
  - [UserUserPasswordUpdate](docs/UserUserPasswordUpdate.md)
  - [UserUserRead](docs/UserUserRead.md)
+ - [UserUserReadOrganization](docs/UserUserReadOrganization.md)
  - [UserUserSubscribed](docs/UserUserSubscribed.md)
  - [UserWrite](docs/UserWrite.md)
+ - [UserWriteOrganization](docs/UserWriteOrganization.md)
  - [View](docs/View.md)
  - [ViewDisputeRead](docs/ViewDisputeRead.md)
  - [ViewRead](docs/ViewRead.md)
