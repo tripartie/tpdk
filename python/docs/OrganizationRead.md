@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
-**icon** | [**MediaRead**](MediaRead.md) |  | [optional] 
-**logo** | [**MediaRead**](MediaRead.md) |  | [optional] 
+**icon** | [**EvidenceReadMedia**](EvidenceReadMedia.md) |  | [optional] 
+**logo** | [**EvidenceReadMedia**](EvidenceReadMedia.md) |  | [optional] 
 **primary_color** | **str** |  | [optional] 
 **secondary_color** | **str** |  | [optional] 
 **accent_color** | **str** |  | [optional] 
@@ -34,7 +34,7 @@ json = "{}"
 # create an instance of OrganizationRead from a JSON string
 organization_read_instance = OrganizationRead.from_json(json)
 # print the JSON string representation of the object
-print OrganizationRead.to_json()
+print(OrganizationRead.to_json())
 
 # convert the object into a dict
 organization_read_dict = organization_read_instance.to_dict()

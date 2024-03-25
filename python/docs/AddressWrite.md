@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of AddressWrite from a JSON string
 address_write_instance = AddressWrite.from_json(json)
 # print the JSON string representation of the object
-print AddressWrite.to_json()
+print(AddressWrite.to_json())
 
 # convert the object into a dict
 address_write_dict = address_write_instance.to_dict()

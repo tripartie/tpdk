@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of TransactionIndependentWrite from a JSON string
 transaction_independent_write_instance = TransactionIndependentWrite.from_json(json)
 # print the JSON string representation of the object
-print TransactionIndependentWrite.to_json()
+print(TransactionIndependentWrite.to_json())
 
 # convert the object into a dict
 transaction_independent_write_dict = transaction_independent_write_instance.to_dict()

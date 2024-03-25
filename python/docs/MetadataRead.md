@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MetadataRead from a JSON string
 metadata_read_instance = MetadataRead.from_json(json)
 # print the JSON string representation of the object
-print MetadataRead.to_json()
+print(MetadataRead.to_json())
 
 # convert the object into a dict
 metadata_read_dict = metadata_read_instance.to_dict()

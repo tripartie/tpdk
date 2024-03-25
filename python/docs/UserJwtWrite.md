@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of UserJwtWrite from a JSON string
 user_jwt_write_instance = UserJwtWrite.from_json(json)
 # print the JSON string representation of the object
-print UserJwtWrite.to_json()
+print(UserJwtWrite.to_json())
 
 # convert the object into a dict
 user_jwt_write_dict = user_jwt_write_instance.to_dict()

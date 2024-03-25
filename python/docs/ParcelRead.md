@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of ParcelRead from a JSON string
 parcel_read_instance = ParcelRead.from_json(json)
 # print the JSON string representation of the object
-print ParcelRead.to_json()
+print(ParcelRead.to_json())
 
 # convert the object into a dict
 parcel_read_dict = parcel_read_instance.to_dict()

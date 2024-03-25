@@ -11,8 +11,8 @@
 |**id** | **Integer** |  |  [optional] [readonly] |
 |**name** | **String** |  |  [optional] |
 |**domainVerified** | **Boolean** |  |  |
-|**icon** | [**MediaUserRead**](MediaUserRead.md) |  |  [optional] |
-|**logo** | [**MediaUserRead**](MediaUserRead.md) |  |  [optional] |
+|**icon** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  |  [optional] |
+|**logo** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  |  [optional] |
 |**safeCheckoutToggle** | **Boolean** |  |  |
 |**resolutionCenterToggle** | **Boolean** |  |  |
 |**internalMessagingToggle** | **Boolean** |  |  |

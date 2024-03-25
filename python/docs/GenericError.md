@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of GenericError from a JSON string
 generic_error_instance = GenericError.from_json(json)
 # print the JSON string representation of the object
-print GenericError.to_json()
+print(GenericError.to_json())
 
 # convert the object into a dict
 generic_error_dict = generic_error_instance.to_dict()

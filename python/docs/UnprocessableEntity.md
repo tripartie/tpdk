@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of UnprocessableEntity from a JSON string
 unprocessable_entity_instance = UnprocessableEntity.from_json(json)
 # print the JSON string representation of the object
-print UnprocessableEntity.to_json()
+print(UnprocessableEntity.to_json())
 
 # convert the object into a dict
 unprocessable_entity_dict = unprocessable_entity_instance.to_dict()

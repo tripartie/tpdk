@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 **email** | **object** |  | [optional] 
 **mobile_phone_number** | **object** |  | [optional] 
 **public_url** | **object** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**organization** | [**OrganizationRead**](OrganizationRead.md) |  | [optional] 
+**organization** | [**OfferReadOrganization**](OfferReadOrganization.md) |  | [optional] 
 **seller** | [**PersonaRead**](PersonaRead.md) | If the seller is actually YOUR organization, set it to NULL. | 
 **nature** | **object** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | 
 **title** | **object** |  | [optional] 
@@ -75,7 +75,7 @@ json = "{}"
 # create an instance of WebhookObject from a JSON string
 webhook_object_instance = WebhookObject.from_json(json)
 # print the JSON string representation of the object
-print WebhookObject.to_json()
+print(WebhookObject.to_json())
 
 # convert the object into a dict
 webhook_object_dict = webhook_object_instance.to_dict()

@@ -35,7 +35,7 @@ json = "{}"
 # create an instance of DisputeUpdate from a JSON string
 dispute_update_instance = DisputeUpdate.from_json(json)
 # print the JSON string representation of the object
-print DisputeUpdate.to_json()
+print(DisputeUpdate.to_json())
 
 # convert the object into a dict
 dispute_update_dict = dispute_update_instance.to_dict()

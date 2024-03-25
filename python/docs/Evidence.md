@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of Evidence from a JSON string
 evidence_instance = Evidence.from_json(json)
 # print the JSON string representation of the object
-print Evidence.to_json()
+print(Evidence.to_json())
 
 # convert the object into a dict
 evidence_dict = evidence_instance.to_dict()

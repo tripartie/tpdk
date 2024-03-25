@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of PersonaExternalAuth from a JSON string
 persona_external_auth_instance = PersonaExternalAuth.from_json(json)
 # print the JSON string representation of the object
-print PersonaExternalAuth.to_json()
+print(PersonaExternalAuth.to_json())
 
 # convert the object into a dict
 persona_external_auth_dict = persona_external_auth_instance.to_dict()

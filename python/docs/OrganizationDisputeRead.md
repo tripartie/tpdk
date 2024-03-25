@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
-**icon** | [**MediaDisputeRead**](MediaDisputeRead.md) |  | [optional] 
-**logo** | [**MediaDisputeRead**](MediaDisputeRead.md) |  | [optional] 
+**icon** | [**OrganizationDisputeReadIcon**](OrganizationDisputeReadIcon.md) |  | [optional] 
+**logo** | [**OrganizationDisputeReadIcon**](OrganizationDisputeReadIcon.md) |  | [optional] 
 **primary_color** | **str** |  | [optional] 
 **secondary_color** | **str** |  | [optional] 
 **accent_color** | **str** |  | [optional] 
@@ -34,7 +34,7 @@ json = "{}"
 # create an instance of OrganizationDisputeRead from a JSON string
 organization_dispute_read_instance = OrganizationDisputeRead.from_json(json)
 # print the JSON string representation of the object
-print OrganizationDisputeRead.to_json()
+print(OrganizationDisputeRead.to_json())
 
 # convert the object into a dict
 organization_dispute_read_dict = organization_dispute_read_instance.to_dict()

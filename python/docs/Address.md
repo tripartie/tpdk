@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of Address from a JSON string
 address_instance = Address.from_json(json)
 # print the JSON string representation of the object
-print Address.to_json()
+print(Address.to_json())
 
 # convert the object into a dict
 address_dict = address_instance.to_dict()

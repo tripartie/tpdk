@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of EvidenceWrite from a JSON string
 evidence_write_instance = EvidenceWrite.from_json(json)
 # print the JSON string representation of the object
-print EvidenceWrite.to_json()
+print(EvidenceWrite.to_json())
 
 # convert the object into a dict
 evidence_write_dict = evidence_write_instance.to_dict()

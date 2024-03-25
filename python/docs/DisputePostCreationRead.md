@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of DisputePostCreationRead from a JSON string
 dispute_post_creation_read_instance = DisputePostCreationRead.from_json(json)
 # print the JSON string representation of the object
-print DisputePostCreationRead.to_json()
+print(DisputePostCreationRead.to_json())
 
 # convert the object into a dict
 dispute_post_creation_read_dict = dispute_post_creation_read_instance.to_dict()

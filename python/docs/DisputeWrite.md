@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of DisputeWrite from a JSON string
 dispute_write_instance = DisputeWrite.from_json(json)
 # print the JSON string representation of the object
-print DisputeWrite.to_json()
+print(DisputeWrite.to_json())
 
 # convert the object into a dict
 dispute_write_dict = dispute_write_instance.to_dict()

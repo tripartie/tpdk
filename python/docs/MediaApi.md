@@ -21,8 +21,6 @@ Retrieves a Media resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media import Media
 from tpdk.rest import ApiException

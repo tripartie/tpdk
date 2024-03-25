@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of MediaDisputeRead from a JSON string
 media_dispute_read_instance = MediaDisputeRead.from_json(json)
 # print the JSON string representation of the object
-print MediaDisputeRead.to_json()
+print(MediaDisputeRead.to_json())
 
 # convert the object into a dict
 media_dispute_read_dict = media_dispute_read_instance.to_dict()

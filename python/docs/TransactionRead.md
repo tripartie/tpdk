@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of TransactionRead from a JSON string
 transaction_read_instance = TransactionRead.from_json(json)
 # print the JSON string representation of the object
-print TransactionRead.to_json()
+print(TransactionRead.to_json())
 
 # convert the object into a dict
 transaction_read_dict = transaction_read_instance.to_dict()

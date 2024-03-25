@@ -33,7 +33,7 @@ json = "{}"
 # create an instance of OfferUpdate from a JSON string
 offer_update_instance = OfferUpdate.from_json(json)
 # print the JSON string representation of the object
-print OfferUpdate.to_json()
+print(OfferUpdate.to_json())
 
 # convert the object into a dict
 offer_update_dict = offer_update_instance.to_dict()

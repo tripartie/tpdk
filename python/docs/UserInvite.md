@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of UserInvite from a JSON string
 user_invite_instance = UserInvite.from_json(json)
 # print the JSON string representation of the object
-print UserInvite.to_json()
+print(UserInvite.to_json())
 
 # convert the object into a dict
 user_invite_dict = user_invite_instance.to_dict()

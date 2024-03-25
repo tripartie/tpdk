@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of AddressUpdate from a JSON string
 address_update_instance = AddressUpdate.from_json(json)
 # print the JSON string representation of the object
-print AddressUpdate.to_json()
+print(AddressUpdate.to_json())
 
 # convert the object into a dict
 address_update_dict = address_update_instance.to_dict()

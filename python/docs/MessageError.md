@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of MessageError from a JSON string
 message_error_instance = MessageError.from_json(json)
 # print the JSON string representation of the object
-print MessageError.to_json()
+print(MessageError.to_json())
 
 # convert the object into a dict
 message_error_dict = message_error_instance.to_dict()

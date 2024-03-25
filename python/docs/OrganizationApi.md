@@ -22,8 +22,6 @@ Retrieves the collection of Organization resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.organization_collection_read import OrganizationCollectionRead
 from tpdk.rest import ApiException
@@ -119,8 +117,6 @@ Retrieves a Organization resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.organization_read import OrganizationRead
 from tpdk.rest import ApiException

@@ -39,7 +39,7 @@ json = "{}"
 # create an instance of DisputeCollectionRead from a JSON string
 dispute_collection_read_instance = DisputeCollectionRead.from_json(json)
 # print the JSON string representation of the object
-print DisputeCollectionRead.to_json()
+print(DisputeCollectionRead.to_json())
 
 # convert the object into a dict
 dispute_collection_read_dict = dispute_collection_read_instance.to_dict()

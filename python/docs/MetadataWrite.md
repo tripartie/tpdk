@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MetadataWrite from a JSON string
 metadata_write_instance = MetadataWrite.from_json(json)
 # print the JSON string representation of the object
-print MetadataWrite.to_json()
+print(MetadataWrite.to_json())
 
 # convert the object into a dict
 metadata_write_dict = metadata_write_instance.to_dict()

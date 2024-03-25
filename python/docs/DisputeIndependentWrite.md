@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of DisputeIndependentWrite from a JSON string
 dispute_independent_write_instance = DisputeIndependentWrite.from_json(json)
 # print the JSON string representation of the object
-print DisputeIndependentWrite.to_json()
+print(DisputeIndependentWrite.to_json())
 
 # convert the object into a dict
 dispute_independent_write_dict = dispute_independent_write_instance.to_dict()

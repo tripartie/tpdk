@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of OfferCollectionRead from a JSON string
 offer_collection_read_instance = OfferCollectionRead.from_json(json)
 # print the JSON string representation of the object
-print OfferCollectionRead.to_json()
+print(OfferCollectionRead.to_json())
 
 # convert the object into a dict
 offer_collection_read_dict = offer_collection_read_instance.to_dict()

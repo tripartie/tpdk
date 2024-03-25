@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of UserTotpSetupRead from a JSON string
 user_totp_setup_read_instance = UserTotpSetupRead.from_json(json)
 # print the JSON string representation of the object
-print UserTotpSetupRead.to_json()
+print(UserTotpSetupRead.to_json())
 
 # convert the object into a dict
 user_totp_setup_read_dict = user_totp_setup_read_instance.to_dict()

@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of ParcelIndependentWrite from a JSON string
 parcel_independent_write_instance = ParcelIndependentWrite.from_json(json)
 # print the JSON string representation of the object
-print ParcelIndependentWrite.to_json()
+print(ParcelIndependentWrite.to_json())
 
 # convert the object into a dict
 parcel_independent_write_dict = parcel_independent_write_instance.to_dict()

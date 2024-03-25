@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**organization** | [**OrganizationRead**](OrganizationRead.md) |  | [optional] 
+**organization** | [**OfferReadOrganization**](OfferReadOrganization.md) |  | [optional] 
 **seller** | [**PersonaRead**](PersonaRead.md) | If the seller is actually YOUR organization, set it to NULL. | 
 **nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
 **title** | **str** |  | [optional] 
@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of OfferRead from a JSON string
 offer_read_instance = OfferRead.from_json(json)
 # print the JSON string representation of the object
-print OfferRead.to_json()
+print(OfferRead.to_json())
 
 # convert the object into a dict
 offer_read_dict = offer_read_instance.to_dict()

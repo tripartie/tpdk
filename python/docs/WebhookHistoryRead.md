@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of WebhookHistoryRead from a JSON string
 webhook_history_read_instance = WebhookHistoryRead.from_json(json)
 # print the JSON string representation of the object
-print WebhookHistoryRead.to_json()
+print(WebhookHistoryRead.to_json())
 
 # convert the object into a dict
 webhook_history_read_dict = webhook_history_read_instance.to_dict()

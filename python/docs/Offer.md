@@ -46,7 +46,7 @@ json = "{}"
 # create an instance of Offer from a JSON string
 offer_instance = Offer.from_json(json)
 # print the JSON string representation of the object
-print Offer.to_json()
+print(Offer.to_json())
 
 # convert the object into a dict
 offer_dict = offer_instance.to_dict()

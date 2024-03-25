@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reference_name** | **str** |  | 
+**reference_name** | **str** |  | [optional] 
 **desired_scopes** | **List[str]** |  | [optional] 
 
 ## Example
@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of ApiClientWrite from a JSON string
 api_client_write_instance = ApiClientWrite.from_json(json)
 # print the JSON string representation of the object
-print ApiClientWrite.to_json()
+print(ApiClientWrite.to_json())
 
 # convert the object into a dict
 api_client_write_dict = api_client_write_instance.to_dict()

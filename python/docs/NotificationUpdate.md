@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of NotificationUpdate from a JSON string
 notification_update_instance = NotificationUpdate.from_json(json)
 # print the JSON string representation of the object
-print NotificationUpdate.to_json()
+print(NotificationUpdate.to_json())
 
 # convert the object into a dict
 notification_update_dict = notification_update_instance.to_dict()
