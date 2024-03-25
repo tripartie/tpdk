@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of ParcelDisputeRead from a JSON string
 parcel_dispute_read_instance = ParcelDisputeRead.from_json(json)
 # print the JSON string representation of the object
-print ParcelDisputeRead.to_json()
+print(ParcelDisputeRead.to_json())
 
 # convert the object into a dict
 parcel_dispute_read_dict = parcel_dispute_read_instance.to_dict()

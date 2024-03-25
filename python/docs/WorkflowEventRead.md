@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of WorkflowEventRead from a JSON string
 workflow_event_read_instance = WorkflowEventRead.from_json(json)
 # print the JSON string representation of the object
-print WorkflowEventRead.to_json()
+print(WorkflowEventRead.to_json())
 
 # convert the object into a dict
 workflow_event_read_dict = workflow_event_read_instance.to_dict()

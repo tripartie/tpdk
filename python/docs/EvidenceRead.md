@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **status** | **str** |  | [default to 'SUBMITTED']
-**media** | [**MediaRead**](MediaRead.md) |  | [optional] 
+**media** | [**EvidenceReadMedia**](EvidenceReadMedia.md) |  | [optional] 
 **additional_information** | **str** | Description of what the evidence actually is. | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of EvidenceRead from a JSON string
 evidence_read_instance = EvidenceRead.from_json(json)
 # print the JSON string representation of the object
-print EvidenceRead.to_json()
+print(EvidenceRead.to_json())
 
 # convert the object into a dict
 evidence_read_dict = evidence_read_instance.to_dict()

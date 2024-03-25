@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of TransactionCollectionRead from a JSON string
 transaction_collection_read_instance = TransactionCollectionRead.from_json(json)
 # print the JSON string representation of the object
-print TransactionCollectionRead.to_json()
+print(TransactionCollectionRead.to_json())
 
 # convert the object into a dict
 transaction_collection_read_dict = transaction_collection_read_instance.to_dict()

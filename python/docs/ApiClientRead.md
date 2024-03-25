@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of ApiClientRead from a JSON string
 api_client_read_instance = ApiClientRead.from_json(json)
 # print the JSON string representation of the object
-print ApiClientRead.to_json()
+print(ApiClientRead.to_json())
 
 # convert the object into a dict
 api_client_read_dict = api_client_read_instance.to_dict()

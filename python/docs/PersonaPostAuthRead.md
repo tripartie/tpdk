@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of PersonaPostAuthRead from a JSON string
 persona_post_auth_read_instance = PersonaPostAuthRead.from_json(json)
 # print the JSON string representation of the object
-print PersonaPostAuthRead.to_json()
+print(PersonaPostAuthRead.to_json())
 
 # convert the object into a dict
 persona_post_auth_read_dict = persona_post_auth_read_instance.to_dict()

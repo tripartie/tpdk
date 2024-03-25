@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of UserPostRegisterRead from a JSON string
 user_post_register_read_instance = UserPostRegisterRead.from_json(json)
 # print the JSON string representation of the object
-print UserPostRegisterRead.to_json()
+print(UserPostRegisterRead.to_json())
 
 # convert the object into a dict
 user_post_register_read_dict = user_post_register_read_instance.to_dict()

@@ -24,7 +24,7 @@ json = "{}"
 # create an instance of TransactionDisputeRead from a JSON string
 transaction_dispute_read_instance = TransactionDisputeRead.from_json(json)
 # print the JSON string representation of the object
-print TransactionDisputeRead.to_json()
+print(TransactionDisputeRead.to_json())
 
 # convert the object into a dict
 transaction_dispute_read_dict = transaction_dispute_read_instance.to_dict()

@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of PersonaDisputeRead from a JSON string
 persona_dispute_read_instance = PersonaDisputeRead.from_json(json)
 # print the JSON string representation of the object
-print PersonaDisputeRead.to_json()
+print(PersonaDisputeRead.to_json())
 
 # convert the object into a dict
 persona_dispute_read_dict = persona_dispute_read_instance.to_dict()

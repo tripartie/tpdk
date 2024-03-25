@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of AddressIndependentWrite from a JSON string
 address_independent_write_instance = AddressIndependentWrite.from_json(json)
 # print the JSON string representation of the object
-print AddressIndependentWrite.to_json()
+print(AddressIndependentWrite.to_json())
 
 # convert the object into a dict
 address_independent_write_dict = address_independent_write_instance.to_dict()

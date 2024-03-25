@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of Parcel from a JSON string
 parcel_instance = Parcel.from_json(json)
 # print the JSON string representation of the object
-print Parcel.to_json()
+print(Parcel.to_json())
 
 # convert the object into a dict
 parcel_dict = parcel_instance.to_dict()

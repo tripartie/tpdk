@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of WebhookSubscriptionRead from a JSON string
 webhook_subscription_read_instance = WebhookSubscriptionRead.from_json(json)
 # print the JSON string representation of the object
-print WebhookSubscriptionRead.to_json()
+print(WebhookSubscriptionRead.to_json())
 
 # convert the object into a dict
 webhook_subscription_read_dict = webhook_subscription_read_instance.to_dict()

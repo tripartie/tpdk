@@ -7,11 +7,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**vat_number** | **str** |  | 
-**commercial_registry_number** | **str** |  | 
+**vat_number** | **str** |  | [optional] 
+**commercial_registry_number** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
-**billing_address** | [**AddressUpdate**](AddressUpdate.md) |  | [optional] 
+**billing_address** | [**OrganizationUpdateBillingAddress**](OrganizationUpdateBillingAddress.md) |  | [optional] 
 **primary_color** | **str** |  | [optional] 
 **secondary_color** | **str** |  | [optional] 
 **accent_color** | **str** |  | [optional] 
@@ -38,7 +38,7 @@ json = "{}"
 # create an instance of OrganizationUpdate from a JSON string
 organization_update_instance = OrganizationUpdate.from_json(json)
 # print the JSON string representation of the object
-print OrganizationUpdate.to_json()
+print(OrganizationUpdate.to_json())
 
 # convert the object into a dict
 organization_update_dict = organization_update_instance.to_dict()

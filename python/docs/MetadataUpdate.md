@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MetadataUpdate from a JSON string
 metadata_update_instance = MetadataUpdate.from_json(json)
 # print the JSON string representation of the object
-print MetadataUpdate.to_json()
+print(MetadataUpdate.to_json())
 
 # convert the object into a dict
 metadata_update_dict = metadata_update_instance.to_dict()

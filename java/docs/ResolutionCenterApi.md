@@ -505,7 +505,7 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
-    String ulid = "ulid_example"; // String | Dispute identifier
+    String ulid = "ulid_example"; // String | Evaluation identifier
     EvaluationWrite evaluationWrite = new EvaluationWrite(); // EvaluationWrite | The new Evaluation resource
     try {
       EvaluationRead result = apiInstance.apiDisputesUlidevaluationsPost(ulid, evaluationWrite);
@@ -525,7 +525,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Dispute identifier | |
+| **ulid** | **String**| Evaluation identifier | |
 | **evaluationWrite** | [**EvaluationWrite**](EvaluationWrite.md)| The new Evaluation resource | |
 
 ### Return type

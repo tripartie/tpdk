@@ -22,8 +22,6 @@ Retrieves the collection of Notification resources.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.rest import ApiException
@@ -50,7 +48,7 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.NotificationApi(api_client)
-    id = 'id_example' # str | Persona identifier
+    id = 'id_example' # str | Notification identifier
     page = 1 # int | The collection page number (optional) (default to 1)
 
     try:
@@ -69,7 +67,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Persona identifier | 
+ **id** | **str**| Notification identifier | 
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
@@ -109,8 +107,6 @@ Updates the Notification resource.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.models.notification_update import NotificationUpdate
@@ -138,7 +134,7 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.NotificationApi(api_client)
-    persona_id = 'persona_id_example' # str | Persona identifier
+    persona_id = 'persona_id_example' # str | Notification identifier
     id = 'id_example' # str | Notification identifier
     notification_update = tpdk.NotificationUpdate() # NotificationUpdate | The updated Notification resource
 
@@ -158,7 +154,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **persona_id** | **str**| Persona identifier | 
+ **persona_id** | **str**| Notification identifier | 
  **id** | **str**| Notification identifier | 
  **notification_update** | [**NotificationUpdate**](NotificationUpdate.md)| The updated Notification resource | 
 
@@ -204,8 +200,6 @@ Retrieves the collection of Notification resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.rest import ApiException
@@ -240,7 +234,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.NotificationApi(api_client)
-    id = 'id_example' # str | User identifier
+    id = 'id_example' # str | Notification identifier
     page = 1 # int | The collection page number (optional) (default to 1)
 
     try:
@@ -259,7 +253,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| User identifier | 
+ **id** | **str**| Notification identifier | 
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
@@ -297,8 +291,6 @@ Updates the Notification resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.notification_read import NotificationRead
 from tpdk.models.notification_update import NotificationUpdate
@@ -326,7 +318,7 @@ configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.NotificationApi(api_client)
-    user_id = 'user_id_example' # str | User identifier
+    user_id = 'user_id_example' # str | Notification identifier
     id = 'id_example' # str | Notification identifier
     notification_update = tpdk.NotificationUpdate() # NotificationUpdate | The updated Notification resource
 
@@ -346,7 +338,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**| User identifier | 
+ **user_id** | **str**| Notification identifier | 
  **id** | **str**| Notification identifier | 
  **notification_update** | [**NotificationUpdate**](NotificationUpdate.md)| The updated Notification resource | 
 

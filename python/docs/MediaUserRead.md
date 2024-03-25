@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of MediaUserRead from a JSON string
 media_user_read_instance = MediaUserRead.from_json(json)
 # print the JSON string representation of the object
-print MediaUserRead.to_json()
+print(MediaUserRead.to_json())
 
 # convert the object into a dict
 media_user_read_dict = media_user_read_instance.to_dict()

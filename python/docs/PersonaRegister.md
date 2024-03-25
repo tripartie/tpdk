@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of PersonaRegister from a JSON string
 persona_register_instance = PersonaRegister.from_json(json)
 # print the JSON string representation of the object
-print PersonaRegister.to_json()
+print(PersonaRegister.to_json())
 
 # convert the object into a dict
 persona_register_dict = persona_register_instance.to_dict()

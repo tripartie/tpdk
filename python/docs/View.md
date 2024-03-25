@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of View from a JSON string
 view_instance = View.from_json(json)
 # print the JSON string representation of the object
-print View.to_json()
+print(View.to_json())
 
 # convert the object into a dict
 view_dict = view_instance.to_dict()

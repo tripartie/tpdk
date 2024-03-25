@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of EvaluationWrite from a JSON string
 evaluation_write_instance = EvaluationWrite.from_json(json)
 # print the JSON string representation of the object
-print EvaluationWrite.to_json()
+print(EvaluationWrite.to_json())
 
 # convert the object into a dict
 evaluation_write_dict = evaluation_write_instance.to_dict()

@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of UserUserSubscribed from a JSON string
 user_user_subscribed_instance = UserUserSubscribed.from_json(json)
 # print the JSON string representation of the object
-print UserUserSubscribed.to_json()
+print(UserUserSubscribed.to_json())
 
 # convert the object into a dict
 user_user_subscribed_dict = user_user_subscribed_instance.to_dict()

@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **origin_country** | **str** | The originating country | [optional] 
 **preferred_language** | **str** |  | [optional] 
 **last_successful_log_in** | **datetime** |  | [optional] 
-**avatar** | [**MediaUserRead**](MediaUserRead.md) |  | [optional] 
+**avatar** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **consent_mail_notification** | **bool** |  | [optional] 
 **consent_mail_ads** | **bool** |  | [optional] 
 **lockdown** | **bool** |  | [optional] 
-**organization** | [**OrganizationUserRead**](OrganizationUserRead.md) |  | [optional] 
+**organization** | [**UserUserReadOrganization**](UserUserReadOrganization.md) |  | [optional] 
 **iri** | **str** |  | [optional] [readonly] 
 **impersonating_organization** | **bool** |  | [optional] [readonly] 
 **var_2fa** | **bool** |  | [optional] [readonly] 
@@ -40,7 +40,7 @@ json = "{}"
 # create an instance of UserUserRead from a JSON string
 user_user_read_instance = UserUserRead.from_json(json)
 # print the JSON string representation of the object
-print UserUserRead.to_json()
+print(UserUserRead.to_json())
 
 # convert the object into a dict
 user_user_read_dict = user_user_read_instance.to_dict()

@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] 
 **domain_verified** | **bool** |  | 
-**icon** | [**MediaUserRead**](MediaUserRead.md) |  | [optional] 
-**logo** | [**MediaUserRead**](MediaUserRead.md) |  | [optional] 
+**icon** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  | [optional] 
+**logo** | [**OrganizationUserReadIcon**](OrganizationUserReadIcon.md) |  | [optional] 
 **safe_checkout_toggle** | **bool** |  | 
 **resolution_center_toggle** | **bool** |  | [default to True]
 **internal_messaging_toggle** | **bool** |  | [default to True]
@@ -30,7 +30,7 @@ json = "{}"
 # create an instance of OrganizationUserRead from a JSON string
 organization_user_read_instance = OrganizationUserRead.from_json(json)
 # print the JSON string representation of the object
-print OrganizationUserRead.to_json()
+print(OrganizationUserRead.to_json())
 
 # convert the object into a dict
 organization_user_read_dict = organization_user_read_instance.to_dict()

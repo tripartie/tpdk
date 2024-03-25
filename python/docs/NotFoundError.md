@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of NotFoundError from a JSON string
 not_found_error_instance = NotFoundError.from_json(json)
 # print the JSON string representation of the object
-print NotFoundError.to_json()
+print(NotFoundError.to_json())
 
 # convert the object into a dict
 not_found_error_dict = not_found_error_instance.to_dict()

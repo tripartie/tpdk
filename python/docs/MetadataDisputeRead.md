@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of MetadataDisputeRead from a JSON string
 metadata_dispute_read_instance = MetadataDisputeRead.from_json(json)
 # print the JSON string representation of the object
-print MetadataDisputeRead.to_json()
+print(MetadataDisputeRead.to_json())
 
 # convert the object into a dict
 metadata_dispute_read_dict = metadata_dispute_read_instance.to_dict()

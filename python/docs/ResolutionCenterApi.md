@@ -33,8 +33,6 @@ Retrieves the collection of Dispute resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_collection_read import DisputeCollectionRead
 from tpdk.rest import ApiException
@@ -170,8 +168,6 @@ Create a draft dispute to be filled by an alleged aggrieved customer. Do not use
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_independent_write import DisputeIndependentWrite
 from tpdk.models.dispute_post_creation_read import DisputePostCreationRead
@@ -256,8 +252,6 @@ Abandon claims on Dispute
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -349,8 +343,6 @@ Retrieves a Dispute resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_read import DisputeRead
 from tpdk.rest import ApiException
@@ -445,8 +437,6 @@ Updates the Dispute resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_read import DisputeRead
 from tpdk.models.dispute_update import DisputeUpdate
@@ -544,8 +534,6 @@ Submit an Evaluation for the Dispute
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.evaluation_read import EvaluationRead
 from tpdk.models.evaluation_write import EvaluationWrite
@@ -573,7 +561,7 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.ResolutionCenterApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
+    ulid = 'ulid_example' # str | Evaluation identifier
     evaluation_write = tpdk.EvaluationWrite() # EvaluationWrite | The new Evaluation resource
 
     try:
@@ -592,7 +580,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
+ **ulid** | **str**| Evaluation identifier | 
  **evaluation_write** | [**EvaluationWrite**](EvaluationWrite.md)| The new Evaluation resource | 
 
 ### Return type
@@ -635,8 +623,6 @@ Retrieves the collection of Evidence resources.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.evidence_read import EvidenceRead
 from tpdk.rest import ApiException
@@ -727,8 +713,6 @@ Removes the Evidence resource.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -818,8 +802,6 @@ Creates a Media resource.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
@@ -909,8 +891,6 @@ This action does not held the actual upload, you will have to do the upload in a
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.evidence_read import EvidenceRead
 from tpdk.models.evidence_write import EvidenceWrite
@@ -1001,8 +981,6 @@ Retrieves the collection of Parcel resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1095,8 +1073,6 @@ Removes the Parcel resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1182,8 +1158,6 @@ Creates a Parcel resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.parcel_read import ParcelRead
 from tpdk.models.parcel_write import ParcelWrite
@@ -1281,8 +1255,6 @@ Creates a Media resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException

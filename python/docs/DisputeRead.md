@@ -60,7 +60,7 @@ json = "{}"
 # create an instance of DisputeRead from a JSON string
 dispute_read_instance = DisputeRead.from_json(json)
 # print the JSON string representation of the object
-print DisputeRead.to_json()
+print(DisputeRead.to_json())
 
 # convert the object into a dict
 dispute_read_dict = dispute_read_instance.to_dict()

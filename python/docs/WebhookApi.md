@@ -25,8 +25,6 @@ Retrieves the collection of WebhookHistory resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.webhook_history_collection_read import WebhookHistoryCollectionRead
 from tpdk.rest import ApiException
@@ -121,8 +119,6 @@ Retrieves a WebhookHistory resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.webhook_history_read import WebhookHistoryRead
 from tpdk.rest import ApiException
@@ -209,8 +205,6 @@ Replaces the WebhookHistory resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.webhook_history_read import WebhookHistoryRead
 from tpdk.rest import ApiException
@@ -300,8 +294,6 @@ Retrieves the collection of WebhookSubscription resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.webhook_subscription_read import WebhookSubscriptionRead
 from tpdk.rest import ApiException
@@ -389,8 +381,6 @@ Removes the WebhookSubscription resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -472,8 +462,6 @@ Creates a WebhookSubscription resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.webhook_subscription_read import WebhookSubscriptionRead
 from tpdk.models.webhook_subscription_write import WebhookSubscriptionWrite

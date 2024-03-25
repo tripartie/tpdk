@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of EvaluationRead from a JSON string
 evaluation_read_instance = EvaluationRead.from_json(json)
 # print the JSON string representation of the object
-print EvaluationRead.to_json()
+print(EvaluationRead.to_json())
 
 # convert the object into a dict
 evaluation_read_dict = evaluation_read_instance.to_dict()

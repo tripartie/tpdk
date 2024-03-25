@@ -41,8 +41,6 @@ Retrieves the collection of ApiClient resources.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.api_client_read import ApiClientRead
 from tpdk.rest import ApiException
@@ -126,8 +124,6 @@ Removes the ApiClient resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -209,8 +205,6 @@ Retrieves a ApiClient resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.api_client_read import ApiClientRead
 from tpdk.rest import ApiException
@@ -295,8 +289,6 @@ Creates a ApiClient resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.api_client_post_creation_read import ApiClientPostCreationRead
 from tpdk.models.api_client_write import ApiClientWrite
@@ -385,8 +377,6 @@ Invite a user to your organization workspace
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_invite import UserInvite
 from tpdk.models.user_post_register_read import UserPostRegisterRead
@@ -481,8 +471,6 @@ Retrieves a User resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_authenticated_read import UserAuthenticatedRead
 from tpdk.rest import ApiException
@@ -571,8 +559,6 @@ Main route for Persona (Organization customers) to authenticate themselves. Publ
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_auth_return import PersonaAuthReturn
 from tpdk.models.persona_external_auth import PersonaExternalAuth
@@ -665,8 +651,6 @@ Retrieves a Persona resource.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_read import PersonaRead
 from tpdk.rest import ApiException
@@ -749,8 +733,6 @@ Creates a Persona resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.persona_read import PersonaRead
 from tpdk.models.persona_register import PersonaRegister
@@ -845,8 +827,6 @@ Internal-use only, protected by a captcha. Organization first-enrollment
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_post_register_read import UserPostRegisterRead
 from tpdk.models.user_write import UserWrite
@@ -939,8 +919,6 @@ Retrieves the collection of User resources.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_collection_read import UserCollectionRead
 from tpdk.rest import ApiException
@@ -1024,8 +1002,6 @@ Removes the User resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1107,8 +1083,6 @@ Retrieves a User resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user import User
 from tpdk.rest import ApiException
@@ -1195,8 +1169,6 @@ Updates the User resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_post_register_read import UserPostRegisterRead
 from tpdk.models.user_update import UserUpdate
@@ -1292,8 +1264,6 @@ Removes the Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1375,8 +1345,6 @@ Creates a Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
@@ -1466,8 +1434,6 @@ Updates the User resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_user_email_update import UserUserEmailUpdate
 from tpdk.models.user_user_read import UserUserRead
@@ -1565,8 +1531,6 @@ Updates the User resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_email_validation_write import UserEmailValidationWrite
 from tpdk.models.user_post_register_read import UserPostRegisterRead
@@ -1662,8 +1626,6 @@ Updates the User resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_user_subscribed import UserUserSubscribed
 from tpdk.rest import ApiException
@@ -1754,8 +1716,6 @@ Updates the User resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_user_password_update import UserUserPasswordUpdate
 from tpdk.models.user_user_read import UserUserRead
@@ -1853,8 +1813,6 @@ Updates the User resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_totp_setup_read import UserTotpSetupRead
 from tpdk.rest import ApiException
@@ -1951,8 +1909,6 @@ Updates the User resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_totp_toggle_write import UserTotpToggleWrite
 from tpdk.rest import ApiException
@@ -2049,8 +2005,6 @@ This endpoint is protected by a captcha, do not try to use it to consume our API
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.user_jwt_created import UserJwtCreated
 from tpdk.models.user_jwt_write import UserJwtWrite

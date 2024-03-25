@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **name** | **str** |  | 
-**vat_number** | **str** |  | 
-**commercial_registry_number** | **str** |  | 
+**vat_number** | **str** |  | [optional] 
+**commercial_registry_number** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
-**billing_address** | [**AddressWrite**](AddressWrite.md) |  | [optional] 
+**billing_address** | [**OrganizationWriteBillingAddress**](OrganizationWriteBillingAddress.md) |  | [optional] 
 
 ## Example
 
@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of OrganizationWrite from a JSON string
 organization_write_instance = OrganizationWrite.from_json(json)
 # print the JSON string representation of the object
-print OrganizationWrite.to_json()
+print(OrganizationWrite.to_json())
 
 # convert the object into a dict
 organization_write_dict = organization_write_instance.to_dict()

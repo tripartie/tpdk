@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of PersonaCollectionRead from a JSON string
 persona_collection_read_instance = PersonaCollectionRead.from_json(json)
 # print the JSON string representation of the object
-print PersonaCollectionRead.to_json()
+print(PersonaCollectionRead.to_json())
 
 # convert the object into a dict
 persona_collection_read_dict = persona_collection_read_instance.to_dict()
