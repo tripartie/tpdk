@@ -29,12 +29,12 @@ json = "{}"
 # create an instance of OfferRead from a JSON string
 offer_read_instance = OfferRead.from_json(json)
 # print the JSON string representation of the object
-print OfferRead.to_json()
+print(OfferRead.to_json())
 
 # convert the object into a dict
 offer_read_dict = offer_read_instance.to_dict()
 # create an instance of OfferRead from a dict
-offer_read_form_dict = offer_read.from_dict(offer_read_dict)
+offer_read_from_dict = OfferRead.from_dict(offer_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

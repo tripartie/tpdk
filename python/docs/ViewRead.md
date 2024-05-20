@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ViewRead from a JSON string
 view_read_instance = ViewRead.from_json(json)
 # print the JSON string representation of the object
-print ViewRead.to_json()
+print(ViewRead.to_json())
 
 # convert the object into a dict
 view_read_dict = view_read_instance.to_dict()
 # create an instance of ViewRead from a dict
-view_read_form_dict = view_read.from_dict(view_read_dict)
+view_read_from_dict = ViewRead.from_dict(view_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

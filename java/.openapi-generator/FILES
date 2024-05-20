@@ -26,6 +26,7 @@ docs/DisputeWrite.md
 docs/EvaluationRead.md
 docs/EvaluationWrite.md
 docs/Evidence.md
+docs/EvidenceApi.md
 docs/EvidenceRead.md
 docs/EvidenceWrite.md
 docs/GenericError.md
@@ -143,6 +144,7 @@ src/main/java/com/tripartie/tpdk/ServerConfiguration.java
 src/main/java/com/tripartie/tpdk/ServerVariable.java
 src/main/java/com/tripartie/tpdk/StringUtil.java
 src/main/java/com/tripartie/tpdk/api/BrandingApi.java
+src/main/java/com/tripartie/tpdk/api/EvidenceApi.java
 src/main/java/com/tripartie/tpdk/api/MediaApi.java
 src/main/java/com/tripartie/tpdk/api/NotificationApi.java
 src/main/java/com/tripartie/tpdk/api/OrganizationApi.java
@@ -266,6 +268,7 @@ src/main/java/com/tripartie/tpdk/model/WebhookSubscriptionWrite.java
 src/main/java/com/tripartie/tpdk/model/WorkflowEventDisputeRead.java
 src/main/java/com/tripartie/tpdk/model/WorkflowEventRead.java
 src/test/java/com/tripartie/tpdk/api/BrandingApiTest.java
+src/test/java/com/tripartie/tpdk/api/EvidenceApiTest.java
 src/test/java/com/tripartie/tpdk/api/MediaApiTest.java
 src/test/java/com/tripartie/tpdk/api/NotificationApiTest.java
 src/test/java/com/tripartie/tpdk/api/OrganizationApiTest.java

@@ -33,12 +33,12 @@ json = "{}"
 # create an instance of OrganizationCollectionRead from a JSON string
 organization_collection_read_instance = OrganizationCollectionRead.from_json(json)
 # print the JSON string representation of the object
-print OrganizationCollectionRead.to_json()
+print(OrganizationCollectionRead.to_json())
 
 # convert the object into a dict
 organization_collection_read_dict = organization_collection_read_instance.to_dict()
 # create an instance of OrganizationCollectionRead from a dict
-organization_collection_read_form_dict = organization_collection_read.from_dict(organization_collection_read_dict)
+organization_collection_read_from_dict = OrganizationCollectionRead.from_dict(organization_collection_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

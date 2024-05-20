@@ -11,8 +11,8 @@ An Offer object represent a public listening
 |**publicUrl** | **URI** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. |  [optional] |
 |**seller** | [**PersonaIndependentWrite**](PersonaIndependentWrite.md) | If the seller is actually YOUR organization, set it to NULL. |  |
 |**nature** | [**NatureEnum**](#NatureEnum) | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. |  [optional] |
-|**title** | **String** |  |  |
-|**description** | **String** |  |  |
+|**title** | **String** |  |  [optional] |
+|**description** | **String** |  |  [optional] |
 |**unitPrice** | **BigDecimal** |  |  [optional] |
 |**currencyCode** | **String** |  |  [optional] |
 |**itemCount** | **Integer** |  |  [optional] |

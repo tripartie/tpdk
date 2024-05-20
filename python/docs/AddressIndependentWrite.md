@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of AddressIndependentWrite from a JSON string
 address_independent_write_instance = AddressIndependentWrite.from_json(json)
 # print the JSON string representation of the object
-print AddressIndependentWrite.to_json()
+print(AddressIndependentWrite.to_json())
 
 # convert the object into a dict
 address_independent_write_dict = address_independent_write_instance.to_dict()
 # create an instance of AddressIndependentWrite from a dict
-address_independent_write_form_dict = address_independent_write.from_dict(address_independent_write_dict)
+address_independent_write_from_dict = AddressIndependentWrite.from_dict(address_independent_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

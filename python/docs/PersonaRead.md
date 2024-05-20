@@ -23,12 +23,12 @@ json = "{}"
 # create an instance of PersonaRead from a JSON string
 persona_read_instance = PersonaRead.from_json(json)
 # print the JSON string representation of the object
-print PersonaRead.to_json()
+print(PersonaRead.to_json())
 
 # convert the object into a dict
 persona_read_dict = persona_read_instance.to_dict()
 # create an instance of PersonaRead from a dict
-persona_read_form_dict = persona_read.from_dict(persona_read_dict)
+persona_read_from_dict = PersonaRead.from_dict(persona_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

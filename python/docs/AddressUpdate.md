@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of AddressUpdate from a JSON string
 address_update_instance = AddressUpdate.from_json(json)
 # print the JSON string representation of the object
-print AddressUpdate.to_json()
+print(AddressUpdate.to_json())
 
 # convert the object into a dict
 address_update_dict = address_update_instance.to_dict()
 # create an instance of AddressUpdate from a dict
-address_update_form_dict = address_update.from_dict(address_update_dict)
+address_update_from_dict = AddressUpdate.from_dict(address_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

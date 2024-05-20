@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of DisputeIndependentWrite from a JSON string
 dispute_independent_write_instance = DisputeIndependentWrite.from_json(json)
 # print the JSON string representation of the object
-print DisputeIndependentWrite.to_json()
+print(DisputeIndependentWrite.to_json())
 
 # convert the object into a dict
 dispute_independent_write_dict = dispute_independent_write_instance.to_dict()
 # create an instance of DisputeIndependentWrite from a dict
-dispute_independent_write_form_dict = dispute_independent_write.from_dict(dispute_independent_write_dict)
+dispute_independent_write_from_dict = DisputeIndependentWrite.from_dict(dispute_independent_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

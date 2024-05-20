@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of PersonaWrite from a JSON string
 persona_write_instance = PersonaWrite.from_json(json)
 # print the JSON string representation of the object
-print PersonaWrite.to_json()
+print(PersonaWrite.to_json())
 
 # convert the object into a dict
 persona_write_dict = persona_write_instance.to_dict()
 # create an instance of PersonaWrite from a dict
-persona_write_form_dict = persona_write.from_dict(persona_write_dict)
+persona_write_from_dict = PersonaWrite.from_dict(persona_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

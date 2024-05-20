@@ -11,8 +11,8 @@
 |**captcha** | **String** |  |  |
 |**firstName** | **String** |  |  |
 |**lastName** | **String** |  |  |
-|**publicName** | **String** |  |  |
-|**roleInCompany** | **String** |  |  |
+|**publicName** | **String** |  |  [optional] |
+|**roleInCompany** | **String** |  |  [optional] |
 |**birthday** | **OffsetDateTime** |  |  [optional] |
 |**email** | **String** |  |  |
 |**plainPassword** | **String** |  |  |

@@ -9,8 +9,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
-|**vatNumber** | **String** |  |  |
-|**commercialRegistryNumber** | **String** |  |  |
+|**vatNumber** | **String** |  |  [optional] |
+|**commercialRegistryNumber** | **String** |  |  [optional] |
 |**websiteUrl** | **URI** |  |  [optional] |
 |**customBaseUrl** | **URI** |  |  [optional] |
 |**billingAddress** | [**AddressUpdate**](AddressUpdate.md) |  |  [optional] |

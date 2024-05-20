@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of PersonaIndependentWrite from a JSON string
 persona_independent_write_instance = PersonaIndependentWrite.from_json(json)
 # print the JSON string representation of the object
-print PersonaIndependentWrite.to_json()
+print(PersonaIndependentWrite.to_json())
 
 # convert the object into a dict
 persona_independent_write_dict = persona_independent_write_instance.to_dict()
 # create an instance of PersonaIndependentWrite from a dict
-persona_independent_write_form_dict = persona_independent_write.from_dict(persona_independent_write_dict)
+persona_independent_write_from_dict = PersonaIndependentWrite.from_dict(persona_independent_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

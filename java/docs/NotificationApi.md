@@ -40,7 +40,7 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Notification identifier
     Integer page = 1; // Integer | The collection page number
     try {
       List<NotificationRead> result = apiInstance.apiPersonasIdnotificationsGetCollection(id, page);
@@ -60,7 +60,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Notification identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 
 ### Return type
@@ -115,7 +115,7 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String personaId = "personaId_example"; // String | Persona identifier
+    String personaId = "personaId_example"; // String | Notification identifier
     String id = "id_example"; // String | Notification identifier
     NotificationUpdate notificationUpdate = new NotificationUpdate(); // NotificationUpdate | The updated Notification resource
     try {
@@ -136,7 +136,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **personaId** | **String**| Persona identifier | |
+| **personaId** | **String**| Notification identifier | |
 | **id** | **String**| Notification identifier | |
 | **notificationUpdate** | [**NotificationUpdate**](NotificationUpdate.md)| The updated Notification resource | |
 
@@ -205,7 +205,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String id = "id_example"; // String | User identifier
+    String id = "id_example"; // String | Notification identifier
     Integer page = 1; // Integer | The collection page number
     try {
       List<NotificationRead> result = apiInstance.apiUsersIdnotificationsGetCollection(id, page);
@@ -225,7 +225,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| User identifier | |
+| **id** | **String**| Notification identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 
 ### Return type
@@ -278,7 +278,7 @@ public class Example {
     //jwtPersonalKey.setApiKeyPrefix("Token");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String userId = "userId_example"; // String | User identifier
+    String userId = "userId_example"; // String | Notification identifier
     String id = "id_example"; // String | Notification identifier
     NotificationUpdate notificationUpdate = new NotificationUpdate(); // NotificationUpdate | The updated Notification resource
     try {
@@ -299,7 +299,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userId** | **String**| User identifier | |
+| **userId** | **String**| Notification identifier | |
 | **id** | **String**| Notification identifier | |
 | **notificationUpdate** | [**NotificationUpdate**](NotificationUpdate.md)| The updated Notification resource | |
 

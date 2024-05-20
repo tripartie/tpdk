@@ -7,65 +7,65 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**ulid** | **Object** |  |  |
+|**ulid** | **String** |  |  |
 |**transaction** | [**TransactionRead**](TransactionRead.md) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
-|**redirectUrl** | **Object** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. |  [optional] |
-|**itemCount** | **Object** |  |  [optional] |
+|**redirectUrl** | **String** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. |  [optional] |
+|**itemCount** | **Integer** |  |  [optional] |
 |**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) |  |  [optional] |
 |**issueInDescriptionType** | [**IssueInDescriptionTypeEnum**](#IssueInDescriptionTypeEnum) | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. |  [optional] |
-|**issueMentionedInOffer** | **Object** |  |  [optional] |
-|**issueDetails** | **Object** |  |  [optional] |
-|**complainantTruthfulnessScore** | **Object** |  |  |
-|**sellerTruthfulnessScore** | **Object** |  |  |
+|**issueMentionedInOffer** | **Boolean** |  |  [optional] |
+|**issueDetails** | **String** |  |  [optional] |
+|**complainantTruthfulnessScore** | **Integer** |  |  |
+|**sellerTruthfulnessScore** | **Integer** |  |  |
 |**complainantStake** | [**ComplainantStakeEnum**](#ComplainantStakeEnum) |  |  [optional] |
 |**inferredStake** | [**InferredStakeEnum**](#InferredStakeEnum) |  |  [optional] |
 |**recommendedSolution** | [**RecommendedSolutionEnum**](#RecommendedSolutionEnum) |  |  [optional] |
-|**recommendedPartialRefundAmount** | **Object** |  |  [optional] |
+|**recommendedPartialRefundAmount** | **Integer** |  |  [optional] |
 |**chosenSolution** | [**ChosenSolutionEnum**](#ChosenSolutionEnum) |  |  [optional] |
-|**chosenPartialRefundAmount** | **Object** |  |  [optional] |
+|**chosenPartialRefundAmount** | **Integer** |  |  [optional] |
 |**counterSolution** | [**CounterSolutionEnum**](#CounterSolutionEnum) |  |  [optional] |
-|**counterPartialRefundAmount** | **Object** |  |  [optional] |
-|**sellerNotes** | **Object** |  |  [optional] |
+|**counterPartialRefundAmount** | **Integer** |  |  [optional] |
+|**sellerNotes** | **String** |  |  [optional] |
 |**sellerRejectionReason** | [**SellerRejectionReasonEnum**](#SellerRejectionReasonEnum) |  |  [optional] |
-|**complainantApproval** | **Object** |  |  [optional] |
-|**sellerApproval** | **Object** |  |  [optional] |
+|**complainantApproval** | **Boolean** |  |  [optional] |
+|**sellerApproval** | **Boolean** |  |  [optional] |
 |**platformSolution** | [**PlatformSolutionEnum**](#PlatformSolutionEnum) |  |  [optional] |
-|**platformPartialRefundAmount** | **Object** |  |  [optional] |
-|**platformApproval** | **Object** |  |  [optional] |
+|**platformPartialRefundAmount** | **Integer** |  |  [optional] |
+|**platformApproval** | **Boolean** |  |  [optional] |
 |**platformActorType** | [**PlatformActorTypeEnum**](#PlatformActorTypeEnum) |  |  [optional] |
-|**platformReasoning** | **Object** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. |  [optional] |
-|**arbitrationBy** | **Object** |  |  [optional] |
-|**parcels** | **Object** |  |  |
-|**views** | **Object** |  |  |
-|**metadata** | **Object** |  |  |
-|**events** | **Object** |  |  [optional] |
-|**createdAt** | **Object** |  |  [optional] [readonly] |
-|**updatedAt** | **Object** |  |  [optional] [readonly] |
-|**viewCount** | **Object** |  |  [optional] [readonly] |
-|**statusExpiration** | **Object** | Yield if eligible the date-time at which the dispute state expire. |  [optional] [readonly] |
+|**platformReasoning** | **String** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. |  [optional] |
+|**arbitrationBy** | **String** |  |  [optional] |
+|**parcels** | [**List&lt;ParcelRead&gt;**](ParcelRead.md) |  |  |
+|**views** | [**List&lt;ViewRead&gt;**](ViewRead.md) |  |  |
+|**metadata** | [**List&lt;MetadataRead&gt;**](MetadataRead.md) |  |  |
+|**events** | [**List&lt;WorkflowEventRead&gt;**](WorkflowEventRead.md) |  |  [optional] |
+|**createdAt** | **OffsetDateTime** |  |  [optional] [readonly] |
+|**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |
+|**viewCount** | **Integer** |  |  [optional] [readonly] |
+|**statusExpiration** | **OffsetDateTime** | Yield if eligible the date-time at which the dispute state expire. |  [optional] [readonly] |
 |**awaitedParty** | [**AwaitedPartyEnum**](#AwaitedPartyEnum) | Determine who is awaited (actor) for the next transition |  [optional] [readonly] |
-|**iri** | **Object** |  |  [optional] [readonly] |
-|**messageCount** | **Object** |  |  [optional] [readonly] |
+|**iri** | **String** |  |  [optional] [readonly] |
+|**messageCount** | **Integer** |  |  [optional] [readonly] |
 |**closedInFavorOf** | [**ClosedInFavorOfEnum**](#ClosedInFavorOfEnum) | Determine who won the case, if not specified, then it is ongoing. |  [optional] [readonly] |
-|**disbursedByBuyer** | **Object** | Total amount disbursed by the buyer to acquire the item. |  [optional] [readonly] |
-|**maxRefundableForBuyer** | **Object** | How much the buyer can actually receive back in case of a full refund. |  [optional] [readonly] |
-|**id** | **Object** |  |  [optional] [readonly] |
-|**firstName** | **Object** |  |  [optional] |
-|**lastName** | **Object** |  |  [optional] |
-|**language** | **Object** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. |  [optional] |
-|**email** | **Object** |  |  [optional] |
-|**mobilePhoneNumber** | **Object** |  |  [optional] |
-|**publicUrl** | **Object** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. |  [optional] |
+|**disbursedByBuyer** | **BigDecimal** | Total amount disbursed by the buyer to acquire the item. |  [optional] [readonly] |
+|**maxRefundableForBuyer** | **BigDecimal** | How much the buyer can actually receive back in case of a full refund. |  [optional] [readonly] |
+|**id** | **Integer** |  |  [optional] [readonly] |
+|**firstName** | **String** |  |  [optional] |
+|**lastName** | **String** |  |  [optional] |
+|**language** | **String** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. |  [optional] |
+|**email** | **String** |  |  [optional] |
+|**mobilePhoneNumber** | **String** |  |  [optional] |
+|**publicUrl** | **String** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. |  [optional] |
 |**organization** | [**OrganizationRead**](OrganizationRead.md) |  |  [optional] |
 |**seller** | [**PersonaRead**](PersonaRead.md) | If the seller is actually YOUR organization, set it to NULL. |  |
 |**nature** | [**NatureEnum**](#NatureEnum) | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. |  |
-|**title** | **Object** |  |  [optional] |
-|**description** | **Object** |  |  [optional] |
-|**unitPrice** | **Object** |  |  [optional] |
-|**currencyCode** | **Object** |  |  [optional] |
+|**title** | **String** |  |  [optional] |
+|**description** | **String** |  |  [optional] |
+|**unitPrice** | **BigDecimal** |  |  [optional] |
+|**currencyCode** | **String** |  |  [optional] |
 |**condition** | [**ConditionEnum**](#ConditionEnum) |  |  [optional] |
-|**medias** | **Object** |  |  |
+|**medias** | [**List&lt;MediaRead&gt;**](MediaRead.md) |  |  |
 
 
 

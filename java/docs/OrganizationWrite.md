@@ -10,8 +10,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Integer** |  |  [optional] [readonly] |
 |**name** | **String** |  |  |
-|**vatNumber** | **String** |  |  |
-|**commercialRegistryNumber** | **String** |  |  |
+|**vatNumber** | **String** |  |  [optional] |
+|**commercialRegistryNumber** | **String** |  |  [optional] |
 |**websiteUrl** | **URI** |  |  [optional] |
 |**billingAddress** | [**AddressWrite**](AddressWrite.md) |  |  [optional] |
 

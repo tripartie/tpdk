@@ -28,12 +28,12 @@ json = "{}"
 # create an instance of PersonaUpdate from a JSON string
 persona_update_instance = PersonaUpdate.from_json(json)
 # print the JSON string representation of the object
-print PersonaUpdate.to_json()
+print(PersonaUpdate.to_json())
 
 # convert the object into a dict
 persona_update_dict = persona_update_instance.to_dict()
 # create an instance of PersonaUpdate from a dict
-persona_update_form_dict = persona_update.from_dict(persona_update_dict)
+persona_update_from_dict = PersonaUpdate.from_dict(persona_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

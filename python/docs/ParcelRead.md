@@ -25,12 +25,12 @@ json = "{}"
 # create an instance of ParcelRead from a JSON string
 parcel_read_instance = ParcelRead.from_json(json)
 # print the JSON string representation of the object
-print ParcelRead.to_json()
+print(ParcelRead.to_json())
 
 # convert the object into a dict
 parcel_read_dict = parcel_read_instance.to_dict()
 # create an instance of ParcelRead from a dict
-parcel_read_form_dict = parcel_read.from_dict(parcel_read_dict)
+parcel_read_from_dict = ParcelRead.from_dict(parcel_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

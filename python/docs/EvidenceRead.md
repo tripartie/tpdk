@@ -24,12 +24,12 @@ json = "{}"
 # create an instance of EvidenceRead from a JSON string
 evidence_read_instance = EvidenceRead.from_json(json)
 # print the JSON string representation of the object
-print EvidenceRead.to_json()
+print(EvidenceRead.to_json())
 
 # convert the object into a dict
 evidence_read_dict = evidence_read_instance.to_dict()
 # create an instance of EvidenceRead from a dict
-evidence_read_form_dict = evidence_read.from_dict(evidence_read_dict)
+evidence_read_from_dict = EvidenceRead.from_dict(evidence_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

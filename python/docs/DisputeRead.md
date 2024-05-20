@@ -60,12 +60,12 @@ json = "{}"
 # create an instance of DisputeRead from a JSON string
 dispute_read_instance = DisputeRead.from_json(json)
 # print the JSON string representation of the object
-print DisputeRead.to_json()
+print(DisputeRead.to_json())
 
 # convert the object into a dict
 dispute_read_dict = dispute_read_instance.to_dict()
 # create an instance of DisputeRead from a dict
-dispute_read_form_dict = dispute_read.from_dict(dispute_read_dict)
+dispute_read_from_dict = DisputeRead.from_dict(dispute_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

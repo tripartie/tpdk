@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of MetadataWrite from a JSON string
 metadata_write_instance = MetadataWrite.from_json(json)
 # print the JSON string representation of the object
-print MetadataWrite.to_json()
+print(MetadataWrite.to_json())
 
 # convert the object into a dict
 metadata_write_dict = metadata_write_instance.to_dict()
 # create an instance of MetadataWrite from a dict
-metadata_write_form_dict = metadata_write.from_dict(metadata_write_dict)
+metadata_write_from_dict = MetadataWrite.from_dict(metadata_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

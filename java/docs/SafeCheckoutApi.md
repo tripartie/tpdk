@@ -78,8 +78,8 @@ public class Example {
     String createdAtStrictlyBefore = "createdAtStrictlyBefore_example"; // String | 
     String createdAtAfter = "createdAtAfter_example"; // String | 
     String createdAtStrictlyAfter = "createdAtStrictlyAfter_example"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> offerMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> offerMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String nature = "service"; // String | Filter on a limited subset of nature
     String condition = "NEW"; // String | Filter on a limited subset of condition
     Boolean shippingAllowed = true; // Boolean | 
@@ -504,10 +504,10 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Offer identifier
+    String ulid = "ulid_example"; // String | Transaction identifier
     Integer page = 1; // Integer | The collection page number
     String orderStatus = "asc"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String status = "CREATED"; // String | Filter on a limited subset of status
     try {
       List<TransactionCollectionRead> result = apiInstance.apiOffersUlidtransactionsGetCollection(ulid, page, orderStatus, metadata, status);
@@ -527,7 +527,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Offer identifier | |
+| **ulid** | **String**| Transaction identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 | **orderStatus** | **String**|  | [optional] [enum: asc, desc] |
 | **metadata** | [**List&lt;String&gt;**](String.md)| Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \&quot;null\&quot; for desired value. | [optional] |
@@ -585,8 +585,8 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Dispute identifier
-    String id = "id_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Evaluation identifier
+    String id = "id_example"; // String | Evaluation identifier
     EvaluationWrite evaluationWrite = new EvaluationWrite(); // EvaluationWrite | The new Evaluation resource
     try {
       EvaluationRead result = apiInstance.apiOffersUlidtransactionsIdevaluationsPost(ulid, id, evaluationWrite);
@@ -606,8 +606,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Dispute identifier | |
-| **id** | **String**| Transaction identifier | |
+| **ulid** | **String**| Evaluation identifier | |
+| **id** | **String**| Evaluation identifier | |
 | **evaluationWrite** | [**EvaluationWrite**](EvaluationWrite.md)| The new Evaluation resource | |
 
 ### Return type
@@ -664,7 +664,7 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Offer identifier
+    String ulid = "ulid_example"; // String | Transaction identifier
     Object body = null; // Object | The new Transaction resource
     try {
       TransactionRead result = apiInstance.apiOffersUlidtransactionsPost(ulid, body);
@@ -684,7 +684,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Offer identifier | |
+| **ulid** | **String**| Transaction identifier | |
 | **body** | **Object**| The new Transaction resource | |
 
 ### Return type
@@ -751,7 +751,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     try {
       apiInstance.apiPersonasIdoffersDelete(id);
     } catch (ApiException e) {
@@ -769,7 +769,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 
 ### Return type
 
@@ -834,7 +834,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     Integer page = 1; // Integer | The collection page number
     String title = "title_example"; // String | 
     String publicUrl = "publicUrl_example"; // String | 
@@ -847,8 +847,8 @@ public class Example {
     String createdAtStrictlyBefore = "createdAtStrictlyBefore_example"; // String | 
     String createdAtAfter = "createdAtAfter_example"; // String | 
     String createdAtStrictlyAfter = "createdAtStrictlyAfter_example"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> offerMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> offerMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String nature = "service"; // String | Filter on a limited subset of nature
     String condition = "NEW"; // String | Filter on a limited subset of condition
     Boolean shippingAllowed = true; // Boolean | 
@@ -870,7 +870,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 | **title** | **String**|  | [optional] |
 | **publicUrl** | **String**|  | [optional] |
@@ -951,7 +951,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     OfferUpdate offerUpdate = new OfferUpdate(); // OfferUpdate | The updated Offer resource
     try {
       OfferRead result = apiInstance.apiPersonasIdoffersPatch(id, offerUpdate);
@@ -971,7 +971,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 | **offerUpdate** | [**OfferUpdate**](OfferUpdate.md)| The updated Offer resource | |
 
 ### Return type
@@ -1039,7 +1039,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     OfferWrite offerWrite = new OfferWrite(); // OfferWrite | The new Offer resource
     try {
       OfferPostCreationRead result = apiInstance.apiPersonasIdoffersPost(id, offerWrite);
@@ -1059,7 +1059,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 | **offerWrite** | [**OfferWrite**](OfferWrite.md)| The new Offer resource | |
 
 ### Return type
@@ -1122,7 +1122,7 @@ public class Example {
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
     Integer page = 1; // Integer | The collection page number
     String orderStatus = "asc"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String status = "CREATED"; // String | Filter on a limited subset of status
     try {
       List<TransactionCollectionRead> result = apiInstance.apiTransactionsGetCollection(page, orderStatus, metadata, status);
@@ -1209,7 +1209,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     try {
       apiInstance.apiTransactionsUliddisputeDelete(ulid);
     } catch (ApiException e) {
@@ -1227,7 +1227,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 
 ### Return type
 
@@ -1292,7 +1292,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     try {
       DisputeRead result = apiInstance.apiTransactionsUliddisputeGet(ulid);
       System.out.println(result);
@@ -1311,7 +1311,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 
 ### Return type
 
@@ -1372,7 +1372,7 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     DisputeUpdate disputeUpdate = new DisputeUpdate(); // DisputeUpdate | The updated Dispute resource
     try {
       DisputeRead result = apiInstance.apiTransactionsUliddisputePatch(ulid, disputeUpdate);
@@ -1392,7 +1392,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 | **disputeUpdate** | [**DisputeUpdate**](DisputeUpdate.md)| The updated Dispute resource | |
 
 ### Return type
@@ -1460,7 +1460,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     DisputeWrite disputeWrite = new DisputeWrite(); // DisputeWrite | The new Dispute resource
     try {
       DisputePostCreationRead result = apiInstance.apiTransactionsUliddisputePost(ulid, disputeWrite);
@@ -1480,7 +1480,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 | **disputeWrite** | [**DisputeWrite**](DisputeWrite.md)| The new Dispute resource | |
 
 ### Return type

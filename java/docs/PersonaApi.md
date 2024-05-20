@@ -63,7 +63,7 @@ public class Example {
     String dateOfBirthStrictlyBefore = "dateOfBirthStrictlyBefore_example"; // String | 
     String dateOfBirthAfter = "dateOfBirthAfter_example"; // String | 
     String dateOfBirthStrictlyAfter = "dateOfBirthStrictlyAfter_example"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     try {
       List<PersonaCollectionRead> result = apiInstance.apiPersonasGetCollection(page, firstName, lastName, email, email2, mobilePhoneNumber, mobilePhoneNumber2, gender, orderCreatedAt, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, dateOfBirthBefore, dateOfBirthStrictlyBefore, dateOfBirthAfter, dateOfBirthStrictlyAfter, metadata);
       System.out.println(result);

@@ -77,9 +77,9 @@ public class Example {
     Boolean existsChosenSolution = true; // Boolean | 
     Boolean existsCounterSolution = true; // Boolean | 
     Boolean existsPlatformSolution = true; // Boolean | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> transactionMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for transaction.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> transactionOfferMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for transaction.offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> transactionMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for transaction.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> transactionOfferMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for transaction.offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     try {
       List<DisputeCollectionRead> result = apiInstance.apiDisputesGetCollection(page, orderCreatedAt, orderStatus, orderUpdatedAt, transactionOfferPublicUrl, transactionOfferPublicUrl2, transactionOfferTitle, transactionBuyerId, transactionBuyerId2, transactionBuyerEmail, transactionOfferSellerId, transactionOfferSellerId2, transactionOfferSellerEmail, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, status, transactionStatus, existsRecommendedSolution, existsChosenSolution, existsCounterSolution, existsPlatformSolution, metadata, transactionMetadata, transactionOfferMetadata);
       System.out.println(result);
@@ -505,7 +505,7 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
-    String ulid = "ulid_example"; // String | Dispute identifier
+    String ulid = "ulid_example"; // String | Evaluation identifier
     EvaluationWrite evaluationWrite = new EvaluationWrite(); // EvaluationWrite | The new Evaluation resource
     try {
       EvaluationRead result = apiInstance.apiDisputesUlidevaluationsPost(ulid, evaluationWrite);
@@ -525,7 +525,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Dispute identifier | |
+| **ulid** | **String**| Evaluation identifier | |
 | **evaluationWrite** | [**EvaluationWrite**](EvaluationWrite.md)| The new Evaluation resource | |
 
 ### Return type

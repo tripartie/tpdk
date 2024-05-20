@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of PersonaPostAuthRead from a JSON string
 persona_post_auth_read_instance = PersonaPostAuthRead.from_json(json)
 # print the JSON string representation of the object
-print PersonaPostAuthRead.to_json()
+print(PersonaPostAuthRead.to_json())
 
 # convert the object into a dict
 persona_post_auth_read_dict = persona_post_auth_read_instance.to_dict()
 # create an instance of PersonaPostAuthRead from a dict
-persona_post_auth_read_form_dict = persona_post_auth_read.from_dict(persona_post_auth_read_dict)
+persona_post_auth_read_from_dict = PersonaPostAuthRead.from_dict(persona_post_auth_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

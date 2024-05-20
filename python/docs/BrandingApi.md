@@ -23,8 +23,6 @@ Updates the Organization resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.organization_read import OrganizationRead
 from tpdk.models.organization_update import OrganizationUpdate
@@ -114,8 +112,6 @@ Removes the Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -197,8 +193,6 @@ Creates a Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
@@ -286,8 +280,6 @@ Removes the Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -369,8 +361,6 @@ Creates a Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException

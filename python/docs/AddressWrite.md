@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of AddressWrite from a JSON string
 address_write_instance = AddressWrite.from_json(json)
 # print the JSON string representation of the object
-print AddressWrite.to_json()
+print(AddressWrite.to_json())
 
 # convert the object into a dict
 address_write_dict = address_write_instance.to_dict()
 # create an instance of AddressWrite from a dict
-address_write_form_dict = address_write.from_dict(address_write_dict)
+address_write_from_dict = AddressWrite.from_dict(address_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

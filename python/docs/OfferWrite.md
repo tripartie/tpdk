@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **enforce_persona_auth** | **bool** | Mean that the generated url cannot be accessed without a generated token for a Persona. Disallow external registration. | [optional] [default to True]
 **override_rate_commission_safe_checkout** | **float** | Override YOUR platform fees for that particular Offer. | [optional] 
 **redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
-**title** | **str** |  | 
-**description** | **str** |  | 
+**title** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
 **unit_price** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] [default to 'EUR']
 **item_count** | **int** |  | [optional] [default to 1]
@@ -34,12 +34,12 @@ json = "{}"
 # create an instance of OfferWrite from a JSON string
 offer_write_instance = OfferWrite.from_json(json)
 # print the JSON string representation of the object
-print OfferWrite.to_json()
+print(OfferWrite.to_json())
 
 # convert the object into a dict
 offer_write_dict = offer_write_instance.to_dict()
 # create an instance of OfferWrite from a dict
-offer_write_form_dict = offer_write.from_dict(offer_write_dict)
+offer_write_from_dict = OfferWrite.from_dict(offer_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
