@@ -28,7 +28,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiOffersGetCollection"></a>
 # **apiOffersGetCollection**
-> List&lt;OfferCollectionRead&gt; apiOffersGetCollection(page, title, publicUrl, publicUrl2, unitPrice, unitPrice2, itemCount, itemCount2, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, metadata, offerMetadata, nature, condition, shippingAllowed)
+> List&lt;OfferCollectionRead&gt; apiOffersGetCollection().page(page).title(title).publicUrl(publicUrl).publicUrl2(publicUrl2).unitPrice(unitPrice).unitPrice2(unitPrice2).itemCount(itemCount).itemCount2(itemCount2).createdAtBefore(createdAtBefore).createdAtStrictlyBefore(createdAtStrictlyBefore).createdAtAfter(createdAtAfter).createdAtStrictlyAfter(createdAtStrictlyAfter).metadata(metadata).offerMetadata(offerMetadata).nature(nature).condition(condition).shippingAllowed(shippingAllowed).execute();
 
 Read issued Offers
 
@@ -78,13 +78,31 @@ public class Example {
     String createdAtStrictlyBefore = "createdAtStrictlyBefore_example"; // String | 
     String createdAtAfter = "createdAtAfter_example"; // String | 
     String createdAtStrictlyAfter = "createdAtStrictlyAfter_example"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> offerMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> offerMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String nature = "service"; // String | Filter on a limited subset of nature
     String condition = "NEW"; // String | Filter on a limited subset of condition
     Boolean shippingAllowed = true; // Boolean | 
     try {
-      List<OfferCollectionRead> result = apiInstance.apiOffersGetCollection(page, title, publicUrl, publicUrl2, unitPrice, unitPrice2, itemCount, itemCount2, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, metadata, offerMetadata, nature, condition, shippingAllowed);
+      List<OfferCollectionRead> result = apiInstance.apiOffersGetCollection()
+            .page(page)
+            .title(title)
+            .publicUrl(publicUrl)
+            .publicUrl2(publicUrl2)
+            .unitPrice(unitPrice)
+            .unitPrice2(unitPrice2)
+            .itemCount(itemCount)
+            .itemCount2(itemCount2)
+            .createdAtBefore(createdAtBefore)
+            .createdAtStrictlyBefore(createdAtStrictlyBefore)
+            .createdAtAfter(createdAtAfter)
+            .createdAtStrictlyAfter(createdAtStrictlyAfter)
+            .metadata(metadata)
+            .offerMetadata(offerMetadata)
+            .nature(nature)
+            .condition(condition)
+            .shippingAllowed(shippingAllowed)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersGetCollection");
@@ -143,7 +161,7 @@ public class Example {
 
 <a id="apiOffersPost"></a>
 # **apiOffersPost**
-> OfferPostCreationRead apiOffersPost(offerIndependentWrite)
+> OfferPostCreationRead apiOffersPost(offerIndependentWrite).execute();
 
 Create an Offer and retrieve url
 
@@ -177,7 +195,8 @@ public class Example {
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
     OfferIndependentWrite offerIndependentWrite = new OfferIndependentWrite(); // OfferIndependentWrite | The new Offer resource
     try {
-      OfferPostCreationRead result = apiInstance.apiOffersPost(offerIndependentWrite);
+      OfferPostCreationRead result = apiInstance.apiOffersPost(offerIndependentWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersPost");
@@ -222,7 +241,7 @@ public class Example {
 
 <a id="apiOffersUlidGet"></a>
 # **apiOffersUlidGet**
-> OfferRead apiOffersUlidGet(ulid)
+> OfferRead apiOffersUlidGet(ulid).execute();
 
 Read an Offer
 
@@ -262,7 +281,8 @@ public class Example {
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
     String ulid = "ulid_example"; // String | Offer identifier
     try {
-      OfferRead result = apiInstance.apiOffersUlidGet(ulid);
+      OfferRead result = apiInstance.apiOffersUlidGet(ulid)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersUlidGet");
@@ -306,7 +326,7 @@ public class Example {
 
 <a id="apiOffersUlidmediasIdDelete"></a>
 # **apiOffersUlidmediasIdDelete**
-> apiOffersUlidmediasIdDelete(ulid, id)
+> apiOffersUlidmediasIdDelete(ulid, id).execute();
 
 Removes the Media resource.
 
@@ -347,7 +367,8 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     Integer id = 56; // Integer | 
     try {
-      apiInstance.apiOffersUlidmediasIdDelete(ulid, id);
+      apiInstance.apiOffersUlidmediasIdDelete(ulid, id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersUlidmediasIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -391,7 +412,7 @@ null (empty response body)
 
 <a id="apiOffersUlidmediasPost"></a>
 # **apiOffersUlidmediasPost**
-> MediaRead apiOffersUlidmediasPost(ulid, _file)
+> MediaRead apiOffersUlidmediasPost(ulid)._file(_file).execute();
 
 Upload a picture for a given Offer
 
@@ -426,7 +447,9 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     File _file = new File("/path/to/file"); // File | 
     try {
-      MediaRead result = apiInstance.apiOffersUlidmediasPost(ulid, _file);
+      MediaRead result = apiInstance.apiOffersUlidmediasPost(ulid)
+            ._file(_file)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersUlidmediasPost");
@@ -472,7 +495,7 @@ public class Example {
 
 <a id="apiOffersUlidtransactionsGetCollection"></a>
 # **apiOffersUlidtransactionsGetCollection**
-> List&lt;TransactionCollectionRead&gt; apiOffersUlidtransactionsGetCollection(ulid, page, orderStatus, metadata, status)
+> List&lt;TransactionCollectionRead&gt; apiOffersUlidtransactionsGetCollection(ulid).page(page).orderStatus(orderStatus).metadata(metadata).status(status).execute();
 
 Retrieve Payment Intents for Offer
 
@@ -504,13 +527,18 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Offer identifier
+    String ulid = "ulid_example"; // String | Transaction identifier
     Integer page = 1; // Integer | The collection page number
     String orderStatus = "asc"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String status = "CREATED"; // String | Filter on a limited subset of status
     try {
-      List<TransactionCollectionRead> result = apiInstance.apiOffersUlidtransactionsGetCollection(ulid, page, orderStatus, metadata, status);
+      List<TransactionCollectionRead> result = apiInstance.apiOffersUlidtransactionsGetCollection(ulid)
+            .page(page)
+            .orderStatus(orderStatus)
+            .metadata(metadata)
+            .status(status)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersUlidtransactionsGetCollection");
@@ -527,7 +555,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Offer identifier | |
+| **ulid** | **String**| Transaction identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 | **orderStatus** | **String**|  | [optional] [enum: asc, desc] |
 | **metadata** | [**List&lt;String&gt;**](String.md)| Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \&quot;null\&quot; for desired value. | [optional] |
@@ -557,7 +585,7 @@ public class Example {
 
 <a id="apiOffersUlidtransactionsIdevaluationsPost"></a>
 # **apiOffersUlidtransactionsIdevaluationsPost**
-> EvaluationRead apiOffersUlidtransactionsIdevaluationsPost(ulid, id, evaluationWrite)
+> EvaluationRead apiOffersUlidtransactionsIdevaluationsPost(ulid, id, evaluationWrite).execute();
 
 Submit an Evaluation for the Offer
 
@@ -585,11 +613,12 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Dispute identifier
-    String id = "id_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Evaluation identifier
+    String id = "id_example"; // String | Evaluation identifier
     EvaluationWrite evaluationWrite = new EvaluationWrite(); // EvaluationWrite | The new Evaluation resource
     try {
-      EvaluationRead result = apiInstance.apiOffersUlidtransactionsIdevaluationsPost(ulid, id, evaluationWrite);
+      EvaluationRead result = apiInstance.apiOffersUlidtransactionsIdevaluationsPost(ulid, id, evaluationWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersUlidtransactionsIdevaluationsPost");
@@ -606,8 +635,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Dispute identifier | |
-| **id** | **String**| Transaction identifier | |
+| **ulid** | **String**| Evaluation identifier | |
+| **id** | **String**| Evaluation identifier | |
 | **evaluationWrite** | [**EvaluationWrite**](EvaluationWrite.md)| The new Evaluation resource | |
 
 ### Return type
@@ -636,7 +665,7 @@ public class Example {
 
 <a id="apiOffersUlidtransactionsPost"></a>
 # **apiOffersUlidtransactionsPost**
-> TransactionRead apiOffersUlidtransactionsPost(ulid, body)
+> TransactionRead apiOffersUlidtransactionsPost(ulid, body).execute();
 
 Create a Payment Intent for Offer
 
@@ -664,10 +693,11 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Offer identifier
+    String ulid = "ulid_example"; // String | Transaction identifier
     Object body = null; // Object | The new Transaction resource
     try {
-      TransactionRead result = apiInstance.apiOffersUlidtransactionsPost(ulid, body);
+      TransactionRead result = apiInstance.apiOffersUlidtransactionsPost(ulid, body)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiOffersUlidtransactionsPost");
@@ -684,7 +714,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Offer identifier | |
+| **ulid** | **String**| Transaction identifier | |
 | **body** | **Object**| The new Transaction resource | |
 
 ### Return type
@@ -713,7 +743,7 @@ public class Example {
 
 <a id="apiPersonasIdoffersDelete"></a>
 # **apiPersonasIdoffersDelete**
-> apiPersonasIdoffersDelete(id)
+> apiPersonasIdoffersDelete(id).execute();
 
 Revoke an Offer for given Persona
 
@@ -751,9 +781,10 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     try {
-      apiInstance.apiPersonasIdoffersDelete(id);
+      apiInstance.apiPersonasIdoffersDelete(id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiPersonasIdoffersDelete");
       System.err.println("Status code: " + e.getCode());
@@ -769,7 +800,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 
 ### Return type
 
@@ -796,7 +827,7 @@ null (empty response body)
 
 <a id="apiPersonasIdoffersGetCollection"></a>
 # **apiPersonasIdoffersGetCollection**
-> List&lt;OfferCollectionRead&gt; apiPersonasIdoffersGetCollection(id, page, title, publicUrl, publicUrl2, unitPrice, unitPrice2, itemCount, itemCount2, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, metadata, offerMetadata, nature, condition, shippingAllowed)
+> List&lt;OfferCollectionRead&gt; apiPersonasIdoffersGetCollection(id).page(page).title(title).publicUrl(publicUrl).publicUrl2(publicUrl2).unitPrice(unitPrice).unitPrice2(unitPrice2).itemCount(itemCount).itemCount2(itemCount2).createdAtBefore(createdAtBefore).createdAtStrictlyBefore(createdAtStrictlyBefore).createdAtAfter(createdAtAfter).createdAtStrictlyAfter(createdAtStrictlyAfter).metadata(metadata).offerMetadata(offerMetadata).nature(nature).condition(condition).shippingAllowed(shippingAllowed).execute();
 
 List or Search Offers for given Persona
 
@@ -834,7 +865,7 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     Integer page = 1; // Integer | The collection page number
     String title = "title_example"; // String | 
     String publicUrl = "publicUrl_example"; // String | 
@@ -847,13 +878,31 @@ public class Example {
     String createdAtStrictlyBefore = "createdAtStrictlyBefore_example"; // String | 
     String createdAtAfter = "createdAtAfter_example"; // String | 
     String createdAtStrictlyAfter = "createdAtStrictlyAfter_example"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> offerMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> offerMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String nature = "service"; // String | Filter on a limited subset of nature
     String condition = "NEW"; // String | Filter on a limited subset of condition
     Boolean shippingAllowed = true; // Boolean | 
     try {
-      List<OfferCollectionRead> result = apiInstance.apiPersonasIdoffersGetCollection(id, page, title, publicUrl, publicUrl2, unitPrice, unitPrice2, itemCount, itemCount2, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, metadata, offerMetadata, nature, condition, shippingAllowed);
+      List<OfferCollectionRead> result = apiInstance.apiPersonasIdoffersGetCollection(id)
+            .page(page)
+            .title(title)
+            .publicUrl(publicUrl)
+            .publicUrl2(publicUrl2)
+            .unitPrice(unitPrice)
+            .unitPrice2(unitPrice2)
+            .itemCount(itemCount)
+            .itemCount2(itemCount2)
+            .createdAtBefore(createdAtBefore)
+            .createdAtStrictlyBefore(createdAtStrictlyBefore)
+            .createdAtAfter(createdAtAfter)
+            .createdAtStrictlyAfter(createdAtStrictlyAfter)
+            .metadata(metadata)
+            .offerMetadata(offerMetadata)
+            .nature(nature)
+            .condition(condition)
+            .shippingAllowed(shippingAllowed)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiPersonasIdoffersGetCollection");
@@ -870,7 +919,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 | **title** | **String**|  | [optional] |
 | **publicUrl** | **String**|  | [optional] |
@@ -913,7 +962,7 @@ public class Example {
 
 <a id="apiPersonasIdoffersPatch"></a>
 # **apiPersonasIdoffersPatch**
-> OfferRead apiPersonasIdoffersPatch(id, offerUpdate)
+> OfferRead apiPersonasIdoffersPatch(id, offerUpdate).execute();
 
 Update an Offer for given Persona
 
@@ -951,10 +1000,11 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     OfferUpdate offerUpdate = new OfferUpdate(); // OfferUpdate | The updated Offer resource
     try {
-      OfferRead result = apiInstance.apiPersonasIdoffersPatch(id, offerUpdate);
+      OfferRead result = apiInstance.apiPersonasIdoffersPatch(id, offerUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiPersonasIdoffersPatch");
@@ -971,7 +1021,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 | **offerUpdate** | [**OfferUpdate**](OfferUpdate.md)| The updated Offer resource | |
 
 ### Return type
@@ -1001,7 +1051,7 @@ public class Example {
 
 <a id="apiPersonasIdoffersPost"></a>
 # **apiPersonasIdoffersPost**
-> OfferPostCreationRead apiPersonasIdoffersPost(id, offerWrite)
+> OfferPostCreationRead apiPersonasIdoffersPost(id, offerWrite).execute();
 
 Create an Offer for given Persona
 
@@ -1039,10 +1089,11 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Offer identifier
     OfferWrite offerWrite = new OfferWrite(); // OfferWrite | The new Offer resource
     try {
-      OfferPostCreationRead result = apiInstance.apiPersonasIdoffersPost(id, offerWrite);
+      OfferPostCreationRead result = apiInstance.apiPersonasIdoffersPost(id, offerWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiPersonasIdoffersPost");
@@ -1059,7 +1110,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Offer identifier | |
 | **offerWrite** | [**OfferWrite**](OfferWrite.md)| The new Offer resource | |
 
 ### Return type
@@ -1088,7 +1139,7 @@ public class Example {
 
 <a id="apiTransactionsGetCollection"></a>
 # **apiTransactionsGetCollection**
-> List&lt;TransactionCollectionRead&gt; apiTransactionsGetCollection(page, orderStatus, metadata, status)
+> List&lt;TransactionCollectionRead&gt; apiTransactionsGetCollection().page(page).orderStatus(orderStatus).metadata(metadata).status(status).execute();
 
 Retrieves the collection of Transaction resources.
 
@@ -1122,10 +1173,15 @@ public class Example {
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
     Integer page = 1; // Integer | The collection page number
     String orderStatus = "asc"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     String status = "CREATED"; // String | Filter on a limited subset of status
     try {
-      List<TransactionCollectionRead> result = apiInstance.apiTransactionsGetCollection(page, orderStatus, metadata, status);
+      List<TransactionCollectionRead> result = apiInstance.apiTransactionsGetCollection()
+            .page(page)
+            .orderStatus(orderStatus)
+            .metadata(metadata)
+            .status(status)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsGetCollection");
@@ -1171,7 +1227,7 @@ public class Example {
 
 <a id="apiTransactionsUliddisputeDelete"></a>
 # **apiTransactionsUliddisputeDelete**
-> apiTransactionsUliddisputeDelete(ulid)
+> apiTransactionsUliddisputeDelete(ulid).execute();
 
 Abandon claims on Dispute
 
@@ -1209,9 +1265,10 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     try {
-      apiInstance.apiTransactionsUliddisputeDelete(ulid);
+      apiInstance.apiTransactionsUliddisputeDelete(ulid)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsUliddisputeDelete");
       System.err.println("Status code: " + e.getCode());
@@ -1227,7 +1284,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 
 ### Return type
 
@@ -1254,7 +1311,7 @@ null (empty response body)
 
 <a id="apiTransactionsUliddisputeGet"></a>
 # **apiTransactionsUliddisputeGet**
-> DisputeRead apiTransactionsUliddisputeGet(ulid)
+> DisputeRead apiTransactionsUliddisputeGet(ulid).execute();
 
 Read Dispute from existing Transaction
 
@@ -1292,9 +1349,10 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     try {
-      DisputeRead result = apiInstance.apiTransactionsUliddisputeGet(ulid);
+      DisputeRead result = apiInstance.apiTransactionsUliddisputeGet(ulid)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsUliddisputeGet");
@@ -1311,7 +1369,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 
 ### Return type
 
@@ -1338,7 +1396,7 @@ public class Example {
 
 <a id="apiTransactionsUliddisputePatch"></a>
 # **apiTransactionsUliddisputePatch**
-> DisputeRead apiTransactionsUliddisputePatch(ulid, disputeUpdate)
+> DisputeRead apiTransactionsUliddisputePatch(ulid, disputeUpdate).execute();
 
 Interact with a Dispute
 
@@ -1372,10 +1430,11 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     DisputeUpdate disputeUpdate = new DisputeUpdate(); // DisputeUpdate | The updated Dispute resource
     try {
-      DisputeRead result = apiInstance.apiTransactionsUliddisputePatch(ulid, disputeUpdate);
+      DisputeRead result = apiInstance.apiTransactionsUliddisputePatch(ulid, disputeUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsUliddisputePatch");
@@ -1392,7 +1451,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 | **disputeUpdate** | [**DisputeUpdate**](DisputeUpdate.md)| The updated Dispute resource | |
 
 ### Return type
@@ -1422,7 +1481,7 @@ public class Example {
 
 <a id="apiTransactionsUliddisputePost"></a>
 # **apiTransactionsUliddisputePost**
-> DisputePostCreationRead apiTransactionsUliddisputePost(ulid, disputeWrite)
+> DisputePostCreationRead apiTransactionsUliddisputePost(ulid, disputeWrite).execute();
 
 Open a Dispute related to existing Transaction
 
@@ -1460,10 +1519,11 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     SafeCheckoutApi apiInstance = new SafeCheckoutApi(defaultClient);
-    String ulid = "ulid_example"; // String | Transaction identifier
+    String ulid = "ulid_example"; // String | Dispute identifier
     DisputeWrite disputeWrite = new DisputeWrite(); // DisputeWrite | The new Dispute resource
     try {
-      DisputePostCreationRead result = apiInstance.apiTransactionsUliddisputePost(ulid, disputeWrite);
+      DisputePostCreationRead result = apiInstance.apiTransactionsUliddisputePost(ulid, disputeWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsUliddisputePost");
@@ -1480,7 +1540,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Transaction identifier | |
+| **ulid** | **String**| Dispute identifier | |
 | **disputeWrite** | [**DisputeWrite**](DisputeWrite.md)| The new Dispute resource | |
 
 ### Return type
@@ -1509,7 +1569,7 @@ public class Example {
 
 <a id="apiTransactionsUlidparcelsGetCollection"></a>
 # **apiTransactionsUlidparcelsGetCollection**
-> List&lt;Object&gt; apiTransactionsUlidparcelsGetCollection(ulid, page)
+> List&lt;Object&gt; apiTransactionsUlidparcelsGetCollection(ulid).page(page).execute();
 
 Read shipments from Transaction
 
@@ -1546,7 +1606,9 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     Integer page = 1; // Integer | The collection page number
     try {
-      List<Object> result = apiInstance.apiTransactionsUlidparcelsGetCollection(ulid, page);
+      List<Object> result = apiInstance.apiTransactionsUlidparcelsGetCollection(ulid)
+            .page(page)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsUlidparcelsGetCollection");
@@ -1590,7 +1652,7 @@ public class Example {
 
 <a id="apiTransactionsUlidparcelsIdDelete"></a>
 # **apiTransactionsUlidparcelsIdDelete**
-> apiTransactionsUlidparcelsIdDelete(ulid, id)
+> apiTransactionsUlidparcelsIdDelete(ulid, id).execute();
 
 Withdraw shipment from Transaction
 
@@ -1621,7 +1683,8 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     Integer id = 56; // Integer | 
     try {
-      apiInstance.apiTransactionsUlidparcelsIdDelete(ulid, id);
+      apiInstance.apiTransactionsUlidparcelsIdDelete(ulid, id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsUlidparcelsIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -1665,7 +1728,7 @@ null (empty response body)
 
 <a id="apiTransactionsUlidparcelsPost"></a>
 # **apiTransactionsUlidparcelsPost**
-> ParcelRead apiTransactionsUlidparcelsPost(ulid, parcelWrite)
+> Object apiTransactionsUlidparcelsPost(ulid, parcelWrite).execute();
 
 Manually declare package shipped for Transaction
 
@@ -1700,7 +1763,8 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     ParcelWrite parcelWrite = new ParcelWrite(); // ParcelWrite | The new Parcel resource
     try {
-      ParcelRead result = apiInstance.apiTransactionsUlidparcelsPost(ulid, parcelWrite);
+      Object result = apiInstance.apiTransactionsUlidparcelsPost(ulid, parcelWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SafeCheckoutApi#apiTransactionsUlidparcelsPost");
@@ -1722,7 +1786,7 @@ public class Example {
 
 ### Return type
 
-[**ParcelRead**](ParcelRead.md)
+**Object**
 
 ### Authorization
 

@@ -13,7 +13,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiOrganizationsIdPatch"></a>
 # **apiOrganizationsIdPatch**
-> OrganizationRead apiOrganizationsIdPatch(id, organizationUpdate)
+> UserOrganizationRead apiOrganizationsIdPatch(id, organizationUpdate).execute();
 
 Update your Organization details, branding or parameters
 
@@ -44,7 +44,8 @@ public class Example {
     String id = "id_example"; // String | Organization identifier
     OrganizationUpdate organizationUpdate = new OrganizationUpdate(); // OrganizationUpdate | The updated Organization resource
     try {
-      OrganizationRead result = apiInstance.apiOrganizationsIdPatch(id, organizationUpdate);
+      UserOrganizationRead result = apiInstance.apiOrganizationsIdPatch(id, organizationUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BrandingApi#apiOrganizationsIdPatch");
@@ -66,7 +67,7 @@ public class Example {
 
 ### Return type
 
-[**OrganizationRead**](OrganizationRead.md)
+[**UserOrganizationRead**](UserOrganizationRead.md)
 
 ### Authorization
 
@@ -91,7 +92,7 @@ public class Example {
 
 <a id="apiOrganizationsIdiconDelete"></a>
 # **apiOrganizationsIdiconDelete**
-> apiOrganizationsIdiconDelete(id)
+> apiOrganizationsIdiconDelete(id).execute();
 
 Unset your Organization Icon
 
@@ -121,7 +122,8 @@ public class Example {
     BrandingApi apiInstance = new BrandingApi(defaultClient);
     Integer id = 56; // Integer | Organization identifier
     try {
-      apiInstance.apiOrganizationsIdiconDelete(id);
+      apiInstance.apiOrganizationsIdiconDelete(id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling BrandingApi#apiOrganizationsIdiconDelete");
       System.err.println("Status code: " + e.getCode());
@@ -164,7 +166,7 @@ null (empty response body)
 
 <a id="apiOrganizationsIdiconPost"></a>
 # **apiOrganizationsIdiconPost**
-> MediaRead apiOrganizationsIdiconPost(id, _file)
+> MediaRead apiOrganizationsIdiconPost(id)._file(_file).execute();
 
 Upload your Organization Icon
 
@@ -195,7 +197,9 @@ public class Example {
     Integer id = 56; // Integer | Organization identifier
     File _file = new File("/path/to/file"); // File | 
     try {
-      MediaRead result = apiInstance.apiOrganizationsIdiconPost(id, _file);
+      MediaRead result = apiInstance.apiOrganizationsIdiconPost(id)
+            ._file(_file)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BrandingApi#apiOrganizationsIdiconPost");
@@ -241,7 +245,7 @@ public class Example {
 
 <a id="apiOrganizationsIdlogoDelete"></a>
 # **apiOrganizationsIdlogoDelete**
-> apiOrganizationsIdlogoDelete(id)
+> apiOrganizationsIdlogoDelete(id).execute();
 
 Unset your Organization Logo
 
@@ -271,7 +275,8 @@ public class Example {
     BrandingApi apiInstance = new BrandingApi(defaultClient);
     Integer id = 56; // Integer | Organization identifier
     try {
-      apiInstance.apiOrganizationsIdlogoDelete(id);
+      apiInstance.apiOrganizationsIdlogoDelete(id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling BrandingApi#apiOrganizationsIdlogoDelete");
       System.err.println("Status code: " + e.getCode());
@@ -314,7 +319,7 @@ null (empty response body)
 
 <a id="apiOrganizationsIdlogoPost"></a>
 # **apiOrganizationsIdlogoPost**
-> MediaRead apiOrganizationsIdlogoPost(id, _file)
+> MediaRead apiOrganizationsIdlogoPost(id)._file(_file).execute();
 
 Upload your Organization logo
 
@@ -345,7 +350,9 @@ public class Example {
     Integer id = 56; // Integer | Organization identifier
     File _file = new File("/path/to/file"); // File | 
     try {
-      MediaRead result = apiInstance.apiOrganizationsIdlogoPost(id, _file);
+      MediaRead result = apiInstance.apiOrganizationsIdlogoPost(id)
+            ._file(_file)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BrandingApi#apiOrganizationsIdlogoPost");

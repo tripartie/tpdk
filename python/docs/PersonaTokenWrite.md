@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of PersonaTokenWrite from a JSON string
 persona_token_write_instance = PersonaTokenWrite.from_json(json)
 # print the JSON string representation of the object
-print PersonaTokenWrite.to_json()
+print(PersonaTokenWrite.to_json())
 
 # convert the object into a dict
 persona_token_write_dict = persona_token_write_instance.to_dict()
 # create an instance of PersonaTokenWrite from a dict
-persona_token_write_form_dict = persona_token_write.from_dict(persona_token_write_dict)
+persona_token_write_from_dict = PersonaTokenWrite.from_dict(persona_token_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,8 +1,9 @@
 # tpdk
 
 Tripartie
-- API version: 2.0.178
-  - Build date: 2024-02-07T15:33:34.209225Z[Etc/UTC]
+- API version: 2.0.199
+  - Build date: 2024-05-24T14:51:06.458670Z[Etc/UTC]
+  - Generator version: 7.6.0
 
 Our API suite for the **Resolution Center** and the **Safe Checkout** features.
 Simple, yet elegant web interfaces for your convenience. One request away from your first automated resolution or safe-checkout.
@@ -42,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.tripartie</groupId>
   <artifactId>tpdk</artifactId>
-  <version>2.0.178</version>
+  <version>2.0.199</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +59,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.tripartie:tpdk:2.0.178"
+     implementation "com.tripartie:tpdk:2.0.199"
   }
 ```
 
@@ -72,7 +73,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/tpdk-2.0.178.jar`
+* `target/tpdk-2.0.199.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -104,7 +105,8 @@ public class Example {
     String id = "id_example"; // String | Organization identifier
     OrganizationUpdate organizationUpdate = new OrganizationUpdate(); // OrganizationUpdate | The updated Organization resource
     try {
-      OrganizationRead result = apiInstance.apiOrganizationsIdPatch(id, organizationUpdate);
+      UserOrganizationRead result = apiInstance.apiOrganizationsIdPatch(id, organizationUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BrandingApi#apiOrganizationsIdPatch");
@@ -129,6 +131,7 @@ Class | Method | HTTP request | Description
 *BrandingApi* | [**apiOrganizationsIdiconPost**](docs/BrandingApi.md#apiOrganizationsIdiconPost) | **POST** /organizations/{id}/icon | Upload your Organization Icon
 *BrandingApi* | [**apiOrganizationsIdlogoDelete**](docs/BrandingApi.md#apiOrganizationsIdlogoDelete) | **DELETE** /organizations/{id}/logo | Unset your Organization Logo
 *BrandingApi* | [**apiOrganizationsIdlogoPost**](docs/BrandingApi.md#apiOrganizationsIdlogoPost) | **POST** /organizations/{id}/logo | Upload your Organization logo
+*EvidenceApi* | [**apiEvidencesIdGet**](docs/EvidenceApi.md#apiEvidencesIdGet) | **GET** /evidences/{id} | Retrieves a Evidence resource.
 *MediaApi* | [**apiMediasIdGet**](docs/MediaApi.md#apiMediasIdGet) | **GET** /medias/{id} | Retrieves a Media resource.
 *NotificationApi* | [**apiPersonasIdnotificationsGetCollection**](docs/NotificationApi.md#apiPersonasIdnotificationsGetCollection) | **GET** /personas/{id}/notifications | Retrieve pending notifications for Persona
 *NotificationApi* | [**apiPersonasPersonaIdnotificationsIdPatch**](docs/NotificationApi.md#apiPersonasPersonaIdnotificationsIdPatch) | **PATCH** /personas/{personaId}/notifications/{id} | Mark as read/unread a notification for Persona
@@ -211,69 +214,90 @@ Class | Method | HTTP request | Description
 
  - [AccessError](docs/AccessError.md)
  - [Address](docs/Address.md)
- - [AddressIndependentWrite](docs/AddressIndependentWrite.md)
- - [AddressUpdate](docs/AddressUpdate.md)
- - [AddressWrite](docs/AddressWrite.md)
  - [ApiClientPostCreationRead](docs/ApiClientPostCreationRead.md)
  - [ApiClientRead](docs/ApiClientRead.md)
  - [ApiClientWrite](docs/ApiClientWrite.md)
  - [AuthError](docs/AuthError.md)
+ - [DisputeAddressIndependentWrite](docs/DisputeAddressIndependentWrite.md)
  - [DisputeCollectionRead](docs/DisputeCollectionRead.md)
  - [DisputeDisputeRead](docs/DisputeDisputeRead.md)
  - [DisputeIndependentWrite](docs/DisputeIndependentWrite.md)
+ - [DisputeMediaRead](docs/DisputeMediaRead.md)
+ - [DisputeMetadataIndependentWrite](docs/DisputeMetadataIndependentWrite.md)
+ - [DisputeMetadataRead](docs/DisputeMetadataRead.md)
+ - [DisputeOfferCollectionRead](docs/DisputeOfferCollectionRead.md)
+ - [DisputeOfferIndependentWrite](docs/DisputeOfferIndependentWrite.md)
+ - [DisputeOfferRead](docs/DisputeOfferRead.md)
+ - [DisputeOrganizationRead](docs/DisputeOrganizationRead.md)
+ - [DisputeParcelIndependentWrite](docs/DisputeParcelIndependentWrite.md)
+ - [DisputeParcelRead](docs/DisputeParcelRead.md)
+ - [DisputePersonaCollectionRead](docs/DisputePersonaCollectionRead.md)
+ - [DisputePersonaIndependentWrite](docs/DisputePersonaIndependentWrite.md)
+ - [DisputePersonaRead](docs/DisputePersonaRead.md)
  - [DisputePostCreationRead](docs/DisputePostCreationRead.md)
  - [DisputeRead](docs/DisputeRead.md)
+ - [DisputeTransactionCollectionRead](docs/DisputeTransactionCollectionRead.md)
+ - [DisputeTransactionIndependentWrite](docs/DisputeTransactionIndependentWrite.md)
+ - [DisputeTransactionRead](docs/DisputeTransactionRead.md)
  - [DisputeUpdate](docs/DisputeUpdate.md)
+ - [DisputeViewRead](docs/DisputeViewRead.md)
+ - [DisputeWorkflowEventRead](docs/DisputeWorkflowEventRead.md)
  - [DisputeWrite](docs/DisputeWrite.md)
  - [EvaluationRead](docs/EvaluationRead.md)
  - [EvaluationWrite](docs/EvaluationWrite.md)
  - [Evidence](docs/Evidence.md)
+ - [EvidenceMediaRead](docs/EvidenceMediaRead.md)
  - [EvidenceRead](docs/EvidenceRead.md)
  - [EvidenceWrite](docs/EvidenceWrite.md)
  - [GenericError](docs/GenericError.md)
  - [InvalidQueryError](docs/InvalidQueryError.md)
  - [Media](docs/Media.md)
- - [MediaAuthenticatedRead](docs/MediaAuthenticatedRead.md)
- - [MediaCollectionRead](docs/MediaCollectionRead.md)
  - [MediaDisputeRead](docs/MediaDisputeRead.md)
  - [MediaRead](docs/MediaRead.md)
  - [MediaUserRead](docs/MediaUserRead.md)
  - [MessageError](docs/MessageError.md)
  - [Metadata](docs/Metadata.md)
  - [MetadataDisputeRead](docs/MetadataDisputeRead.md)
- - [MetadataIndependentWrite](docs/MetadataIndependentWrite.md)
- - [MetadataRead](docs/MetadataRead.md)
- - [MetadataUpdate](docs/MetadataUpdate.md)
- - [MetadataWrite](docs/MetadataWrite.md)
  - [NotFoundError](docs/NotFoundError.md)
  - [NotificationRead](docs/NotificationRead.md)
  - [NotificationUpdate](docs/NotificationUpdate.md)
  - [Offer](docs/Offer.md)
+ - [OfferAddressIndependentWrite](docs/OfferAddressIndependentWrite.md)
  - [OfferCollectionRead](docs/OfferCollectionRead.md)
  - [OfferDisputeRead](docs/OfferDisputeRead.md)
  - [OfferIndependentWrite](docs/OfferIndependentWrite.md)
+ - [OfferMediaRead](docs/OfferMediaRead.md)
+ - [OfferMetadataIndependentWrite](docs/OfferMetadataIndependentWrite.md)
+ - [OfferMetadataUpdate](docs/OfferMetadataUpdate.md)
+ - [OfferMetadataWrite](docs/OfferMetadataWrite.md)
+ - [OfferOrganizationRead](docs/OfferOrganizationRead.md)
+ - [OfferPersonaIndependentWrite](docs/OfferPersonaIndependentWrite.md)
  - [OfferPostCreationRead](docs/OfferPostCreationRead.md)
  - [OfferRead](docs/OfferRead.md)
  - [OfferUpdate](docs/OfferUpdate.md)
  - [OfferWrite](docs/OfferWrite.md)
- - [OrganizationAuthenticatedRead](docs/OrganizationAuthenticatedRead.md)
+ - [OrganizationAddressUpdate](docs/OrganizationAddressUpdate.md)
  - [OrganizationCollectionRead](docs/OrganizationCollectionRead.md)
  - [OrganizationDisputeRead](docs/OrganizationDisputeRead.md)
+ - [OrganizationMediaCollectionRead](docs/OrganizationMediaCollectionRead.md)
+ - [OrganizationMediaRead](docs/OrganizationMediaRead.md)
  - [OrganizationRead](docs/OrganizationRead.md)
  - [OrganizationUpdate](docs/OrganizationUpdate.md)
  - [OrganizationUserRead](docs/OrganizationUserRead.md)
- - [OrganizationWrite](docs/OrganizationWrite.md)
  - [Parcel](docs/Parcel.md)
  - [ParcelDisputeRead](docs/ParcelDisputeRead.md)
- - [ParcelIndependentWrite](docs/ParcelIndependentWrite.md)
- - [ParcelRead](docs/ParcelRead.md)
  - [ParcelWrite](docs/ParcelWrite.md)
  - [Persona](docs/Persona.md)
+ - [PersonaAddressRead](docs/PersonaAddressRead.md)
+ - [PersonaAddressUpdate](docs/PersonaAddressUpdate.md)
+ - [PersonaAddressWrite](docs/PersonaAddressWrite.md)
  - [PersonaAuthReturn](docs/PersonaAuthReturn.md)
  - [PersonaCollectionRead](docs/PersonaCollectionRead.md)
  - [PersonaDisputeRead](docs/PersonaDisputeRead.md)
  - [PersonaExternalAuth](docs/PersonaExternalAuth.md)
- - [PersonaIndependentWrite](docs/PersonaIndependentWrite.md)
+ - [PersonaMetadataRead](docs/PersonaMetadataRead.md)
+ - [PersonaMetadataUpdate](docs/PersonaMetadataUpdate.md)
+ - [PersonaMetadataWrite](docs/PersonaMetadataWrite.md)
  - [PersonaPostAuthRead](docs/PersonaPostAuthRead.md)
  - [PersonaRead](docs/PersonaRead.md)
  - [PersonaRegister](docs/PersonaRegister.md)
@@ -283,17 +307,28 @@ Class | Method | HTTP request | Description
  - [RateLimitError](docs/RateLimitError.md)
  - [TransactionCollectionRead](docs/TransactionCollectionRead.md)
  - [TransactionDisputeRead](docs/TransactionDisputeRead.md)
- - [TransactionIndependentWrite](docs/TransactionIndependentWrite.md)
+ - [TransactionMetadataRead](docs/TransactionMetadataRead.md)
+ - [TransactionOfferCollectionRead](docs/TransactionOfferCollectionRead.md)
+ - [TransactionOfferRead](docs/TransactionOfferRead.md)
+ - [TransactionParcelRead](docs/TransactionParcelRead.md)
  - [TransactionRead](docs/TransactionRead.md)
  - [UnprocessableEntity](docs/UnprocessableEntity.md)
  - [UnprocessableEntityViolationsInner](docs/UnprocessableEntityViolationsInner.md)
  - [User](docs/User.md)
+ - [UserAddressWrite](docs/UserAddressWrite.md)
  - [UserAuthenticatedRead](docs/UserAuthenticatedRead.md)
  - [UserCollectionRead](docs/UserCollectionRead.md)
  - [UserEmailValidationWrite](docs/UserEmailValidationWrite.md)
  - [UserInvite](docs/UserInvite.md)
  - [UserJwtCreated](docs/UserJwtCreated.md)
  - [UserJwtWrite](docs/UserJwtWrite.md)
+ - [UserMediaAuthenticatedRead](docs/UserMediaAuthenticatedRead.md)
+ - [UserMediaCollectionRead](docs/UserMediaCollectionRead.md)
+ - [UserMediaRead](docs/UserMediaRead.md)
+ - [UserOrganizationAuthenticatedRead](docs/UserOrganizationAuthenticatedRead.md)
+ - [UserOrganizationCollectionRead](docs/UserOrganizationCollectionRead.md)
+ - [UserOrganizationRead](docs/UserOrganizationRead.md)
+ - [UserOrganizationWrite](docs/UserOrganizationWrite.md)
  - [UserPostRegisterRead](docs/UserPostRegisterRead.md)
  - [UserTotpSetupRead](docs/UserTotpSetupRead.md)
  - [UserTotpToggleWrite](docs/UserTotpToggleWrite.md)
@@ -305,7 +340,6 @@ Class | Method | HTTP request | Description
  - [UserWrite](docs/UserWrite.md)
  - [View](docs/View.md)
  - [ViewDisputeRead](docs/ViewDisputeRead.md)
- - [ViewRead](docs/ViewRead.md)
  - [Webhook](docs/Webhook.md)
  - [WebhookHistoryCollectionRead](docs/WebhookHistoryCollectionRead.md)
  - [WebhookHistoryRead](docs/WebhookHistoryRead.md)
@@ -313,7 +347,6 @@ Class | Method | HTTP request | Description
  - [WebhookSubscriptionRead](docs/WebhookSubscriptionRead.md)
  - [WebhookSubscriptionWrite](docs/WebhookSubscriptionWrite.md)
  - [WorkflowEventDisputeRead](docs/WorkflowEventDisputeRead.md)
- - [WorkflowEventRead](docs/WorkflowEventRead.md)
 
 
 <a id="documentation-for-authorization"></a>

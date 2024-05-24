@@ -35,12 +35,12 @@ json = "{}"
 # create an instance of DisputeUpdate from a JSON string
 dispute_update_instance = DisputeUpdate.from_json(json)
 # print the JSON string representation of the object
-print DisputeUpdate.to_json()
+print(DisputeUpdate.to_json())
 
 # convert the object into a dict
 dispute_update_dict = dispute_update_instance.to_dict()
 # create an instance of DisputeUpdate from a dict
-dispute_update_form_dict = dispute_update.from_dict(dispute_update_dict)
+dispute_update_from_dict = DisputeUpdate.from_dict(dispute_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

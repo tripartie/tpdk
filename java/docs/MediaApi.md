@@ -9,7 +9,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiMediasIdGet"></a>
 # **apiMediasIdGet**
-> Media apiMediasIdGet(id)
+> Media apiMediasIdGet(id).execute();
 
 Retrieves a Media resource.
 
@@ -49,7 +49,8 @@ public class Example {
     MediaApi apiInstance = new MediaApi(defaultClient);
     String id = "id_example"; // String | Media identifier
     try {
-      Media result = apiInstance.apiMediasIdGet(id);
+      Media result = apiInstance.apiMediasIdGet(id)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MediaApi#apiMediasIdGet");

@@ -14,7 +14,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiWebhookHistoriesGetCollection"></a>
 # **apiWebhookHistoriesGetCollection**
-> List&lt;WebhookHistoryCollectionRead&gt; apiWebhookHistoriesGetCollection(page, event, event2, objectId, objectId2)
+> List&lt;WebhookHistoryCollectionRead&gt; apiWebhookHistoriesGetCollection().page(page).event(event).event2(event2).objectId(objectId).objectId2(objectId2).execute();
 
 Retrieves the collection of WebhookHistory resources.
 
@@ -52,7 +52,13 @@ public class Example {
     String objectId = "objectId_example"; // String | 
     List<String> objectId2 = Arrays.asList(); // List<String> | 
     try {
-      List<WebhookHistoryCollectionRead> result = apiInstance.apiWebhookHistoriesGetCollection(page, event, event2, objectId, objectId2);
+      List<WebhookHistoryCollectionRead> result = apiInstance.apiWebhookHistoriesGetCollection()
+            .page(page)
+            .event(event)
+            .event2(event2)
+            .objectId(objectId)
+            .objectId2(objectId2)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#apiWebhookHistoriesGetCollection");
@@ -99,7 +105,7 @@ public class Example {
 
 <a id="apiWebhookHistoriesIdGet"></a>
 # **apiWebhookHistoriesIdGet**
-> WebhookHistoryRead apiWebhookHistoriesIdGet(id)
+> WebhookHistoryRead apiWebhookHistoriesIdGet(id).execute();
 
 Retrieves a WebhookHistory resource.
 
@@ -133,7 +139,8 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     String id = "id_example"; // String | WebhookHistory identifier
     try {
-      WebhookHistoryRead result = apiInstance.apiWebhookHistoriesIdGet(id);
+      WebhookHistoryRead result = apiInstance.apiWebhookHistoriesIdGet(id)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#apiWebhookHistoriesIdGet");
@@ -177,7 +184,7 @@ public class Example {
 
 <a id="apiWebhookHistoriesIdPut"></a>
 # **apiWebhookHistoriesIdPut**
-> WebhookHistoryRead apiWebhookHistoriesIdPut(id, body)
+> WebhookHistoryRead apiWebhookHistoriesIdPut(id, body).execute();
 
 Replay a Webhook that ended up in failure
 
@@ -208,7 +215,8 @@ public class Example {
     String id = "id_example"; // String | WebhookHistory identifier
     Object body = null; // Object | The updated WebhookHistory resource
     try {
-      WebhookHistoryRead result = apiInstance.apiWebhookHistoriesIdPut(id, body);
+      WebhookHistoryRead result = apiInstance.apiWebhookHistoriesIdPut(id, body)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#apiWebhookHistoriesIdPut");
@@ -255,7 +263,7 @@ public class Example {
 
 <a id="apiWebhookSubscriptionsGetCollection"></a>
 # **apiWebhookSubscriptionsGetCollection**
-> List&lt;WebhookSubscriptionRead&gt; apiWebhookSubscriptionsGetCollection(page, event)
+> List&lt;WebhookSubscriptionRead&gt; apiWebhookSubscriptionsGetCollection().page(page).event(event).execute();
 
 Retrieves the collection of WebhookSubscription resources.
 
@@ -290,7 +298,10 @@ public class Example {
     Integer page = 1; // Integer | The collection page number
     String event = "dispute.opened"; // String | Filter on a limited subset of event
     try {
-      List<WebhookSubscriptionRead> result = apiInstance.apiWebhookSubscriptionsGetCollection(page, event);
+      List<WebhookSubscriptionRead> result = apiInstance.apiWebhookSubscriptionsGetCollection()
+            .page(page)
+            .event(event)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#apiWebhookSubscriptionsGetCollection");
@@ -334,7 +345,7 @@ public class Example {
 
 <a id="apiWebhookSubscriptionsIdDelete"></a>
 # **apiWebhookSubscriptionsIdDelete**
-> apiWebhookSubscriptionsIdDelete(id)
+> apiWebhookSubscriptionsIdDelete(id).execute();
 
 Removes the WebhookSubscription resource.
 
@@ -364,7 +375,8 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     String id = "id_example"; // String | WebhookSubscription identifier
     try {
-      apiInstance.apiWebhookSubscriptionsIdDelete(id);
+      apiInstance.apiWebhookSubscriptionsIdDelete(id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#apiWebhookSubscriptionsIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -407,7 +419,7 @@ null (empty response body)
 
 <a id="apiWebhookSubscriptionsPost"></a>
 # **apiWebhookSubscriptionsPost**
-> WebhookSubscriptionRead apiWebhookSubscriptionsPost(webhookSubscriptionWrite)
+> WebhookSubscriptionRead apiWebhookSubscriptionsPost(webhookSubscriptionWrite).execute();
 
 Subscribe to Event(s)
 
@@ -437,7 +449,8 @@ public class Example {
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     WebhookSubscriptionWrite webhookSubscriptionWrite = new WebhookSubscriptionWrite(); // WebhookSubscriptionWrite | The new WebhookSubscription resource
     try {
-      WebhookSubscriptionRead result = apiInstance.apiWebhookSubscriptionsPost(webhookSubscriptionWrite);
+      WebhookSubscriptionRead result = apiInstance.apiWebhookSubscriptionsPost(webhookSubscriptionWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhookApi#apiWebhookSubscriptionsPost");

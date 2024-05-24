@@ -7,65 +7,81 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**ulid** | **Object** |  |  |
-|**transaction** | [**TransactionRead**](TransactionRead.md) |  |  [optional] |
+|**ulid** | **String** |  |  |
+|**transaction** | [**DisputeTransactionRead**](DisputeTransactionRead.md) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
-|**redirectUrl** | **Object** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. |  [optional] |
-|**itemCount** | **Object** |  |  [optional] |
+|**redirectUrl** | **String** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. |  [optional] |
+|**itemCount** | **Integer** |  |  [optional] |
 |**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) |  |  [optional] |
 |**issueInDescriptionType** | [**IssueInDescriptionTypeEnum**](#IssueInDescriptionTypeEnum) | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. |  [optional] |
-|**issueMentionedInOffer** | **Object** |  |  [optional] |
-|**issueDetails** | **Object** |  |  [optional] |
-|**complainantTruthfulnessScore** | **Object** |  |  |
-|**sellerTruthfulnessScore** | **Object** |  |  |
+|**issueMentionedInOffer** | **Boolean** |  |  [optional] |
+|**issueDetails** | **String** |  |  [optional] |
+|**complainantTruthfulnessScore** | **Integer** |  |  |
+|**sellerTruthfulnessScore** | **Integer** |  |  |
 |**complainantStake** | [**ComplainantStakeEnum**](#ComplainantStakeEnum) |  |  [optional] |
 |**inferredStake** | [**InferredStakeEnum**](#InferredStakeEnum) |  |  [optional] |
 |**recommendedSolution** | [**RecommendedSolutionEnum**](#RecommendedSolutionEnum) |  |  [optional] |
-|**recommendedPartialRefundAmount** | **Object** |  |  [optional] |
+|**recommendedPartialRefundAmount** | **Integer** |  |  [optional] |
 |**chosenSolution** | [**ChosenSolutionEnum**](#ChosenSolutionEnum) |  |  [optional] |
-|**chosenPartialRefundAmount** | **Object** |  |  [optional] |
+|**chosenPartialRefundAmount** | **Integer** |  |  [optional] |
 |**counterSolution** | [**CounterSolutionEnum**](#CounterSolutionEnum) |  |  [optional] |
-|**counterPartialRefundAmount** | **Object** |  |  [optional] |
-|**sellerNotes** | **Object** |  |  [optional] |
+|**counterPartialRefundAmount** | **Integer** |  |  [optional] |
+|**sellerNotes** | **String** |  |  [optional] |
 |**sellerRejectionReason** | [**SellerRejectionReasonEnum**](#SellerRejectionReasonEnum) |  |  [optional] |
-|**complainantApproval** | **Object** |  |  [optional] |
-|**sellerApproval** | **Object** |  |  [optional] |
+|**complainantApproval** | **Boolean** |  |  [optional] |
+|**sellerApproval** | **Boolean** |  |  [optional] |
 |**platformSolution** | [**PlatformSolutionEnum**](#PlatformSolutionEnum) |  |  [optional] |
-|**platformPartialRefundAmount** | **Object** |  |  [optional] |
-|**platformApproval** | **Object** |  |  [optional] |
+|**platformPartialRefundAmount** | **Integer** |  |  [optional] |
+|**platformApproval** | **Boolean** |  |  [optional] |
 |**platformActorType** | [**PlatformActorTypeEnum**](#PlatformActorTypeEnum) |  |  [optional] |
-|**platformReasoning** | **Object** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. |  [optional] |
-|**arbitrationBy** | **Object** |  |  [optional] |
-|**parcels** | **Object** |  |  |
-|**views** | **Object** |  |  |
-|**metadata** | **Object** |  |  |
-|**events** | **Object** |  |  [optional] |
-|**createdAt** | **Object** |  |  [optional] [readonly] |
-|**updatedAt** | **Object** |  |  [optional] [readonly] |
-|**viewCount** | **Object** |  |  [optional] [readonly] |
-|**statusExpiration** | **Object** | Yield if eligible the date-time at which the dispute state expire. |  [optional] [readonly] |
+|**platformReasoning** | **String** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. |  [optional] |
+|**arbitrationBy** | **String** |  |  [optional] |
+|**parcels** | [**List&lt;DisputeParcelRead&gt;**](DisputeParcelRead.md) |  |  |
+|**views** | [**List&lt;DisputeViewRead&gt;**](DisputeViewRead.md) |  |  |
+|**metadata** | [**List&lt;PersonaMetadataRead&gt;**](PersonaMetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. |  |
+|**events** | [**List&lt;DisputeWorkflowEventRead&gt;**](DisputeWorkflowEventRead.md) |  |  [optional] |
+|**createdAt** | **OffsetDateTime** |  |  [optional] [readonly] |
+|**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |
+|**viewCount** | **Integer** |  |  [optional] [readonly] |
+|**statusExpiration** | **OffsetDateTime** | Yield if eligible the date-time at which the dispute state expire. |  [optional] [readonly] |
 |**awaitedParty** | [**AwaitedPartyEnum**](#AwaitedPartyEnum) | Determine who is awaited (actor) for the next transition |  [optional] [readonly] |
-|**iri** | **Object** |  |  [optional] [readonly] |
-|**messageCount** | **Object** |  |  [optional] [readonly] |
+|**iri** | **String** |  |  [optional] [readonly] |
+|**messageCount** | **Integer** |  |  [optional] [readonly] |
 |**closedInFavorOf** | [**ClosedInFavorOfEnum**](#ClosedInFavorOfEnum) | Determine who won the case, if not specified, then it is ongoing. |  [optional] [readonly] |
-|**disbursedByBuyer** | **Object** | Total amount disbursed by the buyer to acquire the item. |  [optional] [readonly] |
-|**maxRefundableForBuyer** | **Object** | How much the buyer can actually receive back in case of a full refund. |  [optional] [readonly] |
-|**id** | **Object** |  |  [optional] [readonly] |
-|**firstName** | **Object** |  |  [optional] |
-|**lastName** | **Object** |  |  [optional] |
-|**language** | **Object** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. |  [optional] |
-|**email** | **Object** |  |  [optional] |
-|**mobilePhoneNumber** | **Object** |  |  [optional] |
-|**publicUrl** | **Object** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. |  [optional] |
-|**organization** | [**OrganizationRead**](OrganizationRead.md) |  |  [optional] |
-|**seller** | [**PersonaRead**](PersonaRead.md) | If the seller is actually YOUR organization, set it to NULL. |  |
+|**disbursedByBuyer** | **BigDecimal** | Total amount disbursed by the buyer to acquire the item. |  [optional] [readonly] |
+|**maxRefundableForBuyer** | **BigDecimal** | How much the buyer can actually receive back in case of a full refund. |  [optional] [readonly] |
+|**id** | **Integer** |  |  [optional] [readonly] |
+|**firstName** | **String** |  |  [optional] |
+|**lastName** | **String** |  |  [optional] |
+|**gender** | [**GenderEnum**](#GenderEnum) |  |  [optional] |
+|**dateOfBirth** | **LocalDate** |  |  [optional] |
+|**language** | **String** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. |  [optional] |
+|**email** | **String** |  |  [optional] |
+|**mobilePhoneNumber** | **String** |  |  [optional] |
+|**address** | [**PersonaAddressRead**](PersonaAddressRead.md) |  |  [optional] |
+|**riskLevel** | [**RiskLevelEnum**](#RiskLevelEnum) | We sort Persona into three distinct risks&#39; category. This is inferred from the riskScore. |  [optional] |
+|**riskScore** | **Integer** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. |  [optional] |
+|**externalPurchaseCount** | **Integer** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. |  [optional] |
+|**externalSellCount** | **Integer** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. |  [optional] |
+|**offerCount** | **Integer** | Issued Offers count owned by a given Persona |  [optional] [readonly] |
+|**purchaseCount** | **Integer** |  |  [optional] [readonly] |
+|**publicUrl** | **String** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. |  [optional] |
+|**enforcePersonaAuth** | **Boolean** | Mean that the generated url cannot be accessed without a generated token for a Persona. Disallow external registration. |  |
+|**overrideRateCommissionSafeCheckout** | **BigDecimal** | Override YOUR platform fees for that particular Offer. |  [optional] |
+|**organization** | [**OfferOrganizationRead**](OfferOrganizationRead.md) |  |  [optional] |
+|**seller** | **String** | If the seller is actually YOUR organization, set it to NULL. |  |
 |**nature** | [**NatureEnum**](#NatureEnum) | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. |  |
-|**title** | **Object** |  |  [optional] |
-|**description** | **Object** |  |  [optional] |
-|**unitPrice** | **Object** |  |  [optional] |
-|**currencyCode** | **Object** |  |  [optional] |
+|**title** | **String** |  |  [optional] |
+|**unitPrice** | **BigDecimal** |  |  [optional] |
+|**currencyCode** | **String** |  |  [optional] |
 |**condition** | [**ConditionEnum**](#ConditionEnum) |  |  [optional] |
-|**medias** | **Object** |  |  |
+|**weightInGram** | **Integer** |  |  [optional] |
+|**shippingAllowed** | **Boolean** | That toggle allows the seller to propose shipping for its item. If set in conjunction of shippingCarrier, the label will be automatically generated. Also, it will restrict the carrier to the limited subset defined. |  |
+|**handDeliveryAllowed** | **Boolean** | Enable both parties to finalize the transaction in person rather than using delivery. A QR Code must be scanned by the seller once the buyer claims the product. |  |
+|**shippingCarriers** | [**List&lt;ShippingCarriersEnum&gt;**](#List&lt;ShippingCarriersEnum&gt;) | If you wish to enable automated shipping label generation through a specific provider, specify it there. |  [optional] |
+|**eanCode** | **String** |  |  [optional] |
+|**canBeSoldSeparately** | **Boolean** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. |  |
+|**medias** | [**List&lt;OfferMediaRead&gt;**](OfferMediaRead.md) |  |  |
 
 
 
@@ -230,6 +246,28 @@
 
 
 
+## Enum: GenderEnum
+
+| Name | Value |
+|---- | -----|
+| MALE | &quot;MALE&quot; |
+| FEMALE | &quot;FEMALE&quot; |
+| OTHER | &quot;OTHER&quot; |
+| RATHER_NOT_SAY | &quot;RATHER_NOT_SAY&quot; |
+
+
+
+## Enum: RiskLevelEnum
+
+| Name | Value |
+|---- | -----|
+| WEAK | &quot;WEAK&quot; |
+| MEDIUM | &quot;MEDIUM&quot; |
+| HIGH | &quot;HIGH&quot; |
+| NULL | &quot;null&quot; |
+
+
+
 ## Enum: NatureEnum
 
 | Name | Value |
@@ -250,6 +288,16 @@
 | DAMAGED | &quot;DAMAGED&quot; |
 | DETERIORATED | &quot;DETERIORATED&quot; |
 | UNRECOVERABLE | &quot;UNRECOVERABLE&quot; |
+
+
+
+## Enum: List&lt;ShippingCarriersEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| SWISSPOST | &quot;SwissPost&quot; |
+| COLISSIMO | &quot;Colissimo&quot; |
+| MONDIALRELAY | &quot;MondialRelay&quot; |
 
 
 

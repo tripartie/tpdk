@@ -19,12 +19,12 @@ json = "{}"
 # create an instance of PersonaAuthReturn from a JSON string
 persona_auth_return_instance = PersonaAuthReturn.from_json(json)
 # print the JSON string representation of the object
-print PersonaAuthReturn.to_json()
+print(PersonaAuthReturn.to_json())
 
 # convert the object into a dict
 persona_auth_return_dict = persona_auth_return_instance.to_dict()
 # create an instance of PersonaAuthReturn from a dict
-persona_auth_return_form_dict = persona_auth_return.from_dict(persona_auth_return_dict)
+persona_auth_return_from_dict = PersonaAuthReturn.from_dict(persona_auth_return_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

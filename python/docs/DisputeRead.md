@@ -7,7 +7,7 @@ Access directly our resolution center without having used the safe-checkout feat
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**transaction** | [**TransactionRead**](TransactionRead.md) |  | [optional] 
+**transaction** | [**DisputeTransactionRead**](DisputeTransactionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
 **redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
@@ -35,10 +35,10 @@ Name | Type | Description | Notes
 **platform_actor_type** | **str** |  | [optional] 
 **platform_reasoning** | **str** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. | [optional] 
 **arbitration_by** | **str** |  | [optional] 
-**parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
-**views** | [**List[ViewRead]**](ViewRead.md) |  | 
-**metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | 
-**events** | [**List[WorkflowEventRead]**](WorkflowEventRead.md) |  | [optional] 
+**parcels** | [**List[DisputeParcelRead]**](DisputeParcelRead.md) |  | 
+**views** | [**List[DisputeViewRead]**](DisputeViewRead.md) |  | 
+**metadata** | [**List[DisputeMetadataRead]**](DisputeMetadataRead.md) |  | 
+**events** | [**List[DisputeWorkflowEventRead]**](DisputeWorkflowEventRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **view_count** | **int** |  | [optional] [readonly] 
@@ -60,12 +60,12 @@ json = "{}"
 # create an instance of DisputeRead from a JSON string
 dispute_read_instance = DisputeRead.from_json(json)
 # print the JSON string representation of the object
-print DisputeRead.to_json()
+print(DisputeRead.to_json())
 
 # convert the object into a dict
 dispute_read_dict = dispute_read_instance.to_dict()
 # create an instance of DisputeRead from a dict
-dispute_read_form_dict = dispute_read.from_dict(dispute_read_dict)
+dispute_read_from_dict = DisputeRead.from_dict(dispute_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

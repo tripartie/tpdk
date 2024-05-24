@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **captcha** | **str** |  | 
 **first_name** | **str** |  | 
 **last_name** | **str** |  | 
-**public_name** | **str** |  | 
-**role_in_company** | **str** |  | 
+**public_name** | **str** |  | [optional] 
+**role_in_company** | **str** |  | [optional] 
 **birthday** | **datetime** |  | [optional] 
 **email** | **str** |  | 
 **plain_password** | **str** |  | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **preferred_language** | **str** |  | 
 **consent_mail_notification** | **bool** |  | [optional] 
 **consent_mail_ads** | **bool** |  | [optional] 
-**organization** | [**OrganizationWrite**](OrganizationWrite.md) |  | [optional] 
+**organization** | [**UserOrganizationWrite**](UserOrganizationWrite.md) |  | [optional] 
 
 ## Example
 
@@ -31,12 +31,12 @@ json = "{}"
 # create an instance of UserWrite from a JSON string
 user_write_instance = UserWrite.from_json(json)
 # print the JSON string representation of the object
-print UserWrite.to_json()
+print(UserWrite.to_json())
 
 # convert the object into a dict
 user_write_dict = user_write_instance.to_dict()
 # create an instance of UserWrite from a dict
-user_write_form_dict = user_write.from_dict(user_write_dict)
+user_write_from_dict = UserWrite.from_dict(user_write_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

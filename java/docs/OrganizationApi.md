@@ -10,7 +10,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiOrganizationsGetCollection"></a>
 # **apiOrganizationsGetCollection**
-> List&lt;OrganizationCollectionRead&gt; apiOrganizationsGetCollection(page, itemsPerPage, name)
+> List&lt;OrganizationCollectionRead&gt; apiOrganizationsGetCollection().page(page).itemsPerPage(itemsPerPage).name(name).execute();
 
 Retrieves the collection of Organization resources.
 
@@ -52,7 +52,11 @@ public class Example {
     Integer itemsPerPage = 30; // Integer | The number of items per page
     String name = "name_example"; // String | 
     try {
-      List<OrganizationCollectionRead> result = apiInstance.apiOrganizationsGetCollection(page, itemsPerPage, name);
+      List<OrganizationCollectionRead> result = apiInstance.apiOrganizationsGetCollection()
+            .page(page)
+            .itemsPerPage(itemsPerPage)
+            .name(name)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationApi#apiOrganizationsGetCollection");
@@ -95,7 +99,7 @@ public class Example {
 
 <a id="apiOrganizationsIdGet"></a>
 # **apiOrganizationsIdGet**
-> OrganizationRead apiOrganizationsIdGet(id)
+> OrganizationRead apiOrganizationsIdGet(id).execute();
 
 Retrieves a Organization resource.
 
@@ -135,7 +139,8 @@ public class Example {
     OrganizationApi apiInstance = new OrganizationApi(defaultClient);
     String id = "id_example"; // String | Organization identifier
     try {
-      OrganizationRead result = apiInstance.apiOrganizationsIdGet(id);
+      OrganizationRead result = apiInstance.apiOrganizationsIdGet(id)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationApi#apiOrganizationsIdGet");

@@ -7,7 +7,7 @@ Access directly our resolution center without having used the safe-checkout feat
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**transaction** | [**TransactionCollectionRead**](TransactionCollectionRead.md) |  | [optional] 
+**transaction** | [**DisputeTransactionCollectionRead**](DisputeTransactionCollectionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
 **issue_type** | **str** |  | [optional] 
@@ -39,12 +39,12 @@ json = "{}"
 # create an instance of DisputeCollectionRead from a JSON string
 dispute_collection_read_instance = DisputeCollectionRead.from_json(json)
 # print the JSON string representation of the object
-print DisputeCollectionRead.to_json()
+print(DisputeCollectionRead.to_json())
 
 # convert the object into a dict
 dispute_collection_read_dict = dispute_collection_read_instance.to_dict()
 # create an instance of DisputeCollectionRead from a dict
-dispute_collection_read_form_dict = dispute_collection_read.from_dict(dispute_collection_read_dict)
+dispute_collection_read_from_dict = DisputeCollectionRead.from_dict(dispute_collection_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

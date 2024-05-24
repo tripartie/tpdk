@@ -34,12 +34,12 @@ json = "{}"
 # create an instance of OrganizationDisputeRead from a JSON string
 organization_dispute_read_instance = OrganizationDisputeRead.from_json(json)
 # print the JSON string representation of the object
-print OrganizationDisputeRead.to_json()
+print(OrganizationDisputeRead.to_json())
 
 # convert the object into a dict
 organization_dispute_read_dict = organization_dispute_read_instance.to_dict()
 # create an instance of OrganizationDisputeRead from a dict
-organization_dispute_read_form_dict = organization_dispute_read.from_dict(organization_dispute_read_dict)
+organization_dispute_read_from_dict = OrganizationDisputeRead.from_dict(organization_dispute_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

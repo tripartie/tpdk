@@ -40,8 +40,6 @@ Retrieves the collection of Offer resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_collection_read import OfferCollectionRead
 from tpdk.rest import ApiException
@@ -166,8 +164,6 @@ Publish an offer so that you can safely retrieve a safe-checkout unique link fro
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_independent_write import OfferIndependentWrite
 from tpdk.models.offer_post_creation_read import OfferPostCreationRead
@@ -258,8 +254,6 @@ Retrieves a Offer resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_read import OfferRead
 from tpdk.rest import ApiException
@@ -354,8 +348,6 @@ Removes the Media resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -448,8 +440,6 @@ Creates a Media resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
@@ -540,8 +530,6 @@ Retrieves the collection of Transaction resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.transaction_collection_read import TransactionCollectionRead
 from tpdk.rest import ApiException
@@ -570,7 +558,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Offer identifier
+    ulid = 'ulid_example' # str | Transaction identifier
     page = 1 # int | The collection page number (optional) (default to 1)
     order_status = 'order_status_example' # str |  (optional)
     metadata = ['[External-ID, 1254A]'] # List[str] | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value. (optional)
@@ -592,7 +580,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Offer identifier | 
+ **ulid** | **str**| Transaction identifier | 
  **page** | **int**| The collection page number | [optional] [default to 1]
  **order_status** | **str**|  | [optional] 
  **metadata** | [**List[str]**](str.md)| Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \&quot;null\&quot; for desired value. | [optional] 
@@ -635,8 +623,6 @@ Submit an Evaluation for the Offer
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.evaluation_read import EvaluationRead
 from tpdk.models.evaluation_write import EvaluationWrite
@@ -664,8 +650,8 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Dispute identifier
-    id = 'id_example' # str | Transaction identifier
+    ulid = 'ulid_example' # str | Evaluation identifier
+    id = 'id_example' # str | Evaluation identifier
     evaluation_write = tpdk.EvaluationWrite() # EvaluationWrite | The new Evaluation resource
 
     try:
@@ -684,8 +670,8 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Dispute identifier | 
- **id** | **str**| Transaction identifier | 
+ **ulid** | **str**| Evaluation identifier | 
+ **id** | **str**| Evaluation identifier | 
  **evaluation_write** | [**EvaluationWrite**](EvaluationWrite.md)| The new Evaluation resource | 
 
 ### Return type
@@ -727,8 +713,6 @@ Cannot be used outside of a Persona (buyer)
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.transaction_read import TransactionRead
 from tpdk.rest import ApiException
@@ -755,7 +739,7 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Offer identifier
+    ulid = 'ulid_example' # str | Transaction identifier
     body = None # object | The new Transaction resource
 
     try:
@@ -774,7 +758,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Offer identifier | 
+ **ulid** | **str**| Transaction identifier | 
  **body** | **object**| The new Transaction resource | 
 
 ### Return type
@@ -818,8 +802,6 @@ That goes without says, if that **Offer** have a _Transaction_ **that is ongoing
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -853,7 +835,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    id = 'id_example' # str | Persona identifier
+    id = 'id_example' # str | Offer identifier
 
     try:
         # Revoke an Offer for given Persona
@@ -869,7 +851,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Persona identifier | 
+ **id** | **str**| Offer identifier | 
 
 ### Return type
 
@@ -911,8 +893,6 @@ Retrieves the collection of Offer resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_collection_read import OfferCollectionRead
 from tpdk.rest import ApiException
@@ -947,7 +927,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    id = 'id_example' # str | Persona identifier
+    id = 'id_example' # str | Offer identifier
     page = 1 # int | The collection page number (optional) (default to 1)
     title = 'title_example' # str |  (optional)
     public_url = 'public_url_example' # str |  (optional)
@@ -982,7 +962,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Persona identifier | 
+ **id** | **str**| Offer identifier | 
  **page** | **int**| The collection page number | [optional] [default to 1]
  **title** | **str**|  | [optional] 
  **public_url** | **str**|  | [optional] 
@@ -1040,8 +1020,6 @@ Updates the Offer resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_read import OfferRead
 from tpdk.models.offer_update import OfferUpdate
@@ -1077,7 +1055,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    id = 'id_example' # str | Persona identifier
+    id = 'id_example' # str | Offer identifier
     offer_update = tpdk.OfferUpdate() # OfferUpdate | The updated Offer resource
 
     try:
@@ -1096,7 +1074,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Persona identifier | 
+ **id** | **str**| Offer identifier | 
  **offer_update** | [**OfferUpdate**](OfferUpdate.md)| The updated Offer resource | 
 
 ### Return type
@@ -1141,8 +1119,6 @@ Creates a Offer resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.offer_post_creation_read import OfferPostCreationRead
 from tpdk.models.offer_write import OfferWrite
@@ -1178,7 +1154,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    id = 'id_example' # str | Persona identifier
+    id = 'id_example' # str | Offer identifier
     offer_write = tpdk.OfferWrite() # OfferWrite | The new Offer resource
 
     try:
@@ -1197,7 +1173,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Persona identifier | 
+ **id** | **str**| Offer identifier | 
  **offer_write** | [**OfferWrite**](OfferWrite.md)| The new Offer resource | 
 
 ### Return type
@@ -1240,8 +1216,6 @@ Retrieves the collection of Transaction resources.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.transaction_collection_read import TransactionCollectionRead
 from tpdk.rest import ApiException
@@ -1335,8 +1309,6 @@ Abandon claims on Dispute
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1370,7 +1342,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Transaction identifier
+    ulid = 'ulid_example' # str | Dispute identifier
 
     try:
         # Abandon claims on Dispute
@@ -1386,7 +1358,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Transaction identifier | 
+ **ulid** | **str**| Dispute identifier | 
 
 ### Return type
 
@@ -1428,8 +1400,6 @@ Retrieves a Dispute resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_read import DisputeRead
 from tpdk.rest import ApiException
@@ -1464,7 +1434,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Transaction identifier
+    ulid = 'ulid_example' # str | Dispute identifier
 
     try:
         # Read Dispute from existing Transaction
@@ -1482,7 +1452,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Transaction identifier | 
+ **ulid** | **str**| Dispute identifier | 
 
 ### Return type
 
@@ -1523,8 +1493,6 @@ Only authenticated Persona can interact with a Dispute object. Usually through o
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_read import DisputeRead
 from tpdk.models.dispute_update import DisputeUpdate
@@ -1558,7 +1526,7 @@ configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Transaction identifier
+    ulid = 'ulid_example' # str | Dispute identifier
     dispute_update = tpdk.DisputeUpdate() # DisputeUpdate | The updated Dispute resource
 
     try:
@@ -1577,7 +1545,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Transaction identifier | 
+ **ulid** | **str**| Dispute identifier | 
  **dispute_update** | [**DisputeUpdate**](DisputeUpdate.md)| The updated Dispute resource | 
 
 ### Return type
@@ -1622,8 +1590,6 @@ Creates a Dispute resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.dispute_post_creation_read import DisputePostCreationRead
 from tpdk.models.dispute_write import DisputeWrite
@@ -1659,7 +1625,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with tpdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tpdk.SafeCheckoutApi(api_client)
-    ulid = 'ulid_example' # str | Transaction identifier
+    ulid = 'ulid_example' # str | Dispute identifier
     dispute_write = tpdk.DisputeWrite() # DisputeWrite | The new Dispute resource
 
     try:
@@ -1678,7 +1644,7 @@ with tpdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ulid** | **str**| Transaction identifier | 
+ **ulid** | **str**| Dispute identifier | 
  **dispute_write** | [**DisputeWrite**](DisputeWrite.md)| The new Dispute resource | 
 
 ### Return type
@@ -1721,8 +1687,6 @@ Retrieves the collection of Parcel resources.
 * Api Key Authentication (personaAuthKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1813,8 +1777,6 @@ No one except the support can do that manoeuvre.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1887,7 +1849,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_transactions_ulidparcels_post**
-> ParcelRead api_transactions_ulidparcels_post(ulid, parcel_write)
+> object api_transactions_ulidparcels_post(ulid, parcel_write)
 
 Manually declare package shipped for Transaction
 
@@ -1899,10 +1861,7 @@ Creates a Parcel resource.
 * OAuth Authentication (oauth):
 
 ```python
-import time
-import os
 import tpdk
-from tpdk.models.parcel_read import ParcelRead
 from tpdk.models.parcel_write import ParcelWrite
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1954,7 +1913,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelRead**](ParcelRead.md)
+**object**
 
 ### Authorization
 
