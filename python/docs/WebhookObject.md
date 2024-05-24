@@ -5,65 +5,81 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ulid** | **object** |  | 
-**transaction** | [**TransactionRead**](TransactionRead.md) |  | [optional] 
-**status** | **object** |  | 
-**redirect_url** | **object** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
-**item_count** | **object** |  | [optional] 
-**issue_type** | **object** |  | [optional] 
-**issue_in_description_type** | **object** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
-**issue_mentioned_in_offer** | **object** |  | [optional] 
-**issue_details** | **object** |  | [optional] 
-**complainant_truthfulness_score** | **object** |  | 
-**seller_truthfulness_score** | **object** |  | 
-**complainant_stake** | **object** |  | [optional] 
-**inferred_stake** | **object** |  | [optional] 
-**recommended_solution** | **object** |  | [optional] 
-**recommended_partial_refund_amount** | **object** |  | [optional] 
-**chosen_solution** | **object** |  | [optional] 
-**chosen_partial_refund_amount** | **object** |  | [optional] 
-**counter_solution** | **object** |  | [optional] 
-**counter_partial_refund_amount** | **object** |  | [optional] 
-**seller_notes** | **object** |  | [optional] 
-**seller_rejection_reason** | **object** |  | [optional] 
-**complainant_approval** | **object** |  | [optional] 
-**seller_approval** | **object** |  | [optional] 
-**platform_solution** | **object** |  | [optional] 
-**platform_partial_refund_amount** | **object** |  | [optional] 
-**platform_approval** | **object** |  | [optional] 
-**platform_actor_type** | **object** |  | [optional] 
-**platform_reasoning** | **object** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. | [optional] 
-**arbitration_by** | **object** |  | [optional] 
-**parcels** | **object** |  | 
-**views** | **object** |  | 
-**metadata** | **object** |  | 
-**events** | **object** |  | [optional] 
-**created_at** | **object** |  | [optional] [readonly] 
-**updated_at** | **object** |  | [optional] [readonly] 
-**view_count** | **object** |  | [optional] [readonly] 
-**status_expiration** | **object** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 
-**awaited_party** | **object** | Determine who is awaited (actor) for the next transition | [optional] [readonly] 
-**iri** | **object** |  | [optional] [readonly] 
-**message_count** | **object** |  | [optional] [readonly] 
-**closed_in_favor_of** | **object** | Determine who won the case, if not specified, then it is ongoing. | [optional] [readonly] 
-**disbursed_by_buyer** | **object** | Total amount disbursed by the buyer to acquire the item. | [optional] [readonly] 
-**max_refundable_for_buyer** | **object** | How much the buyer can actually receive back in case of a full refund. | [optional] [readonly] 
-**id** | **object** |  | [optional] [readonly] 
-**first_name** | **object** |  | [optional] 
-**last_name** | **object** |  | [optional] 
-**language** | **object** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
-**email** | **object** |  | [optional] 
-**mobile_phone_number** | **object** |  | [optional] 
-**public_url** | **object** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**organization** | [**OrganizationRead**](OrganizationRead.md) |  | [optional] 
-**seller** | [**PersonaRead**](PersonaRead.md) | If the seller is actually YOUR organization, set it to NULL. | 
-**nature** | **object** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | 
-**title** | **object** |  | [optional] 
-**description** | **object** |  | [optional] 
-**unit_price** | **object** |  | [optional] 
-**currency_code** | **object** |  | [optional] 
-**condition** | **object** |  | [optional] 
-**medias** | **object** |  | 
+**ulid** | **str** |  | 
+**transaction** | [**DisputeTransactionRead**](DisputeTransactionRead.md) |  | [optional] 
+**status** | **str** |  | [default to 'CREATED']
+**redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
+**item_count** | **int** |  | [optional] [default to 1]
+**issue_type** | **str** |  | [optional] 
+**issue_in_description_type** | **str** | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. | [optional] 
+**issue_mentioned_in_offer** | **bool** |  | [optional] 
+**issue_details** | **str** |  | [optional] 
+**complainant_truthfulness_score** | **int** |  | [default to 100]
+**seller_truthfulness_score** | **int** |  | [default to 100]
+**complainant_stake** | **str** |  | [optional] 
+**inferred_stake** | **str** |  | [optional] 
+**recommended_solution** | **str** |  | [optional] 
+**recommended_partial_refund_amount** | **int** |  | [optional] 
+**chosen_solution** | **str** |  | [optional] 
+**chosen_partial_refund_amount** | **int** |  | [optional] 
+**counter_solution** | **str** |  | [optional] 
+**counter_partial_refund_amount** | **int** |  | [optional] 
+**seller_notes** | **str** |  | [optional] 
+**seller_rejection_reason** | **str** |  | [optional] 
+**complainant_approval** | **bool** |  | [optional] 
+**seller_approval** | **bool** |  | [optional] 
+**platform_solution** | **str** |  | [optional] 
+**platform_partial_refund_amount** | **int** |  | [optional] 
+**platform_approval** | **bool** |  | [optional] 
+**platform_actor_type** | **str** |  | [optional] 
+**platform_reasoning** | **str** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. | [optional] 
+**arbitration_by** | **str** |  | [optional] 
+**parcels** | [**List[DisputeParcelRead]**](DisputeParcelRead.md) |  | 
+**views** | [**List[DisputeViewRead]**](DisputeViewRead.md) |  | 
+**metadata** | [**List[PersonaMetadataRead]**](PersonaMetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | 
+**events** | [**List[DisputeWorkflowEventRead]**](DisputeWorkflowEventRead.md) |  | [optional] 
+**created_at** | **datetime** |  | [optional] [readonly] 
+**updated_at** | **datetime** |  | [optional] [readonly] 
+**view_count** | **int** |  | [optional] [readonly] 
+**status_expiration** | **datetime** | Yield if eligible the date-time at which the dispute state expire. | [optional] [readonly] 
+**awaited_party** | **str** | Determine who is awaited (actor) for the next transition | [optional] [readonly] 
+**iri** | **str** |  | [optional] [readonly] 
+**message_count** | **int** |  | [optional] [readonly] 
+**closed_in_favor_of** | **str** | Determine who won the case, if not specified, then it is ongoing. | [optional] [readonly] 
+**disbursed_by_buyer** | **float** | Total amount disbursed by the buyer to acquire the item. | [optional] [readonly] 
+**max_refundable_for_buyer** | **float** | How much the buyer can actually receive back in case of a full refund. | [optional] [readonly] 
+**id** | **int** |  | [optional] [readonly] 
+**first_name** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**gender** | **str** |  | [optional] [default to 'RATHER_NOT_SAY']
+**date_of_birth** | **date** |  | [optional] 
+**language** | **str** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
+**email** | **str** |  | [optional] 
+**mobile_phone_number** | **str** |  | [optional] 
+**address** | [**PersonaAddressRead**](PersonaAddressRead.md) |  | [optional] 
+**risk_level** | **str** | We sort Persona into three distinct risks&#39; category. This is inferred from the riskScore. | [optional] 
+**risk_score** | **int** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. | [optional] 
+**external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
+**external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
+**offer_count** | **int** | Issued Offers count owned by a given Persona | [optional] [readonly] 
+**purchase_count** | **int** |  | [optional] [readonly] 
+**public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
+**enforce_persona_auth** | **bool** | Mean that the generated url cannot be accessed without a generated token for a Persona. Disallow external registration. | [default to True]
+**override_rate_commission_safe_checkout** | **float** | Override YOUR platform fees for that particular Offer. | [optional] 
+**organization** | [**OfferOrganizationRead**](OfferOrganizationRead.md) |  | [optional] 
+**seller** | **str** | If the seller is actually YOUR organization, set it to NULL. | 
+**nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
+**title** | **str** |  | [optional] 
+**unit_price** | **float** |  | [optional] 
+**currency_code** | **str** |  | [optional] [default to 'EUR']
+**condition** | **str** |  | [optional] [default to 'USED']
+**weight_in_gram** | **int** |  | [optional] 
+**shipping_allowed** | **bool** | That toggle allows the seller to propose shipping for its item. If set in conjunction of shippingCarrier, the label will be automatically generated. Also, it will restrict the carrier to the limited subset defined. | 
+**hand_delivery_allowed** | **bool** | Enable both parties to finalize the transaction in person rather than using delivery. A QR Code must be scanned by the seller once the buyer claims the product. | [default to True]
+**shipping_carriers** | **List[str]** | If you wish to enable automated shipping label generation through a specific provider, specify it there. | [optional] 
+**ean_code** | **str** |  | [optional] 
+**can_be_sold_separately** | **bool** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. | [default to True]
+**medias** | [**List[OfferMediaRead]**](OfferMediaRead.md) |  | 
 
 ## Example
 
@@ -75,12 +91,12 @@ json = "{}"
 # create an instance of WebhookObject from a JSON string
 webhook_object_instance = WebhookObject.from_json(json)
 # print the JSON string representation of the object
-print WebhookObject.to_json()
+print(WebhookObject.to_json())
 
 # convert the object into a dict
 webhook_object_dict = webhook_object_instance.to_dict()
 # create an instance of WebhookObject from a dict
-webhook_object_form_dict = webhook_object.from_dict(webhook_object_dict)
+webhook_object_from_dict = WebhookObject.from_dict(webhook_object_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

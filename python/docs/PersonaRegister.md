@@ -26,12 +26,12 @@ json = "{}"
 # create an instance of PersonaRegister from a JSON string
 persona_register_instance = PersonaRegister.from_json(json)
 # print the JSON string representation of the object
-print PersonaRegister.to_json()
+print(PersonaRegister.to_json())
 
 # convert the object into a dict
 persona_register_dict = persona_register_instance.to_dict()
 # create an instance of PersonaRegister from a dict
-persona_register_form_dict = persona_register.from_dict(persona_register_dict)
+persona_register_from_dict = PersonaRegister.from_dict(persona_register_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

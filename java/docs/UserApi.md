@@ -31,7 +31,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiApiClientsGetCollection"></a>
 # **apiApiClientsGetCollection**
-> List&lt;ApiClientRead&gt; apiApiClientsGetCollection(page)
+> List&lt;ApiClientRead&gt; apiApiClientsGetCollection().page(page).execute();
 
 Retrieves the collection of ApiClient resources.
 
@@ -61,7 +61,9 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     Integer page = 1; // Integer | The collection page number
     try {
-      List<ApiClientRead> result = apiInstance.apiApiClientsGetCollection(page);
+      List<ApiClientRead> result = apiInstance.apiApiClientsGetCollection()
+            .page(page)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiApiClientsGetCollection");
@@ -104,7 +106,7 @@ public class Example {
 
 <a id="apiApiClientsIdentifierDelete"></a>
 # **apiApiClientsIdentifierDelete**
-> apiApiClientsIdentifierDelete(identifier)
+> apiApiClientsIdentifierDelete(identifier).execute();
 
 Removes the ApiClient resource.
 
@@ -134,7 +136,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     String identifier = "identifier_example"; // String | ApiClient identifier
     try {
-      apiInstance.apiApiClientsIdentifierDelete(identifier);
+      apiInstance.apiApiClientsIdentifierDelete(identifier)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiApiClientsIdentifierDelete");
       System.err.println("Status code: " + e.getCode());
@@ -177,7 +180,7 @@ null (empty response body)
 
 <a id="apiApiClientsIdentifierGet"></a>
 # **apiApiClientsIdentifierGet**
-> ApiClientRead apiApiClientsIdentifierGet(identifier)
+> ApiClientRead apiApiClientsIdentifierGet(identifier).execute();
 
 Retrieves a ApiClient resource.
 
@@ -207,7 +210,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     String identifier = "identifier_example"; // String | ApiClient identifier
     try {
-      ApiClientRead result = apiInstance.apiApiClientsIdentifierGet(identifier);
+      ApiClientRead result = apiInstance.apiApiClientsIdentifierGet(identifier)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiApiClientsIdentifierGet");
@@ -251,7 +255,7 @@ public class Example {
 
 <a id="apiApiClientsPost"></a>
 # **apiApiClientsPost**
-> ApiClientPostCreationRead apiApiClientsPost(apiClientWrite)
+> ApiClientPostCreationRead apiApiClientsPost(apiClientWrite).execute();
 
 Creates a ApiClient resource.
 
@@ -281,7 +285,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     ApiClientWrite apiClientWrite = new ApiClientWrite(); // ApiClientWrite | The new ApiClient resource
     try {
-      ApiClientPostCreationRead result = apiInstance.apiApiClientsPost(apiClientWrite);
+      ApiClientPostCreationRead result = apiInstance.apiApiClientsPost(apiClientWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiApiClientsPost");
@@ -326,7 +331,7 @@ public class Example {
 
 <a id="apiInvitePost"></a>
 # **apiInvitePost**
-> UserPostRegisterRead apiInvitePost(userInvite)
+> UserPostRegisterRead apiInvitePost(userInvite).execute();
 
 Organization invite
 
@@ -366,7 +371,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     UserInvite userInvite = new UserInvite(); // UserInvite | The new User resource
     try {
-      UserPostRegisterRead result = apiInstance.apiInvitePost(userInvite);
+      UserPostRegisterRead result = apiInstance.apiInvitePost(userInvite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiInvitePost");
@@ -409,7 +415,7 @@ public class Example {
 
 <a id="apiMeGet"></a>
 # **apiMeGet**
-> UserAuthenticatedRead apiMeGet()
+> UserAuthenticatedRead apiMeGet().execute();
 
 Retrieves a User resource.
 
@@ -448,7 +454,8 @@ public class Example {
 
     UserApi apiInstance = new UserApi(defaultClient);
     try {
-      UserAuthenticatedRead result = apiInstance.apiMeGet();
+      UserAuthenticatedRead result = apiInstance.apiMeGet()
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiMeGet");
@@ -487,7 +494,7 @@ This endpoint does not need any parameter.
 
 <a id="apiPersonasauthenticationPost"></a>
 # **apiPersonasauthenticationPost**
-> PersonaAuthReturn apiPersonasauthenticationPost(personaExternalAuth)
+> PersonaAuthReturn apiPersonasauthenticationPost(personaExternalAuth).execute();
 
 Persona Authentication
 
@@ -527,7 +534,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     PersonaExternalAuth personaExternalAuth = new PersonaExternalAuth(); // PersonaExternalAuth | The new Persona resource
     try {
-      PersonaAuthReturn result = apiInstance.apiPersonasauthenticationPost(personaExternalAuth);
+      PersonaAuthReturn result = apiInstance.apiPersonasauthenticationPost(personaExternalAuth)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiPersonasauthenticationPost");
@@ -570,7 +578,7 @@ public class Example {
 
 <a id="apiPersonasmeGet"></a>
 # **apiPersonasmeGet**
-> PersonaRead apiPersonasmeGet()
+> PersonaRead apiPersonasmeGet().execute();
 
 Retrieve your authenticated Persona
 
@@ -599,7 +607,8 @@ public class Example {
 
     UserApi apiInstance = new UserApi(defaultClient);
     try {
-      PersonaRead result = apiInstance.apiPersonasmeGet();
+      PersonaRead result = apiInstance.apiPersonasmeGet()
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiPersonasmeGet");
@@ -640,7 +649,7 @@ This endpoint does not need any parameter.
 
 <a id="apiPersonasregisterPost"></a>
 # **apiPersonasregisterPost**
-> PersonaRead apiPersonasregisterPost(personaRegister)
+> PersonaRead apiPersonasregisterPost(personaRegister).execute();
 
 Persona external registration
 
@@ -680,7 +689,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     PersonaRegister personaRegister = new PersonaRegister(); // PersonaRegister | The new Persona resource
     try {
-      PersonaRead result = apiInstance.apiPersonasregisterPost(personaRegister);
+      PersonaRead result = apiInstance.apiPersonasregisterPost(personaRegister)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiPersonasregisterPost");
@@ -723,7 +733,7 @@ public class Example {
 
 <a id="apiRegisterPost"></a>
 # **apiRegisterPost**
-> UserPostRegisterRead apiRegisterPost(userWrite)
+> UserPostRegisterRead apiRegisterPost(userWrite).execute();
 
 Organization onboarding
 
@@ -763,7 +773,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     UserWrite userWrite = new UserWrite(); // UserWrite | The new User resource
     try {
-      UserPostRegisterRead result = apiInstance.apiRegisterPost(userWrite);
+      UserPostRegisterRead result = apiInstance.apiRegisterPost(userWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiRegisterPost");
@@ -806,7 +817,7 @@ public class Example {
 
 <a id="apiUsersGetCollection"></a>
 # **apiUsersGetCollection**
-> List&lt;UserCollectionRead&gt; apiUsersGetCollection(page)
+> List&lt;UserCollectionRead&gt; apiUsersGetCollection().page(page).execute();
 
 Retrieves the collection of User resources.
 
@@ -836,7 +847,9 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     Integer page = 1; // Integer | The collection page number
     try {
-      List<UserCollectionRead> result = apiInstance.apiUsersGetCollection(page);
+      List<UserCollectionRead> result = apiInstance.apiUsersGetCollection()
+            .page(page)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersGetCollection");
@@ -879,7 +892,7 @@ public class Example {
 
 <a id="apiUsersIdDelete"></a>
 # **apiUsersIdDelete**
-> apiUsersIdDelete(id)
+> apiUsersIdDelete(id).execute();
 
 Removes the User resource.
 
@@ -909,7 +922,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     String id = "id_example"; // String | User identifier
     try {
-      apiInstance.apiUsersIdDelete(id);
+      apiInstance.apiUsersIdDelete(id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -952,7 +966,7 @@ null (empty response body)
 
 <a id="apiUsersIdGet"></a>
 # **apiUsersIdGet**
-> User apiUsersIdGet(id)
+> User apiUsersIdGet(id).execute();
 
 Retrieves a User resource.
 
@@ -982,7 +996,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     String id = "id_example"; // String | User identifier
     try {
-      User result = apiInstance.apiUsersIdGet(id);
+      User result = apiInstance.apiUsersIdGet(id)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdGet");
@@ -1026,7 +1041,7 @@ public class Example {
 
 <a id="apiUsersIdPatch"></a>
 # **apiUsersIdPatch**
-> UserPostRegisterRead apiUsersIdPatch(id, userUpdate)
+> UserPostRegisterRead apiUsersIdPatch(id, userUpdate).execute();
 
 Updates the User resource.
 
@@ -1067,7 +1082,8 @@ public class Example {
     String id = "id_example"; // String | User identifier
     UserUpdate userUpdate = new UserUpdate(); // UserUpdate | The updated User resource
     try {
-      UserPostRegisterRead result = apiInstance.apiUsersIdPatch(id, userUpdate);
+      UserPostRegisterRead result = apiInstance.apiUsersIdPatch(id, userUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdPatch");
@@ -1112,7 +1128,7 @@ public class Example {
 
 <a id="apiUsersIdavatarDelete"></a>
 # **apiUsersIdavatarDelete**
-> apiUsersIdavatarDelete(id)
+> apiUsersIdavatarDelete(id).execute();
 
 Unset your personal avatar
 
@@ -1142,7 +1158,8 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     Integer id = 56; // Integer | User identifier
     try {
-      apiInstance.apiUsersIdavatarDelete(id);
+      apiInstance.apiUsersIdavatarDelete(id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdavatarDelete");
       System.err.println("Status code: " + e.getCode());
@@ -1185,7 +1202,7 @@ null (empty response body)
 
 <a id="apiUsersIdavatarPost"></a>
 # **apiUsersIdavatarPost**
-> MediaRead apiUsersIdavatarPost(id, _file)
+> MediaRead apiUsersIdavatarPost(id)._file(_file).execute();
 
 Upload your personal avatar
 
@@ -1216,7 +1233,9 @@ public class Example {
     Integer id = 56; // Integer | User identifier
     File _file = new File("/path/to/file"); // File | 
     try {
-      MediaRead result = apiInstance.apiUsersIdavatarPost(id, _file);
+      MediaRead result = apiInstance.apiUsersIdavatarPost(id)
+            ._file(_file)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdavatarPost");
@@ -1262,7 +1281,7 @@ public class Example {
 
 <a id="apiUsersIdemailPatch"></a>
 # **apiUsersIdemailPatch**
-> UserUserRead apiUsersIdemailPatch(id, userUserEmailUpdate)
+> UserUserRead apiUsersIdemailPatch(id, userUserEmailUpdate).execute();
 
 Update user email
 
@@ -1303,7 +1322,8 @@ public class Example {
     String id = "id_example"; // String | User identifier
     UserUserEmailUpdate userUserEmailUpdate = new UserUserEmailUpdate(); // UserUserEmailUpdate | The updated User resource
     try {
-      UserUserRead result = apiInstance.apiUsersIdemailPatch(id, userUserEmailUpdate);
+      UserUserRead result = apiInstance.apiUsersIdemailPatch(id, userUserEmailUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdemailPatch");
@@ -1348,7 +1368,7 @@ public class Example {
 
 <a id="apiUsersIdemailValidationPatch"></a>
 # **apiUsersIdemailValidationPatch**
-> UserPostRegisterRead apiUsersIdemailValidationPatch(id, userEmailValidationWrite)
+> UserPostRegisterRead apiUsersIdemailValidationPatch(id, userEmailValidationWrite).execute();
 
 Validate email ownership
 
@@ -1389,7 +1409,8 @@ public class Example {
     String id = "id_example"; // String | User identifier
     UserEmailValidationWrite userEmailValidationWrite = new UserEmailValidationWrite(); // UserEmailValidationWrite | The updated User resource
     try {
-      UserPostRegisterRead result = apiInstance.apiUsersIdemailValidationPatch(id, userEmailValidationWrite);
+      UserPostRegisterRead result = apiInstance.apiUsersIdemailValidationPatch(id, userEmailValidationWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdemailValidationPatch");
@@ -1434,7 +1455,7 @@ public class Example {
 
 <a id="apiUsersIdenablePatch"></a>
 # **apiUsersIdenablePatch**
-> UserUserSubscribed apiUsersIdenablePatch(id, body)
+> UserUserSubscribed apiUsersIdenablePatch(id, body).execute();
 
 Updates the User resource.
 
@@ -1465,7 +1486,8 @@ public class Example {
     String id = "id_example"; // String | User identifier
     Object body = null; // Object | The updated User resource
     try {
-      UserUserSubscribed result = apiInstance.apiUsersIdenablePatch(id, body);
+      UserUserSubscribed result = apiInstance.apiUsersIdenablePatch(id, body)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdenablePatch");
@@ -1512,7 +1534,7 @@ public class Example {
 
 <a id="apiUsersIdpasswordPatch"></a>
 # **apiUsersIdpasswordPatch**
-> UserUserRead apiUsersIdpasswordPatch(id, userUserPasswordUpdate)
+> UserUserRead apiUsersIdpasswordPatch(id, userUserPasswordUpdate).execute();
 
 Updates the User resource.
 
@@ -1553,7 +1575,8 @@ public class Example {
     String id = "id_example"; // String | User identifier
     UserUserPasswordUpdate userUserPasswordUpdate = new UserUserPasswordUpdate(); // UserUserPasswordUpdate | The updated User resource
     try {
-      UserUserRead result = apiInstance.apiUsersIdpasswordPatch(id, userUserPasswordUpdate);
+      UserUserRead result = apiInstance.apiUsersIdpasswordPatch(id, userUserPasswordUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdpasswordPatch");
@@ -1598,7 +1621,7 @@ public class Example {
 
 <a id="apiUsersIdtotpSetupPatch"></a>
 # **apiUsersIdtotpSetupPatch**
-> UserTotpSetupRead apiUsersIdtotpSetupPatch(id, body)
+> UserTotpSetupRead apiUsersIdtotpSetupPatch(id, body).execute();
 
 Updates the User resource.
 
@@ -1639,7 +1662,8 @@ public class Example {
     String id = "id_example"; // String | User identifier
     Object body = null; // Object | The updated User resource
     try {
-      UserTotpSetupRead result = apiInstance.apiUsersIdtotpSetupPatch(id, body);
+      UserTotpSetupRead result = apiInstance.apiUsersIdtotpSetupPatch(id, body)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdtotpSetupPatch");
@@ -1684,7 +1708,7 @@ public class Example {
 
 <a id="apiUsersIdtotpTogglePatch"></a>
 # **apiUsersIdtotpTogglePatch**
-> Object apiUsersIdtotpTogglePatch(id, userTotpToggleWrite)
+> Object apiUsersIdtotpTogglePatch(id, userTotpToggleWrite).execute();
 
 Updates the User resource.
 
@@ -1725,7 +1749,8 @@ public class Example {
     String id = "id_example"; // String | User identifier
     UserTotpToggleWrite userTotpToggleWrite = new UserTotpToggleWrite(); // UserTotpToggleWrite | The updated User resource
     try {
-      Object result = apiInstance.apiUsersIdtotpTogglePatch(id, userTotpToggleWrite);
+      Object result = apiInstance.apiUsersIdtotpTogglePatch(id, userTotpToggleWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#apiUsersIdtotpTogglePatch");
@@ -1770,7 +1795,7 @@ public class Example {
 
 <a id="authenticationPost"></a>
 # **authenticationPost**
-> UserJwtCreated authenticationPost(userJwtWrite)
+> UserJwtCreated authenticationPost().userJwtWrite(userJwtWrite).execute();
 
 User authentication
 
@@ -1810,7 +1835,9 @@ public class Example {
     UserApi apiInstance = new UserApi(defaultClient);
     UserJwtWrite userJwtWrite = new UserJwtWrite(); // UserJwtWrite | 
     try {
-      UserJwtCreated result = apiInstance.authenticationPost(userJwtWrite);
+      UserJwtCreated result = apiInstance.authenticationPost()
+            .userJwtWrite(userJwtWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserApi#authenticationPost");

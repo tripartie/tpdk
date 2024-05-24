@@ -12,7 +12,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiPersonasIdnotificationsGetCollection"></a>
 # **apiPersonasIdnotificationsGetCollection**
-> List&lt;NotificationRead&gt; apiPersonasIdnotificationsGetCollection(id, page)
+> List&lt;NotificationRead&gt; apiPersonasIdnotificationsGetCollection(id).page(page).execute();
 
 Retrieve pending notifications for Persona
 
@@ -40,10 +40,12 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String id = "id_example"; // String | Persona identifier
+    String id = "id_example"; // String | Notification identifier
     Integer page = 1; // Integer | The collection page number
     try {
-      List<NotificationRead> result = apiInstance.apiPersonasIdnotificationsGetCollection(id, page);
+      List<NotificationRead> result = apiInstance.apiPersonasIdnotificationsGetCollection(id)
+            .page(page)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationApi#apiPersonasIdnotificationsGetCollection");
@@ -60,7 +62,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Persona identifier | |
+| **id** | **String**| Notification identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 
 ### Return type
@@ -87,7 +89,7 @@ public class Example {
 
 <a id="apiPersonasPersonaIdnotificationsIdPatch"></a>
 # **apiPersonasPersonaIdnotificationsIdPatch**
-> NotificationRead apiPersonasPersonaIdnotificationsIdPatch(personaId, id, notificationUpdate)
+> NotificationRead apiPersonasPersonaIdnotificationsIdPatch(personaId, id, notificationUpdate).execute();
 
 Mark as read/unread a notification for Persona
 
@@ -115,11 +117,12 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String personaId = "personaId_example"; // String | Persona identifier
+    String personaId = "personaId_example"; // String | Notification identifier
     String id = "id_example"; // String | Notification identifier
     NotificationUpdate notificationUpdate = new NotificationUpdate(); // NotificationUpdate | The updated Notification resource
     try {
-      NotificationRead result = apiInstance.apiPersonasPersonaIdnotificationsIdPatch(personaId, id, notificationUpdate);
+      NotificationRead result = apiInstance.apiPersonasPersonaIdnotificationsIdPatch(personaId, id, notificationUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationApi#apiPersonasPersonaIdnotificationsIdPatch");
@@ -136,7 +139,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **personaId** | **String**| Persona identifier | |
+| **personaId** | **String**| Notification identifier | |
 | **id** | **String**| Notification identifier | |
 | **notificationUpdate** | [**NotificationUpdate**](NotificationUpdate.md)| The updated Notification resource | |
 
@@ -167,7 +170,7 @@ public class Example {
 
 <a id="apiUsersIdnotificationsGetCollection"></a>
 # **apiUsersIdnotificationsGetCollection**
-> List&lt;NotificationRead&gt; apiUsersIdnotificationsGetCollection(id, page)
+> List&lt;NotificationRead&gt; apiUsersIdnotificationsGetCollection(id).page(page).execute();
 
 Retrieves the collection of Notification resources.
 
@@ -205,10 +208,12 @@ public class Example {
     oauth.setAccessToken("YOUR ACCESS TOKEN");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String id = "id_example"; // String | User identifier
+    String id = "id_example"; // String | Notification identifier
     Integer page = 1; // Integer | The collection page number
     try {
-      List<NotificationRead> result = apiInstance.apiUsersIdnotificationsGetCollection(id, page);
+      List<NotificationRead> result = apiInstance.apiUsersIdnotificationsGetCollection(id)
+            .page(page)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationApi#apiUsersIdnotificationsGetCollection");
@@ -225,7 +230,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**| User identifier | |
+| **id** | **String**| Notification identifier | |
 | **page** | **Integer**| The collection page number | [optional] [default to 1] |
 
 ### Return type
@@ -250,7 +255,7 @@ public class Example {
 
 <a id="apiUsersUserIdnotificationsIdPatch"></a>
 # **apiUsersUserIdnotificationsIdPatch**
-> NotificationRead apiUsersUserIdnotificationsIdPatch(userId, id, notificationUpdate)
+> NotificationRead apiUsersUserIdnotificationsIdPatch(userId, id, notificationUpdate).execute();
 
 Mark as read/unread a notification for User
 
@@ -278,11 +283,12 @@ public class Example {
     //jwtPersonalKey.setApiKeyPrefix("Token");
 
     NotificationApi apiInstance = new NotificationApi(defaultClient);
-    String userId = "userId_example"; // String | User identifier
+    String userId = "userId_example"; // String | Notification identifier
     String id = "id_example"; // String | Notification identifier
     NotificationUpdate notificationUpdate = new NotificationUpdate(); // NotificationUpdate | The updated Notification resource
     try {
-      NotificationRead result = apiInstance.apiUsersUserIdnotificationsIdPatch(userId, id, notificationUpdate);
+      NotificationRead result = apiInstance.apiUsersUserIdnotificationsIdPatch(userId, id, notificationUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NotificationApi#apiUsersUserIdnotificationsIdPatch");
@@ -299,7 +305,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userId** | **String**| User identifier | |
+| **userId** | **String**| Notification identifier | |
 | **id** | **String**| Notification identifier | |
 | **notificationUpdate** | [**NotificationUpdate**](NotificationUpdate.md)| The updated Notification resource | |
 

@@ -14,7 +14,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiPersonasGetCollection"></a>
 # **apiPersonasGetCollection**
-> List&lt;PersonaCollectionRead&gt; apiPersonasGetCollection(page, firstName, lastName, email, email2, mobilePhoneNumber, mobilePhoneNumber2, gender, orderCreatedAt, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, dateOfBirthBefore, dateOfBirthStrictlyBefore, dateOfBirthAfter, dateOfBirthStrictlyAfter, metadata)
+> List&lt;PersonaCollectionRead&gt; apiPersonasGetCollection().page(page).firstName(firstName).lastName(lastName).email(email).email2(email2).mobilePhoneNumber(mobilePhoneNumber).mobilePhoneNumber2(mobilePhoneNumber2).gender(gender).orderCreatedAt(orderCreatedAt).createdAtBefore(createdAtBefore).createdAtStrictlyBefore(createdAtStrictlyBefore).createdAtAfter(createdAtAfter).createdAtStrictlyAfter(createdAtStrictlyAfter).dateOfBirthBefore(dateOfBirthBefore).dateOfBirthStrictlyBefore(dateOfBirthStrictlyBefore).dateOfBirthAfter(dateOfBirthAfter).dateOfBirthStrictlyAfter(dateOfBirthStrictlyAfter).metadata(metadata).execute();
 
 Retrieves the collection of Persona resources.
 
@@ -63,9 +63,28 @@ public class Example {
     String dateOfBirthStrictlyBefore = "dateOfBirthStrictlyBefore_example"; // String | 
     String dateOfBirthAfter = "dateOfBirthAfter_example"; // String | 
     String dateOfBirthStrictlyAfter = "dateOfBirthStrictlyAfter_example"; // String | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     try {
-      List<PersonaCollectionRead> result = apiInstance.apiPersonasGetCollection(page, firstName, lastName, email, email2, mobilePhoneNumber, mobilePhoneNumber2, gender, orderCreatedAt, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, dateOfBirthBefore, dateOfBirthStrictlyBefore, dateOfBirthAfter, dateOfBirthStrictlyAfter, metadata);
+      List<PersonaCollectionRead> result = apiInstance.apiPersonasGetCollection()
+            .page(page)
+            .firstName(firstName)
+            .lastName(lastName)
+            .email(email)
+            .email2(email2)
+            .mobilePhoneNumber(mobilePhoneNumber)
+            .mobilePhoneNumber2(mobilePhoneNumber2)
+            .gender(gender)
+            .orderCreatedAt(orderCreatedAt)
+            .createdAtBefore(createdAtBefore)
+            .createdAtStrictlyBefore(createdAtStrictlyBefore)
+            .createdAtAfter(createdAtAfter)
+            .createdAtStrictlyAfter(createdAtStrictlyAfter)
+            .dateOfBirthBefore(dateOfBirthBefore)
+            .dateOfBirthStrictlyBefore(dateOfBirthStrictlyBefore)
+            .dateOfBirthAfter(dateOfBirthAfter)
+            .dateOfBirthStrictlyAfter(dateOfBirthStrictlyAfter)
+            .metadata(metadata)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonaApi#apiPersonasGetCollection");
@@ -125,7 +144,7 @@ public class Example {
 
 <a id="apiPersonasIdDelete"></a>
 # **apiPersonasIdDelete**
-> apiPersonasIdDelete(id)
+> apiPersonasIdDelete(id).execute();
 
 Unregister a Persona (Your customer)
 
@@ -165,7 +184,8 @@ public class Example {
     PersonaApi apiInstance = new PersonaApi(defaultClient);
     String id = "id_example"; // String | Persona identifier
     try {
-      apiInstance.apiPersonasIdDelete(id);
+      apiInstance.apiPersonasIdDelete(id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonaApi#apiPersonasIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -208,7 +228,7 @@ null (empty response body)
 
 <a id="apiPersonasIdGet"></a>
 # **apiPersonasIdGet**
-> PersonaRead apiPersonasIdGet(id)
+> PersonaRead apiPersonasIdGet(id).execute();
 
 Retrieves a Persona resource.
 
@@ -248,7 +268,8 @@ public class Example {
     PersonaApi apiInstance = new PersonaApi(defaultClient);
     String id = "id_example"; // String | Persona identifier
     try {
-      PersonaRead result = apiInstance.apiPersonasIdGet(id);
+      PersonaRead result = apiInstance.apiPersonasIdGet(id)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonaApi#apiPersonasIdGet");
@@ -292,7 +313,7 @@ public class Example {
 
 <a id="apiPersonasIdPatch"></a>
 # **apiPersonasIdPatch**
-> PersonaRead apiPersonasIdPatch(id, personaUpdate)
+> PersonaRead apiPersonasIdPatch(id, personaUpdate).execute();
 
 Updates the Persona resource.
 
@@ -333,7 +354,8 @@ public class Example {
     String id = "id_example"; // String | Persona identifier
     PersonaUpdate personaUpdate = new PersonaUpdate(); // PersonaUpdate | The updated Persona resource
     try {
-      PersonaRead result = apiInstance.apiPersonasIdPatch(id, personaUpdate);
+      PersonaRead result = apiInstance.apiPersonasIdPatch(id, personaUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonaApi#apiPersonasIdPatch");
@@ -380,7 +402,7 @@ public class Example {
 
 <a id="apiPersonasIdtokenPost"></a>
 # **apiPersonasIdtokenPost**
-> PersonaPostAuthRead apiPersonasIdtokenPost(id, personaTokenWrite)
+> PersonaPostAuthRead apiPersonasIdtokenPost(id, personaTokenWrite).execute();
 
 Issue authenticated URL for single end-user
 
@@ -409,7 +431,8 @@ public class Example {
     String id = "id_example"; // String | Persona identifier
     PersonaTokenWrite personaTokenWrite = new PersonaTokenWrite(); // PersonaTokenWrite | The new Persona resource
     try {
-      PersonaPostAuthRead result = apiInstance.apiPersonasIdtokenPost(id, personaTokenWrite);
+      PersonaPostAuthRead result = apiInstance.apiPersonasIdtokenPost(id, personaTokenWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonaApi#apiPersonasIdtokenPost");
@@ -455,7 +478,7 @@ public class Example {
 
 <a id="apiPersonasPost"></a>
 # **apiPersonasPost**
-> PersonaRead apiPersonasPost(personaWrite)
+> PersonaRead apiPersonasPost(personaWrite).execute();
 
 Register a Persona (Your customer)
 
@@ -483,7 +506,8 @@ public class Example {
     PersonaApi apiInstance = new PersonaApi(defaultClient);
     PersonaWrite personaWrite = new PersonaWrite(); // PersonaWrite | The new Persona resource
     try {
-      PersonaRead result = apiInstance.apiPersonasPost(personaWrite);
+      PersonaRead result = apiInstance.apiPersonasPost(personaWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PersonaApi#apiPersonasPost");

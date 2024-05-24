@@ -8,7 +8,7 @@ info:
     Our API suite for the **Resolution Center** and the **Safe Checkout** features.
     Simple, yet elegant web interfaces for your convenience. One request away from your first automated resolution or safe-checkout.
   title: Tripartie
-  version: 2.0.178
+  version: 2.0.199
 servers:
 - description: Sandbox
   url: https://staging-api.tripartie.com
@@ -109,7 +109,8 @@ paths:
       summary: Retrieves the collection of ApiClient resources.
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a ApiClient resource.
@@ -195,7 +196,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /api-clients/{identifier}:
     delete:
       deprecated: false
@@ -266,7 +268,8 @@ paths:
       summary: Removes the ApiClient resource.
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       deprecated: false
       description: Retrieves a ApiClient resource.
@@ -340,7 +343,8 @@ paths:
       summary: Retrieves a ApiClient resource.
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /authentication:
     post:
       description: "This endpoint is protected by a captcha, do not try to use it\
@@ -398,7 +402,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes:
     get:
       deprecated: false
@@ -806,7 +811,8 @@ paths:
       summary: Retrieves the collection of Dispute resources.
       tags:
       - Resolution-Center
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: |-
@@ -899,7 +905,8 @@ paths:
       tags:
       - Resolution-Center
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes/{ulid}:
     delete:
       deprecated: false
@@ -974,7 +981,8 @@ paths:
       summary: Abandon claims on Dispute
       tags:
       - Resolution-Center
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       deprecated: false
       description: Retrieves a Dispute resource.
@@ -1051,7 +1059,8 @@ paths:
       summary: Retrieves a Dispute resource.
       tags:
       - Resolution-Center
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       deprecated: false
       description: Updates the Dispute resource.
@@ -1164,7 +1173,8 @@ paths:
       tags:
       - Resolution-Center
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes/{ulid}/evaluations:
     post:
       deprecated: false
@@ -1174,7 +1184,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Dispute identifier
+        description: Evaluation identifier
         explode: false
         in: path
         name: ulid
@@ -1262,7 +1272,8 @@ paths:
       tags:
       - Resolution-Center
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes/{ulid}/evidences:
     get:
       deprecated: false
@@ -1334,7 +1345,8 @@ paths:
       summary: Retrieve all Evidences in Dispute
       tags:
       - Resolution-Center
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: "This action does not held the actual upload, you will have to\
@@ -1431,7 +1443,8 @@ paths:
       tags:
       - Resolution-Center
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes/{ulid}/evidences/{id}:
     delete:
       deprecated: false
@@ -1513,7 +1526,8 @@ paths:
       summary: Withdraw an Evidence from a Dispute
       tags:
       - Resolution-Center
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes/{ulid}/evidences/{id}/media:
     post:
       deprecated: false
@@ -1620,7 +1634,8 @@ paths:
       tags:
       - Resolution-Center
       x-content-type: multipart/form-data
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes/{ulid}/parcels:
     get:
       deprecated: false
@@ -1706,7 +1721,8 @@ paths:
       summary: Retrieves the collection of Parcel resources.
       tags:
       - Resolution-Center
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a Parcel resource.
@@ -1805,7 +1821,8 @@ paths:
       tags:
       - Resolution-Center
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /disputes/{ulid}/parcels/{id}:
     delete:
       deprecated: false
@@ -1886,7 +1903,70 @@ paths:
       summary: Removes the Parcel resource.
       tags:
       - Resolution-Center
-      x-accepts: application/json
+      x-accepts:
+      - application/json
+  /evidences/{id}:
+    get:
+      deprecated: false
+      description: Retrieves a Evidence resource.
+      operationId: api_evidences_id_get
+      parameters:
+      - allowReserved: false
+        deprecated: false
+        description: Evidence identifier
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Evidence'
+          description: Evidence resource
+          headers:
+            X-Rate-Limit:
+              description: HTTP standardized header for rate limit consumption status
+              explode: false
+              schema:
+                example: 554; reset="2025-01-12T12:11:02"
+                type: string
+              style: simple
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+          description: Resource not found
+          headers:
+            X-Rate-Limit:
+              description: HTTP standardized header for rate limit consumption status
+              explode: false
+              schema:
+                example: 554; reset="2025-01-12T12:11:02"
+                type: string
+              style: simple
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RateLimitError'
+          description: Rate limit exhausted
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericError'
+          description: Unexpected server error
+      summary: Retrieves a Evidence resource.
+      tags:
+      - Evidence
+      x-accepts:
+      - application/json
   /invite:
     post:
       deprecated: false
@@ -1959,7 +2039,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /me:
     get:
       deprecated: false
@@ -2010,7 +2091,8 @@ paths:
       summary: Retrieves a User resource.
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /medias/{id}:
     get:
       deprecated: false
@@ -2071,7 +2153,8 @@ paths:
       summary: Retrieves a Media resource.
       tags:
       - Media
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /offers:
     get:
       deprecated: false
@@ -2354,7 +2437,8 @@ paths:
       summary: Read issued Offers
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Publish an offer so that you can safely retrieve a safe-checkout
@@ -2443,7 +2527,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /offers/{ulid}:
     get:
       deprecated: false
@@ -2521,7 +2606,8 @@ paths:
       summary: Read an Offer
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /offers/{ulid}/medias:
     post:
       deprecated: false
@@ -2621,7 +2707,8 @@ paths:
       - Safe-Checkout
       - Resolution-Center
       x-content-type: multipart/form-data
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /offers/{ulid}/medias/{id}:
     delete:
       deprecated: false
@@ -2705,7 +2792,8 @@ paths:
       summary: Removes the Media resource.
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /offers/{ulid}/transactions:
     get:
       deprecated: false
@@ -2714,7 +2802,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Offer identifier
+        description: Transaction identifier
         explode: false
         in: path
         name: ulid
@@ -2843,7 +2931,8 @@ paths:
       summary: Retrieve Payment Intents for Offer
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Cannot be used outside of a Persona (buyer)
@@ -2851,7 +2940,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Offer identifier
+        description: Transaction identifier
         explode: false
         in: path
         name: ulid
@@ -2939,7 +3028,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /offers/{ulid}/transactions/{id}/evaluations:
     post:
       deprecated: false
@@ -2949,7 +3039,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Dispute identifier
+        description: Evaluation identifier
         explode: false
         in: path
         name: ulid
@@ -2959,7 +3049,7 @@ paths:
         style: simple
       - allowReserved: false
         deprecated: false
-        description: Transaction identifier
+        description: Evaluation identifier
         explode: false
         in: path
         name: id
@@ -3047,7 +3137,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /organizations:
     get:
       deprecated: false
@@ -3130,7 +3221,8 @@ paths:
       summary: Retrieves the collection of Organization resources.
       tags:
       - Organization
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /organizations/{id}:
     get:
       deprecated: false
@@ -3191,7 +3283,8 @@ paths:
       summary: Retrieves a Organization resource.
       tags:
       - Organization
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       deprecated: false
       description: Updates the Organization resource.
@@ -3219,7 +3312,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Organization-Read'
+                $ref: '#/components/schemas/User-Organization-Read'
           description: Organization resource updated
           headers:
             X-Rate-Limit:
@@ -3301,7 +3394,8 @@ paths:
       tags:
       - Branding
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /organizations/{id}/icon:
     delete:
       deprecated: false
@@ -3372,7 +3466,8 @@ paths:
       summary: Unset your Organization Icon
       tags:
       - Branding
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a Media resource.
@@ -3468,7 +3563,8 @@ paths:
       tags:
       - Branding
       x-content-type: multipart/form-data
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /organizations/{id}/logo:
     delete:
       deprecated: false
@@ -3539,7 +3635,8 @@ paths:
       summary: Unset your Organization Logo
       tags:
       - Branding
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a Media resource.
@@ -3635,7 +3732,8 @@ paths:
       tags:
       - Branding
       x-content-type: multipart/form-data
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas:
     get:
       deprecated: false
@@ -3916,7 +4014,8 @@ paths:
       summary: Retrieves the collection of Persona resources.
       tags:
       - Persona
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: |-
@@ -4010,7 +4109,8 @@ paths:
       tags:
       - Persona
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/authentication:
     post:
       deprecated: false
@@ -4084,7 +4184,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/me:
     get:
       deprecated: false
@@ -4149,7 +4250,8 @@ paths:
       summary: Retrieve your authenticated Persona
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/register:
     post:
       deprecated: false
@@ -4222,7 +4324,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/{id}:
     delete:
       deprecated: false
@@ -4298,7 +4401,8 @@ paths:
       summary: Unregister a Persona (Your customer)
       tags:
       - Persona
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       deprecated: false
       description: Retrieves a Persona resource.
@@ -4375,7 +4479,8 @@ paths:
       summary: Retrieves a Persona resource.
       tags:
       - Persona
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       deprecated: false
       description: Update your Persona (eg. your customer/user entry) through that
@@ -4490,7 +4595,8 @@ paths:
       tags:
       - Persona
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/{id}/notifications:
     get:
       deprecated: false
@@ -4499,7 +4605,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Persona identifier
+        description: Notification identifier
         explode: false
         in: path
         name: id
@@ -4573,7 +4679,8 @@ paths:
       summary: Retrieve pending notifications for Persona
       tags:
       - Notification
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/{id}/offers:
     delete:
       deprecated: false
@@ -4583,7 +4690,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Persona identifier
+        description: Offer identifier
         explode: false
         in: path
         name: id
@@ -4648,7 +4755,8 @@ paths:
       summary: Revoke an Offer for given Persona
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       deprecated: false
       description: Retrieves the collection of Offer resources.
@@ -4656,7 +4764,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Persona identifier
+        description: Offer identifier
         explode: false
         in: path
         name: id
@@ -4940,7 +5048,8 @@ paths:
       summary: List or Search Offers for given Persona
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       deprecated: false
       description: Updates the Offer resource.
@@ -4948,7 +5057,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Persona identifier
+        description: Offer identifier
         explode: false
         in: path
         name: id
@@ -5053,7 +5162,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a Offer resource.
@@ -5061,7 +5171,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Persona identifier
+        description: Offer identifier
         explode: false
         in: path
         name: id
@@ -5152,7 +5262,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/{id}/token:
     post:
       deprecated: false
@@ -5252,7 +5363,8 @@ paths:
       tags:
       - Persona
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /personas/{personaId}/notifications/{id}:
     patch:
       deprecated: false
@@ -5261,7 +5373,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Persona identifier
+        description: Notification identifier
         explode: false
         in: path
         name: personaId
@@ -5373,7 +5485,8 @@ paths:
       tags:
       - Notification
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /register:
     post:
       deprecated: false
@@ -5446,7 +5559,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /transactions:
     get:
       deprecated: false
@@ -5574,7 +5688,8 @@ paths:
       summary: Retrieves the collection of Transaction resources.
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /transactions/{ulid}/dispute:
     delete:
       deprecated: false
@@ -5584,7 +5699,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Transaction identifier
+        description: Dispute identifier
         explode: false
         in: path
         name: ulid
@@ -5649,7 +5764,8 @@ paths:
       summary: Abandon claims on Dispute
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       deprecated: false
       description: Retrieves a Dispute resource.
@@ -5657,7 +5773,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Transaction identifier
+        description: Dispute identifier
         explode: false
         in: path
         name: ulid
@@ -5726,7 +5842,8 @@ paths:
       summary: Read Dispute from existing Transaction
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       deprecated: false
       description: Only authenticated Persona can interact with a Dispute object.
@@ -5735,7 +5852,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Transaction identifier
+        description: Dispute identifier
         explode: false
         in: path
         name: ulid
@@ -5838,7 +5955,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a Dispute resource.
@@ -5846,7 +5964,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: Transaction identifier
+        description: Dispute identifier
         explode: false
         in: path
         name: ulid
@@ -5937,7 +6055,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /transactions/{ulid}/parcels:
     get:
       deprecated: false
@@ -6021,7 +6140,8 @@ paths:
       summary: Read shipments from Transaction
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a Parcel resource.
@@ -6119,7 +6239,8 @@ paths:
       tags:
       - Safe-Checkout
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /transactions/{ulid}/parcels/{id}:
     delete:
       deprecated: false
@@ -6200,7 +6321,8 @@ paths:
       summary: Withdraw shipment from Transaction
       tags:
       - Safe-Checkout
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users:
     get:
       deprecated: false
@@ -6273,7 +6395,8 @@ paths:
       summary: Retrieves the collection of User resources.
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}:
     delete:
       deprecated: false
@@ -6344,7 +6467,8 @@ paths:
       summary: Removes the User resource.
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       deprecated: false
       description: Retrieves a User resource.
@@ -6418,7 +6542,8 @@ paths:
       summary: Retrieves a User resource.
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       deprecated: false
       description: Updates the User resource.
@@ -6514,7 +6639,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/avatar:
     delete:
       deprecated: false
@@ -6585,7 +6711,8 @@ paths:
       summary: Unset your personal avatar
       tags:
       - User
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       deprecated: false
       description: Creates a Media resource.
@@ -6681,7 +6808,8 @@ paths:
       tags:
       - User
       x-content-type: multipart/form-data
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/email:
     patch:
       deprecated: false
@@ -6778,7 +6906,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/email-validation:
     patch:
       deprecated: false
@@ -6875,7 +7004,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/enable:
     patch:
       deprecated: false
@@ -6986,7 +7116,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/notifications:
     get:
       deprecated: false
@@ -6995,7 +7126,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: User identifier
+        description: Notification identifier
         explode: false
         in: path
         name: id
@@ -7055,7 +7186,8 @@ paths:
       summary: Retrieves the collection of Notification resources.
       tags:
       - Notification
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/password:
     patch:
       deprecated: false
@@ -7152,7 +7284,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/totp-setup:
     patch:
       deprecated: false
@@ -7249,7 +7382,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{id}/totp-toggle:
     patch:
       deprecated: false
@@ -7346,7 +7480,8 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /users/{userId}/notifications/{id}:
     patch:
       deprecated: false
@@ -7355,7 +7490,7 @@ paths:
       parameters:
       - allowReserved: false
         deprecated: false
-        description: User identifier
+        description: Notification identifier
         explode: false
         in: path
         name: userId
@@ -7467,7 +7602,8 @@ paths:
       tags:
       - Notification
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /webhook-histories:
     get:
       deprecated: false
@@ -7590,7 +7726,8 @@ paths:
       summary: Retrieves the collection of WebhookHistory resources.
       tags:
       - Webhook
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /webhook-histories/{id}:
     get:
       deprecated: false
@@ -7667,7 +7804,8 @@ paths:
       summary: Retrieves a WebhookHistory resource.
       tags:
       - Webhook
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
       deprecated: false
       description: Replaces the WebhookHistory resource.
@@ -7777,7 +7915,8 @@ paths:
       tags:
       - Webhook
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /webhook-subscriptions:
     get:
       deprecated: false
@@ -7885,7 +8024,8 @@ paths:
       summary: Retrieves the collection of WebhookSubscription resources.
       tags:
       - Webhook
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       callbacks:
         onData:
@@ -7989,7 +8129,8 @@ paths:
       tags:
       - Webhook
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /webhook-subscriptions/{id}:
     delete:
       deprecated: false
@@ -8060,7 +8201,8 @@ paths:
       summary: Removes the WebhookSubscription resource.
       tags:
       - Webhook
-      x-accepts: application/json
+      x-accepts:
+      - application/json
 components:
   examples: {}
   headers: {}
@@ -8116,117 +8258,6 @@ components:
           format: date-time
           nullable: true
           readOnly: true
-          type: string
-    Address-IndependentWrite:
-      deprecated: false
-      description: ""
-      properties:
-        companyName:
-          example: Company Tld
-          nullable: true
-          type: string
-        countryCode:
-          example: FRA
-          maxLength: 3
-          type: string
-        zipCode:
-          example: "75004"
-          type: string
-        cityName:
-          example: Paris
-          type: string
-        firstLine:
-          example: 118 avenue des champs élysées
-          type: string
-        secondLine:
-          example: Apt 6E
-          nullable: true
-          type: string
-        buildingName:
-          example: Electron
-          nullable: true
-          type: string
-        buildingFloor:
-          example: Third floor
-          nullable: true
-          type: string
-        gateOrPortalOrInboxCode:
-          example: "3124"
-          nullable: true
-          type: string
-    Address-Update:
-      deprecated: false
-      description: ""
-      properties:
-        companyName:
-          example: Company Tld
-          nullable: true
-          type: string
-        countryCode:
-          example: FRA
-          maxLength: 3
-          type: string
-        zipCode:
-          example: "75004"
-          type: string
-        cityName:
-          example: Paris
-          type: string
-        firstLine:
-          example: 118 avenue des champs élysées
-          type: string
-        secondLine:
-          example: Apt 6E
-          nullable: true
-          type: string
-        buildingName:
-          example: Electron
-          nullable: true
-          type: string
-        buildingFloor:
-          example: Third floor
-          nullable: true
-          type: string
-        gateOrPortalOrInboxCode:
-          example: "3124"
-          nullable: true
-          type: string
-    Address-Write:
-      deprecated: false
-      description: ""
-      properties:
-        companyName:
-          example: Company Tld
-          nullable: true
-          type: string
-        countryCode:
-          example: FRA
-          maxLength: 3
-          type: string
-        zipCode:
-          example: "75004"
-          type: string
-        cityName:
-          example: Paris
-          type: string
-        firstLine:
-          example: 118 avenue des champs élysées
-          type: string
-        secondLine:
-          example: Apt 6E
-          nullable: true
-          type: string
-        buildingName:
-          example: Electron
-          nullable: true
-          type: string
-        buildingFloor:
-          example: Third floor
-          nullable: true
-          type: string
-        gateOrPortalOrInboxCode:
-          example: "3124"
-          nullable: true
           type: string
     ApiClient-PostCreationRead:
       deprecated: false
@@ -8308,8 +8339,43 @@ components:
             type: string
           minItems: 1
           type: array
-      required:
-      - referenceName
+    Dispute-Address-IndependentWrite:
+      deprecated: false
+      description: ""
+      properties:
+        companyName:
+          example: Company Tld
+          nullable: true
+          type: string
+        countryCode:
+          example: FRA
+          maxLength: 3
+          type: string
+        zipCode:
+          example: "75004"
+          type: string
+        cityName:
+          example: Paris
+          type: string
+        firstLine:
+          example: 118 avenue des champs élysées
+          type: string
+        secondLine:
+          example: Apt 6E
+          nullable: true
+          type: string
+        buildingName:
+          example: Electron
+          nullable: true
+          type: string
+        buildingFloor:
+          example: Third floor
+          nullable: true
+          type: string
+        gateOrPortalOrInboxCode:
+          example: "3124"
+          nullable: true
+          type: string
     Dispute-CollectionRead:
       deprecated: false
       description: Access directly our resolution center without having used the safe-checkout
@@ -8359,7 +8425,7 @@ components:
           example: 01ARZ3NDEKTSV4RRFFQ69G5FAV
           type: string
         transaction:
-          $ref: '#/components/schemas/Transaction-CollectionRead'
+          $ref: '#/components/schemas/Dispute-Transaction-CollectionRead'
         status:
           default: CREATED
           enum:
@@ -8491,7 +8557,6 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         messageCount:
           example: 6
           readOnly: true
@@ -8513,7 +8578,7 @@ components:
         feature.
       properties:
         transaction:
-          $ref: '#/components/schemas/Transaction-IndependentWrite'
+          $ref: '#/components/schemas/Dispute-Transaction-IndependentWrite'
         redirectUrl:
           description: Fill-in that field IF you intend to redirect your customer
             instead of using a WebView.
@@ -8525,11 +8590,610 @@ components:
           type: string
         metadata:
           items:
-            $ref: '#/components/schemas/Metadata-IndependentWrite'
+            $ref: '#/components/schemas/Dispute-Metadata-IndependentWrite'
           maxItems: 16
           type: array
       required:
       - transaction
+    Dispute-Media-Read:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
+    Dispute-Metadata-IndependentWrite:
+      deprecated: false
+      description: ""
+      example:
+        value: "54412"
+        key: External-ID
+      properties:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
+          nullable: true
+          type: string
+    Dispute-Metadata-Read:
+      deprecated: false
+      description: ""
+      example:
+        value: "54412"
+        key: External-ID
+      properties:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
+          nullable: true
+          type: string
+    Dispute-Offer-CollectionRead:
+      deprecated: false
+      description: ""
+      example:
+        seller:
+          firstName: John
+          lastName: Doe
+          id: 0
+        unitPrice: 125.54
+        condition: USED
+        ulid: ulid
+        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+        title: ASUS TUF X570-PLUS GAMING Motherboard
+        currencyCode: EUR
+        itemCount: 1
+      properties:
+        ulid:
+          type: string
+        publicUrl:
+          description: "If specified, there would be not need for you to fill-in details.\
+            \ Must be accessible over WAN."
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          nullable: true
+          type: string
+        seller:
+          $ref: '#/components/schemas/Dispute-Persona-CollectionRead'
+        title:
+          example: ASUS TUF X570-PLUS GAMING Motherboard
+          type: string
+        unitPrice:
+          example: 125.54
+          nullable: true
+          type: number
+        currencyCode:
+          default: EUR
+          example: EUR
+          nullable: true
+          type: string
+        itemCount:
+          default: 1
+          example: 1
+          type: integer
+        condition:
+          default: USED
+          enum:
+          - NEW
+          - USED
+          - DAMAGED
+          - DETERIORATED
+          - UNRECOVERABLE
+          example: USED
+          type: string
+      required:
+      - seller
+      - ulid
+    Dispute-Offer-IndependentWrite:
+      deprecated: false
+      description: An Offer object represent a public listening
+      properties:
+        publicUrl:
+          description: "If specified, there would be not need for you to fill-in details.\
+            \ Must be accessible over WAN."
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          nullable: true
+          type: string
+        seller:
+          $ref: '#/components/schemas/Dispute-Persona-IndependentWrite'
+        nature:
+          default: physical_item
+          description: This WILL affect the assigned workflow. Choosing service will
+            disable delivery for example. Refer to our technical hub for more information.
+          enum:
+          - service
+          - physical_item
+          - dematerialized_item
+          - rent_item
+          example: physical_item
+          type: string
+        title:
+          example: ASUS TUF X570-PLUS GAMING Motherboard
+          maxLength: 250
+          type: string
+          nullable: true
+        description:
+          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
+            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
+            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
+            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
+            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
+            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
+            \ id est laborum."
+          maxLength: 100000
+          nullable: true
+          type: string
+          nullable: true
+        unitPrice:
+          example: 125.54
+          nullable: true
+          type: number
+          nullable: true
+        currencyCode:
+          default: EUR
+          example: EUR
+          externalDocs:
+            url: https://schema.org/priceCurrency
+          nullable: true
+          type: string
+          nullable: true
+        itemCount:
+          default: 1
+          example: 1
+          type: integer
+        condition:
+          default: USED
+          enum:
+          - NEW
+          - USED
+          - DAMAGED
+          - DETERIORATED
+          - UNRECOVERABLE
+          example: USED
+          type: string
+        weightInGram:
+          nullable: true
+          type: integer
+        eanCode:
+          example: "4718017388450"
+          nullable: true
+          type: string
+        metadata:
+          items:
+            $ref: '#/components/schemas/Dispute-Metadata-IndependentWrite'
+          type: array
+      required:
+      - seller
+    Dispute-Offer-Read:
+      deprecated: false
+      description: ""
+      example:
+        seller:
+          firstName: John
+          lastName: Doe
+          mobilePhoneNumber: "+33745214529"
+          language: fr
+          id: 6
+          email: john.doe@gmail.com
+        unitPrice: 125.54
+        medias:
+        - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        condition: USED
+        ulid: ulid
+        nature: physical_item
+        organization:
+          warningColor: warningColor
+          errorColor: errorColor
+          rateCommissionSafeCheckout: 0.8008281904610115
+          accentColor: accentColor
+          counterProposalToggle: true
+          icon:
+            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          primaryColor: primaryColor
+          infoColor: infoColor
+          personaAuthPortalToggle: true
+          directNotificationToggle: true
+          flatRateEnabled: true
+          websiteUrl: websiteUrl
+          successColor: successColor
+          name: name
+          logo:
+            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          customBaseUrl: customBaseUrl
+          secondaryColor: secondaryColor
+        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
+          \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
+          \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
+          \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
+          \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
+          \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
+          \ id est laborum."
+        title: ASUS TUF X570-PLUS GAMING Motherboard
+        currencyCode: EUR
+        itemCount: 1
+      properties:
+        ulid:
+          type: string
+        publicUrl:
+          description: "If specified, there would be not need for you to fill-in details.\
+            \ Must be accessible over WAN."
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          nullable: true
+          type: string
+        organization:
+          $ref: '#/components/schemas/Dispute-Organization-Read'
+        seller:
+          $ref: '#/components/schemas/Dispute-Persona-Read'
+        nature:
+          default: physical_item
+          description: This WILL affect the assigned workflow. Choosing service will
+            disable delivery for example. Refer to our technical hub for more information.
+          enum:
+          - service
+          - physical_item
+          - dematerialized_item
+          - rent_item
+          example: physical_item
+          type: string
+        title:
+          example: ASUS TUF X570-PLUS GAMING Motherboard
+          type: string
+        description:
+          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
+            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
+            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
+            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
+            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
+            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
+            \ id est laborum."
+          nullable: true
+          type: string
+        unitPrice:
+          example: 125.54
+          nullable: true
+          type: number
+        currencyCode:
+          default: EUR
+          example: EUR
+          nullable: true
+          type: string
+        itemCount:
+          default: 1
+          example: 1
+          type: integer
+        condition:
+          default: USED
+          enum:
+          - NEW
+          - USED
+          - DAMAGED
+          - DETERIORATED
+          - UNRECOVERABLE
+          example: USED
+          type: string
+        medias:
+          items:
+            $ref: '#/components/schemas/Dispute-Media-Read'
+          type: array
+      required:
+      - medias
+      - nature
+      - seller
+      - ulid
+    Dispute-Organization-Read:
+      deprecated: false
+      description: ""
+      example:
+        warningColor: warningColor
+        errorColor: errorColor
+        rateCommissionSafeCheckout: 0.8008281904610115
+        accentColor: accentColor
+        counterProposalToggle: true
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        primaryColor: primaryColor
+        infoColor: infoColor
+        personaAuthPortalToggle: true
+        directNotificationToggle: true
+        flatRateEnabled: true
+        websiteUrl: websiteUrl
+        successColor: successColor
+        name: name
+        logo:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        customBaseUrl: customBaseUrl
+        secondaryColor: secondaryColor
+      properties:
+        name:
+          type: string
+        websiteUrl:
+          nullable: true
+          type: string
+        customBaseUrl:
+          nullable: true
+          type: string
+        icon:
+          $ref: '#/components/schemas/Dispute-Media-Read'
+        logo:
+          $ref: '#/components/schemas/Dispute-Media-Read'
+        primaryColor:
+          nullable: true
+          type: string
+        secondaryColor:
+          nullable: true
+          type: string
+        accentColor:
+          nullable: true
+          type: string
+        errorColor:
+          nullable: true
+          type: string
+        infoColor:
+          nullable: true
+          type: string
+        successColor:
+          nullable: true
+          type: string
+        warningColor:
+          nullable: true
+          type: string
+        directNotificationToggle:
+          default: true
+          example: true
+          type: boolean
+        personaAuthPortalToggle:
+          type: boolean
+        counterProposalToggle:
+          default: true
+          example: true
+          type: boolean
+        flatRateEnabled:
+          readOnly: true
+          type: boolean
+        rateCommissionSafeCheckout:
+          type: number
+      required:
+      - counterProposalToggle
+      - directNotificationToggle
+      - personaAuthPortalToggle
+      - rateCommissionSafeCheckout
+    Dispute-Parcel-IndependentWrite:
+      deprecated: false
+      description: ""
+      properties:
+        carrier:
+          enum:
+          - SwissPost
+          - MondialRelay
+          - Colissimo
+          - Dhl
+          - Chronopost
+          - ColisPrive
+          - Dpd
+          - Ups
+          - FedEx
+          - RelaisColis
+          type: string
+        identifier:
+          example: 8J001271466474
+          type: string
+        price:
+          example: 4.88
+          nullable: true
+          type: number
+        refundable:
+          type: boolean
+        currency:
+          default: EUR
+          example: EUR
+          nullable: true
+          type: string
+      required:
+      - refundable
+    Dispute-Parcel-Read:
+      deprecated: false
+      description: ""
+      example:
+        identifier: 8J001271466474
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        carrier: SwissPost
+        price: 4.88
+        refundable: true
+        currency: EUR
+        status: CREATED
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        carrier:
+          enum:
+          - SwissPost
+          - MondialRelay
+          - Colissimo
+          - Dhl
+          - Chronopost
+          - ColisPrive
+          - Dpd
+          - Ups
+          - FedEx
+          - RelaisColis
+          type: string
+        identifier:
+          example: 8J001271466474
+          maxLength: 128
+          minLength: 4
+          type: string
+        price:
+          example: 4.88
+          minimum: 0
+          nullable: true
+          type: number
+        refundable:
+          type: boolean
+        currency:
+          default: EUR
+          example: EUR
+          externalDocs:
+            url: https://schema.org/priceCurrency
+          nullable: true
+          type: string
+        status:
+          enum:
+          - CREATED
+          - SHIPPED
+          - IN_TRANSIT
+          - DELIVERED
+          - ERROR
+          - ACCEPTED
+          - REFUSED
+          - null
+          nullable: true
+          type: string
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+      required:
+      - carrier
+      - identifier
+    Dispute-Persona-CollectionRead:
+      deprecated: false
+      description: ""
+      example:
+        firstName: John
+        lastName: Doe
+        id: 0
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        firstName:
+          example: John
+          type: string
+        lastName:
+          example: Doe
+          type: string
+    Dispute-Persona-IndependentWrite:
+      deprecated: false
+      description: ""
+      properties:
+        firstName:
+          example: John
+          maxLength: 64
+          minLength: 1
+          type: string
+        lastName:
+          example: Doe
+          maxLength: 64
+          minLength: 1
+          type: string
+        gender:
+          default: RATHER_NOT_SAY
+          enum:
+          - MALE
+          - FEMALE
+          - OTHER
+          - RATHER_NOT_SAY
+          example: RATHER_NOT_SAY
+          type: string
+        dateOfBirth:
+          format: date
+          nullable: true
+          type: string
+        language:
+          description: "That data is used for rendering the frontend application with\
+            \ given language. If not set, will be inferred. Custom codes can be issued\
+            \ for specific requirements."
+          example: fr
+          nullable: true
+          type: string
+        email:
+          example: john.doe@gmail.com
+          externalDocs:
+            url: https://schema.org/email
+          format: email
+          nullable: true
+          type: string
+        mobilePhoneNumber:
+          example: "+33745214529"
+          nullable: true
+          type: string
+        address:
+          $ref: '#/components/schemas/Dispute-Address-IndependentWrite'
+        externalPurchaseCount:
+          description: "Knowing the statistics on your user is used to better know\
+            \ its profile when you do not use the Safe-Checkout feature. Although\
+            \ it is not required, we recommend that you keep us informed."
+          minimum: 0
+          type: integer
+        externalSellCount:
+          description: "Knowing the statistics on your user is used to better know\
+            \ its profile when you do not use the Safe-Checkout feature. Although\
+            \ it is not required, we recommend that you keep us informed."
+          minimum: 0
+          type: integer
+        metadata:
+          description: You can assign different meta to your Persona object for different
+            purposes. eg. Ease searching.
+          items:
+            $ref: '#/components/schemas/Dispute-Metadata-IndependentWrite'
+          maxItems: 16
+          type: array
+      required:
+      - firstName
+      - gender
+      - lastName
+    Dispute-Persona-Read:
+      deprecated: false
+      description: ""
+      example:
+        firstName: John
+        lastName: Doe
+        mobilePhoneNumber: "+33745214529"
+        language: fr
+        id: 6
+        email: john.doe@gmail.com
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        firstName:
+          example: John
+          type: string
+        lastName:
+          example: Doe
+          type: string
+        language:
+          description: "That data is used for rendering the frontend application with\
+            \ given language. If not set, will be inferred. Custom codes can be issued\
+            \ for specific requirements."
+          example: fr
+          nullable: true
+          type: string
+        email:
+          example: john.doe@gmail.com
+          nullable: true
+          type: string
+        mobilePhoneNumber:
+          example: "+33745214529"
+          nullable: true
+          type: string
     Dispute-PostCreationRead:
       deprecated: false
       description: Access directly our resolution center without having used the safe-checkout
@@ -8735,7 +9399,7 @@ components:
           example: 01ARZ3NDEKTSV4RRFFQ69G5FAV
           type: string
         transaction:
-          $ref: '#/components/schemas/Transaction-Read'
+          $ref: '#/components/schemas/Dispute-Transaction-Read'
         status:
           default: CREATED
           enum:
@@ -8916,22 +9580,21 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         parcels:
           items:
-            $ref: '#/components/schemas/Parcel-Read'
+            $ref: '#/components/schemas/Dispute-Parcel-Read'
           type: array
         views:
           items:
-            $ref: '#/components/schemas/View-Read'
+            $ref: '#/components/schemas/Dispute-View-Read'
           type: array
         metadata:
           items:
-            $ref: '#/components/schemas/Metadata-Read'
+            $ref: '#/components/schemas/Dispute-Metadata-Read'
           type: array
         events:
           items:
-            $ref: '#/components/schemas/WorkflowEvent-Read'
+            $ref: '#/components/schemas/Dispute-WorkflowEvent-Read'
           type: array
         createdAt:
           format: date-time
@@ -8966,7 +9629,6 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         messageCount:
           example: 6
           readOnly: true
@@ -8998,6 +9660,168 @@ components:
       - status
       - ulid
       - views
+    Dispute-Transaction-CollectionRead:
+      deprecated: false
+      description: ""
+      example:
+        offer:
+          seller:
+            firstName: John
+            lastName: Doe
+            id: 0
+          unitPrice: 125.54
+          condition: USED
+          ulid: ulid
+          publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          title: ASUS TUF X570-PLUS GAMING Motherboard
+          currencyCode: EUR
+          itemCount: 1
+        ulid: ulid
+        buyer:
+          firstName: John
+          lastName: Doe
+          id: 0
+      properties:
+        ulid:
+          type: string
+        offer:
+          $ref: '#/components/schemas/Dispute-Offer-CollectionRead'
+        buyer:
+          $ref: '#/components/schemas/Dispute-Persona-CollectionRead'
+      required:
+      - buyer
+      - offer
+      - ulid
+    Dispute-Transaction-IndependentWrite:
+      deprecated: false
+      description: ""
+      properties:
+        offer:
+          $ref: '#/components/schemas/Dispute-Offer-IndependentWrite'
+        buyer:
+          $ref: '#/components/schemas/Dispute-Persona-IndependentWrite'
+        fees:
+          nullable: true
+          type: number
+        refundableFees:
+          type: boolean
+        metadata:
+          items:
+            $ref: '#/components/schemas/Dispute-Metadata-IndependentWrite'
+          type: array
+        parcels:
+          items:
+            $ref: '#/components/schemas/Dispute-Parcel-IndependentWrite'
+          type: array
+      required:
+      - buyer
+      - offer
+    Dispute-Transaction-Read:
+      deprecated: false
+      description: ""
+      example:
+        offer:
+          seller:
+            firstName: John
+            lastName: Doe
+            mobilePhoneNumber: "+33745214529"
+            language: fr
+            id: 6
+            email: john.doe@gmail.com
+          unitPrice: 125.54
+          medias:
+          - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          condition: USED
+          ulid: ulid
+          nature: physical_item
+          organization:
+            warningColor: warningColor
+            errorColor: errorColor
+            rateCommissionSafeCheckout: 0.8008281904610115
+            accentColor: accentColor
+            counterProposalToggle: true
+            icon:
+              publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+            primaryColor: primaryColor
+            infoColor: infoColor
+            personaAuthPortalToggle: true
+            directNotificationToggle: true
+            flatRateEnabled: true
+            websiteUrl: websiteUrl
+            successColor: successColor
+            name: name
+            logo:
+              publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+            customBaseUrl: customBaseUrl
+            secondaryColor: secondaryColor
+          publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
+            \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
+            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
+            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
+            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
+            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
+            \ id est laborum."
+          title: ASUS TUF X570-PLUS GAMING Motherboard
+          currencyCode: EUR
+          itemCount: 1
+        fees: 1.4658129805029452
+        refundableFees: true
+        metadata:
+        - value: "54412"
+          key: External-ID
+        - value: "54412"
+          key: External-ID
+        ulid: ulid
+        buyer:
+          firstName: John
+          lastName: Doe
+          mobilePhoneNumber: "+33745214529"
+          language: fr
+          id: 6
+          email: john.doe@gmail.com
+        parcels:
+        - identifier: 8J001271466474
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          carrier: SwissPost
+          price: 4.88
+          refundable: true
+          currency: EUR
+          status: CREATED
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - identifier: 8J001271466474
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          carrier: SwissPost
+          price: 4.88
+          refundable: true
+          currency: EUR
+          status: CREATED
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        ulid:
+          type: string
+        offer:
+          $ref: '#/components/schemas/Dispute-Offer-Read'
+        buyer:
+          $ref: '#/components/schemas/Dispute-Persona-Read'
+        fees:
+          nullable: true
+          type: number
+        refundableFees:
+          type: boolean
+        metadata:
+          items:
+            $ref: '#/components/schemas/Dispute-Metadata-Read'
+          type: array
+        parcels:
+          items:
+            $ref: '#/components/schemas/Dispute-Parcel-Read'
+          type: array
+      required:
+      - buyer
+      - offer
+      - ulid
     Dispute-Update:
       deprecated: false
       description: Access directly our resolution center without having used the safe-checkout
@@ -9122,6 +9946,89 @@ components:
           minLength: 30
           nullable: true
           type: string
+    Dispute-View-Read:
+      deprecated: false
+      description: ""
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        hitCount: 1
+        namedSource: BUYER
+      properties:
+        hitCount:
+          default: 1
+          example: 1
+          type: integer
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        namedSource:
+          enum:
+          - BUYER
+          - PLATFORM
+          - SELLER
+          - OTHER
+          readOnly: true
+          type: string
+          nullable: true
+      required:
+      - hitCount
+    Dispute-WorkflowEvent-Read:
+      deprecated: false
+      description: ""
+      example:
+        occurredAt: 2000-01-23T04:56:07.000+00:00
+        initiator: https://example.com/
+        from: from
+        label: label
+        to: to
+        event: dispute.opened
+      properties:
+        label:
+          type: string
+        from:
+          nullable: true
+          type: string
+        to:
+          nullable: true
+          type: string
+        event:
+          enum:
+          - dispute.opened
+          - dispute.submitted
+          - dispute.created
+          - dispute.abandoned
+          - dispute.settlement
+          - dispute.closed
+          - dispute.expired
+          - dispute.manual_arbitration_required
+          - dispute.updated
+          - dispute.reminder
+          - offer.created
+          - offer.expired
+          - offer.updated
+          - offer.crawl_failure
+          - offer.transaction.authorized
+          - offer.transaction.reconciled
+          - offer.transaction.abandoned
+          - offer.closed
+          - offer.transaction.refund
+          - persona.added
+          - null
+          nullable: true
+          type: string
+        occurredAt:
+          format: date-time
+          readOnly: true
+          type: string
+        initiator:
+          example: https://example.com/
+          format: iri-reference
+          nullable: true
+          readOnly: true
+          type: string
+      required:
+      - label
     Dispute-Write:
       deprecated: false
       description: ""
@@ -9325,7 +10232,6 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         parcels:
           items:
             $ref: '#/components/schemas/Parcel-dispute.read'
@@ -9375,7 +10281,6 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         messageCount:
           example: 6
           readOnly: true
@@ -9453,6 +10358,17 @@ components:
     Evidence:
       deprecated: false
       description: ""
+      example:
+        owner: https://example.com/
+        dispute: https://example.com/
+        additionalInformation: "The motherboard I received have a minor scratch at\
+          \ the bottom, here is the proof."
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        publisher: BUYER
+        id: 0
+        media: https://example.com/
+        status: SUBMITTED
+        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           readOnly: true
@@ -9462,13 +10378,11 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         owner:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         status:
           default: SUBMITTED
           enum:
@@ -9485,7 +10399,6 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         additionalInformation:
           description: Description of what the evidence actually is.
           example: "The motherboard I received have a minor scratch at the bottom,\
@@ -9511,6 +10424,20 @@ components:
           nullable: true
       required:
       - status
+    Evidence-Media-Read:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
     Evidence-Read:
       deprecated: false
       description: ""
@@ -9540,7 +10467,7 @@ components:
           example: SUBMITTED
           type: string
         media:
-          $ref: '#/components/schemas/Media-Read'
+          $ref: '#/components/schemas/Evidence-Media-Read'
         additionalInformation:
           description: Description of what the evidence actually is.
           example: "The motherboard I received have a minor scratch at the bottom,\
@@ -9626,19 +10553,16 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         original:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         owner:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         offers:
           items:
             example: https://example.com/
@@ -9658,48 +10582,21 @@ components:
       - filename
       - fingerprint
       - publicUrl
-    Media-AuthenticatedRead:
-      deprecated: false
-      description: ""
-      example:
-        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-      properties:
-        publicUrl:
-          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          type: string
-      required:
-      - publicUrl
-    Media-CollectionRead:
-      deprecated: false
-      description: ""
-      example:
-        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-      properties:
-        publicUrl:
-          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          type: string
-      required:
-      - publicUrl
     Media-Read:
       deprecated: false
       description: ""
       example:
         publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        thumbnailUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
       properties:
         publicUrl:
           example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
           type: string
-      required:
-      - publicUrl
+        thumbnailUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          nullable: true
+          readOnly: true
+          type: string
     Media-UserRead:
       deprecated: false
       description: ""
@@ -9740,81 +10637,21 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         dispute:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         offer:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         transaction:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Metadata-IndependentWrite:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Metadata-Read:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Metadata-Update:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Metadata-Write:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
         key:
           example: External-ID
           type: string
@@ -9913,13 +10750,11 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         seller:
           description: "If the seller is actually YOUR organization, set it to NULL."
           example: https://example.com/
           format: iri-reference
           type: string
-          owl:maxCardinality: 1
         nature:
           default: physical_item
           description: This WILL affect the assigned workflow. Choosing service will
@@ -10031,7 +10866,6 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         halfPricePoint:
           nullable: true
           readOnly: true
@@ -10047,21 +10881,66 @@ components:
       - ulid
       - url
       - views
-    Offer-CollectionRead:
+    Offer-Address-IndependentWrite:
       deprecated: false
       description: ""
+      properties:
+        companyName:
+          example: Company Tld
+          nullable: true
+          type: string
+        countryCode:
+          example: FRA
+          maxLength: 3
+          type: string
+        zipCode:
+          example: "75004"
+          type: string
+        cityName:
+          example: Paris
+          type: string
+        firstLine:
+          example: 118 avenue des champs élysées
+          type: string
+        secondLine:
+          example: Apt 6E
+          nullable: true
+          type: string
+        buildingName:
+          example: Electron
+          nullable: true
+          type: string
+        buildingFloor:
+          example: Third floor
+          nullable: true
+          type: string
+        gateOrPortalOrInboxCode:
+          example: "3124"
+          nullable: true
+          type: string
+    Offer-CollectionRead:
+      deprecated: false
+      description: An Offer object represent a public listening
       example:
-        seller:
-          firstName: John
-          lastName: Doe
-          id: 0
+        seller: https://example.com/
         unitPrice: 125.54
-        condition: USED
+        iri: https://example.com/
         ulid: ulid
-        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+        nature: physical_item
         title: ASUS TUF X570-PLUS GAMING Motherboard
-        currencyCode: EUR
+        overrideRateCommissionSafeCheckout: 0.8008281904610115
         itemCount: 1
+        shippingAllowed: true
+        handDeliveryAllowed: true
+        enforcePersonaAuth: true
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        condition: USED
+        shippingCarriers:
+        - SwissPost
+        - SwissPost
+        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+        currencyCode: EUR
+        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         ulid:
           type: string
@@ -10071,8 +10950,32 @@ components:
           example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
           nullable: true
           type: string
+        enforcePersonaAuth:
+          default: true
+          description: Mean that the generated url cannot be accessed without a generated
+            token for a Persona. Disallow external registration.
+          example: true
+          type: boolean
+        overrideRateCommissionSafeCheckout:
+          description: Override YOUR platform fees for that particular Offer.
+          nullable: true
+          type: number
         seller:
-          $ref: '#/components/schemas/Persona-CollectionRead'
+          description: "If the seller is actually YOUR organization, set it to NULL."
+          example: https://example.com/
+          format: iri-reference
+          type: string
+        nature:
+          default: physical_item
+          description: This WILL affect the assigned workflow. Choosing service will
+            disable delivery for example. Refer to our technical hub for more information.
+          enum:
+          - service
+          - physical_item
+          - dematerialized_item
+          - rent_item
+          example: physical_item
+          type: string
         title:
           example: ASUS TUF X570-PLUS GAMING Motherboard
           type: string
@@ -10099,24 +11002,65 @@ components:
           - UNRECOVERABLE
           example: USED
           type: string
+        shippingAllowed:
+          description: "That toggle allows the seller to propose shipping for its\
+            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
+            \ generated. Also, it will restrict the carrier to the limited subset\
+            \ defined."
+          type: boolean
+        handDeliveryAllowed:
+          default: true
+          description: Enable both parties to finalize the transaction in person rather
+            than using delivery. A QR Code must be scanned by the seller once the
+            buyer claims the product.
+          example: true
+          type: boolean
+        shippingCarriers:
+          description: "If you wish to enable automated shipping label generation\
+            \ through a specific provider, specify it there."
+          items:
+            enum:
+            - SwissPost
+            - Colissimo
+            - MondialRelay
+            type: string
+          type: array
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+        iri:
+          example: https://example.com/
+          format: iri-reference
+          readOnly: true
+          type: string
       required:
+      - enforcePersonaAuth
+      - handDeliveryAllowed
+      - nature
       - seller
+      - shippingAllowed
       - ulid
     Offer-IndependentWrite:
       deprecated: false
       description: An Offer object represent a public listening
       properties:
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+        redirectUrl:
+          description: Fill-in that field IF you intend to redirect your customer
+            instead of using a WebView.
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
           externalDocs:
             url: https://schema.org/url
           format: uri
           nullable: true
           type: string
         seller:
-          $ref: '#/components/schemas/Persona-IndependentWrite'
+          $ref: '#/components/schemas/Offer-Persona-IndependentWrite'
         nature:
           default: physical_item
           description: This WILL affect the assigned workflow. Choosing service will
@@ -10175,18 +11119,231 @@ components:
         weightInGram:
           nullable: true
           type: integer
+        shippingAllowed:
+          description: "That toggle allows the seller to propose shipping for its\
+            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
+            \ generated. Also, it will restrict the carrier to the limited subset\
+            \ defined."
+          type: boolean
+        handDeliveryAllowed:
+          default: true
+          description: Enable both parties to finalize the transaction in person rather
+            than using delivery. A QR Code must be scanned by the seller once the
+            buyer claims the product.
+          example: true
+          type: boolean
+        shippingCarriers:
+          description: "If you wish to enable automated shipping label generation\
+            \ through a specific provider, specify it there."
+          items:
+            enum:
+            - SwissPost
+            - Colissimo
+            - MondialRelay
+            type: string
+          type: array
+          uniqueItems: true
         eanCode:
           example: "4718017388450"
           nullable: true
           type: string
+        canBeSoldSeparately:
+          default: true
+          description: "Set this flag to false to forbid a potential buyer to acquire\
+            \ this item separately. \n        This is only useful in a BulkOffer context."
+          example: true
+          type: boolean
         metadata:
           items:
-            $ref: '#/components/schemas/Metadata-IndependentWrite'
+            $ref: '#/components/schemas/Offer-Metadata-IndependentWrite'
           type: array
       required:
-      - description
       - seller
-      - title
+    Offer-Media-Read:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
+    Offer-Metadata-IndependentWrite:
+      deprecated: false
+      description: ""
+      example:
+        value: "54412"
+        key: External-ID
+      properties:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
+          nullable: true
+          type: string
+    Offer-Metadata-Update:
+      deprecated: false
+      description: ""
+      example:
+        value: "54412"
+        key: External-ID
+      properties:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
+          nullable: true
+          type: string
+    Offer-Metadata-Write:
+      deprecated: false
+      description: ""
+      example:
+        value: "54412"
+        key: External-ID
+      properties:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
+          nullable: true
+          type: string
+    Offer-Organization-Read:
+      deprecated: false
+      description: ""
+      example:
+        warningColor: warningColor
+        errorColor: errorColor
+        rateCommissionSafeCheckout: 6.027456183070403
+        accentColor: accentColor
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        primaryColor: primaryColor
+        infoColor: infoColor
+        personaAuthPortalToggle: true
+        directNotificationToggle: true
+        flatRateEnabled: true
+        websiteUrl: websiteUrl
+        successColor: successColor
+        name: name
+        logo:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        customBaseUrl: customBaseUrl
+        secondaryColor: secondaryColor
+      properties:
+        name:
+          type: string
+        websiteUrl:
+          nullable: true
+          type: string
+        customBaseUrl:
+          nullable: true
+          type: string
+        icon:
+          $ref: '#/components/schemas/Offer-Media-Read'
+        logo:
+          $ref: '#/components/schemas/Offer-Media-Read'
+        primaryColor:
+          nullable: true
+          type: string
+        secondaryColor:
+          nullable: true
+          type: string
+        accentColor:
+          nullable: true
+          type: string
+        errorColor:
+          nullable: true
+          type: string
+        infoColor:
+          nullable: true
+          type: string
+        successColor:
+          nullable: true
+          type: string
+        warningColor:
+          nullable: true
+          type: string
+        directNotificationToggle:
+          default: true
+          example: true
+          type: boolean
+        personaAuthPortalToggle:
+          type: boolean
+        flatRateEnabled:
+          readOnly: true
+          type: boolean
+        rateCommissionSafeCheckout:
+          type: number
+      required:
+      - directNotificationToggle
+      - personaAuthPortalToggle
+      - rateCommissionSafeCheckout
+    Offer-Persona-IndependentWrite:
+      deprecated: false
+      description: ""
+      properties:
+        firstName:
+          example: John
+          maxLength: 64
+          minLength: 1
+          type: string
+        lastName:
+          example: Doe
+          maxLength: 64
+          minLength: 1
+          type: string
+        gender:
+          default: RATHER_NOT_SAY
+          enum:
+          - MALE
+          - FEMALE
+          - OTHER
+          - RATHER_NOT_SAY
+          example: RATHER_NOT_SAY
+          type: string
+        dateOfBirth:
+          format: date
+          nullable: true
+          type: string
+        language:
+          description: "That data is used for rendering the frontend application with\
+            \ given language. If not set, will be inferred. Custom codes can be issued\
+            \ for specific requirements."
+          example: fr
+          nullable: true
+          type: string
+        email:
+          example: john.doe@gmail.com
+          externalDocs:
+            url: https://schema.org/email
+          format: email
+          nullable: true
+          type: string
+        mobilePhoneNumber:
+          example: "+33745214529"
+          nullable: true
+          type: string
+        address:
+          $ref: '#/components/schemas/Offer-Address-IndependentWrite'
+        metadata:
+          description: You can assign different meta to your Persona object for different
+            purposes. eg. Ease searching.
+          items:
+            $ref: '#/components/schemas/Offer-Metadata-IndependentWrite'
+          maxItems: 16
+          type: array
+      required:
+      - firstName
+      - gender
+      - lastName
     Offer-PostCreationRead:
       deprecated: false
       description: An Offer object represent a public listening
@@ -10200,28 +11357,36 @@ components:
           type: string
     Offer-Read:
       deprecated: false
-      description: ""
+      description: An Offer object represent a public listening
       example:
-        seller:
-          firstName: John
-          lastName: Doe
-          mobilePhoneNumber: "+33745214529"
-          language: fr
-          id: 6
-          email: john.doe@gmail.com
+        seller: https://example.com/
         unitPrice: 125.54
+        iri: https://example.com/
+        redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
+        ulid: ulid
+        nature: physical_item
+        title: ASUS TUF X570-PLUS GAMING Motherboard
+        overrideRateCommissionSafeCheckout: 0.8008281904610115
+        itemCount: 1
+        shippingAllowed: true
+        canBeSoldSeparately: true
+        handDeliveryAllowed: true
+        enforcePersonaAuth: true
+        weightInGram: 1
         medias:
         - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        createdAt: 2000-01-23T04:56:07.000+00:00
         condition: USED
-        ulid: ulid
-        nature: physical_item
+        shippingCarriers:
+        - SwissPost
+        - SwissPost
+        eanCode: "4718017388450"
         organization:
           warningColor: warningColor
           errorColor: errorColor
-          rateCommissionSafeCheckout: 0.8008281904610115
+          rateCommissionSafeCheckout: 6.027456183070403
           accentColor: accentColor
-          counterProposalToggle: true
           icon:
             publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
           primaryColor: primaryColor
@@ -10237,16 +11402,8 @@ components:
           customBaseUrl: customBaseUrl
           secondaryColor: secondaryColor
         publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
-          \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-          \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-          \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-          \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-          \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-          \ id est laborum."
-        title: ASUS TUF X570-PLUS GAMING Motherboard
         currencyCode: EUR
-        itemCount: 1
+        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         ulid:
           type: string
@@ -10256,10 +11413,29 @@ components:
           example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
           nullable: true
           type: string
+        enforcePersonaAuth:
+          default: true
+          description: Mean that the generated url cannot be accessed without a generated
+            token for a Persona. Disallow external registration.
+          example: true
+          type: boolean
+        overrideRateCommissionSafeCheckout:
+          description: Override YOUR platform fees for that particular Offer.
+          nullable: true
+          type: number
+        redirectUrl:
+          description: Fill-in that field IF you intend to redirect your customer
+            instead of using a WebView.
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
+          nullable: true
+          type: string
         organization:
-          $ref: '#/components/schemas/Organization-Read'
+          $ref: '#/components/schemas/Offer-Organization-Read'
         seller:
-          $ref: '#/components/schemas/Persona-Read'
+          description: "If the seller is actually YOUR organization, set it to NULL."
+          example: https://example.com/
+          format: iri-reference
+          type: string
         nature:
           default: physical_item
           description: This WILL affect the assigned workflow. Choosing service will
@@ -10273,16 +11449,6 @@ components:
           type: string
         title:
           example: ASUS TUF X570-PLUS GAMING Motherboard
-          type: string
-        description:
-          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-            \ id est laborum."
-          nullable: true
           type: string
         unitPrice:
           example: 125.54
@@ -10307,14 +11473,68 @@ components:
           - UNRECOVERABLE
           example: USED
           type: string
+        weightInGram:
+          nullable: true
+          type: integer
+        shippingAllowed:
+          description: "That toggle allows the seller to propose shipping for its\
+            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
+            \ generated. Also, it will restrict the carrier to the limited subset\
+            \ defined."
+          type: boolean
+        handDeliveryAllowed:
+          default: true
+          description: Enable both parties to finalize the transaction in person rather
+            than using delivery. A QR Code must be scanned by the seller once the
+            buyer claims the product.
+          example: true
+          type: boolean
+        shippingCarriers:
+          description: "If you wish to enable automated shipping label generation\
+            \ through a specific provider, specify it there."
+          items:
+            enum:
+            - SwissPost
+            - Colissimo
+            - MondialRelay
+            type: string
+          type: array
+        eanCode:
+          example: "4718017388450"
+          nullable: true
+          type: string
+        canBeSoldSeparately:
+          default: true
+          description: "Set this flag to false to forbid a potential buyer to acquire\
+            \ this item separately. \n        This is only useful in a BulkOffer context."
+          example: true
+          type: boolean
         medias:
           items:
-            $ref: '#/components/schemas/Media-Read'
+            $ref: '#/components/schemas/Offer-Media-Read'
           type: array
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+        iri:
+          example: https://example.com/
+          format: iri-reference
+          readOnly: true
+          type: string
       required:
+      - canBeSoldSeparately
+      - enforcePersonaAuth
+      - handDeliveryAllowed
       - medias
       - nature
       - seller
+      - shippingAllowed
       - ulid
     Offer-Update:
       deprecated: false
@@ -10394,6 +11614,7 @@ components:
             - MondialRelay
             type: string
           type: array
+          uniqueItems: true
         eanCode:
           example: "4718017388450"
           nullable: true
@@ -10406,7 +11627,7 @@ components:
           type: boolean
         metadata:
           items:
-            $ref: '#/components/schemas/Metadata-Update'
+            $ref: '#/components/schemas/Offer-Metadata-Update'
           type: array
     Offer-Write:
       deprecated: false
@@ -10510,6 +11731,7 @@ components:
             - MondialRelay
             type: string
           type: array
+          uniqueItems: true
         eanCode:
           example: "4718017388450"
           nullable: true
@@ -10522,11 +11744,8 @@ components:
           type: boolean
         metadata:
           items:
-            $ref: '#/components/schemas/Metadata-Write'
+            $ref: '#/components/schemas/Offer-Metadata-Write'
           type: array
-      required:
-      - description
-      - title
     Offer-dispute.read:
       deprecated: false
       description: ""
@@ -10599,71 +11818,43 @@ components:
       - nature
       - seller
       - ulid
-    Organization-AuthenticatedRead:
+    Organization-Address-Update:
       deprecated: false
       description: ""
-      example:
-        rateCommissionSafeCheckout: 1.4658129805029452
-        safeCheckoutToggle: true
-        counterProposalToggle: true
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        personaAuthPortalToggle: true
-        automatedReturnToggle: true
-        flatRateEnabled: true
-        domainVerified: true
-        resolutionCenterToggle: true
-        name: name
-        logo:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        internalMessagingToggle: true
-        id: 6
       properties:
-        id:
-          readOnly: true
-          type: integer
-        name:
+        companyName:
+          example: Company Tld
+          nullable: true
           type: string
-        domainVerified:
-          type: boolean
-        icon:
-          $ref: '#/components/schemas/Media-AuthenticatedRead'
-        logo:
-          $ref: '#/components/schemas/Media-AuthenticatedRead'
-        safeCheckoutToggle:
-          type: boolean
-        resolutionCenterToggle:
-          default: true
-          example: true
-          type: boolean
-        internalMessagingToggle:
-          default: true
-          example: true
-          type: boolean
-        personaAuthPortalToggle:
-          type: boolean
-        automatedReturnToggle:
-          default: true
-          example: true
-          type: boolean
-        counterProposalToggle:
-          default: true
-          example: true
-          type: boolean
-        flatRateEnabled:
-          readOnly: true
-          type: boolean
-        rateCommissionSafeCheckout:
-          type: number
-      required:
-      - automatedReturnToggle
-      - counterProposalToggle
-      - domainVerified
-      - internalMessagingToggle
-      - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
-      - resolutionCenterToggle
-      - safeCheckoutToggle
+        countryCode:
+          example: FRA
+          maxLength: 3
+          type: string
+        zipCode:
+          example: "75004"
+          type: string
+        cityName:
+          example: Paris
+          type: string
+        firstLine:
+          example: 118 avenue des champs élysées
+          type: string
+        secondLine:
+          example: Apt 6E
+          nullable: true
+          type: string
+        buildingName:
+          example: Electron
+          nullable: true
+          type: string
+        buildingFloor:
+          example: Third floor
+          nullable: true
+          type: string
+        gateOrPortalOrInboxCode:
+          example: "3124"
+          nullable: true
+          type: string
     Organization-CollectionRead:
       deprecated: false
       description: ""
@@ -10701,9 +11892,9 @@ components:
           nullable: true
           type: string
         icon:
-          $ref: '#/components/schemas/Media-CollectionRead'
+          $ref: '#/components/schemas/Organization-Media-CollectionRead'
         logo:
-          $ref: '#/components/schemas/Media-CollectionRead'
+          $ref: '#/components/schemas/Organization-Media-CollectionRead'
         directNotificationToggle:
           default: true
           example: true
@@ -10742,31 +11933,72 @@ components:
       - rateCommissionSafeCheckout
       - resolutionCenterToggle
       - safeCheckoutToggle
+    Organization-Media-CollectionRead:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
+    Organization-Media-Read:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
     Organization-Read:
       deprecated: false
       description: ""
       example:
-        warningColor: warningColor
         errorColor: errorColor
         rateCommissionSafeCheckout: 0.8008281904610115
-        accentColor: accentColor
+        safeCheckoutToggle: true
         counterProposalToggle: true
         icon:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         primaryColor: primaryColor
         infoColor: infoColor
         personaAuthPortalToggle: true
-        directNotificationToggle: true
         flatRateEnabled: true
+        domainVerified: true
+        anonymityLevel: PARTIAL_FIRST_NAME
         websiteUrl: websiteUrl
-        successColor: successColor
-        name: name
+        resolutionCenterToggle: true
         logo:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        internalMessagingToggle: true
+        warningColor: warningColor
+        accentColor: accentColor
+        automatedReturnToggle: true
+        directNotificationToggle: true
+        successColor: successColor
+        name: name
+        commercialRegistryNumber: commercialRegistryNumber
         customBaseUrl: customBaseUrl
+        vatNumber: vatNumber
         secondaryColor: secondaryColor
       properties:
         name:
+          type: string
+        vatNumber:
+          nullable: true
+          type: string
+        commercialRegistryNumber:
           type: string
         websiteUrl:
           nullable: true
@@ -10774,10 +12006,12 @@ components:
         customBaseUrl:
           nullable: true
           type: string
+        domainVerified:
+          type: boolean
         icon:
-          $ref: '#/components/schemas/Media-Read'
+          $ref: '#/components/schemas/Organization-Media-Read'
         logo:
-          $ref: '#/components/schemas/Media-Read'
+          $ref: '#/components/schemas/Organization-Media-Read'
         primaryColor:
           nullable: true
           type: string
@@ -10803,7 +12037,29 @@ components:
           default: true
           example: true
           type: boolean
+        anonymityLevel:
+          default: PARTIAL_FIRST_NAME
+          enum:
+          - COMPLETE
+          - PARTIAL_FIRST_NAME
+          - TRANSPARENT
+          example: PARTIAL_FIRST_NAME
+          type: string
+        safeCheckoutToggle:
+          type: boolean
+        resolutionCenterToggle:
+          default: true
+          example: true
+          type: boolean
+        internalMessagingToggle:
+          default: true
+          example: true
+          type: boolean
         personaAuthPortalToggle:
+          type: boolean
+        automatedReturnToggle:
+          default: true
+          example: true
           type: boolean
         counterProposalToggle:
           default: true
@@ -10815,10 +12071,16 @@ components:
         rateCommissionSafeCheckout:
           type: number
       required:
+      - anonymityLevel
+      - automatedReturnToggle
       - counterProposalToggle
       - directNotificationToggle
+      - domainVerified
+      - internalMessagingToggle
       - personaAuthPortalToggle
       - rateCommissionSafeCheckout
+      - resolutionCenterToggle
+      - safeCheckoutToggle
     Organization-Update:
       deprecated: false
       description: ""
@@ -10847,7 +12109,7 @@ components:
           nullable: true
           type: string
         billingAddress:
-          $ref: '#/components/schemas/Address-Update'
+          $ref: '#/components/schemas/Organization-Address-Update'
         primaryColor:
           nullable: true
           type: string
@@ -10901,9 +12163,7 @@ components:
         rateCommissionSafeCheckout:
           type: number
       required:
-      - commercialRegistryNumber
       - name
-      - vatNumber
     Organization-UserRead:
       deprecated: false
       description: ""
@@ -10969,36 +12229,6 @@ components:
       - rateCommissionSafeCheckout
       - resolutionCenterToggle
       - safeCheckoutToggle
-    Organization-Write:
-      deprecated: false
-      description: ""
-      properties:
-        id:
-          readOnly: true
-          type: integer
-        name:
-          maxLength: 64
-          type: string
-        vatNumber:
-          maxLength: 32
-          nullable: true
-          type: string
-        commercialRegistryNumber:
-          maxLength: 32
-          type: string
-        websiteUrl:
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          maxLength: 64
-          nullable: true
-          type: string
-        billingAddress:
-          $ref: '#/components/schemas/Address-Write'
-      required:
-      - commercialRegistryNumber
-      - name
-      - vatNumber
     Organization-dispute.read:
       deprecated: false
       description: ""
@@ -11112,13 +12342,11 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         transaction:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         createdAt:
           format: date-time
           readOnly: true
@@ -11135,108 +12363,10 @@ components:
       deprecated: false
       description: ""
       type: object
-    Parcel-IndependentWrite:
-      deprecated: false
-      description: ""
-      properties:
-        carrier:
-          enum:
-          - SwissPost
-          - MondialRelay
-          - Colissimo
-          - Dhl
-          - Chronopost
-          - ColisPrive
-          - Dpd
-          - Ups
-          - FedEx
-          - RelaisColis
-          type: string
-        identifier:
-          example: 8J001271466474
-          type: string
-        price:
-          example: 4.88
-          nullable: true
-          type: number
-        refundable:
-          type: boolean
-        currency:
-          default: EUR
-          example: EUR
-          nullable: true
-          type: string
-      required:
-      - refundable
     Parcel-Read:
       deprecated: false
       description: ""
-      example:
-        identifier: 8J001271466474
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        carrier: SwissPost
-        price: 4.88
-        refundable: true
-        currency: EUR
-        status: CREATED
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-      properties:
-        carrier:
-          enum:
-          - SwissPost
-          - MondialRelay
-          - Colissimo
-          - Dhl
-          - Chronopost
-          - ColisPrive
-          - Dpd
-          - Ups
-          - FedEx
-          - RelaisColis
-          type: string
-        identifier:
-          example: 8J001271466474
-          maxLength: 128
-          minLength: 4
-          type: string
-        price:
-          example: 4.88
-          minimum: 0
-          nullable: true
-          type: number
-        refundable:
-          type: boolean
-        currency:
-          default: EUR
-          example: EUR
-          externalDocs:
-            url: https://schema.org/priceCurrency
-          nullable: true
-          type: string
-        status:
-          enum:
-          - CREATED
-          - SHIPPED
-          - IN_TRANSIT
-          - DELIVERED
-          - ERROR
-          - ACCEPTED
-          - REFUSED
-          - null
-          nullable: true
-          type: string
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        updatedAt:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-      required:
-      - carrier
-      - identifier
+      type: object
     Parcel-Write:
       deprecated: false
       description: ""
@@ -11345,7 +12475,6 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         targetUrl:
           description: The URL you wish that Persona to go to without additional MFA.
             The URL MUST concern that Persona.
@@ -11458,6 +12587,7 @@ components:
             example: https://example.com/
             format: iri-reference
             type: string
+          type: array
         views:
           items:
             $ref: '#/components/schemas/View'
@@ -11492,6 +12622,138 @@ components:
       - offers
       - purchases
       - views
+    Persona-Address-Read:
+      deprecated: false
+      description: ""
+      example:
+        zipCode: "75004"
+        buildingName: Electron
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        cityName: Paris
+        countryCode: FRA
+        companyName: Company Tld
+        secondLine: Apt 6E
+        firstLine: 118 avenue des champs élysées
+        buildingFloor: Third floor
+        gateOrPortalOrInboxCode: "3124"
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        companyName:
+          example: Company Tld
+          nullable: true
+          type: string
+        countryCode:
+          example: FRA
+          maxLength: 3
+          type: string
+        zipCode:
+          example: "75004"
+          type: string
+        cityName:
+          example: Paris
+          type: string
+        firstLine:
+          example: 118 avenue des champs élysées
+          type: string
+        secondLine:
+          example: Apt 6E
+          nullable: true
+          type: string
+        buildingName:
+          example: Electron
+          nullable: true
+          type: string
+        buildingFloor:
+          example: Third floor
+          nullable: true
+          type: string
+        gateOrPortalOrInboxCode:
+          example: "3124"
+          nullable: true
+          type: string
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+    Persona-Address-Update:
+      deprecated: false
+      description: ""
+      properties:
+        companyName:
+          example: Company Tld
+          nullable: true
+          type: string
+        countryCode:
+          example: FRA
+          maxLength: 3
+          type: string
+        zipCode:
+          example: "75004"
+          type: string
+        cityName:
+          example: Paris
+          type: string
+        firstLine:
+          example: 118 avenue des champs élysées
+          type: string
+        secondLine:
+          example: Apt 6E
+          nullable: true
+          type: string
+        buildingName:
+          example: Electron
+          nullable: true
+          type: string
+        buildingFloor:
+          example: Third floor
+          nullable: true
+          type: string
+        gateOrPortalOrInboxCode:
+          example: "3124"
+          nullable: true
+          type: string
+    Persona-Address-Write:
+      deprecated: false
+      description: ""
+      properties:
+        companyName:
+          example: Company Tld
+          nullable: true
+          type: string
+        countryCode:
+          example: FRA
+          maxLength: 3
+          type: string
+        zipCode:
+          example: "75004"
+          type: string
+        cityName:
+          example: Paris
+          type: string
+        firstLine:
+          example: 118 avenue des champs élysées
+          type: string
+        secondLine:
+          example: Apt 6E
+          nullable: true
+          type: string
+        buildingName:
+          example: Electron
+          nullable: true
+          type: string
+        buildingFloor:
+          example: Third floor
+          nullable: true
+          type: string
+        gateOrPortalOrInboxCode:
+          example: "3124"
+          nullable: true
+          type: string
     Persona-AuthReturn:
       deprecated: false
       description: ""
@@ -11518,7 +12780,13 @@ components:
       example:
         firstName: John
         lastName: Doe
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        riskLevel: WEAK
+        offerCount: 4
+        purchaseCount: 42
         id: 0
+        email: john.doe@gmail.com
+        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           readOnly: true
@@ -11529,6 +12797,38 @@ components:
         lastName:
           example: Doe
           type: string
+        email:
+          example: john.doe@gmail.com
+          nullable: true
+          type: string
+        riskLevel:
+          description: We sort Persona into three distinct risks' category. This is
+            inferred from the riskScore.
+          enum:
+          - WEAK
+          - MEDIUM
+          - HIGH
+          - null
+          nullable: true
+          type: string
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+        offerCount:
+          description: Issued Offers count owned by a given Persona
+          example: 4
+          readOnly: true
+          type: integer
+        purchaseCount:
+          example: 42
+          readOnly: true
+          type: integer
     Persona-ExternalAuth:
       deprecated: false
       description: ""
@@ -11554,76 +12854,48 @@ components:
           example: "+33745214529"
           nullable: true
           type: string
-    Persona-IndependentWrite:
+    Persona-Metadata-Read:
       deprecated: false
       description: ""
+      example:
+        value: "54412"
+        key: External-ID
       properties:
-        firstName:
-          example: John
-          maxLength: 64
-          minLength: 1
+        key:
+          example: External-ID
           type: string
-        lastName:
-          example: Doe
-          maxLength: 64
-          minLength: 1
-          type: string
-        gender:
-          default: RATHER_NOT_SAY
-          enum:
-          - MALE
-          - FEMALE
-          - OTHER
-          - RATHER_NOT_SAY
-          example: RATHER_NOT_SAY
-          type: string
-        dateOfBirth:
-          format: date
+        value:
+          example: "54412"
           nullable: true
           type: string
-        language:
-          description: "That data is used for rendering the frontend application with\
-            \ given language. If not set, will be inferred. Custom codes can be issued\
-            \ for specific requirements."
-          example: fr
+    Persona-Metadata-Update:
+      deprecated: false
+      description: ""
+      example:
+        value: "54412"
+        key: External-ID
+      properties:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
           nullable: true
           type: string
-        email:
-          example: john.doe@gmail.com
-          externalDocs:
-            url: https://schema.org/email
-          format: email
+    Persona-Metadata-Write:
+      deprecated: false
+      description: ""
+      example:
+        value: "54412"
+        key: External-ID
+      properties:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
           nullable: true
           type: string
-        mobilePhoneNumber:
-          example: "+33745214529"
-          nullable: true
-          type: string
-        address:
-          $ref: '#/components/schemas/Address-IndependentWrite'
-        externalPurchaseCount:
-          description: "Knowing the statistics on your user is used to better know\
-            \ its profile when you do not use the Safe-Checkout feature. Although\
-            \ it is not required, we recommend that you keep us informed."
-          minimum: 0
-          type: integer
-        externalSellCount:
-          description: "Knowing the statistics on your user is used to better know\
-            \ its profile when you do not use the Safe-Checkout feature. Although\
-            \ it is not required, we recommend that you keep us informed."
-          minimum: 0
-          type: integer
-        metadata:
-          description: You can assign different meta to your Persona object for different
-            purposes. eg. Ease searching.
-          items:
-            $ref: '#/components/schemas/Metadata-IndependentWrite'
-          maxItems: 16
-          type: array
-      required:
-      - firstName
-      - gender
-      - lastName
     Persona-PostAuthRead:
       deprecated: false
       description: ""
@@ -11648,12 +12920,39 @@ components:
       deprecated: false
       description: ""
       example:
-        firstName: John
         lastName: Doe
         mobilePhoneNumber: "+33745214529"
+        metadata:
+        - value: "54412"
+          key: External-ID
+        - value: "54412"
+          key: External-ID
+        address:
+          zipCode: "75004"
+          buildingName: Electron
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          cityName: Paris
+          countryCode: FRA
+          companyName: Company Tld
+          secondLine: Apt 6E
+          firstLine: 118 avenue des champs élysées
+          buildingFloor: Third floor
+          gateOrPortalOrInboxCode: "3124"
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        riskLevel: WEAK
+        gender: RATHER_NOT_SAY
+        offerCount: 4
+        purchaseCount: 42
+        externalSellCount: 1
+        dateOfBirth: 2000-01-23
         language: fr
-        id: 6
+        externalPurchaseCount: 6
+        firstName: John
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        id: 0
+        riskScore: 24
         email: john.doe@gmail.com
+        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           readOnly: true
@@ -11663,6 +12962,19 @@ components:
           type: string
         lastName:
           example: Doe
+          type: string
+        gender:
+          default: RATHER_NOT_SAY
+          enum:
+          - MALE
+          - FEMALE
+          - OTHER
+          - RATHER_NOT_SAY
+          example: RATHER_NOT_SAY
+          type: string
+        dateOfBirth:
+          format: date
+          nullable: true
           type: string
         language:
           description: "That data is used for rendering the frontend application with\
@@ -11679,6 +12991,61 @@ components:
           example: "+33745214529"
           nullable: true
           type: string
+        address:
+          $ref: '#/components/schemas/Persona-Address-Read'
+        riskLevel:
+          description: We sort Persona into three distinct risks' category. This is
+            inferred from the riskScore.
+          enum:
+          - WEAK
+          - MEDIUM
+          - HIGH
+          - null
+          nullable: true
+          type: string
+        riskScore:
+          description: "That score is regularly updated, each action taken can potentially\
+            \ update that value. A value close to zero mean zero risk and close to\
+            \ a hundred mean risky."
+          example: 24
+          maximum: 100
+          minimum: 0
+          nullable: true
+          type: integer
+        externalPurchaseCount:
+          description: "Knowing the statistics on your user is used to better know\
+            \ its profile when you do not use the Safe-Checkout feature. Although\
+            \ it is not required, we recommend that you keep us informed."
+          type: integer
+        externalSellCount:
+          description: "Knowing the statistics on your user is used to better know\
+            \ its profile when you do not use the Safe-Checkout feature. Although\
+            \ it is not required, we recommend that you keep us informed."
+          type: integer
+        metadata:
+          description: You can assign different meta to your Persona object for different
+            purposes. eg. Ease searching.
+          items:
+            $ref: '#/components/schemas/Persona-Metadata-Read'
+          type: array
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+        offerCount:
+          description: Issued Offers count owned by a given Persona
+          example: 4
+          readOnly: true
+          type: integer
+        purchaseCount:
+          example: 42
+          readOnly: true
+          type: integer
     Persona-Register:
       deprecated: false
       description: ""
@@ -11798,7 +13165,7 @@ components:
           nullable: true
           type: string
         address:
-          $ref: '#/components/schemas/Address-Update'
+          $ref: '#/components/schemas/Persona-Address-Update'
         externalPurchaseCount:
           description: "Knowing the statistics on your user is used to better know\
             \ its profile when you do not use the Safe-Checkout feature. Although\
@@ -11815,7 +13182,7 @@ components:
           description: You can assign different meta to your Persona object for different
             purposes. eg. Ease searching.
           items:
-            $ref: '#/components/schemas/Metadata-Update'
+            $ref: '#/components/schemas/Persona-Metadata-Update'
           maxItems: 16
           type: array
       required:
@@ -11868,7 +13235,7 @@ components:
           nullable: true
           type: string
         address:
-          $ref: '#/components/schemas/Address-Write'
+          $ref: '#/components/schemas/Persona-Address-Write'
         externalPurchaseCount:
           description: "Knowing the statistics on your user is used to better know\
             \ its profile when you do not use the Safe-Checkout feature. Although\
@@ -11885,7 +13252,7 @@ components:
           description: You can assign different meta to your Persona object for different
             purposes. eg. Ease searching.
           items:
-            $ref: '#/components/schemas/Metadata-Write'
+            $ref: '#/components/schemas/Persona-Metadata-Write'
           maxItems: 16
           type: array
       required:
@@ -11936,97 +13303,425 @@ components:
       description: ""
       example:
         offer:
-          seller:
-            firstName: John
-            lastName: Doe
-            id: 0
+          seller: https://example.com/
           unitPrice: 125.54
+          medias:
+          - https://example.com/
+          - https://example.com/
+          createdAt: 2000-01-23T04:56:07.000+00:00
           condition: USED
           ulid: ulid
+          nature: physical_item
           publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
           title: ASUS TUF X570-PLUS GAMING Motherboard
           currencyCode: EUR
           itemCount: 1
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        fees: 0.8008281904610115
         ulid: ulid
-        buyer:
-          firstName: John
-          lastName: Doe
-          id: 0
+        buyer: https://example.com/
+        status: CREATED
       properties:
         ulid:
           type: string
         offer:
-          $ref: '#/components/schemas/Offer-CollectionRead'
+          $ref: '#/components/schemas/Transaction-Offer-CollectionRead'
         buyer:
-          $ref: '#/components/schemas/Persona-CollectionRead'
+          example: https://example.com/
+          format: iri-reference
+          type: string
+        status:
+          default: CREATED
+          enum:
+          - CREATED
+          - AUTHORIZED
+          - REFUSED
+          - ACCEPTED
+          - SHIPPED
+          - IN_TRANSIT
+          - DELIVERED
+          - COMPLETED
+          - DISPUTED
+          - null
+          example: CREATED
+          nullable: true
+          type: string
+        fees:
+          nullable: true
+          type: number
       required:
       - buyer
       - offer
       - ulid
-    Transaction-IndependentWrite:
+    Transaction-Metadata-Read:
       deprecated: false
       description: ""
+      example:
+        value: "54412"
+        key: External-ID
       properties:
-        offer:
-          $ref: '#/components/schemas/Offer-IndependentWrite'
-        buyer:
-          $ref: '#/components/schemas/Persona-IndependentWrite'
-        fees:
+        key:
+          example: External-ID
+          type: string
+        value:
+          example: "54412"
+          nullable: true
+          type: string
+    Transaction-Offer-CollectionRead:
+      deprecated: false
+      description: ""
+      example:
+        seller: https://example.com/
+        unitPrice: 125.54
+        medias:
+        - https://example.com/
+        - https://example.com/
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        condition: USED
+        ulid: ulid
+        nature: physical_item
+        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+        title: ASUS TUF X570-PLUS GAMING Motherboard
+        currencyCode: EUR
+        itemCount: 1
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        ulid:
+          type: string
+        publicUrl:
+          description: "If specified, there would be not need for you to fill-in details.\
+            \ Must be accessible over WAN."
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          nullable: true
+          type: string
+        seller:
+          description: "If the seller is actually YOUR organization, set it to NULL."
+          example: https://example.com/
+          format: iri-reference
+          type: string
+        nature:
+          default: physical_item
+          description: This WILL affect the assigned workflow. Choosing service will
+            disable delivery for example. Refer to our technical hub for more information.
+          enum:
+          - service
+          - physical_item
+          - dematerialized_item
+          - rent_item
+          example: physical_item
+          type: string
+        title:
+          example: ASUS TUF X570-PLUS GAMING Motherboard
+          type: string
+        unitPrice:
+          example: 125.54
           nullable: true
           type: number
-        refundableFees:
+        currencyCode:
+          default: EUR
+          example: EUR
+          nullable: true
+          type: string
+        itemCount:
+          default: 1
+          example: 1
+          type: integer
+        condition:
+          default: USED
+          enum:
+          - NEW
+          - USED
+          - DAMAGED
+          - DETERIORATED
+          - UNRECOVERABLE
+          example: USED
+          type: string
+        medias:
+          items:
+            example: https://example.com/
+            format: iri-reference
+            type: string
+          type: array
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+      required:
+      - medias
+      - nature
+      - seller
+      - ulid
+    Transaction-Offer-Read:
+      deprecated: false
+      description: ""
+      example:
+        seller: https://example.com/
+        unitPrice: 125.54
+        metadata:
+        - value: "54412"
+          key: External-ID
+        - value: "54412"
+          key: External-ID
+        redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
+        ulid: ulid
+        nature: physical_item
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
+          \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
+          \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
+          \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
+          \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
+          \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
+          \ id est laborum."
+        title: ASUS TUF X570-PLUS GAMING Motherboard
+        overrideRateCommissionSafeCheckout: 0.8008281904610115
+        itemCount: 1
+        shippingAllowed: true
+        canBeSoldSeparately: true
+        handDeliveryAllowed: true
+        enforcePersonaAuth: true
+        weightInGram: 6
+        medias:
+        - https://example.com/
+        - https://example.com/
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        condition: USED
+        shippingCarriers:
+        - SwissPost
+        - SwissPost
+        eanCode: "4718017388450"
+        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+        currencyCode: EUR
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        ulid:
+          type: string
+        publicUrl:
+          description: "If specified, there would be not need for you to fill-in details.\
+            \ Must be accessible over WAN."
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          nullable: true
+          type: string
+        enforcePersonaAuth:
+          default: true
+          description: Mean that the generated url cannot be accessed without a generated
+            token for a Persona. Disallow external registration.
+          example: true
+          type: boolean
+        overrideRateCommissionSafeCheckout:
+          description: Override YOUR platform fees for that particular Offer.
+          nullable: true
+          type: number
+        redirectUrl:
+          description: Fill-in that field IF you intend to redirect your customer
+            instead of using a WebView.
+          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
+          nullable: true
+          type: string
+        seller:
+          description: "If the seller is actually YOUR organization, set it to NULL."
+          example: https://example.com/
+          format: iri-reference
+          type: string
+        nature:
+          default: physical_item
+          description: This WILL affect the assigned workflow. Choosing service will
+            disable delivery for example. Refer to our technical hub for more information.
+          enum:
+          - service
+          - physical_item
+          - dematerialized_item
+          - rent_item
+          example: physical_item
+          type: string
+        title:
+          example: ASUS TUF X570-PLUS GAMING Motherboard
+          type: string
+        description:
+          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
+            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
+            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
+            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
+            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
+            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
+            \ id est laborum."
+          nullable: true
+          type: string
+        unitPrice:
+          example: 125.54
+          nullable: true
+          type: number
+        currencyCode:
+          default: EUR
+          example: EUR
+          nullable: true
+          type: string
+        itemCount:
+          default: 1
+          example: 1
+          type: integer
+        condition:
+          default: USED
+          enum:
+          - NEW
+          - USED
+          - DAMAGED
+          - DETERIORATED
+          - UNRECOVERABLE
+          example: USED
+          type: string
+        weightInGram:
+          nullable: true
+          type: integer
+        shippingAllowed:
+          description: "That toggle allows the seller to propose shipping for its\
+            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
+            \ generated. Also, it will restrict the carrier to the limited subset\
+            \ defined."
+          type: boolean
+        handDeliveryAllowed:
+          default: true
+          description: Enable both parties to finalize the transaction in person rather
+            than using delivery. A QR Code must be scanned by the seller once the
+            buyer claims the product.
+          example: true
+          type: boolean
+        shippingCarriers:
+          description: "If you wish to enable automated shipping label generation\
+            \ through a specific provider, specify it there."
+          items:
+            enum:
+            - SwissPost
+            - Colissimo
+            - MondialRelay
+            type: string
+          type: array
+        eanCode:
+          example: "4718017388450"
+          nullable: true
+          type: string
+        canBeSoldSeparately:
+          default: true
+          description: "Set this flag to false to forbid a potential buyer to acquire\
+            \ this item separately. \n        This is only useful in a BulkOffer context."
+          example: true
           type: boolean
         metadata:
           items:
-            $ref: '#/components/schemas/Metadata-IndependentWrite'
+            $ref: '#/components/schemas/Transaction-Metadata-Read'
           type: array
-        parcels:
+        medias:
           items:
-            $ref: '#/components/schemas/Parcel-IndependentWrite'
+            example: https://example.com/
+            format: iri-reference
+            type: string
           type: array
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
       required:
-      - buyer
-      - offer
+      - canBeSoldSeparately
+      - enforcePersonaAuth
+      - handDeliveryAllowed
+      - medias
+      - nature
+      - seller
+      - shippingAllowed
+      - ulid
+    Transaction-Parcel-Read:
+      deprecated: false
+      description: ""
+      example:
+        identifier: 8J001271466474
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        carrier: SwissPost
+        price: 4.88
+        refundable: true
+        currency: EUR
+        status: CREATED
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        carrier:
+          enum:
+          - SwissPost
+          - MondialRelay
+          - Colissimo
+          - Dhl
+          - Chronopost
+          - ColisPrive
+          - Dpd
+          - Ups
+          - FedEx
+          - RelaisColis
+          type: string
+        identifier:
+          example: 8J001271466474
+          maxLength: 128
+          minLength: 4
+          type: string
+        price:
+          example: 4.88
+          minimum: 0
+          nullable: true
+          type: number
+        refundable:
+          type: boolean
+        currency:
+          default: EUR
+          example: EUR
+          externalDocs:
+            url: https://schema.org/priceCurrency
+          nullable: true
+          type: string
+        status:
+          enum:
+          - CREATED
+          - SHIPPED
+          - IN_TRANSIT
+          - DELIVERED
+          - ERROR
+          - ACCEPTED
+          - REFUSED
+          - null
+          nullable: true
+          type: string
+        createdAt:
+          format: date-time
+          readOnly: true
+          type: string
+        updatedAt:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+      required:
+      - carrier
+      - identifier
     Transaction-Read:
       deprecated: false
       description: ""
       example:
         offer:
-          seller:
-            firstName: John
-            lastName: Doe
-            mobilePhoneNumber: "+33745214529"
-            language: fr
-            id: 6
-            email: john.doe@gmail.com
+          seller: https://example.com/
           unitPrice: 125.54
-          medias:
-          - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          condition: USED
+          metadata:
+          - value: "54412"
+            key: External-ID
+          - value: "54412"
+            key: External-ID
+          redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
           ulid: ulid
           nature: physical_item
-          organization:
-            warningColor: warningColor
-            errorColor: errorColor
-            rateCommissionSafeCheckout: 0.8008281904610115
-            accentColor: accentColor
-            counterProposalToggle: true
-            icon:
-              publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-            primaryColor: primaryColor
-            infoColor: infoColor
-            personaAuthPortalToggle: true
-            directNotificationToggle: true
-            flatRateEnabled: true
-            websiteUrl: websiteUrl
-            successColor: successColor
-            name: name
-            logo:
-              publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-            customBaseUrl: customBaseUrl
-            secondaryColor: secondaryColor
-          publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
             \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
             \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
@@ -12035,8 +13730,25 @@ components:
             \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
             \ id est laborum."
           title: ASUS TUF X570-PLUS GAMING Motherboard
-          currencyCode: EUR
+          overrideRateCommissionSafeCheckout: 0.8008281904610115
           itemCount: 1
+          shippingAllowed: true
+          canBeSoldSeparately: true
+          handDeliveryAllowed: true
+          enforcePersonaAuth: true
+          weightInGram: 6
+          medias:
+          - https://example.com/
+          - https://example.com/
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          condition: USED
+          shippingCarriers:
+          - SwissPost
+          - SwissPost
+          eanCode: "4718017388450"
+          publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+          currencyCode: EUR
+          updatedAt: 2000-01-23T04:56:07.000+00:00
         fees: 1.4658129805029452
         refundableFees: true
         metadata:
@@ -12045,13 +13757,8 @@ components:
         - value: "54412"
           key: External-ID
         ulid: ulid
-        buyer:
-          firstName: John
-          lastName: Doe
-          mobilePhoneNumber: "+33745214529"
-          language: fr
-          id: 6
-          email: john.doe@gmail.com
+        buyer: https://example.com/
+        status: CREATED
         parcels:
         - identifier: 8J001271466474
           createdAt: 2000-01-23T04:56:07.000+00:00
@@ -12073,9 +13780,27 @@ components:
         ulid:
           type: string
         offer:
-          $ref: '#/components/schemas/Offer-Read'
+          $ref: '#/components/schemas/Transaction-Offer-Read'
         buyer:
-          $ref: '#/components/schemas/Persona-Read'
+          example: https://example.com/
+          format: iri-reference
+          type: string
+        status:
+          default: CREATED
+          enum:
+          - CREATED
+          - AUTHORIZED
+          - REFUSED
+          - ACCEPTED
+          - SHIPPED
+          - IN_TRANSIT
+          - DELIVERED
+          - COMPLETED
+          - DISPUTED
+          - null
+          example: CREATED
+          nullable: true
+          type: string
         fees:
           nullable: true
           type: number
@@ -12083,11 +13808,11 @@ components:
           type: boolean
         metadata:
           items:
-            $ref: '#/components/schemas/Metadata-Read'
+            $ref: '#/components/schemas/Transaction-Metadata-Read'
           type: array
         parcels:
           items:
-            $ref: '#/components/schemas/Parcel-Read'
+            $ref: '#/components/schemas/Transaction-Parcel-Read'
           type: array
       required:
       - buyer
@@ -12229,6 +13954,10 @@ components:
             - ROLE_ACCOUNTING_MANAGER
             - ROLE_BILLING_MANAGER
             - ROLE_CUSTOMER_SERVICE
+            - ROLE_CUSTOMER_SERVICE
+            - ROLE_PLATFORM_ADMIN
+            - ROLE_PLATFORM_SUPPORT
+            - ROLE_ORGANIZATION_OWNER
             type: string
           type: array
         roles:
@@ -12306,7 +14035,6 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         notifications:
           items:
             example: https://example.com/
@@ -12348,19 +14076,16 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         impersonatedOrganization:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         iri:
           example: https://example.com/
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         username:
           description: A visual identifier that represents this user.
           readOnly: true
@@ -12385,6 +14110,43 @@ components:
       - lockdown
       - roles
       - views
+    User-Address-Write:
+      deprecated: false
+      description: ""
+      properties:
+        companyName:
+          example: Company Tld
+          nullable: true
+          type: string
+        countryCode:
+          example: FRA
+          maxLength: 3
+          type: string
+        zipCode:
+          example: "75004"
+          type: string
+        cityName:
+          example: Paris
+          type: string
+        firstLine:
+          example: 118 avenue des champs élysées
+          type: string
+        secondLine:
+          example: Apt 6E
+          nullable: true
+          type: string
+        buildingName:
+          example: Electron
+          nullable: true
+          type: string
+        buildingFloor:
+          example: Third floor
+          nullable: true
+          type: string
+        gateOrPortalOrInboxCode:
+          example: "3124"
+          nullable: true
+          type: string
     User-AuthenticatedRead:
       deprecated: false
       description: ""
@@ -12492,7 +14254,7 @@ components:
           nullable: true
           type: string
         avatar:
-          $ref: '#/components/schemas/Media-AuthenticatedRead'
+          $ref: '#/components/schemas/User-Media-AuthenticatedRead'
         createdAt:
           format: date-time
           readOnly: true
@@ -12508,13 +14270,12 @@ components:
         lockdown:
           type: boolean
         organization:
-          $ref: '#/components/schemas/Organization-AuthenticatedRead'
+          $ref: '#/components/schemas/User-Organization-AuthenticatedRead'
         iri:
           example: https://example.com/
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         impersonatingOrganization:
           readOnly: true
           type: boolean
@@ -12543,24 +14304,8 @@ components:
         createdAt: 2000-01-23T04:56:07.000+00:00
         publicName: Nickname
         organization:
-          rateCommissionSafeCheckout: 6.027456183070403
-          safeCheckoutToggle: true
-          counterProposalToggle: true
-          icon:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          personaAuthPortalToggle: true
-          automatedReturnToggle: true
-          directNotificationToggle: true
-          flatRateEnabled: true
-          websiteUrl: websiteUrl
-          resolutionCenterToggle: true
           name: name
-          logo:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          internalMessagingToggle: true
-          id: 0
-          commercialRegistryNumber: commercialRegistryNumber
-          vatNumber: vatNumber
+          id: 6
         lastSuccessfulLogIn: 2000-01-23T04:56:07.000+00:00
         id: 0
         roleInCompany: Accounting Dpt
@@ -12614,7 +14359,7 @@ components:
           nullable: true
           type: string
         avatar:
-          $ref: '#/components/schemas/Media-CollectionRead'
+          $ref: '#/components/schemas/User-Media-CollectionRead'
         createdAt:
           format: date-time
           readOnly: true
@@ -12624,13 +14369,12 @@ components:
           readOnly: true
           type: string
         organization:
-          $ref: '#/components/schemas/Organization-CollectionRead'
+          $ref: '#/components/schemas/User-Organization-CollectionRead'
         iri:
           example: https://example.com/
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         "2fa":
           readOnly: true
           type: boolean
@@ -12688,6 +14432,10 @@ components:
             - ROLE_ACCOUNTING_MANAGER
             - ROLE_BILLING_MANAGER
             - ROLE_CUSTOMER_SERVICE
+            - ROLE_CUSTOMER_SERVICE
+            - ROLE_PLATFORM_ADMIN
+            - ROLE_PLATFORM_SUPPORT
+            - ROLE_ORGANIZATION_OWNER
             type: string
           type: array
       required:
@@ -12695,6 +14443,212 @@ components:
       - firstName
       - invitedRole
       - lastName
+    User-Media-AuthenticatedRead:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
+    User-Media-CollectionRead:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
+    User-Media-Read:
+      deprecated: false
+      description: ""
+      example:
+        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+      properties:
+        publicUrl:
+          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          type: string
+      required:
+      - publicUrl
+    User-Organization-AuthenticatedRead:
+      deprecated: false
+      description: ""
+      example:
+        rateCommissionSafeCheckout: 1.4658129805029452
+        safeCheckoutToggle: true
+        counterProposalToggle: true
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        personaAuthPortalToggle: true
+        automatedReturnToggle: true
+        flatRateEnabled: true
+        domainVerified: true
+        resolutionCenterToggle: true
+        name: name
+        logo:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        internalMessagingToggle: true
+        id: 6
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        name:
+          type: string
+        domainVerified:
+          type: boolean
+        icon:
+          $ref: '#/components/schemas/User-Media-AuthenticatedRead'
+        logo:
+          $ref: '#/components/schemas/User-Media-AuthenticatedRead'
+        safeCheckoutToggle:
+          type: boolean
+        resolutionCenterToggle:
+          default: true
+          example: true
+          type: boolean
+        internalMessagingToggle:
+          default: true
+          example: true
+          type: boolean
+        personaAuthPortalToggle:
+          type: boolean
+        automatedReturnToggle:
+          default: true
+          example: true
+          type: boolean
+        counterProposalToggle:
+          default: true
+          example: true
+          type: boolean
+        flatRateEnabled:
+          readOnly: true
+          type: boolean
+        rateCommissionSafeCheckout:
+          type: number
+      required:
+      - automatedReturnToggle
+      - counterProposalToggle
+      - domainVerified
+      - internalMessagingToggle
+      - personaAuthPortalToggle
+      - rateCommissionSafeCheckout
+      - resolutionCenterToggle
+      - safeCheckoutToggle
+    User-Organization-CollectionRead:
+      deprecated: false
+      description: ""
+      example:
+        name: name
+        id: 6
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        name:
+          type: string
+    User-Organization-Read:
+      deprecated: false
+      description: ""
+      example:
+        rateCommissionSafeCheckout: 6.027456183070403
+        safeCheckoutToggle: true
+        counterProposalToggle: true
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        personaAuthPortalToggle: true
+        automatedReturnToggle: true
+        flatRateEnabled: true
+        domainVerified: true
+        resolutionCenterToggle: true
+        name: name
+        logo:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        internalMessagingToggle: true
+        id: 0
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        name:
+          maxLength: 64
+          type: string
+        domainVerified:
+          type: boolean
+        icon:
+          $ref: '#/components/schemas/User-Media-Read'
+        logo:
+          $ref: '#/components/schemas/User-Media-Read'
+        safeCheckoutToggle:
+          type: boolean
+        resolutionCenterToggle:
+          default: true
+          example: true
+          type: boolean
+        internalMessagingToggle:
+          default: true
+          example: true
+          type: boolean
+        personaAuthPortalToggle:
+          type: boolean
+        automatedReturnToggle:
+          default: true
+          example: true
+          type: boolean
+        counterProposalToggle:
+          default: true
+          example: true
+          type: boolean
+        flatRateEnabled:
+          readOnly: true
+          type: boolean
+        rateCommissionSafeCheckout:
+          type: number
+      required:
+      - name
+    User-Organization-Write:
+      deprecated: false
+      description: ""
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        name:
+          maxLength: 64
+          type: string
+        vatNumber:
+          maxLength: 32
+          nullable: true
+          type: string
+        commercialRegistryNumber:
+          maxLength: 32
+          type: string
+        websiteUrl:
+          externalDocs:
+            url: https://schema.org/url
+          format: uri
+          maxLength: 64
+          nullable: true
+          type: string
+        billingAddress:
+          $ref: '#/components/schemas/User-Address-Write'
+      required:
+      - name
     User-PostRegisterRead:
       deprecated: false
       description: ""
@@ -12710,7 +14664,6 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
     User-TotpSetupRead:
       deprecated: false
       description: ""
@@ -12947,7 +14900,6 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
         impersonatingOrganization:
           readOnly: true
           type: boolean
@@ -13020,7 +14972,7 @@ components:
         consentMailAds:
           type: boolean
         organization:
-          $ref: '#/components/schemas/Organization-Write'
+          $ref: '#/components/schemas/User-Organization-Write'
       required:
       - captcha
       - email
@@ -13029,8 +14981,6 @@ components:
       - originCountry
       - plainPassword
       - preferredLanguage
-      - publicName
-      - roleInCompany
     User-user.subscribed:
       deprecated: false
       description: Disable a user account
@@ -13046,7 +14996,6 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-          owl:maxCardinality: 1
     View:
       deprecated: false
       description: ""
@@ -13071,25 +15020,21 @@ components:
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         dispute:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         persona:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         user:
           example: https://example.com/
           format: iri-reference
           nullable: true
           type: string
-          owl:maxCardinality: 1
         hitCount:
           default: 1
           example: 1
@@ -13110,33 +15055,6 @@ components:
       required:
       - hitCount
       - ipAddress
-    View-Read:
-      deprecated: false
-      description: ""
-      example:
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        hitCount: 1
-        namedSource: BUYER
-      properties:
-        hitCount:
-          default: 1
-          example: 1
-          type: integer
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        namedSource:
-          enum:
-          - BUYER
-          - PLATFORM
-          - SELLER
-          - OTHER
-          readOnly: true
-          type: string
-          nullable: true
-      required:
-      - hitCount
     View-dispute.read:
       deprecated: false
       description: ""
@@ -13405,63 +15323,6 @@ components:
           type: string
       required:
       - callbackUrl
-    WorkflowEvent-Read:
-      deprecated: false
-      description: ""
-      example:
-        occurredAt: 2000-01-23T04:56:07.000+00:00
-        initiator: https://example.com/
-        from: from
-        label: label
-        to: to
-        event: dispute.opened
-      properties:
-        label:
-          type: string
-        from:
-          nullable: true
-          type: string
-        to:
-          nullable: true
-          type: string
-        event:
-          enum:
-          - dispute.opened
-          - dispute.submitted
-          - dispute.created
-          - dispute.abandoned
-          - dispute.settlement
-          - dispute.closed
-          - dispute.expired
-          - dispute.manual_arbitration_required
-          - dispute.updated
-          - dispute.reminder
-          - offer.created
-          - offer.expired
-          - offer.updated
-          - offer.crawl_failure
-          - offer.transaction.authorized
-          - offer.transaction.reconciled
-          - offer.transaction.abandoned
-          - offer.closed
-          - offer.transaction.refund
-          - persona.added
-          - null
-          nullable: true
-          type: string
-        occurredAt:
-          format: date-time
-          readOnly: true
-          type: string
-        initiator:
-          example: https://example.com/
-          format: iri-reference
-          nullable: true
-          readOnly: true
-          type: string
-          owl:maxCardinality: 1
-      required:
-      - label
     WorkflowEvent-dispute.read:
       deprecated: false
       description: ""
@@ -13516,7 +15377,6 @@ components:
           nullable: true
           readOnly: true
           type: string
-          owl:maxCardinality: 1
       required:
       - label
     Webhook:
@@ -13526,7 +15386,169 @@ components:
         id: 122541
         event: dispute.created
         objectId: 01ARZ3NDEKTSV4RRFFQ69G5FAV
-        object: null
+        object:
+          counterSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          metadata:
+          - value: "54412"
+            key: External-ID
+          - value: "54412"
+            key: External-ID
+          redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?from_dispute=true
+          messageCount: 6
+          ulid: 01ARZ3NDEKTSV4RRFFQ69G5FAV
+          platformApproval: true
+          platformReasoning: The buyer does not respect our terms of service.
+          issueMentionedInOffer: true
+          sellerApproval: true
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          platformSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          complainantStake: LOW
+          inferredStake: LOW
+          viewCount: 5
+          views:
+          - createdAt: 2000-01-23T04:56:07.000+00:00
+            hitCount: 1
+            namedSource: BUYER
+          - createdAt: 2000-01-23T04:56:07.000+00:00
+            hitCount: 1
+            namedSource: BUYER
+          events:
+          - occurredAt: 2000-01-23T04:56:07.000+00:00
+            initiator: https://example.com/
+            from: from
+            label: label
+            to: to
+            event: dispute.opened
+          - occurredAt: 2000-01-23T04:56:07.000+00:00
+            initiator: https://example.com/
+            from: from
+            label: label
+            to: to
+            event: dispute.opened
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+          chosenSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          iri: https://example.com/
+          closedInFavorOf: BUYER
+          counterPartialRefundAmount: 30
+          sellerTruthfulnessScore: 100
+          recommendedSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
+          platformPartialRefundAmount: 5
+          platformActorType: RULING
+          arbitrationBy: https://example.com/
+          awaitedParty: BUYER
+          issueDetails: "The item received have multiple impacts on the left side,\
+            \ this was not mentioned and I feel a bit sad. Although it is usable as-is,\
+            \ I expected it without flaws."
+          chosenPartialRefundAmount: 40
+          statusExpiration: 2000-01-23T04:56:07.000+00:00
+          itemCount: 1
+          complainantApproval: true
+          maxRefundableForBuyer: 7.061401241503109
+          issueType: NOT_AS_DESCRIBED
+          sellerNotes: "Unfortunately, I did not notice it, after thinking again,\
+            \ yes, you deserve a discount on that."
+          recommendedPartialRefundAmount: 35
+          disbursedByBuyer: 2.3021358869347655
+          sellerRejectionReason: UNJUSTIFIED_REQUEST
+          issueInDescriptionType: WRONG_COLOUR
+          transaction:
+            offer:
+              seller:
+                firstName: John
+                lastName: Doe
+                mobilePhoneNumber: "+33745214529"
+                language: fr
+                id: 6
+                email: john.doe@gmail.com
+              unitPrice: 125.54
+              medias:
+              - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+              - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+              condition: USED
+              ulid: ulid
+              nature: physical_item
+              organization:
+                warningColor: warningColor
+                errorColor: errorColor
+                rateCommissionSafeCheckout: 0.8008281904610115
+                accentColor: accentColor
+                counterProposalToggle: true
+                icon:
+                  publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+                primaryColor: primaryColor
+                infoColor: infoColor
+                personaAuthPortalToggle: true
+                directNotificationToggle: true
+                flatRateEnabled: true
+                websiteUrl: websiteUrl
+                successColor: successColor
+                name: name
+                logo:
+                  publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+                customBaseUrl: customBaseUrl
+                secondaryColor: secondaryColor
+              publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+                \ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+                \ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris\
+                \ nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in\
+                \ reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\
+                \ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\
+                \ culpa qui officia deserunt mollit anim id est laborum."
+              title: ASUS TUF X570-PLUS GAMING Motherboard
+              currencyCode: EUR
+              itemCount: 1
+            fees: 1.4658129805029452
+            refundableFees: true
+            metadata:
+            - value: "54412"
+              key: External-ID
+            - value: "54412"
+              key: External-ID
+            ulid: ulid
+            buyer:
+              firstName: John
+              lastName: Doe
+              mobilePhoneNumber: "+33745214529"
+              language: fr
+              id: 6
+              email: john.doe@gmail.com
+            parcels:
+            - identifier: 8J001271466474
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              carrier: SwissPost
+              price: 4.88
+              refundable: true
+              currency: EUR
+              status: CREATED
+              updatedAt: 2000-01-23T04:56:07.000+00:00
+            - identifier: 8J001271466474
+              createdAt: 2000-01-23T04:56:07.000+00:00
+              carrier: SwissPost
+              price: 4.88
+              refundable: true
+              currency: EUR
+              status: CREATED
+              updatedAt: 2000-01-23T04:56:07.000+00:00
+          status: CREATED
+          complainantTruthfulnessScore: 100
+          parcels:
+          - identifier: 8J001271466474
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            carrier: SwissPost
+            price: 4.88
+            refundable: true
+            currency: EUR
+            status: CREATED
+            updatedAt: 2000-01-23T04:56:07.000+00:00
+          - identifier: 8J001271466474
+            createdAt: 2000-01-23T04:56:07.000+00:00
+            carrier: SwissPost
+            price: 4.88
+            refundable: true
+            currency: EUR
+            status: CREATED
+            updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           example: 122541
@@ -13567,6 +15589,9 @@ components:
         object:
           $ref: '#/components/schemas/Webhook_object'
     AuthError:
+      example:
+        code: 401
+        message: JWT Token not found
       properties:
         code:
           example: 401
@@ -13575,6 +15600,8 @@ components:
           example: JWT Token not found
           type: string
     MessageError:
+      example:
+        message: email or password mismatch
       properties:
         message:
           example: email or password mismatch
@@ -13582,6 +15609,10 @@ components:
     NotFoundError:
       description: This error can occurs when you reference objects in the query that
         does not exist.
+      example:
+        detail: Not Found
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13593,6 +15624,10 @@ components:
           example: Not Found
           type: string
     GenericError:
+      example:
+        detail: An internal error occurred that prevented us to fulfill the request
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13604,6 +15639,10 @@ components:
           example: An internal error occurred that prevented us to fulfill the request
           type: string
     AccessError:
+      example:
+        detail: Access denied
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13615,6 +15654,10 @@ components:
           example: Access denied
           type: string
     InvalidQueryError:
+      example:
+        detail: The request is malformed and therefore cannot be executed
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13626,6 +15669,10 @@ components:
           example: The request is malformed and therefore cannot be executed
           type: string
     RateLimitError:
+      example:
+        detail: Too many request
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13637,6 +15684,23 @@ components:
           example: Too many request
           type: string
     UnprocessableEntity:
+      example:
+        violations:
+        - code: c1051bb4-d103-4f74-8988-acbcafc7fdc3
+          propertyPath: firstName
+          message: This value should not be blank.
+        - code: c1051bb4-d103-4f74-8988-acbcafc7fdc3
+          propertyPath: firstName
+          message: This value should not be blank.
+        detail: |-
+          firstName: This value should not be blank.
+          lastName: This value should not be blank.
+          email: This value should not be null.
+          plainPassword: This value should not be null.
+          originCountry: This value should not be null.
+          preferredLanguage: This value should not be null.
+        type: https://tools.ietf.org/html/rfc2616#section-10
+        title: An error occurred
       properties:
         type:
           example: https://tools.ietf.org/html/rfc2616#section-10
@@ -13700,6 +15764,10 @@ components:
       - $ref: '#/components/schemas/Offer-Read'
       nullable: false
     UnprocessableEntity_violations_inner:
+      example:
+        code: c1051bb4-d103-4f74-8988-acbcafc7fdc3
+        propertyPath: firstName
+        message: This value should not be blank.
       properties:
         propertyPath:
           example: firstName

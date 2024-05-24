@@ -11,8 +11,8 @@
 |**captcha** | **String** |  |  |
 |**firstName** | **String** |  |  |
 |**lastName** | **String** |  |  |
-|**publicName** | **String** |  |  |
-|**roleInCompany** | **String** |  |  |
+|**publicName** | **String** |  |  [optional] |
+|**roleInCompany** | **String** |  |  [optional] |
 |**birthday** | **OffsetDateTime** |  |  [optional] |
 |**email** | **String** |  |  |
 |**plainPassword** | **String** |  |  |
@@ -21,7 +21,7 @@
 |**preferredLanguage** | **String** |  |  |
 |**consentMailNotification** | **Boolean** |  |  [optional] |
 |**consentMailAds** | **Boolean** |  |  [optional] |
-|**organization** | [**OrganizationWrite**](OrganizationWrite.md) |  |  [optional] |
+|**organization** | [**UserOrganizationWrite**](UserOrganizationWrite.md) |  |  [optional] |
 
 
 

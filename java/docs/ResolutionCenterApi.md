@@ -22,7 +22,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiDisputesGetCollection"></a>
 # **apiDisputesGetCollection**
-> List&lt;DisputeCollectionRead&gt; apiDisputesGetCollection(page, orderCreatedAt, orderStatus, orderUpdatedAt, transactionOfferPublicUrl, transactionOfferPublicUrl2, transactionOfferTitle, transactionBuyerId, transactionBuyerId2, transactionBuyerEmail, transactionOfferSellerId, transactionOfferSellerId2, transactionOfferSellerEmail, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, status, transactionStatus, existsRecommendedSolution, existsChosenSolution, existsCounterSolution, existsPlatformSolution, metadata, transactionMetadata, transactionOfferMetadata)
+> List&lt;DisputeCollectionRead&gt; apiDisputesGetCollection().page(page).orderCreatedAt(orderCreatedAt).orderStatus(orderStatus).orderUpdatedAt(orderUpdatedAt).transactionOfferPublicUrl(transactionOfferPublicUrl).transactionOfferPublicUrl2(transactionOfferPublicUrl2).transactionOfferTitle(transactionOfferTitle).transactionBuyerId(transactionBuyerId).transactionBuyerId2(transactionBuyerId2).transactionBuyerEmail(transactionBuyerEmail).transactionOfferSellerId(transactionOfferSellerId).transactionOfferSellerId2(transactionOfferSellerId2).transactionOfferSellerEmail(transactionOfferSellerEmail).createdAtBefore(createdAtBefore).createdAtStrictlyBefore(createdAtStrictlyBefore).createdAtAfter(createdAtAfter).createdAtStrictlyAfter(createdAtStrictlyAfter).status(status).transactionStatus(transactionStatus).existsRecommendedSolution(existsRecommendedSolution).existsChosenSolution(existsChosenSolution).existsCounterSolution(existsCounterSolution).existsPlatformSolution(existsPlatformSolution).metadata(metadata).transactionMetadata(transactionMetadata).transactionOfferMetadata(transactionOfferMetadata).execute();
 
 Retrieves the collection of Dispute resources.
 
@@ -77,11 +77,38 @@ public class Example {
     Boolean existsChosenSolution = true; // Boolean | 
     Boolean existsCounterSolution = true; // Boolean | 
     Boolean existsPlatformSolution = true; // Boolean | 
-    List<String> metadata = Arrays.asList(); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> transactionMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for transaction.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
-    List<String> transactionOfferMetadata = Arrays.asList(); // List<String> | Flattened OrderedMap for transaction.offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> metadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> transactionMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for transaction.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
+    List<String> transactionOfferMetadata = Arrays.asList(new ArrayList<>()); // List<String> | Flattened OrderedMap for transaction.offer.metadata. Must be a multiple of two items count. Explicitly set \"null\" for desired value.
     try {
-      List<DisputeCollectionRead> result = apiInstance.apiDisputesGetCollection(page, orderCreatedAt, orderStatus, orderUpdatedAt, transactionOfferPublicUrl, transactionOfferPublicUrl2, transactionOfferTitle, transactionBuyerId, transactionBuyerId2, transactionBuyerEmail, transactionOfferSellerId, transactionOfferSellerId2, transactionOfferSellerEmail, createdAtBefore, createdAtStrictlyBefore, createdAtAfter, createdAtStrictlyAfter, status, transactionStatus, existsRecommendedSolution, existsChosenSolution, existsCounterSolution, existsPlatformSolution, metadata, transactionMetadata, transactionOfferMetadata);
+      List<DisputeCollectionRead> result = apiInstance.apiDisputesGetCollection()
+            .page(page)
+            .orderCreatedAt(orderCreatedAt)
+            .orderStatus(orderStatus)
+            .orderUpdatedAt(orderUpdatedAt)
+            .transactionOfferPublicUrl(transactionOfferPublicUrl)
+            .transactionOfferPublicUrl2(transactionOfferPublicUrl2)
+            .transactionOfferTitle(transactionOfferTitle)
+            .transactionBuyerId(transactionBuyerId)
+            .transactionBuyerId2(transactionBuyerId2)
+            .transactionBuyerEmail(transactionBuyerEmail)
+            .transactionOfferSellerId(transactionOfferSellerId)
+            .transactionOfferSellerId2(transactionOfferSellerId2)
+            .transactionOfferSellerEmail(transactionOfferSellerEmail)
+            .createdAtBefore(createdAtBefore)
+            .createdAtStrictlyBefore(createdAtStrictlyBefore)
+            .createdAtAfter(createdAtAfter)
+            .createdAtStrictlyAfter(createdAtStrictlyAfter)
+            .status(status)
+            .transactionStatus(transactionStatus)
+            .existsRecommendedSolution(existsRecommendedSolution)
+            .existsChosenSolution(existsChosenSolution)
+            .existsCounterSolution(existsCounterSolution)
+            .existsPlatformSolution(existsPlatformSolution)
+            .metadata(metadata)
+            .transactionMetadata(transactionMetadata)
+            .transactionOfferMetadata(transactionOfferMetadata)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesGetCollection");
@@ -149,7 +176,7 @@ public class Example {
 
 <a id="apiDisputesPost"></a>
 # **apiDisputesPost**
-> DisputePostCreationRead apiDisputesPost(disputeIndependentWrite)
+> DisputePostCreationRead apiDisputesPost(disputeIndependentWrite).execute();
 
 Draft a standalone Dispute
 
@@ -177,7 +204,8 @@ public class Example {
     ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
     DisputeIndependentWrite disputeIndependentWrite = new DisputeIndependentWrite(); // DisputeIndependentWrite | The new Dispute resource
     try {
-      DisputePostCreationRead result = apiInstance.apiDisputesPost(disputeIndependentWrite);
+      DisputePostCreationRead result = apiInstance.apiDisputesPost(disputeIndependentWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesPost");
@@ -222,7 +250,7 @@ public class Example {
 
 <a id="apiDisputesUlidDelete"></a>
 # **apiDisputesUlidDelete**
-> apiDisputesUlidDelete(ulid)
+> apiDisputesUlidDelete(ulid).execute();
 
 Abandon claims on Dispute
 
@@ -262,7 +290,8 @@ public class Example {
     ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
     String ulid = "ulid_example"; // String | Dispute identifier
     try {
-      apiInstance.apiDisputesUlidDelete(ulid);
+      apiInstance.apiDisputesUlidDelete(ulid)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidDelete");
       System.err.println("Status code: " + e.getCode());
@@ -305,7 +334,7 @@ null (empty response body)
 
 <a id="apiDisputesUlidGet"></a>
 # **apiDisputesUlidGet**
-> DisputeRead apiDisputesUlidGet(ulid)
+> DisputeRead apiDisputesUlidGet(ulid).execute();
 
 Retrieves a Dispute resource.
 
@@ -345,7 +374,8 @@ public class Example {
     ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
     String ulid = "ulid_example"; // String | Dispute identifier
     try {
-      DisputeRead result = apiInstance.apiDisputesUlidGet(ulid);
+      DisputeRead result = apiInstance.apiDisputesUlidGet(ulid)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidGet");
@@ -389,7 +419,7 @@ public class Example {
 
 <a id="apiDisputesUlidPatch"></a>
 # **apiDisputesUlidPatch**
-> DisputeRead apiDisputesUlidPatch(ulid, disputeUpdate)
+> DisputeRead apiDisputesUlidPatch(ulid, disputeUpdate).execute();
 
 Update the Dispute
 
@@ -430,7 +460,8 @@ public class Example {
     String ulid = "ulid_example"; // String | Dispute identifier
     DisputeUpdate disputeUpdate = new DisputeUpdate(); // DisputeUpdate | The updated Dispute resource
     try {
-      DisputeRead result = apiInstance.apiDisputesUlidPatch(ulid, disputeUpdate);
+      DisputeRead result = apiInstance.apiDisputesUlidPatch(ulid, disputeUpdate)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidPatch");
@@ -477,7 +508,7 @@ public class Example {
 
 <a id="apiDisputesUlidevaluationsPost"></a>
 # **apiDisputesUlidevaluationsPost**
-> EvaluationRead apiDisputesUlidevaluationsPost(ulid, evaluationWrite)
+> EvaluationRead apiDisputesUlidevaluationsPost(ulid, evaluationWrite).execute();
 
 Submit an Evaluation for the Dispute
 
@@ -505,10 +536,11 @@ public class Example {
     //personaAuthKey.setApiKeyPrefix("Token");
 
     ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
-    String ulid = "ulid_example"; // String | Dispute identifier
+    String ulid = "ulid_example"; // String | Evaluation identifier
     EvaluationWrite evaluationWrite = new EvaluationWrite(); // EvaluationWrite | The new Evaluation resource
     try {
-      EvaluationRead result = apiInstance.apiDisputesUlidevaluationsPost(ulid, evaluationWrite);
+      EvaluationRead result = apiInstance.apiDisputesUlidevaluationsPost(ulid, evaluationWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidevaluationsPost");
@@ -525,7 +557,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ulid** | **String**| Dispute identifier | |
+| **ulid** | **String**| Evaluation identifier | |
 | **evaluationWrite** | [**EvaluationWrite**](EvaluationWrite.md)| The new Evaluation resource | |
 
 ### Return type
@@ -554,7 +586,7 @@ public class Example {
 
 <a id="apiDisputesUlidevidencesGetCollection"></a>
 # **apiDisputesUlidevidencesGetCollection**
-> List&lt;EvidenceRead&gt; apiDisputesUlidevidencesGetCollection(ulid)
+> List&lt;EvidenceRead&gt; apiDisputesUlidevidencesGetCollection(ulid).execute();
 
 Retrieve all Evidences in Dispute
 
@@ -590,7 +622,8 @@ public class Example {
     ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
     String ulid = "ulid_example"; // String | 
     try {
-      List<EvidenceRead> result = apiInstance.apiDisputesUlidevidencesGetCollection(ulid);
+      List<EvidenceRead> result = apiInstance.apiDisputesUlidevidencesGetCollection(ulid)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidevidencesGetCollection");
@@ -633,7 +666,7 @@ public class Example {
 
 <a id="apiDisputesUlidevidencesIdDelete"></a>
 # **apiDisputesUlidevidencesIdDelete**
-> apiDisputesUlidevidencesIdDelete(ulid, id)
+> apiDisputesUlidevidencesIdDelete(ulid, id).execute();
 
 Withdraw an Evidence from a Dispute
 
@@ -670,7 +703,8 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     Integer id = 56; // Integer | 
     try {
-      apiInstance.apiDisputesUlidevidencesIdDelete(ulid, id);
+      apiInstance.apiDisputesUlidevidencesIdDelete(ulid, id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidevidencesIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -714,7 +748,7 @@ null (empty response body)
 
 <a id="apiDisputesUlidevidencesIdmediaPost"></a>
 # **apiDisputesUlidevidencesIdmediaPost**
-> MediaRead apiDisputesUlidevidencesIdmediaPost(ulid, id, _file)
+> MediaRead apiDisputesUlidevidencesIdmediaPost(ulid, id)._file(_file).execute();
 
 Upload attachment in regard of described Evidence
 
@@ -746,7 +780,9 @@ public class Example {
     Integer id = 56; // Integer | 
     File _file = new File("/path/to/file"); // File | 
     try {
-      MediaRead result = apiInstance.apiDisputesUlidevidencesIdmediaPost(ulid, id, _file);
+      MediaRead result = apiInstance.apiDisputesUlidevidencesIdmediaPost(ulid, id)
+            ._file(_file)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidevidencesIdmediaPost");
@@ -793,7 +829,7 @@ public class Example {
 
 <a id="apiDisputesUlidevidencesPost"></a>
 # **apiDisputesUlidevidencesPost**
-> EvidenceRead apiDisputesUlidevidencesPost(ulid, evidenceWrite)
+> EvidenceRead apiDisputesUlidevidencesPost(ulid, evidenceWrite).execute();
 
 Submit an Evidence to the Dispute case
 
@@ -824,7 +860,8 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     EvidenceWrite evidenceWrite = new EvidenceWrite(); // EvidenceWrite | The new Evidence resource
     try {
-      EvidenceRead result = apiInstance.apiDisputesUlidevidencesPost(ulid, evidenceWrite);
+      EvidenceRead result = apiInstance.apiDisputesUlidevidencesPost(ulid, evidenceWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidevidencesPost");
@@ -870,7 +907,7 @@ public class Example {
 
 <a id="apiDisputesUlidparcelsGetCollection"></a>
 # **apiDisputesUlidparcelsGetCollection**
-> List&lt;Object&gt; apiDisputesUlidparcelsGetCollection(ulid, page)
+> List&lt;Object&gt; apiDisputesUlidparcelsGetCollection(ulid).page(page).execute();
 
 Retrieves the collection of Parcel resources.
 
@@ -911,7 +948,9 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     Integer page = 1; // Integer | The collection page number
     try {
-      List<Object> result = apiInstance.apiDisputesUlidparcelsGetCollection(ulid, page);
+      List<Object> result = apiInstance.apiDisputesUlidparcelsGetCollection(ulid)
+            .page(page)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidparcelsGetCollection");
@@ -955,7 +994,7 @@ public class Example {
 
 <a id="apiDisputesUlidparcelsIdDelete"></a>
 # **apiDisputesUlidparcelsIdDelete**
-> apiDisputesUlidparcelsIdDelete(ulid, id)
+> apiDisputesUlidparcelsIdDelete(ulid, id).execute();
 
 Removes the Parcel resource.
 
@@ -986,7 +1025,8 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     Integer id = 56; // Integer | 
     try {
-      apiInstance.apiDisputesUlidparcelsIdDelete(ulid, id);
+      apiInstance.apiDisputesUlidparcelsIdDelete(ulid, id)
+            .execute();
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidparcelsIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -1030,7 +1070,7 @@ null (empty response body)
 
 <a id="apiDisputesUlidparcelsPost"></a>
 # **apiDisputesUlidparcelsPost**
-> ParcelRead apiDisputesUlidparcelsPost(ulid, parcelWrite)
+> Object apiDisputesUlidparcelsPost(ulid, parcelWrite).execute();
 
 Creates a Parcel resource.
 
@@ -1071,7 +1111,8 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     ParcelWrite parcelWrite = new ParcelWrite(); // ParcelWrite | The new Parcel resource
     try {
-      ParcelRead result = apiInstance.apiDisputesUlidparcelsPost(ulid, parcelWrite);
+      Object result = apiInstance.apiDisputesUlidparcelsPost(ulid, parcelWrite)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiDisputesUlidparcelsPost");
@@ -1093,7 +1134,7 @@ public class Example {
 
 ### Return type
 
-[**ParcelRead**](ParcelRead.md)
+**Object**
 
 ### Authorization
 
@@ -1117,7 +1158,7 @@ public class Example {
 
 <a id="apiOffersUlidmediasPost"></a>
 # **apiOffersUlidmediasPost**
-> MediaRead apiOffersUlidmediasPost(ulid, _file)
+> MediaRead apiOffersUlidmediasPost(ulid)._file(_file).execute();
 
 Upload a picture for a given Offer
 
@@ -1152,7 +1193,9 @@ public class Example {
     String ulid = "ulid_example"; // String | 
     File _file = new File("/path/to/file"); // File | 
     try {
-      MediaRead result = apiInstance.apiOffersUlidmediasPost(ulid, _file);
+      MediaRead result = apiInstance.apiOffersUlidmediasPost(ulid)
+            ._file(_file)
+            .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResolutionCenterApi#apiOffersUlidmediasPost");

@@ -30,7 +30,7 @@
 |**externalSellCount** | **Integer** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. |  [optional] |
 |**metadata** | [**List&lt;Metadata&gt;**](Metadata.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. |  [optional] |
 |**offers** | **List&lt;String&gt;** |  |  |
-|**purchases** | **Object** |  |  |
+|**purchases** | **List&lt;String&gt;** |  |  |
 |**views** | [**List&lt;View&gt;**](View.md) |  |  |
 |**createdAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |

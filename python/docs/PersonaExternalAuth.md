@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of PersonaExternalAuth from a JSON string
 persona_external_auth_instance = PersonaExternalAuth.from_json(json)
 # print the JSON string representation of the object
-print PersonaExternalAuth.to_json()
+print(PersonaExternalAuth.to_json())
 
 # convert the object into a dict
 persona_external_auth_dict = persona_external_auth_instance.to_dict()
 # create an instance of PersonaExternalAuth from a dict
-persona_external_auth_form_dict = persona_external_auth.from_dict(persona_external_auth_dict)
+persona_external_auth_from_dict = PersonaExternalAuth.from_dict(persona_external_auth_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

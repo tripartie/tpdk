@@ -2,6 +2,7 @@
 
 # import apis into api package
 from tpdk.api.branding_api import BrandingApi
+from tpdk.api.evidence_api import EvidenceApi
 from tpdk.api.media_api import MediaApi
 from tpdk.api.notification_api import NotificationApi
 from tpdk.api.organization_api import OrganizationApi

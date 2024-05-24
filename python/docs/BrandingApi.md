@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **api_organizations_id_patch**
-> OrganizationRead api_organizations_id_patch(id, organization_update)
+> UserOrganizationRead api_organizations_id_patch(id, organization_update)
 
 Update your Organization details, branding or parameters
 
@@ -23,11 +23,9 @@ Updates the Organization resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
-from tpdk.models.organization_read import OrganizationRead
 from tpdk.models.organization_update import OrganizationUpdate
+from tpdk.models.user_organization_read import UserOrganizationRead
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -76,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganizationRead**](OrganizationRead.md)
+[**UserOrganizationRead**](UserOrganizationRead.md)
 
 ### Authorization
 
@@ -114,8 +112,6 @@ Removes the Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -197,8 +193,6 @@ Creates a Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException
@@ -286,8 +280,6 @@ Removes the Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -369,8 +361,6 @@ Creates a Media resource.
 * Api Key Authentication (jwtPersonalKey):
 
 ```python
-import time
-import os
 import tpdk
 from tpdk.models.media_read import MediaRead
 from tpdk.rest import ApiException

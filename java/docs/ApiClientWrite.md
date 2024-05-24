@@ -8,7 +8,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**referenceName** | **String** |  |  |
+|**referenceName** | **String** |  |  [optional] |
 |**desiredScopes** | [**List&lt;DesiredScopesEnum&gt;**](#List&lt;DesiredScopesEnum&gt;) |  |  [optional] |
 
 

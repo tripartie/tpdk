@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **shipping_carriers** | **List[str]** | If you wish to enable automated shipping label generation through a specific provider, specify it there. | [optional] 
 **ean_code** | **str** |  | [optional] 
 **can_be_sold_separately** | **bool** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. | [optional] [default to True]
-**metadata** | [**List[MetadataUpdate]**](MetadataUpdate.md) |  | [optional] 
+**metadata** | [**List[OfferMetadataUpdate]**](OfferMetadataUpdate.md) |  | [optional] 
 
 ## Example
 
@@ -33,12 +33,12 @@ json = "{}"
 # create an instance of OfferUpdate from a JSON string
 offer_update_instance = OfferUpdate.from_json(json)
 # print the JSON string representation of the object
-print OfferUpdate.to_json()
+print(OfferUpdate.to_json())
 
 # convert the object into a dict
 offer_update_dict = offer_update_instance.to_dict()
 # create an instance of OfferUpdate from a dict
-offer_update_form_dict = offer_update.from_dict(offer_update_dict)
+offer_update_from_dict = OfferUpdate.from_dict(offer_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

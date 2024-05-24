@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
 **metadata** | [**List[Metadata]**](Metadata.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | [optional] 
 **offers** | **List[str]** |  | 
-**purchases** | **object** |  | 
+**purchases** | **List[str]** |  | 
 **views** | [**List[View]**](View.md) |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
@@ -47,12 +47,12 @@ json = "{}"
 # create an instance of Persona from a JSON string
 persona_instance = Persona.from_json(json)
 # print the JSON string representation of the object
-print Persona.to_json()
+print(Persona.to_json())
 
 # convert the object into a dict
 persona_dict = persona_instance.to_dict()
 # create an instance of Persona from a dict
-persona_form_dict = persona.from_dict(persona_dict)
+persona_from_dict = Persona.from_dict(persona_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
