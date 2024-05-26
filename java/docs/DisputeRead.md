@@ -9,7 +9,7 @@ Access directly our resolution center without having used the safe-checkout feat
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**ulid** | **String** |  |  |
-|**transaction** | [**DisputeTransactionRead**](DisputeTransactionRead.md) |  |  [optional] |
+|**transaction** | [**TransactionRead**](TransactionRead.md) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**redirectUrl** | **String** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. |  [optional] |
 |**itemCount** | **Integer** | The dispute may concern only PART of the package. Specify it there. |  [optional] |
@@ -37,10 +37,10 @@ Access directly our resolution center without having used the safe-checkout feat
 |**platformActorType** | [**PlatformActorTypeEnum**](#PlatformActorTypeEnum) |  |  [optional] |
 |**platformReasoning** | **String** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. |  [optional] |
 |**arbitrationBy** | **String** |  |  [optional] |
-|**parcels** | [**List&lt;DisputeParcelRead&gt;**](DisputeParcelRead.md) |  |  |
-|**views** | [**List&lt;DisputeViewRead&gt;**](DisputeViewRead.md) |  |  |
-|**metadata** | [**List&lt;DisputeMetadataRead&gt;**](DisputeMetadataRead.md) |  |  |
-|**events** | [**List&lt;DisputeWorkflowEventRead&gt;**](DisputeWorkflowEventRead.md) |  |  [optional] |
+|**parcels** | [**List&lt;ParcelRead&gt;**](ParcelRead.md) |  |  |
+|**views** | [**List&lt;ViewRead&gt;**](ViewRead.md) |  |  |
+|**metadata** | [**List&lt;MetadataRead&gt;**](MetadataRead.md) |  |  |
+|**events** | [**List&lt;WorkflowEventRead&gt;**](WorkflowEventRead.md) |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**viewCount** | **Integer** |  |  [optional] [readonly] |

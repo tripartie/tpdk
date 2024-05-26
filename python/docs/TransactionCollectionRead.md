@@ -7,10 +7,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**offer** | [**TransactionOfferCollectionRead**](TransactionOfferCollectionRead.md) |  | 
-**buyer** | **str** |  | 
-**status** | **str** |  | [optional] [default to 'CREATED']
-**fees** | **float** |  | [optional] 
+**offer** | [**OfferCollectionRead**](OfferCollectionRead.md) |  | 
+**buyer** | [**PersonaCollectionRead**](PersonaCollectionRead.md) |  | 
 
 ## Example
 

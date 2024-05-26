@@ -18,10 +18,10 @@
 |**totpEnabled** | **Boolean** |  |  [optional] |
 |**intlPhoneNumber** | **String** |  |  [optional] |
 |**lastSuccessfulLogIn** | **OffsetDateTime** |  |  [optional] |
-|**avatar** | [**UserMediaCollectionRead**](UserMediaCollectionRead.md) |  |  [optional] |
+|**avatar** | [**MediaCollectionRead**](MediaCollectionRead.md) |  |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |
-|**organization** | [**UserOrganizationCollectionRead**](UserOrganizationCollectionRead.md) |  |  [optional] |
+|**organization** | [**OrganizationCollectionRead**](OrganizationCollectionRead.md) |  |  [optional] |
 |**iri** | **String** |  |  [optional] [readonly] |
 |**_2fa** | **Boolean** |  |  [optional] [readonly] |
 

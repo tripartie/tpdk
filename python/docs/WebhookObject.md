@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**transaction** | [**DisputeTransactionRead**](DisputeTransactionRead.md) |  | [optional] 
+**transaction** | [**TransactionRead**](TransactionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
 **redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
 **item_count** | **int** |  | [optional] [default to 1]
@@ -34,10 +34,10 @@ Name | Type | Description | Notes
 **platform_actor_type** | **str** |  | [optional] 
 **platform_reasoning** | **str** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. | [optional] 
 **arbitration_by** | **str** |  | [optional] 
-**parcels** | [**List[DisputeParcelRead]**](DisputeParcelRead.md) |  | 
-**views** | [**List[DisputeViewRead]**](DisputeViewRead.md) |  | 
-**metadata** | [**List[PersonaMetadataRead]**](PersonaMetadataRead.md) | You can assign different meta to your Persona object for different purposes. eg. Ease searching. | 
-**events** | [**List[DisputeWorkflowEventRead]**](DisputeWorkflowEventRead.md) |  | [optional] 
+**parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
+**views** | [**List[ViewRead]**](ViewRead.md) |  | 
+**metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | 
+**events** | [**List[WorkflowEventRead]**](WorkflowEventRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **view_count** | **int** |  | [optional] [readonly] 
@@ -51,35 +51,19 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
-**gender** | **str** |  | [optional] [default to 'RATHER_NOT_SAY']
-**date_of_birth** | **date** |  | [optional] 
 **language** | **str** | That data is used for rendering the frontend application with given language. If not set, will be inferred. Custom codes can be issued for specific requirements. | [optional] 
 **email** | **str** |  | [optional] 
 **mobile_phone_number** | **str** |  | [optional] 
-**address** | [**PersonaAddressRead**](PersonaAddressRead.md) |  | [optional] 
-**risk_level** | **str** | We sort Persona into three distinct risks&#39; category. This is inferred from the riskScore. | [optional] 
-**risk_score** | **int** | That score is regularly updated, each action taken can potentially update that value. A value close to zero mean zero risk and close to a hundred mean risky. | [optional] 
-**external_purchase_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
-**external_sell_count** | **int** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. | [optional] 
-**offer_count** | **int** | Issued Offers count owned by a given Persona | [optional] [readonly] 
-**purchase_count** | **int** |  | [optional] [readonly] 
 **public_url** | **str** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. | [optional] 
-**enforce_persona_auth** | **bool** | Mean that the generated url cannot be accessed without a generated token for a Persona. Disallow external registration. | [default to True]
-**override_rate_commission_safe_checkout** | **float** | Override YOUR platform fees for that particular Offer. | [optional] 
-**organization** | [**OfferOrganizationRead**](OfferOrganizationRead.md) |  | [optional] 
-**seller** | **str** | If the seller is actually YOUR organization, set it to NULL. | 
+**organization** | [**OrganizationRead**](OrganizationRead.md) |  | [optional] 
+**seller** | [**PersonaRead**](PersonaRead.md) | If the seller is actually YOUR organization, set it to NULL. | 
 **nature** | **str** | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. | [default to 'physical_item']
 **title** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
 **unit_price** | **float** |  | [optional] 
 **currency_code** | **str** |  | [optional] [default to 'EUR']
 **condition** | **str** |  | [optional] [default to 'USED']
-**weight_in_gram** | **int** |  | [optional] 
-**shipping_allowed** | **bool** | That toggle allows the seller to propose shipping for its item. If set in conjunction of shippingCarrier, the label will be automatically generated. Also, it will restrict the carrier to the limited subset defined. | 
-**hand_delivery_allowed** | **bool** | Enable both parties to finalize the transaction in person rather than using delivery. A QR Code must be scanned by the seller once the buyer claims the product. | [default to True]
-**shipping_carriers** | **List[str]** | If you wish to enable automated shipping label generation through a specific provider, specify it there. | [optional] 
-**ean_code** | **str** |  | [optional] 
-**can_be_sold_separately** | **bool** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. | [default to True]
-**medias** | [**List[OfferMediaRead]**](OfferMediaRead.md) |  | 
+**medias** | [**List[MediaRead]**](MediaRead.md) |  | 
 
 ## Example
 

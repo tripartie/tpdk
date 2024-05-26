@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **status** | **str** |  | [default to 'SUBMITTED']
-**media** | [**EvidenceMediaRead**](EvidenceMediaRead.md) |  | [optional] 
+**media** | [**MediaRead**](MediaRead.md) |  | [optional] 
 **additional_information** | **str** | Description of what the evidence actually is. | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 

@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **totp_enabled** | **bool** |  | [optional] 
 **intl_phone_number** | **str** |  | [optional] 
 **last_successful_log_in** | **datetime** |  | [optional] 
-**avatar** | [**UserMediaCollectionRead**](UserMediaCollectionRead.md) |  | [optional] 
+**avatar** | [**MediaCollectionRead**](MediaCollectionRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
-**organization** | [**UserOrganizationCollectionRead**](UserOrganizationCollectionRead.md) |  | [optional] 
+**organization** | [**OrganizationCollectionRead**](OrganizationCollectionRead.md) |  | [optional] 
 **iri** | **str** |  | [optional] [readonly] 
 **var_2fa** | **bool** |  | [optional] [readonly] 
 

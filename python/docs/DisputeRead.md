@@ -7,7 +7,7 @@ Access directly our resolution center without having used the safe-checkout feat
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**transaction** | [**DisputeTransactionRead**](DisputeTransactionRead.md) |  | [optional] 
+**transaction** | [**TransactionRead**](TransactionRead.md) |  | [optional] 
 **status** | **str** |  | [default to 'CREATED']
 **redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
 **item_count** | **int** | The dispute may concern only PART of the package. Specify it there. | [optional] 
@@ -35,10 +35,10 @@ Name | Type | Description | Notes
 **platform_actor_type** | **str** |  | [optional] 
 **platform_reasoning** | **str** | Explicit additional information about the platform decision. Could be written by AI, Ruling or Customer Care. | [optional] 
 **arbitration_by** | **str** |  | [optional] 
-**parcels** | [**List[DisputeParcelRead]**](DisputeParcelRead.md) |  | 
-**views** | [**List[DisputeViewRead]**](DisputeViewRead.md) |  | 
-**metadata** | [**List[DisputeMetadataRead]**](DisputeMetadataRead.md) |  | 
-**events** | [**List[DisputeWorkflowEventRead]**](DisputeWorkflowEventRead.md) |  | [optional] 
+**parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | 
+**views** | [**List[ViewRead]**](ViewRead.md) |  | 
+**metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | 
+**events** | [**List[WorkflowEventRead]**](WorkflowEventRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **view_count** | **int** |  | [optional] [readonly] 

@@ -10,7 +10,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Integer** |  |  [optional] [readonly] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
-|**media** | [**EvidenceMediaRead**](EvidenceMediaRead.md) |  |  [optional] |
+|**media** | [**MediaRead**](MediaRead.md) |  |  [optional] |
 |**additionalInformation** | **String** | Description of what the evidence actually is. |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |

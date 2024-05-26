@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **preferred_language** | **str** |  | 
 **consent_mail_notification** | **bool** |  | [optional] 
 **consent_mail_ads** | **bool** |  | [optional] 
-**organization** | [**UserOrganizationWrite**](UserOrganizationWrite.md) |  | [optional] 
+**organization** | [**OrganizationWrite**](OrganizationWrite.md) |  | [optional] 
 
 ## Example
 

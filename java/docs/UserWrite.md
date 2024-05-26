@@ -21,7 +21,7 @@
 |**preferredLanguage** | **String** |  |  |
 |**consentMailNotification** | **Boolean** |  |  [optional] |
 |**consentMailAds** | **Boolean** |  |  [optional] |
-|**organization** | [**UserOrganizationWrite**](UserOrganizationWrite.md) |  |  [optional] |
+|**organization** | [**OrganizationWrite**](OrganizationWrite.md) |  |  [optional] |
 
 
 

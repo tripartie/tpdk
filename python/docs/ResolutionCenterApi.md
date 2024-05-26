@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**api_disputes_ulidparcels_get_collection**](ResolutionCenterApi.md#api_disputes_ulidparcels_get_collection) | **GET** /disputes/{ulid}/parcels | Retrieves the collection of Parcel resources.
 [**api_disputes_ulidparcels_id_delete**](ResolutionCenterApi.md#api_disputes_ulidparcels_id_delete) | **DELETE** /disputes/{ulid}/parcels/{id} | Removes the Parcel resource.
 [**api_disputes_ulidparcels_post**](ResolutionCenterApi.md#api_disputes_ulidparcels_post) | **POST** /disputes/{ulid}/parcels | Creates a Parcel resource.
+[**api_offers_ulidmedias_id_delete**](ResolutionCenterApi.md#api_offers_ulidmedias_id_delete) | **DELETE** /offers/{ulid}/medias/{id} | Removes the Media resource.
 [**api_offers_ulidmedias_post**](ResolutionCenterApi.md#api_offers_ulidmedias_post) | **POST** /offers/{ulid}/medias | Upload a picture for a given Offer
 
 
@@ -1145,7 +1146,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_disputes_ulidparcels_post**
-> object api_disputes_ulidparcels_post(ulid, parcel_write)
+> ParcelRead api_disputes_ulidparcels_post(ulid, parcel_write)
 
 Creates a Parcel resource.
 
@@ -1159,6 +1160,7 @@ Creates a Parcel resource.
 
 ```python
 import tpdk
+from tpdk.models.parcel_read import ParcelRead
 from tpdk.models.parcel_write import ParcelWrite
 from tpdk.rest import ApiException
 from pprint import pprint
@@ -1216,7 +1218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**ParcelRead**](ParcelRead.md)
 
 ### Authorization
 
@@ -1234,6 +1236,99 @@ Name | Type | Description  | Notes
 **201** | Parcel resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
 **400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
 **422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**401** | Authentication required |  -  |
+**403** | Unauthorized access |  -  |
+**429** | Rate limit exhausted |  -  |
+**500** | Unexpected server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_offers_ulidmedias_id_delete**
+> api_offers_ulidmedias_id_delete(ulid, id)
+
+Removes the Media resource.
+
+Removes the Media resource.
+
+### Example
+
+* Api Key Authentication (jwtPersonalKey):
+* Api Key Authentication (personaAuthKey):
+* OAuth Authentication (oauth):
+
+```python
+import tpdk
+from tpdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging-api.tripartie.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = tpdk.Configuration(
+    host = "https://staging-api.tripartie.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: jwtPersonalKey
+configuration.api_key['jwtPersonalKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['jwtPersonalKey'] = 'Bearer'
+
+# Configure API key authorization: personaAuthKey
+configuration.api_key['personaAuthKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['personaAuthKey'] = 'Bearer'
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+with tpdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = tpdk.ResolutionCenterApi(api_client)
+    ulid = 'ulid_example' # str | 
+    id = 56 # int | 
+
+    try:
+        # Removes the Media resource.
+        api_instance.api_offers_ulidmedias_id_delete(ulid, id)
+    except Exception as e:
+        print("Exception when calling ResolutionCenterApi->api_offers_ulidmedias_id_delete: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ulid** | **str**|  | 
+ **id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Media resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+**404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
 **401** | Authentication required |  -  |
 **403** | Unauthorized access |  -  |
 **429** | Rate limit exhausted |  -  |

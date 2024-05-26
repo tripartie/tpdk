@@ -8,8 +8,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**publicUrl** | **String** |  |  [optional] |
-|**thumbnailUrl** | **String** |  |  [optional] [readonly] |
+|**publicUrl** | **URI** |  |  |
 
 
 

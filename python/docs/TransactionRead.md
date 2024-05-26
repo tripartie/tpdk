@@ -7,13 +7,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ulid** | **str** |  | 
-**offer** | [**TransactionOfferRead**](TransactionOfferRead.md) |  | 
-**buyer** | **str** |  | 
-**status** | **str** |  | [optional] [default to 'CREATED']
+**offer** | [**OfferRead**](OfferRead.md) |  | 
+**buyer** | [**PersonaRead**](PersonaRead.md) |  | 
 **fees** | **float** |  | [optional] 
 **refundable_fees** | **bool** |  | [optional] 
-**metadata** | [**List[TransactionMetadataRead]**](TransactionMetadataRead.md) |  | [optional] 
-**parcels** | [**List[TransactionParcelRead]**](TransactionParcelRead.md) |  | [optional] 
+**metadata** | [**List[MetadataRead]**](MetadataRead.md) |  | [optional] 
+**parcels** | [**List[ParcelRead]**](ParcelRead.md) |  | [optional] 
 
 ## Example
 

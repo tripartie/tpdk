@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **origin_country** | **str** | The originating country | [optional] 
 **preferred_language** | **str** |  | [optional] 
 **last_successful_log_in** | **datetime** |  | [optional] 
-**avatar** | [**UserMediaAuthenticatedRead**](UserMediaAuthenticatedRead.md) |  | [optional] 
+**avatar** | [**MediaAuthenticatedRead**](MediaAuthenticatedRead.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **consent_mail_notification** | **bool** |  | 
 **consent_mail_ads** | **bool** |  | 
 **lockdown** | **bool** |  | 
-**organization** | [**UserOrganizationAuthenticatedRead**](UserOrganizationAuthenticatedRead.md) |  | [optional] 
+**organization** | [**OrganizationAuthenticatedRead**](OrganizationAuthenticatedRead.md) |  | [optional] 
 **iri** | **str** |  | [optional] [readonly] 
 **impersonating_organization** | **bool** |  | [optional] [readonly] 
 **var_2fa** | **bool** |  | [optional] [readonly] 

@@ -13,7 +13,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 
 <a id="apiOrganizationsIdPatch"></a>
 # **apiOrganizationsIdPatch**
-> UserOrganizationRead apiOrganizationsIdPatch(id, organizationUpdate).execute();
+> OrganizationRead apiOrganizationsIdPatch(id, organizationUpdate).execute();
 
 Update your Organization details, branding or parameters
 
@@ -44,7 +44,7 @@ public class Example {
     String id = "id_example"; // String | Organization identifier
     OrganizationUpdate organizationUpdate = new OrganizationUpdate(); // OrganizationUpdate | The updated Organization resource
     try {
-      UserOrganizationRead result = apiInstance.apiOrganizationsIdPatch(id, organizationUpdate)
+      OrganizationRead result = apiInstance.apiOrganizationsIdPatch(id, organizationUpdate)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -67,7 +67,7 @@ public class Example {
 
 ### Return type
 
-[**UserOrganizationRead**](UserOrganizationRead.md)
+[**OrganizationRead**](OrganizationRead.md)
 
 ### Authorization
 

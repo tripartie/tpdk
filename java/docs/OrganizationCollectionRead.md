@@ -13,17 +13,14 @@
 |**vatNumber** | **String** |  |  [optional] |
 |**commercialRegistryNumber** | **String** |  |  [optional] |
 |**websiteUrl** | **String** |  |  [optional] |
-|**icon** | [**OrganizationMediaCollectionRead**](OrganizationMediaCollectionRead.md) |  |  [optional] |
-|**logo** | [**OrganizationMediaCollectionRead**](OrganizationMediaCollectionRead.md) |  |  [optional] |
+|**icon** | [**MediaCollectionRead**](MediaCollectionRead.md) |  |  [optional] |
+|**logo** | [**MediaCollectionRead**](MediaCollectionRead.md) |  |  [optional] |
 |**directNotificationToggle** | **Boolean** |  |  |
-|**safeCheckoutToggle** | **Boolean** |  |  |
-|**resolutionCenterToggle** | **Boolean** |  |  |
 |**internalMessagingToggle** | **Boolean** |  |  |
 |**personaAuthPortalToggle** | **Boolean** |  |  |
 |**automatedReturnToggle** | **Boolean** |  |  |
 |**counterProposalToggle** | **Boolean** |  |  |
 |**flatRateEnabled** | **Boolean** |  |  [optional] [readonly] |
-|**rateCommissionSafeCheckout** | **BigDecimal** |  |  |
 
 
 

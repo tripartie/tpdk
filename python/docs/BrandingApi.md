@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **api_organizations_id_patch**
-> UserOrganizationRead api_organizations_id_patch(id, organization_update)
+> OrganizationRead api_organizations_id_patch(id, organization_update)
 
 Update your Organization details, branding or parameters
 
@@ -24,8 +24,8 @@ Updates the Organization resource.
 
 ```python
 import tpdk
+from tpdk.models.organization_read import OrganizationRead
 from tpdk.models.organization_update import OrganizationUpdate
-from tpdk.models.user_organization_read import UserOrganizationRead
 from tpdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserOrganizationRead**](UserOrganizationRead.md)
+[**OrganizationRead**](OrganizationRead.md)
 
 ### Authorization
 

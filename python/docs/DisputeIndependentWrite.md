@@ -6,9 +6,9 @@ Access directly our resolution center without having used the safe-checkout feat
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction** | [**DisputeTransactionIndependentWrite**](DisputeTransactionIndependentWrite.md) |  | 
+**transaction** | [**TransactionIndependentWrite**](TransactionIndependentWrite.md) |  | 
 **redirect_url** | **str** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. | [optional] 
-**metadata** | [**List[DisputeMetadataIndependentWrite]**](DisputeMetadataIndependentWrite.md) |  | [optional] 
+**metadata** | [**List[MetadataIndependentWrite]**](MetadataIndependentWrite.md) |  | [optional] 
 
 ## Example
 

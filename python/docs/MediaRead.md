@@ -6,8 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**public_url** | **str** |  | [optional] 
-**thumbnail_url** | **str** |  | [optional] [readonly] 
+**public_url** | **str** |  | 
 
 ## Example
 

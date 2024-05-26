@@ -9,7 +9,7 @@ Access directly our resolution center without having used the safe-checkout feat
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**ulid** | **String** |  |  |
-|**transaction** | [**DisputeTransactionCollectionRead**](DisputeTransactionCollectionRead.md) |  |  [optional] |
+|**transaction** | [**TransactionCollectionRead**](TransactionCollectionRead.md) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**itemCount** | **Integer** | The dispute may concern only PART of the package. Specify it there. |  [optional] |
 |**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) |  |  [optional] |

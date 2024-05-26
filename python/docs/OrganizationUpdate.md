@@ -11,14 +11,8 @@ Name | Type | Description | Notes
 **commercial_registry_number** | **str** |  | [optional] 
 **website_url** | **str** |  | [optional] 
 **custom_base_url** | **str** |  | [optional] 
-**billing_address** | [**OrganizationAddressUpdate**](OrganizationAddressUpdate.md) |  | [optional] 
+**billing_address** | [**AddressUpdate**](AddressUpdate.md) |  | [optional] 
 **primary_color** | **str** |  | [optional] 
-**secondary_color** | **str** |  | [optional] 
-**accent_color** | **str** |  | [optional] 
-**error_color** | **str** |  | [optional] 
-**info_color** | **str** |  | [optional] 
-**success_color** | **str** |  | [optional] 
-**warning_color** | **str** |  | [optional] 
 **direct_notification_toggle** | **bool** |  | [optional] [default to True]
 **anonymity_level** | **str** |  | [optional] [default to 'PARTIAL_FIRST_NAME']
 **internal_messaging_toggle** | **bool** |  | [optional] [default to True]
@@ -26,7 +20,6 @@ Name | Type | Description | Notes
 **automated_return_toggle** | **bool** |  | [optional] [default to True]
 **counter_proposal_toggle** | **bool** |  | [optional] [default to True]
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
-**rate_commission_safe_checkout** | **float** |  | [optional] 
 
 ## Example
 
