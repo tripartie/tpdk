@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **salt** | **str** |  | [optional] [readonly] 
 **user_identifier** | **str** |  | [optional] [readonly] 
 **impersonating_organization** | **bool** |  | [optional] [readonly] 
-**var_2fa** | **bool** |  | [optional] [readonly] 
+**second_auth_factor** | **bool** |  | [optional] [readonly] 
 
 ## Example
 

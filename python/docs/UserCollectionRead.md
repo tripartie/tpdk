@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **organization** | [**UserOrganizationCollectionRead**](UserOrganizationCollectionRead.md) |  | [optional] 
 **iri** | **str** |  | [optional] [readonly] 
-**var_2fa** | **bool** |  | [optional] [readonly] 
+**second_auth_factor** | **bool** |  | [optional] [readonly] 
 
 ## Example
 

@@ -14,14 +14,11 @@ Name | Type | Description | Notes
 **icon** | [**OrganizationMediaCollectionRead**](OrganizationMediaCollectionRead.md) |  | [optional] 
 **logo** | [**OrganizationMediaCollectionRead**](OrganizationMediaCollectionRead.md) |  | [optional] 
 **direct_notification_toggle** | **bool** |  | [default to True]
-**safe_checkout_toggle** | **bool** |  | 
-**resolution_center_toggle** | **bool** |  | [default to True]
 **internal_messaging_toggle** | **bool** |  | [default to True]
 **persona_auth_portal_toggle** | **bool** |  | 
 **automated_return_toggle** | **bool** |  | [default to True]
 **counter_proposal_toggle** | **bool** |  | [default to True]
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
-**rate_commission_safe_checkout** | **float** |  | 
 
 ## Example
 

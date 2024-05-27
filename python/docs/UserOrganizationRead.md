@@ -11,14 +11,11 @@ Name | Type | Description | Notes
 **domain_verified** | **bool** |  | [optional] 
 **icon** | [**UserMediaRead**](UserMediaRead.md) |  | [optional] 
 **logo** | [**UserMediaRead**](UserMediaRead.md) |  | [optional] 
-**safe_checkout_toggle** | **bool** |  | [optional] 
-**resolution_center_toggle** | **bool** |  | [optional] [default to True]
 **internal_messaging_toggle** | **bool** |  | [optional] [default to True]
 **persona_auth_portal_toggle** | **bool** |  | [optional] 
 **automated_return_toggle** | **bool** |  | [optional] [default to True]
 **counter_proposal_toggle** | **bool** |  | [optional] [default to True]
 **flat_rate_enabled** | **bool** |  | [optional] [readonly] 
-**rate_commission_safe_checkout** | **float** |  | [optional] 
 
 ## Example
 

@@ -17,22 +17,13 @@
 |**icon** | [**OrganizationMediaRead**](OrganizationMediaRead.md) |  |  [optional] |
 |**logo** | [**OrganizationMediaRead**](OrganizationMediaRead.md) |  |  [optional] |
 |**primaryColor** | **String** |  |  [optional] |
-|**secondaryColor** | **String** |  |  [optional] |
-|**accentColor** | **String** |  |  [optional] |
-|**errorColor** | **String** |  |  [optional] |
-|**infoColor** | **String** |  |  [optional] |
-|**successColor** | **String** |  |  [optional] |
-|**warningColor** | **String** |  |  [optional] |
 |**directNotificationToggle** | **Boolean** |  |  |
 |**anonymityLevel** | [**AnonymityLevelEnum**](#AnonymityLevelEnum) |  |  |
-|**safeCheckoutToggle** | **Boolean** |  |  |
-|**resolutionCenterToggle** | **Boolean** |  |  |
 |**internalMessagingToggle** | **Boolean** |  |  |
 |**personaAuthPortalToggle** | **Boolean** |  |  |
 |**automatedReturnToggle** | **Boolean** |  |  |
 |**counterProposalToggle** | **Boolean** |  |  |
 |**flatRateEnabled** | **Boolean** |  |  [optional] [readonly] |
-|**rateCommissionSafeCheckout** | **BigDecimal** |  |  |
 
 
 

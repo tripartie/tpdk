@@ -23,7 +23,7 @@
 |**updatedAt** | **OffsetDateTime** |  |  [optional] [readonly] |
 |**organization** | [**UserOrganizationCollectionRead**](UserOrganizationCollectionRead.md) |  |  [optional] |
 |**iri** | **String** |  |  [optional] [readonly] |
-|**_2fa** | **Boolean** |  |  [optional] [readonly] |
+|**secondAuthFactor** | **Boolean** |  |  [optional] [readonly] |
 
 
 

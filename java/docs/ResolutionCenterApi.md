@@ -17,6 +17,7 @@ All URIs are relative to *https://staging-api.tripartie.com*
 | [**apiDisputesUlidparcelsGetCollection**](ResolutionCenterApi.md#apiDisputesUlidparcelsGetCollection) | **GET** /disputes/{ulid}/parcels | Retrieves the collection of Parcel resources. |
 | [**apiDisputesUlidparcelsIdDelete**](ResolutionCenterApi.md#apiDisputesUlidparcelsIdDelete) | **DELETE** /disputes/{ulid}/parcels/{id} | Removes the Parcel resource. |
 | [**apiDisputesUlidparcelsPost**](ResolutionCenterApi.md#apiDisputesUlidparcelsPost) | **POST** /disputes/{ulid}/parcels | Creates a Parcel resource. |
+| [**apiOffersUlidmediasIdDelete**](ResolutionCenterApi.md#apiOffersUlidmediasIdDelete) | **DELETE** /offers/{ulid}/medias/{id} | Removes the Media resource. |
 | [**apiOffersUlidmediasPost**](ResolutionCenterApi.md#apiOffersUlidmediasPost) | **POST** /offers/{ulid}/medias | Upload a picture for a given Offer |
 
 
@@ -1151,6 +1152,92 @@ public class Example {
 | **201** | Parcel resource created |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
 | **400** | Invalid input |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
 | **422** | Unprocessable entity |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+| **401** | Authentication required |  -  |
+| **403** | Unauthorized access |  -  |
+| **429** | Rate limit exhausted |  -  |
+| **500** | Unexpected server error |  -  |
+
+<a id="apiOffersUlidmediasIdDelete"></a>
+# **apiOffersUlidmediasIdDelete**
+> apiOffersUlidmediasIdDelete(ulid, id).execute();
+
+Removes the Media resource.
+
+Removes the Media resource.
+
+### Example
+```java
+// Import classes:
+import com.tripartie.tpdk.ApiClient;
+import com.tripartie.tpdk.ApiException;
+import com.tripartie.tpdk.Configuration;
+import com.tripartie.tpdk.auth.*;
+import com.tripartie.tpdk.models.*;
+import com.tripartie.tpdk.api.ResolutionCenterApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://staging-api.tripartie.com");
+    
+    // Configure API key authorization: jwtPersonalKey
+    ApiKeyAuth jwtPersonalKey = (ApiKeyAuth) defaultClient.getAuthentication("jwtPersonalKey");
+    jwtPersonalKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //jwtPersonalKey.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: personaAuthKey
+    ApiKeyAuth personaAuthKey = (ApiKeyAuth) defaultClient.getAuthentication("personaAuthKey");
+    personaAuthKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //personaAuthKey.setApiKeyPrefix("Token");
+
+    // Configure OAuth2 access token for authorization: oauth
+    OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+    oauth.setAccessToken("YOUR ACCESS TOKEN");
+
+    ResolutionCenterApi apiInstance = new ResolutionCenterApi(defaultClient);
+    String ulid = "ulid_example"; // String | 
+    Integer id = 56; // Integer | 
+    try {
+      apiInstance.apiOffersUlidmediasIdDelete(ulid, id)
+            .execute();
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ResolutionCenterApi#apiOffersUlidmediasIdDelete");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ulid** | **String**|  | |
+| **id** | **Integer**|  | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[jwtPersonalKey](../README.md#jwtPersonalKey), [personaAuthKey](../README.md#personaAuthKey), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Media resource deleted |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
+| **404** | Resource not found |  * X-Rate-Limit - HTTP standardized header for rate limit consumption status <br>  |
 | **401** | Authentication required |  -  |
 | **403** | Unauthorized access |  -  |
 | **429** | Rate limit exhausted |  -  |
