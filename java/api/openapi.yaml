@@ -8,7 +8,7 @@ info:
     Our API suite for the **Resolution Center** and the **Safe Checkout** features.
     Simple, yet elegant web interfaces for your convenience. One request away from your first automated resolution or safe-checkout.
   title: Tripartie
-  version: 2.0.199
+  version: 2.0.204
 servers:
 - description: Sandbox
   url: https://staging-api.tripartie.com
@@ -24,9 +24,6 @@ tags:
 - description: Automate disputes between your customers while making sure they are
     satisfied
   name: Resolution-Center
-- description: Make offers and transactions for your marketplace without the inherent
-    risks
-  name: Safe-Checkout
 - description: Common shared knowledge of your base users
   name: Persona
 - description: Be kept up-to-date if anything happens
@@ -1905,68 +1902,6 @@ paths:
       - Resolution-Center
       x-accepts:
       - application/json
-  /evidences/{id}:
-    get:
-      deprecated: false
-      description: Retrieves a Evidence resource.
-      operationId: api_evidences_id_get
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Evidence identifier
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Evidence'
-          description: Evidence resource
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      summary: Retrieves a Evidence resource.
-      tags:
-      - Evidence
-      x-accepts:
-      - application/json
   /invite:
     post:
       deprecated: false
@@ -2093,521 +2028,6 @@ paths:
       - User
       x-accepts:
       - application/json
-  /medias/{id}:
-    get:
-      deprecated: false
-      description: Retrieves a Media resource.
-      operationId: api_medias_id_get
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Media identifier
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Media'
-          description: Media resource
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      summary: Retrieves a Media resource.
-      tags:
-      - Media
-      x-accepts:
-      - application/json
-  /offers:
-    get:
-      deprecated: false
-      description: Retrieves the collection of Offer resources.
-      operationId: api_offers_get_collection
-      parameters:
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: The collection page number
-        explode: false
-        in: query
-        name: page
-        required: false
-        schema:
-          default: 1
-          type: integer
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: title
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: publicUrl
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: true
-        in: query
-        name: "publicUrl[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: unitPrice
-        required: false
-        schema:
-          type: number
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: true
-        in: query
-        name: "unitPrice[]"
-        required: false
-        schema:
-          items:
-            type: number
-          type: array
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: itemCount
-        required: false
-        schema:
-          type: integer
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: true
-        in: query
-        name: "itemCount[]"
-        required: false
-        schema:
-          items:
-            type: integer
-          type: array
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[before]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[strictly_before]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[after]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[strictly_after]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Flattened OrderedMap for metadata. Must be a multiple of two
-          items count. Explicitly set "null" for desired value.
-        example:
-        - External-ID
-        - 1254A
-        explode: true
-        in: query
-        name: "metadata[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: deepObject
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Flattened OrderedMap for offer.metadata. Must be a multiple of
-          two items count. Explicitly set "null" for desired value.
-        example:
-        - External-ID
-        - 1254A
-        explode: true
-        in: query
-        name: "offer.metadata[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: deepObject
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Filter on a limited subset of nature
-        example: service
-        explode: false
-        in: query
-        name: nature
-        required: false
-        schema:
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Filter on a limited subset of condition
-        example: NEW
-        explode: false
-        in: query
-        name: condition
-        required: false
-        schema:
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: shippingAllowed
-        required: false
-        schema:
-          type: boolean
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Offer-CollectionRead'
-                type: array
-          description: Offer collection
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-            Content-Range:
-              description: "HTTP standardized header for partial content, used for\
-                \ the pagination"
-              explode: false
-              schema:
-                example: 0-50/28441
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_READ
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Read issued Offers
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-    post:
-      deprecated: false
-      description: Publish an offer so that you can safely retrieve a safe-checkout
-        unique link from us
-      operationId: api_offers_post
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Offer-IndependentWrite'
-        description: The new Offer resource
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offer-PostCreationRead'
-          description: Offer resource created
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_WRITE
-        personaAuthKey: []
-      summary: Create an Offer and retrieve url
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /offers/{ulid}:
-    get:
-      deprecated: false
-      description: Retrieves a Offer resource.
-      operationId: api_offers_ulid_get
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Offer identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offer-Read'
-          description: Offer resource
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_READ
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Read an Offer
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
   /offers/{ulid}/medias:
     post:
       deprecated: false
@@ -2704,7 +2124,6 @@ paths:
         personaAuthKey: []
       summary: Upload a picture for a given Offer
       tags:
-      - Safe-Checkout
       - Resolution-Center
       x-content-type: multipart/form-data
       x-accepts:
@@ -2791,352 +2210,7 @@ paths:
         jwtPersonalKey: []
       summary: Removes the Media resource.
       tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-  /offers/{ulid}/transactions:
-    get:
-      deprecated: false
-      description: Retrieves the collection of Transaction resources.
-      operationId: api_offers_ulidtransactions_get_collection
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Transaction identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: The collection page number
-        explode: false
-        in: query
-        name: page
-        required: false
-        schema:
-          default: 1
-          type: integer
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "order[status]"
-        required: false
-        schema:
-          enum:
-          - asc
-          - desc
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Flattened OrderedMap for metadata. Must be a multiple of two
-          items count. Explicitly set "null" for desired value.
-        example:
-        - External-ID
-        - 1254A
-        explode: true
-        in: query
-        name: "metadata[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: deepObject
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Filter on a limited subset of status
-        example: CREATED
-        explode: false
-        in: query
-        name: status
-        required: false
-        schema:
-          enum:
-          - CREATED
-          - AUTHORIZED
-          - REFUSED
-          - ACCEPTED
-          - SHIPPED
-          - IN_TRANSIT
-          - DELIVERED
-          - COMPLETED
-          - DISPUTED
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Transaction-CollectionRead'
-                type: array
-          description: Transaction collection
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-            Content-Range:
-              description: "HTTP standardized header for partial content, used for\
-                \ the pagination"
-              explode: false
-              schema:
-                example: 0-50/28441
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_READ
-        jwtPersonalKey: []
-      summary: Retrieve Payment Intents for Offer
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-    post:
-      deprecated: false
-      description: Cannot be used outside of a Persona (buyer)
-      operationId: api_offers_ulidtransactions_post
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Transaction identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Transaction'
-        description: The new Transaction resource
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Transaction-Read'
-          description: Transaction resource created
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - personaAuthKey: []
-      summary: Create a Payment Intent for Offer
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /offers/{ulid}/transactions/{id}/evaluations:
-    post:
-      deprecated: false
-      description: '**Only authenticated** buyer and seller **CAN** issue an evaluation
-        **WHEN** the transaction reached a final state.'
-      operationId: api_offers_ulidtransactions_idevaluations_post
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Evaluation identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - allowReserved: false
-        deprecated: false
-        description: Evaluation identifier
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Evaluation-Write'
-        description: The new Evaluation resource
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Evaluation-Read'
-          description: Evaluation resource created
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - personaAuthKey: []
-      summary: Submit an Evaluation for the Offer
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
+      - Resolution-Center
       x-accepts:
       - application/json
   /organizations:
@@ -4019,7 +3093,7 @@ paths:
     post:
       deprecated: false
       description: |-
-        You should not register your whole database of users, only those who are concerned by a Safe-checkout or Dispute operation.
+        You should not register your whole database of users, only those who are concerned by a Dispute operation.
         One Persona entry for your organization can be assigned as a seller or buyer.
 
         **Notes:**
@@ -4681,595 +3755,12 @@ paths:
       - Notification
       x-accepts:
       - application/json
-  /personas/{id}/offers:
-    delete:
-      deprecated: false
-      description: "That goes without says, if that **Offer** have a _Transaction_\
-        \ **that is ongoing**, you **MAY NOT** revoke the **Offer**."
-      operationId: api_personas_idoffers_delete
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Offer identifier
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "204":
-          description: Offer resource deleted
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_WRITE
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Revoke an Offer for given Persona
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-    get:
-      deprecated: false
-      description: Retrieves the collection of Offer resources.
-      operationId: api_personas_idoffers_get_collection
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Offer identifier
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: The collection page number
-        explode: false
-        in: query
-        name: page
-        required: false
-        schema:
-          default: 1
-          type: integer
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: title
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: publicUrl
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: true
-        in: query
-        name: "publicUrl[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: unitPrice
-        required: false
-        schema:
-          type: number
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: true
-        in: query
-        name: "unitPrice[]"
-        required: false
-        schema:
-          items:
-            type: number
-          type: array
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: itemCount
-        required: false
-        schema:
-          type: integer
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: true
-        in: query
-        name: "itemCount[]"
-        required: false
-        schema:
-          items:
-            type: integer
-          type: array
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[before]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[strictly_before]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[after]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "createdAt[strictly_after]"
-        required: false
-        schema:
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Flattened OrderedMap for metadata. Must be a multiple of two
-          items count. Explicitly set "null" for desired value.
-        example:
-        - External-ID
-        - 1254A
-        explode: true
-        in: query
-        name: "metadata[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: deepObject
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Flattened OrderedMap for offer.metadata. Must be a multiple of
-          two items count. Explicitly set "null" for desired value.
-        example:
-        - External-ID
-        - 1254A
-        explode: true
-        in: query
-        name: "offer.metadata[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: deepObject
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Filter on a limited subset of nature
-        example: service
-        explode: false
-        in: query
-        name: nature
-        required: false
-        schema:
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Filter on a limited subset of condition
-        example: NEW
-        explode: false
-        in: query
-        name: condition
-        required: false
-        schema:
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: shippingAllowed
-        required: false
-        schema:
-          type: boolean
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Offer-CollectionRead'
-                type: array
-          description: Offer collection
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-            Content-Range:
-              description: "HTTP standardized header for partial content, used for\
-                \ the pagination"
-              explode: false
-              schema:
-                example: 0-50/28441
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_READ
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: List or Search Offers for given Persona
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-    patch:
-      deprecated: false
-      description: Updates the Offer resource.
-      operationId: api_personas_idoffers_patch
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Offer identifier
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Offer-Update'
-        description: The updated Offer resource
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offer-Read'
-          description: Offer resource updated
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_WRITE
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Update an Offer for given Persona
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-    post:
-      deprecated: false
-      description: Creates a Offer resource.
-      operationId: api_personas_idoffers_post
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Offer identifier
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Offer-Write'
-        description: The new Offer resource
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offer-PostCreationRead'
-          description: Offer resource created
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_WRITE
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Create an Offer for given Persona
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
-      x-accepts:
-      - application/json
   /personas/{id}/token:
     post:
       deprecated: false
       description: "Without this, your users may be required to pass a MFA challenge\
         \ even if they are already logged-in from your website. Pass the URL you wish\
-        \ your user access, either a Dispute or Safe-checkout resource."
+        \ your user access, either a Dispute resource."
       operationId: api_personas_idtoken_post
       parameters:
       - allowReserved: false
@@ -5559,768 +4050,6 @@ paths:
       tags:
       - User
       x-content-type: application/json
-      x-accepts:
-      - application/json
-  /transactions:
-    get:
-      deprecated: false
-      description: Retrieves the collection of Transaction resources.
-      operationId: api_transactions_get_collection
-      parameters:
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: The collection page number
-        explode: false
-        in: query
-        name: page
-        required: false
-        schema:
-          default: 1
-          type: integer
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: query
-        name: "order[status]"
-        required: false
-        schema:
-          enum:
-          - asc
-          - desc
-          type: string
-        style: form
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Flattened OrderedMap for metadata. Must be a multiple of two
-          items count. Explicitly set "null" for desired value.
-        example:
-        - External-ID
-        - 1254A
-        explode: true
-        in: query
-        name: "metadata[]"
-        required: false
-        schema:
-          items:
-            type: string
-          type: array
-        style: deepObject
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: Filter on a limited subset of status
-        example: CREATED
-        explode: false
-        in: query
-        name: status
-        required: false
-        schema:
-          enum:
-          - CREATED
-          - AUTHORIZED
-          - REFUSED
-          - ACCEPTED
-          - SHIPPED
-          - IN_TRANSIT
-          - DELIVERED
-          - COMPLETED
-          - DISPUTED
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Transaction-CollectionRead'
-                type: array
-          description: Transaction collection
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-            Content-Range:
-              description: "HTTP standardized header for partial content, used for\
-                \ the pagination"
-              explode: false
-              schema:
-                example: 0-50/28441
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_READ
-        jwtPersonalKey: []
-      summary: Retrieves the collection of Transaction resources.
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-  /transactions/{ulid}/dispute:
-    delete:
-      deprecated: false
-      description: "**Only the buyer/complainant** can dismiss the case immediately.\
-        \ Otherwise, the support can but in a limited ranges of Dispute status."
-      operationId: api_transactions_uliddispute_delete
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Dispute identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "204":
-          description: Dispute resource deleted
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - DISPUTE_ARBITRATION
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Abandon claims on Dispute
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-    get:
-      deprecated: false
-      description: Retrieves a Dispute resource.
-      operationId: api_transactions_uliddispute_get
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Dispute identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Dispute-Read'
-          description: Dispute resource
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - DISPUTE_READ
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Read Dispute from existing Transaction
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-    patch:
-      deprecated: false
-      description: Only authenticated Persona can interact with a Dispute object.
-        Usually through our web application.
-      operationId: api_transactions_uliddispute_patch
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Dispute identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Dispute-Update'
-        description: The updated Dispute resource
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Dispute-Read'
-          description: Dispute resource updated
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - personaAuthKey: []
-        jwtPersonalKey: []
-      summary: Interact with a Dispute
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-    post:
-      deprecated: false
-      description: Creates a Dispute resource.
-      operationId: api_transactions_uliddispute_post
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: Dispute identifier
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Dispute-Write'
-        description: The new Dispute resource
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Dispute-PostCreationRead'
-          description: Dispute resource created
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - DISPUTE_WRITE
-        jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Open a Dispute related to existing Transaction
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /transactions/{ulid}/parcels:
-    get:
-      deprecated: false
-      description: Retrieves the collection of Parcel resources.
-      operationId: api_transactions_ulidparcels_get_collection
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - allowEmptyValue: true
-        allowReserved: false
-        deprecated: false
-        description: The collection page number
-        explode: false
-        in: query
-        name: page
-        required: false
-        schema:
-          default: 1
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Parcel-CollectionRead'
-                type: array
-          description: Parcel collection
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-            Content-Range:
-              description: "HTTP standardized header for partial content, used for\
-                \ the pagination"
-              explode: false
-              schema:
-                example: 0-50/28441
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - jwtPersonalKey: []
-        personaAuthKey: []
-      summary: Read shipments from Transaction
-      tags:
-      - Safe-Checkout
-      x-accepts:
-      - application/json
-    post:
-      deprecated: false
-      description: Creates a Parcel resource.
-      operationId: api_transactions_ulidparcels_post
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Parcel-Write'
-        description: The new Parcel resource
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Parcel-Read'
-          description: Parcel resource created
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InvalidQueryError'
-          description: Invalid input
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnprocessableEntity'
-          description: Unprocessable entity
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - oauth:
-        - OFFER_WRITE
-        jwtPersonalKey: []
-      summary: Manually declare package shipped for Transaction
-      tags:
-      - Safe-Checkout
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /transactions/{ulid}/parcels/{id}:
-    delete:
-      deprecated: false
-      description: No one except the support can do that manoeuvre.
-      operationId: api_transactions_ulidparcels_id_delete
-      parameters:
-      - allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: path
-        name: ulid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - allowReserved: false
-        deprecated: false
-        description: ""
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: integer
-        style: simple
-      responses:
-        "204":
-          description: Parcel resource deleted
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotFoundError'
-          description: Resource not found
-          headers:
-            X-Rate-Limit:
-              description: HTTP standardized header for rate limit consumption status
-              explode: false
-              schema:
-                example: 554; reset="2025-01-12T12:11:02"
-                type: string
-              style: simple
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthError'
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccessError'
-          description: Unauthorized access
-        "429":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RateLimitError'
-          description: Rate limit exhausted
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GenericError'
-          description: Unexpected server error
-      security:
-      - jwtPersonalKey: []
-      summary: Withdraw shipment from Transaction
-      tags:
-      - Safe-Checkout
       x-accepts:
       - application/json
   /users:
@@ -8694,15 +6423,12 @@ components:
       - ulid
     Dispute-Offer-IndependentWrite:
       deprecated: false
-      description: An Offer object represent a public listening
+      description: ""
       properties:
         publicUrl:
           description: "If specified, there would be not need for you to fill-in details.\
             \ Must be accessible over WAN."
           example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
           nullable: true
           type: string
         seller:
@@ -8720,9 +6446,7 @@ components:
           type: string
         title:
           example: ASUS TUF X570-PLUS GAMING Motherboard
-          maxLength: 250
           type: string
-          nullable: true
         description:
           example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
             \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
@@ -8731,23 +6455,17 @@ components:
             \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
             \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
             \ id est laborum."
-          maxLength: 100000
           nullable: true
           type: string
-          nullable: true
         unitPrice:
           example: 125.54
           nullable: true
           type: number
-          nullable: true
         currencyCode:
           default: EUR
           example: EUR
-          externalDocs:
-            url: https://schema.org/priceCurrency
           nullable: true
           type: string
-          nullable: true
         itemCount:
           default: 1
           example: 1
@@ -8774,6 +6492,7 @@ components:
             $ref: '#/components/schemas/Dispute-Metadata-IndependentWrite'
           type: array
       required:
+      - nature
       - seller
     Dispute-Offer-Read:
       deprecated: false
@@ -8784,7 +6503,7 @@ components:
           lastName: Doe
           mobilePhoneNumber: "+33745214529"
           language: fr
-          id: 6
+          id: 0
           email: john.doe@gmail.com
         unitPrice: 125.54
         medias:
@@ -8794,25 +6513,18 @@ components:
         ulid: ulid
         nature: physical_item
         organization:
-          warningColor: warningColor
-          errorColor: errorColor
-          rateCommissionSafeCheckout: 0.8008281904610115
-          accentColor: accentColor
-          counterProposalToggle: true
-          icon:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          primaryColor: primaryColor
-          infoColor: infoColor
-          personaAuthPortalToggle: true
           directNotificationToggle: true
           flatRateEnabled: true
           websiteUrl: websiteUrl
-          successColor: successColor
+          counterProposalToggle: true
           name: name
+          icon:
+            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+          primaryColor: primaryColor
           logo:
             publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
           customBaseUrl: customBaseUrl
-          secondaryColor: secondaryColor
+          personaAuthPortalToggle: true
         publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
           \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
@@ -8897,25 +6609,18 @@ components:
       deprecated: false
       description: ""
       example:
-        warningColor: warningColor
-        errorColor: errorColor
-        rateCommissionSafeCheckout: 0.8008281904610115
-        accentColor: accentColor
-        counterProposalToggle: true
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        primaryColor: primaryColor
-        infoColor: infoColor
-        personaAuthPortalToggle: true
         directNotificationToggle: true
         flatRateEnabled: true
         websiteUrl: websiteUrl
-        successColor: successColor
+        counterProposalToggle: true
         name: name
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+        primaryColor: primaryColor
         logo:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         customBaseUrl: customBaseUrl
-        secondaryColor: secondaryColor
+        personaAuthPortalToggle: true
       properties:
         name:
           type: string
@@ -8932,24 +6637,6 @@ components:
         primaryColor:
           nullable: true
           type: string
-        secondaryColor:
-          nullable: true
-          type: string
-        accentColor:
-          nullable: true
-          type: string
-        errorColor:
-          nullable: true
-          type: string
-        infoColor:
-          nullable: true
-          type: string
-        successColor:
-          nullable: true
-          type: string
-        warningColor:
-          nullable: true
-          type: string
         directNotificationToggle:
           default: true
           example: true
@@ -8963,13 +6650,10 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - counterProposalToggle
       - directNotificationToggle
       - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
     Dispute-Parcel-IndependentWrite:
       deprecated: false
       description: ""
@@ -9167,7 +6851,7 @@ components:
         lastName: Doe
         mobilePhoneNumber: "+33745214529"
         language: fr
-        id: 6
+        id: 0
         email: john.doe@gmail.com
       properties:
         id:
@@ -9277,7 +6961,7 @@ components:
         counterPartialRefundAmount: 30
         sellerTruthfulnessScore: 100
         recommendedSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
-        platformPartialRefundAmount: 5
+        platformPartialRefundAmount: 1
         platformActorType: RULING
         arbitrationBy: https://example.com/
         awaitedParty: BUYER
@@ -9288,12 +6972,12 @@ components:
         statusExpiration: 2000-01-23T04:56:07.000+00:00
         itemCount: 1
         complainantApproval: true
-        maxRefundableForBuyer: 7.061401241503109
+        maxRefundableForBuyer: 2.3021358869347655
         issueType: NOT_AS_DESCRIBED
         sellerNotes: "Unfortunately, I did not notice it, after thinking again, yes,\
           \ you deserve a discount on that."
         recommendedPartialRefundAmount: 35
-        disbursedByBuyer: 2.3021358869347655
+        disbursedByBuyer: 5.637376656633329
         sellerRejectionReason: UNJUSTIFIED_REQUEST
         issueInDescriptionType: WRONG_COLOUR
         transaction:
@@ -9303,7 +6987,7 @@ components:
               lastName: Doe
               mobilePhoneNumber: "+33745214529"
               language: fr
-              id: 6
+              id: 0
               email: john.doe@gmail.com
             unitPrice: 125.54
             medias:
@@ -9313,25 +6997,18 @@ components:
             ulid: ulid
             nature: physical_item
             organization:
-              warningColor: warningColor
-              errorColor: errorColor
-              rateCommissionSafeCheckout: 0.8008281904610115
-              accentColor: accentColor
-              counterProposalToggle: true
-              icon:
-                publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-              primaryColor: primaryColor
-              infoColor: infoColor
-              personaAuthPortalToggle: true
               directNotificationToggle: true
               flatRateEnabled: true
               websiteUrl: websiteUrl
-              successColor: successColor
+              counterProposalToggle: true
               name: name
+              icon:
+                publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+              primaryColor: primaryColor
               logo:
                 publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
               customBaseUrl: customBaseUrl
-              secondaryColor: secondaryColor
+              personaAuthPortalToggle: true
             publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
               \ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
@@ -9343,7 +7020,7 @@ components:
             title: ASUS TUF X570-PLUS GAMING Motherboard
             currencyCode: EUR
             itemCount: 1
-          fees: 1.4658129805029452
+          fees: 6.027456183070403
           refundableFees: true
           metadata:
           - value: "54412"
@@ -9356,7 +7033,7 @@ components:
             lastName: Doe
             mobilePhoneNumber: "+33745214529"
             language: fr
-            id: 6
+            id: 0
             email: john.doe@gmail.com
           parcels:
           - identifier: 8J001271466474
@@ -9726,7 +7403,7 @@ components:
             lastName: Doe
             mobilePhoneNumber: "+33745214529"
             language: fr
-            id: 6
+            id: 0
             email: john.doe@gmail.com
           unitPrice: 125.54
           medias:
@@ -9736,25 +7413,18 @@ components:
           ulid: ulid
           nature: physical_item
           organization:
-            warningColor: warningColor
-            errorColor: errorColor
-            rateCommissionSafeCheckout: 0.8008281904610115
-            accentColor: accentColor
-            counterProposalToggle: true
-            icon:
-              publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-            primaryColor: primaryColor
-            infoColor: infoColor
-            personaAuthPortalToggle: true
             directNotificationToggle: true
             flatRateEnabled: true
             websiteUrl: websiteUrl
-            successColor: successColor
+            counterProposalToggle: true
             name: name
+            icon:
+              publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+            primaryColor: primaryColor
             logo:
               publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
             customBaseUrl: customBaseUrl
-            secondaryColor: secondaryColor
+            personaAuthPortalToggle: true
           publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
             \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
@@ -9766,7 +7436,7 @@ components:
           title: ASUS TUF X570-PLUS GAMING Motherboard
           currencyCode: EUR
           itemCount: 1
-        fees: 1.4658129805029452
+        fees: 6.027456183070403
         refundableFees: true
         metadata:
         - value: "54412"
@@ -9779,7 +7449,7 @@ components:
           lastName: Doe
           mobilePhoneNumber: "+33745214529"
           language: fr
-          id: 6
+          id: 0
           email: john.doe@gmail.com
         parcels:
         - identifier: 8J001271466474
@@ -10029,19 +7699,6 @@ components:
           type: string
       required:
       - label
-    Dispute-Write:
-      deprecated: false
-      description: ""
-      properties:
-        redirectUrl:
-          description: Fill-in that field IF you intend to redirect your customer
-            instead of using a WebView.
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?from_dispute=true
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          nullable: true
-          type: string
     Dispute-dispute.read:
       deprecated: false
       description: Access directly our resolution center without having used the safe-checkout
@@ -10358,17 +8015,6 @@ components:
     Evidence:
       deprecated: false
       description: ""
-      example:
-        owner: https://example.com/
-        dispute: https://example.com/
-        additionalInformation: "The motherboard I received have a minor scratch at\
-          \ the bottom, here is the proof."
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        publisher: BUYER
-        id: 0
-        media: https://example.com/
-        status: SUBMITTED
-        updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         id:
           readOnly: true
@@ -10509,21 +8155,6 @@ components:
     Media:
       deprecated: false
       description: ""
-      example:
-        owner: https://example.com/
-        offers:
-        - https://example.com/
-        - https://example.com/
-        extension: extension
-        thumbnail: https://example.com/
-        filename: filename
-        file: ""
-        original: https://example.com/
-        fingerprint: fingerprint
-        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        id: 0
-        b64EncodedTmpFile: b64EncodedTmpFile
-        thumbnailUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
       properties:
         id:
           readOnly: true
@@ -10706,1046 +8337,6 @@ components:
           type: boolean
       required:
       - seen
-    Offer:
-      deprecated: false
-      description: ""
-      properties:
-        id:
-          readOnly: true
-          type: integer
-        ulid:
-          type: string
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          nullable: true
-          type: string
-        enforcePersonaAuth:
-          default: true
-          description: Mean that the generated url cannot be accessed without a generated
-            token for a Persona. Disallow external registration.
-          example: true
-          type: boolean
-        overrideRateCommissionSafeCheckout:
-          description: Override YOUR platform fees for that particular Offer.
-          nullable: true
-          type: number
-        redirectUrl:
-          description: Fill-in that field IF you intend to redirect your customer
-            instead of using a WebView.
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-          nullable: true
-          type: string
-        url:
-          example: https://next.tripartie.app/?c=01ARZ3NDEKTSV4RRFFQ69G5FAV
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          nullable: true
-          readOnly: true
-          type: string
-        organization:
-          example: https://example.com/
-          format: iri-reference
-          nullable: true
-          type: string
-        seller:
-          description: "If the seller is actually YOUR organization, set it to NULL."
-          example: https://example.com/
-          format: iri-reference
-          type: string
-        nature:
-          default: physical_item
-          description: This WILL affect the assigned workflow. Choosing service will
-            disable delivery for example. Refer to our technical hub for more information.
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          example: physical_item
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          type: string
-        description:
-          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-            \ id est laborum."
-          nullable: true
-          type: string
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-        currencyCode:
-          default: EUR
-          example: EUR
-          nullable: true
-          type: string
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        condition:
-          default: USED
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          example: USED
-          type: string
-        weightInGram:
-          nullable: true
-          type: integer
-        shippingAllowed:
-          description: "That toggle allows the seller to propose shipping for its\
-            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
-            \ generated. Also, it will restrict the carrier to the limited subset\
-            \ defined."
-          type: boolean
-        handDeliveryAllowed:
-          default: true
-          description: Enable both parties to finalize the transaction in person rather
-            than using delivery. A QR Code must be scanned by the seller once the
-            buyer claims the product.
-          example: true
-          type: boolean
-        shippingCarriers:
-          description: "If you wish to enable automated shipping label generation\
-            \ through a specific provider, specify it there."
-          items:
-            enum:
-            - SwissPost
-            - Colissimo
-            - MondialRelay
-            type: string
-          type: array
-        eanCode:
-          example: "4718017388450"
-          nullable: true
-          type: string
-        canBeSoldSeparately:
-          default: true
-          description: "Set this flag to false to forbid a potential buyer to acquire\
-            \ this item separately. \n        This is only useful in a BulkOffer context."
-          example: true
-          type: boolean
-        metadata:
-          items:
-            $ref: '#/components/schemas/Metadata'
-          type: array
-        medias:
-          items:
-            example: https://example.com/
-            format: iri-reference
-            type: string
-          type: array
-        views:
-          items:
-            $ref: '#/components/schemas/View'
-          type: array
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        updatedAt:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-        iri:
-          example: https://example.com/
-          format: iri-reference
-          readOnly: true
-          type: string
-        halfPricePoint:
-          nullable: true
-          readOnly: true
-          type: number
-      required:
-      - canBeSoldSeparately
-      - enforcePersonaAuth
-      - handDeliveryAllowed
-      - medias
-      - nature
-      - seller
-      - shippingAllowed
-      - ulid
-      - url
-      - views
-    Offer-Address-IndependentWrite:
-      deprecated: false
-      description: ""
-      properties:
-        companyName:
-          example: Company Tld
-          nullable: true
-          type: string
-        countryCode:
-          example: FRA
-          maxLength: 3
-          type: string
-        zipCode:
-          example: "75004"
-          type: string
-        cityName:
-          example: Paris
-          type: string
-        firstLine:
-          example: 118 avenue des champs élysées
-          type: string
-        secondLine:
-          example: Apt 6E
-          nullable: true
-          type: string
-        buildingName:
-          example: Electron
-          nullable: true
-          type: string
-        buildingFloor:
-          example: Third floor
-          nullable: true
-          type: string
-        gateOrPortalOrInboxCode:
-          example: "3124"
-          nullable: true
-          type: string
-    Offer-CollectionRead:
-      deprecated: false
-      description: An Offer object represent a public listening
-      example:
-        seller: https://example.com/
-        unitPrice: 125.54
-        iri: https://example.com/
-        ulid: ulid
-        nature: physical_item
-        title: ASUS TUF X570-PLUS GAMING Motherboard
-        overrideRateCommissionSafeCheckout: 0.8008281904610115
-        itemCount: 1
-        shippingAllowed: true
-        handDeliveryAllowed: true
-        enforcePersonaAuth: true
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        condition: USED
-        shippingCarriers:
-        - SwissPost
-        - SwissPost
-        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-        currencyCode: EUR
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-      properties:
-        ulid:
-          type: string
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          nullable: true
-          type: string
-        enforcePersonaAuth:
-          default: true
-          description: Mean that the generated url cannot be accessed without a generated
-            token for a Persona. Disallow external registration.
-          example: true
-          type: boolean
-        overrideRateCommissionSafeCheckout:
-          description: Override YOUR platform fees for that particular Offer.
-          nullable: true
-          type: number
-        seller:
-          description: "If the seller is actually YOUR organization, set it to NULL."
-          example: https://example.com/
-          format: iri-reference
-          type: string
-        nature:
-          default: physical_item
-          description: This WILL affect the assigned workflow. Choosing service will
-            disable delivery for example. Refer to our technical hub for more information.
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          example: physical_item
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          type: string
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-        currencyCode:
-          default: EUR
-          example: EUR
-          nullable: true
-          type: string
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        condition:
-          default: USED
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          example: USED
-          type: string
-        shippingAllowed:
-          description: "That toggle allows the seller to propose shipping for its\
-            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
-            \ generated. Also, it will restrict the carrier to the limited subset\
-            \ defined."
-          type: boolean
-        handDeliveryAllowed:
-          default: true
-          description: Enable both parties to finalize the transaction in person rather
-            than using delivery. A QR Code must be scanned by the seller once the
-            buyer claims the product.
-          example: true
-          type: boolean
-        shippingCarriers:
-          description: "If you wish to enable automated shipping label generation\
-            \ through a specific provider, specify it there."
-          items:
-            enum:
-            - SwissPost
-            - Colissimo
-            - MondialRelay
-            type: string
-          type: array
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        updatedAt:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-        iri:
-          example: https://example.com/
-          format: iri-reference
-          readOnly: true
-          type: string
-      required:
-      - enforcePersonaAuth
-      - handDeliveryAllowed
-      - nature
-      - seller
-      - shippingAllowed
-      - ulid
-    Offer-IndependentWrite:
-      deprecated: false
-      description: An Offer object represent a public listening
-      properties:
-        redirectUrl:
-          description: Fill-in that field IF you intend to redirect your customer
-            instead of using a WebView.
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          nullable: true
-          type: string
-        seller:
-          $ref: '#/components/schemas/Offer-Persona-IndependentWrite'
-        nature:
-          default: physical_item
-          description: This WILL affect the assigned workflow. Choosing service will
-            disable delivery for example. Refer to our technical hub for more information.
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          example: physical_item
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          maxLength: 250
-          type: string
-          nullable: true
-        description:
-          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-            \ id est laborum."
-          maxLength: 100000
-          nullable: true
-          type: string
-          nullable: true
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-          nullable: true
-        currencyCode:
-          default: EUR
-          example: EUR
-          externalDocs:
-            url: https://schema.org/priceCurrency
-          nullable: true
-          type: string
-          nullable: true
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        condition:
-          default: USED
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          example: USED
-          type: string
-        weightInGram:
-          nullable: true
-          type: integer
-        shippingAllowed:
-          description: "That toggle allows the seller to propose shipping for its\
-            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
-            \ generated. Also, it will restrict the carrier to the limited subset\
-            \ defined."
-          type: boolean
-        handDeliveryAllowed:
-          default: true
-          description: Enable both parties to finalize the transaction in person rather
-            than using delivery. A QR Code must be scanned by the seller once the
-            buyer claims the product.
-          example: true
-          type: boolean
-        shippingCarriers:
-          description: "If you wish to enable automated shipping label generation\
-            \ through a specific provider, specify it there."
-          items:
-            enum:
-            - SwissPost
-            - Colissimo
-            - MondialRelay
-            type: string
-          type: array
-          uniqueItems: true
-        eanCode:
-          example: "4718017388450"
-          nullable: true
-          type: string
-        canBeSoldSeparately:
-          default: true
-          description: "Set this flag to false to forbid a potential buyer to acquire\
-            \ this item separately. \n        This is only useful in a BulkOffer context."
-          example: true
-          type: boolean
-        metadata:
-          items:
-            $ref: '#/components/schemas/Offer-Metadata-IndependentWrite'
-          type: array
-      required:
-      - seller
-    Offer-Media-Read:
-      deprecated: false
-      description: ""
-      example:
-        publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-      properties:
-        publicUrl:
-          example: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          type: string
-      required:
-      - publicUrl
-    Offer-Metadata-IndependentWrite:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Offer-Metadata-Update:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Offer-Metadata-Write:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Offer-Organization-Read:
-      deprecated: false
-      description: ""
-      example:
-        warningColor: warningColor
-        errorColor: errorColor
-        rateCommissionSafeCheckout: 6.027456183070403
-        accentColor: accentColor
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        primaryColor: primaryColor
-        infoColor: infoColor
-        personaAuthPortalToggle: true
-        directNotificationToggle: true
-        flatRateEnabled: true
-        websiteUrl: websiteUrl
-        successColor: successColor
-        name: name
-        logo:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        customBaseUrl: customBaseUrl
-        secondaryColor: secondaryColor
-      properties:
-        name:
-          type: string
-        websiteUrl:
-          nullable: true
-          type: string
-        customBaseUrl:
-          nullable: true
-          type: string
-        icon:
-          $ref: '#/components/schemas/Offer-Media-Read'
-        logo:
-          $ref: '#/components/schemas/Offer-Media-Read'
-        primaryColor:
-          nullable: true
-          type: string
-        secondaryColor:
-          nullable: true
-          type: string
-        accentColor:
-          nullable: true
-          type: string
-        errorColor:
-          nullable: true
-          type: string
-        infoColor:
-          nullable: true
-          type: string
-        successColor:
-          nullable: true
-          type: string
-        warningColor:
-          nullable: true
-          type: string
-        directNotificationToggle:
-          default: true
-          example: true
-          type: boolean
-        personaAuthPortalToggle:
-          type: boolean
-        flatRateEnabled:
-          readOnly: true
-          type: boolean
-        rateCommissionSafeCheckout:
-          type: number
-      required:
-      - directNotificationToggle
-      - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
-    Offer-Persona-IndependentWrite:
-      deprecated: false
-      description: ""
-      properties:
-        firstName:
-          example: John
-          maxLength: 64
-          minLength: 1
-          type: string
-        lastName:
-          example: Doe
-          maxLength: 64
-          minLength: 1
-          type: string
-        gender:
-          default: RATHER_NOT_SAY
-          enum:
-          - MALE
-          - FEMALE
-          - OTHER
-          - RATHER_NOT_SAY
-          example: RATHER_NOT_SAY
-          type: string
-        dateOfBirth:
-          format: date
-          nullable: true
-          type: string
-        language:
-          description: "That data is used for rendering the frontend application with\
-            \ given language. If not set, will be inferred. Custom codes can be issued\
-            \ for specific requirements."
-          example: fr
-          nullable: true
-          type: string
-        email:
-          example: john.doe@gmail.com
-          externalDocs:
-            url: https://schema.org/email
-          format: email
-          nullable: true
-          type: string
-        mobilePhoneNumber:
-          example: "+33745214529"
-          nullable: true
-          type: string
-        address:
-          $ref: '#/components/schemas/Offer-Address-IndependentWrite'
-        metadata:
-          description: You can assign different meta to your Persona object for different
-            purposes. eg. Ease searching.
-          items:
-            $ref: '#/components/schemas/Offer-Metadata-IndependentWrite'
-          maxItems: 16
-          type: array
-      required:
-      - firstName
-      - gender
-      - lastName
-    Offer-PostCreationRead:
-      deprecated: false
-      description: An Offer object represent a public listening
-      example:
-        url: https://next.tripartie.app/?c=01ARZ3NDEKTSV4RRFFQ69G5FAV
-      properties:
-        url:
-          example: https://next.tripartie.app/?c=01ARZ3NDEKTSV4RRFFQ69G5FAV
-          nullable: true
-          readOnly: true
-          type: string
-    Offer-Read:
-      deprecated: false
-      description: An Offer object represent a public listening
-      example:
-        seller: https://example.com/
-        unitPrice: 125.54
-        iri: https://example.com/
-        redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-        ulid: ulid
-        nature: physical_item
-        title: ASUS TUF X570-PLUS GAMING Motherboard
-        overrideRateCommissionSafeCheckout: 0.8008281904610115
-        itemCount: 1
-        shippingAllowed: true
-        canBeSoldSeparately: true
-        handDeliveryAllowed: true
-        enforcePersonaAuth: true
-        weightInGram: 1
-        medias:
-        - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        - publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        condition: USED
-        shippingCarriers:
-        - SwissPost
-        - SwissPost
-        eanCode: "4718017388450"
-        organization:
-          warningColor: warningColor
-          errorColor: errorColor
-          rateCommissionSafeCheckout: 6.027456183070403
-          accentColor: accentColor
-          icon:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          primaryColor: primaryColor
-          infoColor: infoColor
-          personaAuthPortalToggle: true
-          directNotificationToggle: true
-          flatRateEnabled: true
-          websiteUrl: websiteUrl
-          successColor: successColor
-          name: name
-          logo:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          customBaseUrl: customBaseUrl
-          secondaryColor: secondaryColor
-        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-        currencyCode: EUR
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-      properties:
-        ulid:
-          type: string
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          nullable: true
-          type: string
-        enforcePersonaAuth:
-          default: true
-          description: Mean that the generated url cannot be accessed without a generated
-            token for a Persona. Disallow external registration.
-          example: true
-          type: boolean
-        overrideRateCommissionSafeCheckout:
-          description: Override YOUR platform fees for that particular Offer.
-          nullable: true
-          type: number
-        redirectUrl:
-          description: Fill-in that field IF you intend to redirect your customer
-            instead of using a WebView.
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-          nullable: true
-          type: string
-        organization:
-          $ref: '#/components/schemas/Offer-Organization-Read'
-        seller:
-          description: "If the seller is actually YOUR organization, set it to NULL."
-          example: https://example.com/
-          format: iri-reference
-          type: string
-        nature:
-          default: physical_item
-          description: This WILL affect the assigned workflow. Choosing service will
-            disable delivery for example. Refer to our technical hub for more information.
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          example: physical_item
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          type: string
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-        currencyCode:
-          default: EUR
-          example: EUR
-          nullable: true
-          type: string
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        condition:
-          default: USED
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          example: USED
-          type: string
-        weightInGram:
-          nullable: true
-          type: integer
-        shippingAllowed:
-          description: "That toggle allows the seller to propose shipping for its\
-            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
-            \ generated. Also, it will restrict the carrier to the limited subset\
-            \ defined."
-          type: boolean
-        handDeliveryAllowed:
-          default: true
-          description: Enable both parties to finalize the transaction in person rather
-            than using delivery. A QR Code must be scanned by the seller once the
-            buyer claims the product.
-          example: true
-          type: boolean
-        shippingCarriers:
-          description: "If you wish to enable automated shipping label generation\
-            \ through a specific provider, specify it there."
-          items:
-            enum:
-            - SwissPost
-            - Colissimo
-            - MondialRelay
-            type: string
-          type: array
-        eanCode:
-          example: "4718017388450"
-          nullable: true
-          type: string
-        canBeSoldSeparately:
-          default: true
-          description: "Set this flag to false to forbid a potential buyer to acquire\
-            \ this item separately. \n        This is only useful in a BulkOffer context."
-          example: true
-          type: boolean
-        medias:
-          items:
-            $ref: '#/components/schemas/Offer-Media-Read'
-          type: array
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        updatedAt:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-        iri:
-          example: https://example.com/
-          format: iri-reference
-          readOnly: true
-          type: string
-      required:
-      - canBeSoldSeparately
-      - enforcePersonaAuth
-      - handDeliveryAllowed
-      - medias
-      - nature
-      - seller
-      - shippingAllowed
-      - ulid
-    Offer-Update:
-      deprecated: false
-      description: ""
-      properties:
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          nullable: true
-          type: string
-        enforcePersonaAuth:
-          default: true
-          description: Mean that the generated url cannot be accessed without a generated
-            token for a Persona. Disallow external registration.
-          example: true
-          type: boolean
-        overrideRateCommissionSafeCheckout:
-          description: Override YOUR platform fees for that particular Offer.
-          nullable: true
-          type: number
-        redirectUrl:
-          description: Fill-in that field IF you intend to redirect your customer
-            instead of using a WebView.
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-          nullable: true
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          type: string
-        description:
-          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-            \ id est laborum."
-          nullable: true
-          type: string
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-        currencyCode:
-          default: EUR
-          example: EUR
-          nullable: true
-          type: string
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        weightInGram:
-          nullable: true
-          type: integer
-        shippingAllowed:
-          description: "That toggle allows the seller to propose shipping for its\
-            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
-            \ generated. Also, it will restrict the carrier to the limited subset\
-            \ defined."
-          type: boolean
-        handDeliveryAllowed:
-          default: true
-          description: Enable both parties to finalize the transaction in person rather
-            than using delivery. A QR Code must be scanned by the seller once the
-            buyer claims the product.
-          example: true
-          type: boolean
-        shippingCarriers:
-          description: "If you wish to enable automated shipping label generation\
-            \ through a specific provider, specify it there."
-          items:
-            enum:
-            - SwissPost
-            - Colissimo
-            - MondialRelay
-            type: string
-          type: array
-          uniqueItems: true
-        eanCode:
-          example: "4718017388450"
-          nullable: true
-          type: string
-        canBeSoldSeparately:
-          default: true
-          description: "Set this flag to false to forbid a potential buyer to acquire\
-            \ this item separately. \n        This is only useful in a BulkOffer context."
-          example: true
-          type: boolean
-        metadata:
-          items:
-            $ref: '#/components/schemas/Offer-Metadata-Update'
-          type: array
-    Offer-Write:
-      deprecated: false
-      description: ""
-      properties:
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          nullable: true
-          type: string
-        enforcePersonaAuth:
-          default: true
-          description: Mean that the generated url cannot be accessed without a generated
-            token for a Persona. Disallow external registration.
-          example: true
-          type: boolean
-        overrideRateCommissionSafeCheckout:
-          description: Override YOUR platform fees for that particular Offer.
-          nullable: true
-          type: number
-        redirectUrl:
-          description: Fill-in that field IF you intend to redirect your customer
-            instead of using a WebView.
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-          externalDocs:
-            url: https://schema.org/url
-          format: uri
-          nullable: true
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          maxLength: 250
-          type: string
-          nullable: true
-        description:
-          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-            \ id est laborum."
-          maxLength: 100000
-          nullable: true
-          type: string
-          nullable: true
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-          nullable: true
-        currencyCode:
-          default: EUR
-          example: EUR
-          externalDocs:
-            url: https://schema.org/priceCurrency
-          nullable: true
-          type: string
-          nullable: true
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        condition:
-          default: USED
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          example: USED
-          type: string
-        weightInGram:
-          nullable: true
-          type: integer
-        shippingAllowed:
-          description: "That toggle allows the seller to propose shipping for its\
-            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
-            \ generated. Also, it will restrict the carrier to the limited subset\
-            \ defined."
-          type: boolean
-        handDeliveryAllowed:
-          default: true
-          description: Enable both parties to finalize the transaction in person rather
-            than using delivery. A QR Code must be scanned by the seller once the
-            buyer claims the product.
-          example: true
-          type: boolean
-        shippingCarriers:
-          description: "If you wish to enable automated shipping label generation\
-            \ through a specific provider, specify it there."
-          items:
-            enum:
-            - SwissPost
-            - Colissimo
-            - MondialRelay
-            type: string
-          type: array
-          uniqueItems: true
-        eanCode:
-          example: "4718017388450"
-          nullable: true
-          type: string
-        canBeSoldSeparately:
-          default: true
-          description: "Set this flag to false to forbid a potential buyer to acquire\
-            \ this item separately. \n        This is only useful in a BulkOffer context."
-          example: true
-          type: boolean
-        metadata:
-          items:
-            $ref: '#/components/schemas/Offer-Metadata-Write'
-          type: array
     Offer-dispute.read:
       deprecated: false
       description: ""
@@ -11859,8 +8450,6 @@ components:
       deprecated: false
       description: ""
       example:
-        rateCommissionSafeCheckout: 6.027456183070403
-        safeCheckoutToggle: true
         counterProposalToggle: true
         icon:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
@@ -11869,7 +8458,6 @@ components:
         directNotificationToggle: true
         flatRateEnabled: true
         websiteUrl: websiteUrl
-        resolutionCenterToggle: true
         name: name
         logo:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
@@ -11899,12 +8487,6 @@ components:
           default: true
           example: true
           type: boolean
-        safeCheckoutToggle:
-          type: boolean
-        resolutionCenterToggle:
-          default: true
-          example: true
-          type: boolean
         internalMessagingToggle:
           default: true
           example: true
@@ -11922,17 +8504,12 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - automatedReturnToggle
       - counterProposalToggle
       - directNotificationToggle
       - internalMessagingToggle
       - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
-      - resolutionCenterToggle
-      - safeCheckoutToggle
     Organization-Media-CollectionRead:
       deprecated: false
       description: ""
@@ -11965,33 +8542,24 @@ components:
       deprecated: false
       description: ""
       example:
-        errorColor: errorColor
-        rateCommissionSafeCheckout: 0.8008281904610115
-        safeCheckoutToggle: true
         counterProposalToggle: true
         icon:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         primaryColor: primaryColor
-        infoColor: infoColor
         personaAuthPortalToggle: true
+        automatedReturnToggle: true
+        directNotificationToggle: true
         flatRateEnabled: true
         domainVerified: true
         anonymityLevel: PARTIAL_FIRST_NAME
         websiteUrl: websiteUrl
-        resolutionCenterToggle: true
+        name: name
         logo:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         internalMessagingToggle: true
-        warningColor: warningColor
-        accentColor: accentColor
-        automatedReturnToggle: true
-        directNotificationToggle: true
-        successColor: successColor
-        name: name
         commercialRegistryNumber: commercialRegistryNumber
         customBaseUrl: customBaseUrl
         vatNumber: vatNumber
-        secondaryColor: secondaryColor
       properties:
         name:
           type: string
@@ -12015,24 +8583,6 @@ components:
         primaryColor:
           nullable: true
           type: string
-        secondaryColor:
-          nullable: true
-          type: string
-        accentColor:
-          nullable: true
-          type: string
-        errorColor:
-          nullable: true
-          type: string
-        infoColor:
-          nullable: true
-          type: string
-        successColor:
-          nullable: true
-          type: string
-        warningColor:
-          nullable: true
-          type: string
         directNotificationToggle:
           default: true
           example: true
@@ -12045,12 +8595,6 @@ components:
           - TRANSPARENT
           example: PARTIAL_FIRST_NAME
           type: string
-        safeCheckoutToggle:
-          type: boolean
-        resolutionCenterToggle:
-          default: true
-          example: true
-          type: boolean
         internalMessagingToggle:
           default: true
           example: true
@@ -12068,8 +8612,6 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - anonymityLevel
       - automatedReturnToggle
@@ -12078,9 +8620,6 @@ components:
       - domainVerified
       - internalMessagingToggle
       - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
-      - resolutionCenterToggle
-      - safeCheckoutToggle
     Organization-Update:
       deprecated: false
       description: ""
@@ -12113,24 +8652,6 @@ components:
         primaryColor:
           nullable: true
           type: string
-        secondaryColor:
-          nullable: true
-          type: string
-        accentColor:
-          nullable: true
-          type: string
-        errorColor:
-          nullable: true
-          type: string
-        infoColor:
-          nullable: true
-          type: string
-        successColor:
-          nullable: true
-          type: string
-        warningColor:
-          nullable: true
-          type: string
         directNotificationToggle:
           default: true
           example: true
@@ -12160,29 +8681,24 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - name
     Organization-UserRead:
       deprecated: false
       description: ""
       example:
-        rateCommissionSafeCheckout: 1.4658129805029452
-        safeCheckoutToggle: true
-        counterProposalToggle: true
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        personaAuthPortalToggle: true
-        automatedReturnToggle: true
         flatRateEnabled: true
         domainVerified: true
-        resolutionCenterToggle: true
+        counterProposalToggle: true
         name: name
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         logo:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         internalMessagingToggle: true
         id: 6
+        personaAuthPortalToggle: true
+        automatedReturnToggle: true
       properties:
         id:
           readOnly: true
@@ -12195,12 +8711,6 @@ components:
           $ref: '#/components/schemas/Media-UserRead'
         logo:
           $ref: '#/components/schemas/Media-UserRead'
-        safeCheckoutToggle:
-          type: boolean
-        resolutionCenterToggle:
-          default: true
-          example: true
-          type: boolean
         internalMessagingToggle:
           default: true
           example: true
@@ -12218,17 +8728,12 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - automatedReturnToggle
       - counterProposalToggle
       - domainVerified
       - internalMessagingToggle
       - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
-      - resolutionCenterToggle
-      - safeCheckoutToggle
     Organization-dispute.read:
       deprecated: false
       description: ""
@@ -12248,24 +8753,6 @@ components:
         primaryColor:
           nullable: true
           type: string
-        secondaryColor:
-          nullable: true
-          type: string
-        accentColor:
-          nullable: true
-          type: string
-        errorColor:
-          nullable: true
-          type: string
-        infoColor:
-          nullable: true
-          type: string
-        successColor:
-          nullable: true
-          type: string
-        warningColor:
-          nullable: true
-          type: string
         directNotificationToggle:
           default: true
           example: true
@@ -12279,13 +8766,10 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - counterProposalToggle
       - directNotificationToggle
       - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
     Parcel:
       deprecated: false
       description: ""
@@ -13267,7 +9751,7 @@ components:
         lastName: Doe
         mobilePhoneNumber: "+33745214529"
         language: fr
-        id: 6
+        id: 0
         email: john.doe@gmail.com
       properties:
         id:
@@ -13294,530 +9778,6 @@ components:
           example: "+33745214529"
           nullable: true
           type: string
-    Transaction:
-      deprecated: false
-      description: ""
-      type: object
-    Transaction-CollectionRead:
-      deprecated: false
-      description: ""
-      example:
-        offer:
-          seller: https://example.com/
-          unitPrice: 125.54
-          medias:
-          - https://example.com/
-          - https://example.com/
-          createdAt: 2000-01-23T04:56:07.000+00:00
-          condition: USED
-          ulid: ulid
-          nature: physical_item
-          publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          title: ASUS TUF X570-PLUS GAMING Motherboard
-          currencyCode: EUR
-          itemCount: 1
-          updatedAt: 2000-01-23T04:56:07.000+00:00
-        fees: 0.8008281904610115
-        ulid: ulid
-        buyer: https://example.com/
-        status: CREATED
-      properties:
-        ulid:
-          type: string
-        offer:
-          $ref: '#/components/schemas/Transaction-Offer-CollectionRead'
-        buyer:
-          example: https://example.com/
-          format: iri-reference
-          type: string
-        status:
-          default: CREATED
-          enum:
-          - CREATED
-          - AUTHORIZED
-          - REFUSED
-          - ACCEPTED
-          - SHIPPED
-          - IN_TRANSIT
-          - DELIVERED
-          - COMPLETED
-          - DISPUTED
-          - null
-          example: CREATED
-          nullable: true
-          type: string
-        fees:
-          nullable: true
-          type: number
-      required:
-      - buyer
-      - offer
-      - ulid
-    Transaction-Metadata-Read:
-      deprecated: false
-      description: ""
-      example:
-        value: "54412"
-        key: External-ID
-      properties:
-        key:
-          example: External-ID
-          type: string
-        value:
-          example: "54412"
-          nullable: true
-          type: string
-    Transaction-Offer-CollectionRead:
-      deprecated: false
-      description: ""
-      example:
-        seller: https://example.com/
-        unitPrice: 125.54
-        medias:
-        - https://example.com/
-        - https://example.com/
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        condition: USED
-        ulid: ulid
-        nature: physical_item
-        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-        title: ASUS TUF X570-PLUS GAMING Motherboard
-        currencyCode: EUR
-        itemCount: 1
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-      properties:
-        ulid:
-          type: string
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          nullable: true
-          type: string
-        seller:
-          description: "If the seller is actually YOUR organization, set it to NULL."
-          example: https://example.com/
-          format: iri-reference
-          type: string
-        nature:
-          default: physical_item
-          description: This WILL affect the assigned workflow. Choosing service will
-            disable delivery for example. Refer to our technical hub for more information.
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          example: physical_item
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          type: string
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-        currencyCode:
-          default: EUR
-          example: EUR
-          nullable: true
-          type: string
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        condition:
-          default: USED
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          example: USED
-          type: string
-        medias:
-          items:
-            example: https://example.com/
-            format: iri-reference
-            type: string
-          type: array
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        updatedAt:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-      required:
-      - medias
-      - nature
-      - seller
-      - ulid
-    Transaction-Offer-Read:
-      deprecated: false
-      description: ""
-      example:
-        seller: https://example.com/
-        unitPrice: 125.54
-        metadata:
-        - value: "54412"
-          key: External-ID
-        - value: "54412"
-          key: External-ID
-        redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-        ulid: ulid
-        nature: physical_item
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
-          \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-          \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-          \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-          \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-          \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-          \ id est laborum."
-        title: ASUS TUF X570-PLUS GAMING Motherboard
-        overrideRateCommissionSafeCheckout: 0.8008281904610115
-        itemCount: 1
-        shippingAllowed: true
-        canBeSoldSeparately: true
-        handDeliveryAllowed: true
-        enforcePersonaAuth: true
-        weightInGram: 6
-        medias:
-        - https://example.com/
-        - https://example.com/
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        condition: USED
-        shippingCarriers:
-        - SwissPost
-        - SwissPost
-        eanCode: "4718017388450"
-        publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-        currencyCode: EUR
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-      properties:
-        ulid:
-          type: string
-        publicUrl:
-          description: "If specified, there would be not need for you to fill-in details.\
-            \ Must be accessible over WAN."
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          nullable: true
-          type: string
-        enforcePersonaAuth:
-          default: true
-          description: Mean that the generated url cannot be accessed without a generated
-            token for a Persona. Disallow external registration.
-          example: true
-          type: boolean
-        overrideRateCommissionSafeCheckout:
-          description: Override YOUR platform fees for that particular Offer.
-          nullable: true
-          type: number
-        redirectUrl:
-          description: Fill-in that field IF you intend to redirect your customer
-            instead of using a WebView.
-          example: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-          nullable: true
-          type: string
-        seller:
-          description: "If the seller is actually YOUR organization, set it to NULL."
-          example: https://example.com/
-          format: iri-reference
-          type: string
-        nature:
-          default: physical_item
-          description: This WILL affect the assigned workflow. Choosing service will
-            disable delivery for example. Refer to our technical hub for more information.
-          enum:
-          - service
-          - physical_item
-          - dematerialized_item
-          - rent_item
-          example: physical_item
-          type: string
-        title:
-          example: ASUS TUF X570-PLUS GAMING Motherboard
-          type: string
-        description:
-          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-            \ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-            \ id est laborum."
-          nullable: true
-          type: string
-        unitPrice:
-          example: 125.54
-          nullable: true
-          type: number
-        currencyCode:
-          default: EUR
-          example: EUR
-          nullable: true
-          type: string
-        itemCount:
-          default: 1
-          example: 1
-          type: integer
-        condition:
-          default: USED
-          enum:
-          - NEW
-          - USED
-          - DAMAGED
-          - DETERIORATED
-          - UNRECOVERABLE
-          example: USED
-          type: string
-        weightInGram:
-          nullable: true
-          type: integer
-        shippingAllowed:
-          description: "That toggle allows the seller to propose shipping for its\
-            \ item. If set in conjunction of shippingCarrier, the label will be automatically\
-            \ generated. Also, it will restrict the carrier to the limited subset\
-            \ defined."
-          type: boolean
-        handDeliveryAllowed:
-          default: true
-          description: Enable both parties to finalize the transaction in person rather
-            than using delivery. A QR Code must be scanned by the seller once the
-            buyer claims the product.
-          example: true
-          type: boolean
-        shippingCarriers:
-          description: "If you wish to enable automated shipping label generation\
-            \ through a specific provider, specify it there."
-          items:
-            enum:
-            - SwissPost
-            - Colissimo
-            - MondialRelay
-            type: string
-          type: array
-        eanCode:
-          example: "4718017388450"
-          nullable: true
-          type: string
-        canBeSoldSeparately:
-          default: true
-          description: "Set this flag to false to forbid a potential buyer to acquire\
-            \ this item separately. \n        This is only useful in a BulkOffer context."
-          example: true
-          type: boolean
-        metadata:
-          items:
-            $ref: '#/components/schemas/Transaction-Metadata-Read'
-          type: array
-        medias:
-          items:
-            example: https://example.com/
-            format: iri-reference
-            type: string
-          type: array
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        updatedAt:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-      required:
-      - canBeSoldSeparately
-      - enforcePersonaAuth
-      - handDeliveryAllowed
-      - medias
-      - nature
-      - seller
-      - shippingAllowed
-      - ulid
-    Transaction-Parcel-Read:
-      deprecated: false
-      description: ""
-      example:
-        identifier: 8J001271466474
-        createdAt: 2000-01-23T04:56:07.000+00:00
-        carrier: SwissPost
-        price: 4.88
-        refundable: true
-        currency: EUR
-        status: CREATED
-        updatedAt: 2000-01-23T04:56:07.000+00:00
-      properties:
-        carrier:
-          enum:
-          - SwissPost
-          - MondialRelay
-          - Colissimo
-          - Dhl
-          - Chronopost
-          - ColisPrive
-          - Dpd
-          - Ups
-          - FedEx
-          - RelaisColis
-          type: string
-        identifier:
-          example: 8J001271466474
-          maxLength: 128
-          minLength: 4
-          type: string
-        price:
-          example: 4.88
-          minimum: 0
-          nullable: true
-          type: number
-        refundable:
-          type: boolean
-        currency:
-          default: EUR
-          example: EUR
-          externalDocs:
-            url: https://schema.org/priceCurrency
-          nullable: true
-          type: string
-        status:
-          enum:
-          - CREATED
-          - SHIPPED
-          - IN_TRANSIT
-          - DELIVERED
-          - ERROR
-          - ACCEPTED
-          - REFUSED
-          - null
-          nullable: true
-          type: string
-        createdAt:
-          format: date-time
-          readOnly: true
-          type: string
-        updatedAt:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-      required:
-      - carrier
-      - identifier
-    Transaction-Read:
-      deprecated: false
-      description: ""
-      example:
-        offer:
-          seller: https://example.com/
-          unitPrice: 125.54
-          metadata:
-          - value: "54412"
-            key: External-ID
-          - value: "54412"
-            key: External-ID
-          redirectUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold?checkout=true
-          ulid: ulid
-          nature: physical_item
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\
-            \ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-            \ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-            \ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-            \ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\
-            \ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim\
-            \ id est laborum."
-          title: ASUS TUF X570-PLUS GAMING Motherboard
-          overrideRateCommissionSafeCheckout: 0.8008281904610115
-          itemCount: 1
-          shippingAllowed: true
-          canBeSoldSeparately: true
-          handDeliveryAllowed: true
-          enforcePersonaAuth: true
-          weightInGram: 6
-          medias:
-          - https://example.com/
-          - https://example.com/
-          createdAt: 2000-01-23T04:56:07.000+00:00
-          condition: USED
-          shippingCarriers:
-          - SwissPost
-          - SwissPost
-          eanCode: "4718017388450"
-          publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
-          currencyCode: EUR
-          updatedAt: 2000-01-23T04:56:07.000+00:00
-        fees: 1.4658129805029452
-        refundableFees: true
-        metadata:
-        - value: "54412"
-          key: External-ID
-        - value: "54412"
-          key: External-ID
-        ulid: ulid
-        buyer: https://example.com/
-        status: CREATED
-        parcels:
-        - identifier: 8J001271466474
-          createdAt: 2000-01-23T04:56:07.000+00:00
-          carrier: SwissPost
-          price: 4.88
-          refundable: true
-          currency: EUR
-          status: CREATED
-          updatedAt: 2000-01-23T04:56:07.000+00:00
-        - identifier: 8J001271466474
-          createdAt: 2000-01-23T04:56:07.000+00:00
-          carrier: SwissPost
-          price: 4.88
-          refundable: true
-          currency: EUR
-          status: CREATED
-          updatedAt: 2000-01-23T04:56:07.000+00:00
-      properties:
-        ulid:
-          type: string
-        offer:
-          $ref: '#/components/schemas/Transaction-Offer-Read'
-        buyer:
-          example: https://example.com/
-          format: iri-reference
-          type: string
-        status:
-          default: CREATED
-          enum:
-          - CREATED
-          - AUTHORIZED
-          - REFUSED
-          - ACCEPTED
-          - SHIPPED
-          - IN_TRANSIT
-          - DELIVERED
-          - COMPLETED
-          - DISPUTED
-          - null
-          example: CREATED
-          nullable: true
-          type: string
-        fees:
-          nullable: true
-          type: number
-        refundableFees:
-          type: boolean
-        metadata:
-          items:
-            $ref: '#/components/schemas/Transaction-Metadata-Read'
-          type: array
-        parcels:
-          items:
-            $ref: '#/components/schemas/Transaction-Parcel-Read'
-          type: array
-      required:
-      - buyer
-      - offer
-      - ulid
     Transaction-dispute.read:
       deprecated: false
       description: ""
@@ -13898,9 +9858,9 @@ components:
         iri: https://example.com/
         salt: salt
         totpUri: totpUri
+        secondAuthFactor: true
         newPassword: new-secr$t
         avatar: https://example.com/
-        "2fa": true
         consentMailAds: true
         firstName: Jacob
         medias:
@@ -14100,7 +10060,7 @@ components:
         impersonatingOrganization:
           readOnly: true
           type: boolean
-        "2fa":
+        secondAuthFactor:
           readOnly: true
           type: boolean
       required:
@@ -14156,12 +10116,12 @@ components:
         iri: https://example.com/
         preferredLanguage: fr
         consentMailNotification: true
+        secondAuthFactor: true
         roles:
         - ROLE_ORGANIZATION_OWNER
         avatar:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         totpEnabled: true
-        "2fa": true
         intlPhoneNumber: "+33700000000"
         consentMailAds: true
         firstName: Jacob
@@ -14169,21 +10129,18 @@ components:
         impersonatingOrganization: true
         publicName: Nickname
         organization:
-          rateCommissionSafeCheckout: 1.4658129805029452
-          safeCheckoutToggle: true
-          counterProposalToggle: true
-          icon:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          personaAuthPortalToggle: true
-          automatedReturnToggle: true
           flatRateEnabled: true
           domainVerified: true
-          resolutionCenterToggle: true
+          counterProposalToggle: true
           name: name
+          icon:
+            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
           logo:
             publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
           internalMessagingToggle: true
           id: 6
+          personaAuthPortalToggle: true
+          automatedReturnToggle: true
         originCountry: FRA
         lockdown: true
         lastSuccessfulLogIn: 2000-01-23T04:56:07.000+00:00
@@ -14279,7 +10236,7 @@ components:
         impersonatingOrganization:
           readOnly: true
           type: boolean
-        "2fa":
+        secondAuthFactor:
           readOnly: true
           type: boolean
       required:
@@ -14293,12 +10250,12 @@ components:
       example:
         lastName: TAHRI
         iri: https://example.com/
+        secondAuthFactor: true
         roles:
         - ROLE_ORGANIZATION_OWNER
         avatar:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         totpEnabled: true
-        "2fa": true
         intlPhoneNumber: "+33700000000"
         firstName: Jacob
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -14375,7 +10332,7 @@ components:
           format: iri-reference
           readOnly: true
           type: string
-        "2fa":
+        secondAuthFactor:
           readOnly: true
           type: boolean
       required:
@@ -14489,21 +10446,18 @@ components:
       deprecated: false
       description: ""
       example:
-        rateCommissionSafeCheckout: 1.4658129805029452
-        safeCheckoutToggle: true
-        counterProposalToggle: true
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        personaAuthPortalToggle: true
-        automatedReturnToggle: true
         flatRateEnabled: true
         domainVerified: true
-        resolutionCenterToggle: true
+        counterProposalToggle: true
         name: name
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         logo:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         internalMessagingToggle: true
         id: 6
+        personaAuthPortalToggle: true
+        automatedReturnToggle: true
       properties:
         id:
           readOnly: true
@@ -14516,12 +10470,6 @@ components:
           $ref: '#/components/schemas/User-Media-AuthenticatedRead'
         logo:
           $ref: '#/components/schemas/User-Media-AuthenticatedRead'
-        safeCheckoutToggle:
-          type: boolean
-        resolutionCenterToggle:
-          default: true
-          example: true
-          type: boolean
         internalMessagingToggle:
           default: true
           example: true
@@ -14539,17 +10487,12 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - automatedReturnToggle
       - counterProposalToggle
       - domainVerified
       - internalMessagingToggle
       - personaAuthPortalToggle
-      - rateCommissionSafeCheckout
-      - resolutionCenterToggle
-      - safeCheckoutToggle
     User-Organization-CollectionRead:
       deprecated: false
       description: ""
@@ -14566,21 +10509,18 @@ components:
       deprecated: false
       description: ""
       example:
-        rateCommissionSafeCheckout: 6.027456183070403
-        safeCheckoutToggle: true
-        counterProposalToggle: true
-        icon:
-          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-        personaAuthPortalToggle: true
-        automatedReturnToggle: true
         flatRateEnabled: true
         domainVerified: true
-        resolutionCenterToggle: true
+        counterProposalToggle: true
         name: name
+        icon:
+          publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         logo:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         internalMessagingToggle: true
         id: 0
+        personaAuthPortalToggle: true
+        automatedReturnToggle: true
       properties:
         id:
           readOnly: true
@@ -14594,12 +10534,6 @@ components:
           $ref: '#/components/schemas/User-Media-Read'
         logo:
           $ref: '#/components/schemas/User-Media-Read'
-        safeCheckoutToggle:
-          type: boolean
-        resolutionCenterToggle:
-          default: true
-          example: true
-          type: boolean
         internalMessagingToggle:
           default: true
           example: true
@@ -14617,8 +10551,6 @@ components:
         flatRateEnabled:
           readOnly: true
           type: boolean
-        rateCommissionSafeCheckout:
-          type: number
       required:
       - name
     User-Organization-Write:
@@ -14778,12 +10710,12 @@ components:
         iri: https://example.com/
         preferredLanguage: fr
         consentMailNotification: true
+        secondAuthFactor: true
         roles:
         - ROLE_ORGANIZATION_OWNER
         avatar:
           publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
         totpEnabled: true
-        "2fa": true
         intlPhoneNumber: "+33700000000"
         consentMailAds: true
         firstName: Jacob
@@ -14791,21 +10723,18 @@ components:
         impersonatingOrganization: true
         publicName: Nickname
         organization:
-          rateCommissionSafeCheckout: 1.4658129805029452
-          safeCheckoutToggle: true
-          counterProposalToggle: true
-          icon:
-            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-          personaAuthPortalToggle: true
-          automatedReturnToggle: true
           flatRateEnabled: true
           domainVerified: true
-          resolutionCenterToggle: true
+          counterProposalToggle: true
           name: name
+          icon:
+            publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
           logo:
             publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
           internalMessagingToggle: true
           id: 6
+          personaAuthPortalToggle: true
+          automatedReturnToggle: true
         originCountry: FRA
         lockdown: true
         lastSuccessfulLogIn: 2000-01-23T04:56:07.000+00:00
@@ -14903,7 +10832,7 @@ components:
         impersonatingOrganization:
           readOnly: true
           type: boolean
-        "2fa":
+        secondAuthFactor:
           readOnly: true
           type: boolean
       required:
@@ -15432,7 +11361,7 @@ components:
           counterPartialRefundAmount: 30
           sellerTruthfulnessScore: 100
           recommendedSolution: PARTIAL_REFUND_WITH_PARTIAL_RETURN
-          platformPartialRefundAmount: 5
+          platformPartialRefundAmount: 1
           platformActorType: RULING
           arbitrationBy: https://example.com/
           awaitedParty: BUYER
@@ -15443,12 +11372,12 @@ components:
           statusExpiration: 2000-01-23T04:56:07.000+00:00
           itemCount: 1
           complainantApproval: true
-          maxRefundableForBuyer: 7.061401241503109
+          maxRefundableForBuyer: 2.3021358869347655
           issueType: NOT_AS_DESCRIBED
           sellerNotes: "Unfortunately, I did not notice it, after thinking again,\
             \ yes, you deserve a discount on that."
           recommendedPartialRefundAmount: 35
-          disbursedByBuyer: 2.3021358869347655
+          disbursedByBuyer: 5.637376656633329
           sellerRejectionReason: UNJUSTIFIED_REQUEST
           issueInDescriptionType: WRONG_COLOUR
           transaction:
@@ -15458,7 +11387,7 @@ components:
                 lastName: Doe
                 mobilePhoneNumber: "+33745214529"
                 language: fr
-                id: 6
+                id: 0
                 email: john.doe@gmail.com
               unitPrice: 125.54
               medias:
@@ -15468,25 +11397,18 @@ components:
               ulid: ulid
               nature: physical_item
               organization:
-                warningColor: warningColor
-                errorColor: errorColor
-                rateCommissionSafeCheckout: 0.8008281904610115
-                accentColor: accentColor
-                counterProposalToggle: true
-                icon:
-                  publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
-                primaryColor: primaryColor
-                infoColor: infoColor
-                personaAuthPortalToggle: true
                 directNotificationToggle: true
                 flatRateEnabled: true
                 websiteUrl: websiteUrl
-                successColor: successColor
+                counterProposalToggle: true
                 name: name
+                icon:
+                  publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
+                primaryColor: primaryColor
                 logo:
                   publicUrl: https://cdn.tripartie.app/b15e64db-fbd2-442b-afee-69ee45e2959b.jpg
                 customBaseUrl: customBaseUrl
-                secondaryColor: secondaryColor
+                personaAuthPortalToggle: true
               publicUrl: https://marketplace.tld/offers/that-special-item-i-wish-to-sold
               description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
                 \ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
@@ -15498,7 +11420,7 @@ components:
               title: ASUS TUF X570-PLUS GAMING Motherboard
               currencyCode: EUR
               itemCount: 1
-            fees: 1.4658129805029452
+            fees: 6.027456183070403
             refundableFees: true
             metadata:
             - value: "54412"
@@ -15511,7 +11433,7 @@ components:
               lastName: Doe
               mobilePhoneNumber: "+33745214529"
               language: fr
-              id: 6
+              id: 0
               email: john.doe@gmail.com
             parcels:
             - identifier: 8J001271466474
@@ -15761,7 +11683,6 @@ components:
       anyOf:
       - $ref: '#/components/schemas/Dispute-Read'
       - $ref: '#/components/schemas/Persona-Read'
-      - $ref: '#/components/schemas/Offer-Read'
       nullable: false
     UnprocessableEntity_violations_inner:
       example:

@@ -15,12 +15,6 @@
 |**customBaseUrl** | **URI** |  |  [optional] |
 |**billingAddress** | [**OrganizationAddressUpdate**](OrganizationAddressUpdate.md) |  |  [optional] |
 |**primaryColor** | **String** |  |  [optional] |
-|**secondaryColor** | **String** |  |  [optional] |
-|**accentColor** | **String** |  |  [optional] |
-|**errorColor** | **String** |  |  [optional] |
-|**infoColor** | **String** |  |  [optional] |
-|**successColor** | **String** |  |  [optional] |
-|**warningColor** | **String** |  |  [optional] |
 |**directNotificationToggle** | **Boolean** |  |  [optional] |
 |**anonymityLevel** | [**AnonymityLevelEnum**](#AnonymityLevelEnum) |  |  [optional] |
 |**internalMessagingToggle** | **Boolean** |  |  [optional] |
@@ -28,7 +22,6 @@
 |**automatedReturnToggle** | **Boolean** |  |  [optional] |
 |**counterProposalToggle** | **Boolean** |  |  [optional] |
 |**flatRateEnabled** | **Boolean** |  |  [optional] [readonly] |
-|**rateCommissionSafeCheckout** | **BigDecimal** |  |  [optional] |
 
 
 

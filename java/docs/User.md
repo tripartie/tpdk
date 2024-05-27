@@ -50,7 +50,7 @@
 |**salt** | **String** |  |  [optional] [readonly] |
 |**userIdentifier** | **String** |  |  [optional] [readonly] |
 |**impersonatingOrganization** | **Boolean** |  |  [optional] [readonly] |
-|**_2fa** | **Boolean** |  |  [optional] [readonly] |
+|**secondAuthFactor** | **Boolean** |  |  [optional] [readonly] |
 
 
 

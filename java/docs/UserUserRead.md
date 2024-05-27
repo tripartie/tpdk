@@ -30,7 +30,7 @@
 |**organization** | [**OrganizationUserRead**](OrganizationUserRead.md) |  |  [optional] |
 |**iri** | **String** |  |  [optional] [readonly] |
 |**impersonatingOrganization** | **Boolean** |  |  [optional] [readonly] |
-|**_2fa** | **Boolean** |  |  [optional] [readonly] |
+|**secondAuthFactor** | **Boolean** |  |  [optional] [readonly] |
 
 
 

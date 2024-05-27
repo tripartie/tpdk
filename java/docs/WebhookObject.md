@@ -11,7 +11,7 @@
 |**transaction** | [**DisputeTransactionRead**](DisputeTransactionRead.md) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**redirectUrl** | **String** | Fill-in that field IF you intend to redirect your customer instead of using a WebView. |  [optional] |
-|**itemCount** | **Integer** |  |  [optional] |
+|**itemCount** | **Integer** | The dispute may concern only PART of the package. Specify it there. |  [optional] |
 |**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) |  |  [optional] |
 |**issueInDescriptionType** | [**IssueInDescriptionTypeEnum**](#IssueInDescriptionTypeEnum) | To be set only in conjunction of issueType &#x3D; NOT_AS_DESCRIBED. |  [optional] |
 |**issueMentionedInOffer** | **Boolean** |  |  [optional] |
@@ -65,23 +65,6 @@
 |**externalSellCount** | **Integer** | Knowing the statistics on your user is used to better know its profile when you do not use the Safe-Checkout feature. Although it is not required, we recommend that you keep us informed. |  [optional] |
 |**offerCount** | **Integer** | Issued Offers count owned by a given Persona |  [optional] [readonly] |
 |**purchaseCount** | **Integer** |  |  [optional] [readonly] |
-|**publicUrl** | **String** | If specified, there would be not need for you to fill-in details. Must be accessible over WAN. |  [optional] |
-|**enforcePersonaAuth** | **Boolean** | Mean that the generated url cannot be accessed without a generated token for a Persona. Disallow external registration. |  |
-|**overrideRateCommissionSafeCheckout** | **BigDecimal** | Override YOUR platform fees for that particular Offer. |  [optional] |
-|**organization** | [**OfferOrganizationRead**](OfferOrganizationRead.md) |  |  [optional] |
-|**seller** | **String** | If the seller is actually YOUR organization, set it to NULL. |  |
-|**nature** | [**NatureEnum**](#NatureEnum) | This WILL affect the assigned workflow. Choosing service will disable delivery for example. Refer to our technical hub for more information. |  |
-|**title** | **String** |  |  [optional] |
-|**unitPrice** | **BigDecimal** |  |  [optional] |
-|**currencyCode** | **String** |  |  [optional] |
-|**condition** | [**ConditionEnum**](#ConditionEnum) |  |  [optional] |
-|**weightInGram** | **Integer** |  |  [optional] |
-|**shippingAllowed** | **Boolean** | That toggle allows the seller to propose shipping for its item. If set in conjunction of shippingCarrier, the label will be automatically generated. Also, it will restrict the carrier to the limited subset defined. |  |
-|**handDeliveryAllowed** | **Boolean** | Enable both parties to finalize the transaction in person rather than using delivery. A QR Code must be scanned by the seller once the buyer claims the product. |  |
-|**shippingCarriers** | [**List&lt;ShippingCarriersEnum&gt;**](#List&lt;ShippingCarriersEnum&gt;) | If you wish to enable automated shipping label generation through a specific provider, specify it there. |  [optional] |
-|**eanCode** | **String** |  |  [optional] |
-|**canBeSoldSeparately** | **Boolean** | Set this flag to false to forbid a potential buyer to acquire this item separately.          This is only useful in a BulkOffer context. |  |
-|**medias** | [**List&lt;OfferMediaRead&gt;**](OfferMediaRead.md) |  |  |
 
 
 
@@ -265,39 +248,6 @@
 | MEDIUM | &quot;MEDIUM&quot; |
 | HIGH | &quot;HIGH&quot; |
 | NULL | &quot;null&quot; |
-
-
-
-## Enum: NatureEnum
-
-| Name | Value |
-|---- | -----|
-| SERVICE | &quot;service&quot; |
-| PHYSICAL_ITEM | &quot;physical_item&quot; |
-| DEMATERIALIZED_ITEM | &quot;dematerialized_item&quot; |
-| RENT_ITEM | &quot;rent_item&quot; |
-
-
-
-## Enum: ConditionEnum
-
-| Name | Value |
-|---- | -----|
-| NEW | &quot;NEW&quot; |
-| USED | &quot;USED&quot; |
-| DAMAGED | &quot;DAMAGED&quot; |
-| DETERIORATED | &quot;DETERIORATED&quot; |
-| UNRECOVERABLE | &quot;UNRECOVERABLE&quot; |
-
-
-
-## Enum: List&lt;ShippingCarriersEnum&gt;
-
-| Name | Value |
-|---- | -----|
-| SWISSPOST | &quot;SwissPost&quot; |
-| COLISSIMO | &quot;Colissimo&quot; |
-| MONDIALRELAY | &quot;MondialRelay&quot; |
 
 
 
