@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "tpdk"
-version = "2.0.204"
-description = "Tripartie"
+version = "2.0.208"
+description = "Resolution Center"
 authors = ["Tripartie SAS <noc@tripartie.com>"]
 license = "Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/tripartie/tpdk"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Tripartie"]
+keywords = ["OpenAPI", "OpenAPI-Generator", "Resolution Center"]
 include = ["tpdk/py.typed"]
 
 [tool.poetry.dependencies]
